@@ -10,51 +10,46 @@ export default {
         return {
             activeSkill: null,
 
-            skills: [
+            skillset: [
                 {
-                    name: 'HTML',
-                    level: 90,
-                    icon: 'fa-solid fa-code'
+                    title: 'HTML',
+                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
                 },
                 {
-                    name: 'CSS',
-                    level: 80,
-                    icon: 'fa-solid fa-code'
+                    title: 'CSS',
+                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
                 },
                 {
-                    name: 'JavaScript',
-                    level: 70,
-                    icon: 'fa-solid fa-code'
+                    title: 'JavaScript',
+                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
                 },
                 {
-                    name: 'Vue',
-                    level: 60,
-                    icon: 'fa-solid fa-code'
+                    title: 'Vue',
+                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
                 },
                 {
-                    name: 'React',
-                    level: 50,
-                    icon: 'fa-solid fa-code'
+                    title: 'Java',
+                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
                 },
                 {
-                    name: 'Node',
-                    level: 40,
-                    icon: 'fa-solid fa-code'
+                    title: 'Problem Solving',
+                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
                 },
                 {
-                    name: 'MongoDB',
-                    level: 30,
-                    icon: 'fa-solid fa-code'
+                    title: 'Teamwork',
+                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
                 },
                 {
-                    name: 'Git',
-                    level: 20,
-                    icon: 'fa-solid fa-code'
+                    title: 'Communication',
+                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
                 },
                 {
-                    name: 'Python',
-                    level: 10,
-                    icon: 'fa-solid fa-code'
+                    title: 'Leadership',
+                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
+                },
+                {
+                    title: 'Time Management',
+                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
                 }
             ]
         }
@@ -65,6 +60,12 @@ export default {
             console.log(index)
             this.activeSkill = this.activeSkill === index ? null : index
             console.log(this.activeSkill === index)
+        }
+    },
+
+    computed: {
+        skills () {
+            return this.skillset.sort((a, b) => a.title.localeCompare(b.title))
         }
     }
 }
@@ -79,11 +80,25 @@ export default {
 
 <style lang="scss" scoped>
 .skillsets {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
     gap: 2rem;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-end;
     color: #fff;
+    padding: 2rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 </style>
