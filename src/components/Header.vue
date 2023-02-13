@@ -4,9 +4,6 @@ import { RouterLink } from 'vue-router'
 
 <template>
     <div class="header">
-        <div class="header__title">
-            <h1>Tobias Weinlich</h1>
-        </div>
         <div class="header__links">
             <RouterLink :to="{ name: 'about' }">About</RouterLink>
             <RouterLink :to="{ name: 'contact'}">Contact</RouterLink>
@@ -17,7 +14,7 @@ import { RouterLink } from 'vue-router'
 <style lang="scss" scoped>
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 1rem 3rem 1rem 2rem;
     background-color: #333;
