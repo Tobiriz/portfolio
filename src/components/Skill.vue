@@ -35,23 +35,24 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    color: #fff;
+    color: rgba($color: #fff, $alpha: .5);
     cursor: default;
     
     &__title {
         h3 {
-            font-size: 3rem;
+            font-size: 5rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.1rem;
         }
 
         &:hover {
-            color: #ccc;
+            color: #fff;
         }
     }
 
     &__content {
+        text-align: end;
         p {
             font-size: 1.5rem;
             font-weight: 400;
