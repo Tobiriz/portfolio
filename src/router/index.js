@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import LandingPage from '../views/LandingPage.vue'
-import ContentView from '../views/ContentView.vue'
-import AboutView from '../views/AboutView.vue'
-import ContactView from '../views/ContactView.vue'
+import LandingPage from '@/views/LandingPage.vue'
+import ContentView from '@/views/ContentView.vue'
+import AboutView from '@/views/AboutView.vue'
+import SkillsetView from '@/views/SkillsetView.vue'
+import ContactView from '@/views/ContactView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +22,11 @@ const router = createRouter({
           path: '',
           name: 'about',
           component: AboutView,
+        },
+        {
+          path: 'skillset',
+          name: 'skillset',
+          component: SkillsetView,
         },
         {
           path: 'contact',
