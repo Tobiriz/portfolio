@@ -85,12 +85,12 @@ export default {
                 })
             } else if (index === 2) {
                 aboutContainer.scrollTo({
-                    top: myWorkExperienceTop - aboutMeTop - 100,
+                    top: myWorkExperienceTop - aboutMeTop,
                     behavior: 'smooth'
                 })
             } else if (index === 3) {
                 aboutContainer.scrollTo({
-                    top: myEducationTop - aboutMeTop - 100,
+                    top: myEducationTop - aboutMeTop,
                     behavior: 'smooth'
                 })
             }
@@ -199,7 +199,7 @@ export default {
         canvasCircle3Text.style.top = canvasCircle3Difference + 'px'
         
         //Set the data
-        this.distance = (myEducationBottom - aboutMeTop) - (aboutContainerBottom - aboutContainerTop) + 66
+        this.distance = (myEducationBottom - aboutMeTop) - (aboutContainerBottom - aboutContainerTop) + this.difference
         this.circle2 = circle2Position
         this.circle3 = circle3Position
         
