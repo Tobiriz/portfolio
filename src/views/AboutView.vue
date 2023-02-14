@@ -17,44 +17,71 @@ export default {
             jobs: [
                 {
                     id: 1,
-                    title: 'Frontend Developer',
-                    company: 'Company 1',
-                    date: '2021 - Present',
-                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
+                    date: 'September 2021 - October 2022',
+                    title: 'Working Student in Sales',
+                    company: 'LIDL Vertriebs-GmbH & Co. KG',
+                    location: 'Braunschweig, Germany',
+                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.',
                 },
                 {
                     id: 2,
-                    title: 'Frontend Developer',
-                    company: 'Company 2',
-                    date: '2020 - 2021',
-                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
+                    date: 'July 2015 - September 2018',
+                    title: 'Service Technician',
+                    company: 'TELCAT Multicom GmbH',
+                    location: 'Peine, Germany',
+                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.',
                 },
                 {
                     id: 3,
-                    title: 'Frontend Developer',
-                    company: 'Company 3',
-                    date: '2019 - 2020',
-                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
+                    date: 'September 2012 - July 2015',
+                    title: 'Electronics Technician Trainee',
+                    company: 'R.PAPE GmbH',
+                    location: 'Braunschweig, Germany',
+                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.',
                 }
             ],
             schools: [
                 {
                     id: 1,
-                    title: 'School 1',
-                    date: '2015 - 2019',
-                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
+                    date: 'March 2022 - Present',
+                    title: 'Electrical Engineering and Information Technology',
+                    school: 'Ostfalia University of Applied Sciences',
+                    location: 'Wolfenbüttel, Germany'
                 },
                 {
                     id: 2,
-                    title: 'School 2',
-                    date: '2012 - 2015',
-                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
+                    date: 'October 2019 - February 2022',
+                    title: 'Mechanical Engineering',
+                    school: 'Technical University of Braunshweig',
+                    location: 'Braunshweig, Germany'
                 },
                 {
                     id: 3,
-                    title: 'School 3',
-                    date: '2008 - 2012',
-                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
+                    date: 'October 2018 - September 2019',
+                    title: 'Physics',
+                    school: 'Technical University of Braunshweig',
+                    location: 'Braunshweig, Germany'
+                },
+                {
+                    id: 4,
+                    date: 'September 2012 - July 2015',
+                    title: 'Electronics Technician Trainee',
+                    school: 'Vocation School for Metals Technology Electrical Engineering',
+                    location: 'Hannover, Germany'
+                },
+                {
+                    id: 5,
+                    date: 'August 2011 - August 2012',
+                    title: 'School',
+                    school: 'Vocation School for Business and Administration',
+                    location: 'Braunschweig, Germany'
+                },
+                {
+                    id: 6,
+                    date: 'July 2011',
+                    title: 'Secondary School',
+                    school: 'Realschule Maschstraße',
+                    location: 'Braunschweig, Germany'
                 }
             ]
         }
@@ -116,7 +143,7 @@ export default {
     gap: 6rem;
     flex-direction: column;
     align-items: flex-end;
-    padding: 2rem;
+    padding: 2rem 4rem 2rem 2rem;
     box-sizing: border-box;
     overflow-y: auto;
 
@@ -137,19 +164,18 @@ export default {
         &__title {
             font-size: 2rem;
             font-weight: 600;
-            color: #fff;
+            color: #ccc;
         }
 
         &__content {
             font-size: 1.5rem;
             font-weight: 400;
-            color: #fff;
+            color: #ddd;
         }
     }
     
     &__my-work-experience {
         width: 80%;
-        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
@@ -158,19 +184,12 @@ export default {
         &__title {
             font-size: 2rem;
             font-weight: 600;
-            color: #fff;
-        }
-
-        &__content {
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: #fff;
+            color: #ccc;
         }
     }
 
     &__my-education {
         width: 80%;
-        height: 100%;
         display: flex;
         flex-direction: column;
         gap: 2rem;
@@ -178,13 +197,7 @@ export default {
         &__title {
             font-size: 2rem;
             font-weight: 600;
-            color: #fff;
-        }
-
-        &__content {
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: #fff;
+            color: #ccc;
         }
     }
 }
