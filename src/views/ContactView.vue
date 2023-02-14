@@ -67,9 +67,9 @@ export default {
 
         h2 {
             padding-bottom: .5rem;
-            cursor: pointer;
-            color: #fff;
-            transition: color .2s ease-in-out;
+            cursor: default;
+            color: rgba($color: #fff, $alpha: .5);
+            transition: color .3s ease-in-out;
 
             &:hover {
                 color: #40826d;
