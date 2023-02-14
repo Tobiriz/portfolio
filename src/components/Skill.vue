@@ -48,7 +48,7 @@ export default {
         }
 
         &:hover {
-            color: #fff;
+            color: #40826d;
         }
     }
 
@@ -62,6 +62,6 @@ export default {
 }
 
 .isActive {
-    color: #fff;
+    color: #40826d;
 }
 </style>
