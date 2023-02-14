@@ -41,35 +41,35 @@ export default {
             canvasLinePosition.style.height = canvasLinePositionHeight + 'px'
 
             if (canvasLinePositionHeight >= 0) {
-                canvasCircle1.style.opacity = '1'
+                canvasCircle1.style.backgroundColor = '#fff'
             } else {
-                canvasCircle1.style.opacity = '.5'
+                canvasCircle1.style.backgroundColor = '#888'
             }
 
             if (canvasLinePositionHeight >= 0 && canvasLinePositionHeight <= this.circle2) {
-                canvasCircle1Text.style.opacity = '1'
+                canvasCircle1Text.style.color = '#fff'
             } else {
-                canvasCircle1Text.style.opacity = '.5'
+                canvasCircle1Text.style.color = '#888'
             }
 
             if (canvasLinePositionHeight >= this.circle2) {
-                canvasCircle2.style.opacity = '1'
+                canvasCircle2.style.backgroundColor = '#fff'
             } else {
-                canvasCircle2.style.opacity = '.5'
+                canvasCircle2.style.backgroundColor = '#888'
             }
 
             if (canvasLinePositionHeight >= this.circle2 && canvasLinePositionHeight <= this.circle3) {
-                canvasCircle2Text.style.opacity = '1'
+                canvasCircle2Text.style.color = '#fff'
             } else {
-                canvasCircle2Text.style.opacity = '.5'
+                canvasCircle2Text.style.color = '#888'
             }
 
             if (canvasLinePositionHeight >= this.circle3) {
-                canvasCircle3Text.style.opacity = '1'
-                canvasCircle3.style.opacity = '1'
+                canvasCircle3Text.style.color = '#fff'
+                canvasCircle3.style.backgroundColor = '#fff'
             } else {
-                canvasCircle3Text.style.opacity = '.5'
-                canvasCircle3.style.opacity = '.5'
+                canvasCircle3Text.style.color = '#888'
+                canvasCircle3.style.backgroundColor = '#888'
             }
         },
         scrollTo(index) {
@@ -205,7 +205,7 @@ export default {
         
         //Add event listener to the about container
         aboutContainer.addEventListener('scroll', this.handleScroll)
-        this.handleScroll()
+        setInterval(this.handleScroll, 10)
     },
     
     unmounted() {
@@ -266,8 +266,7 @@ export default {
         left: 0;
         width: 2px;
         height: 100%;
-        background-color: #fff;
-        opacity: .5;
+        background-color: #888;
 
         &__position {
             position: absolute;
@@ -275,7 +274,6 @@ export default {
             left: 0;
             width: 2px;
             background-color: #fff;
-            opacity: 1;
         }
     }
 
@@ -284,8 +282,7 @@ export default {
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background-color: #fff;
-        opacity: .5;
+        background-color: #888;
     }
 }
 </style>
