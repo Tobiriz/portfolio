@@ -1,9 +1,26 @@
 <script>
+import ViewName from '@/components/ViewName.vue'
+
+export default {
+    components: {
+        ViewName
+    }
+}
 </script>
 
 <template>
     <div>
-        <h1>Contact</h1>
-        <p>Contact page</p>
+        <div>
+            Tobias Weinlich
+        </div>
+        <ViewName>
+            <template #view-name>
+                Contact
+            </template>
+        </ViewName>
     </div>
 </template>
+
+<style lang="scss" scoped>
+
+</style>
