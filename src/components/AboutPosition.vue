@@ -199,18 +199,75 @@ export default {
         canvasCircle3Text.style.top = canvasCircle3Difference + 'px'
         
         //Set the data
-        this.distance = (myEducationBottom - aboutMeTop) - (aboutContainerBottom - aboutContainerTop) + this.difference
+        this.distance = (myEducationBottom - aboutMeTop) - (aboutContainerBottom - aboutContainerTop) + 66
         this.circle2 = circle2Position
         this.circle3 = circle3Position
         
+        canvasCircle1Text.addEventListener('mouseover', () => {
+            canvasCircle1Text.style.color = '#40826d'
+            canvasCircle1.style.backgroundColor = '#40826d'
+        })
+        canvasCircle1Text.addEventListener('mouseout', () => {
+            this.handleScroll()
+        })
+
+        canvasCircle2Text.addEventListener('mouseover', () => {
+            canvasCircle2Text.style.color = '#40826d'
+            canvasCircle2.style.backgroundColor = '#40826d'
+        })
+        canvasCircle2Text.addEventListener('mouseout', () => {
+            this.handleScroll()
+        })
+
+        canvasCircle3Text.addEventListener('mouseover', () => {
+            canvasCircle3Text.style.color = '#40826d'
+            canvasCircle3.style.backgroundColor = '#40826d'
+        })
+        canvasCircle3Text.addEventListener('mouseout', () => {
+            this.handleScroll()
+        })
+
+        canvasCircle1Text.style.color = '#fff'
+        canvasCircle2Text.style.color = '#888'
+        canvasCircle3Text.style.color = '#888'
+        canvasCircle1.style.backgroundColor = '#fff'
+        canvasCircle2.style.backgroundColor = '#888'
+        canvasCircle3.style.backgroundColor = '#888'
+        canvasLinePosition.style.backgroundColor = '#888'
+
         //Add event listener to the about container
         aboutContainer.addEventListener('scroll', this.handleScroll)
-        setInterval(this.handleScroll, 10)
+        setTimeout(this.handleScroll, 500)
+        canvasLinePosition.style.backgroundColor = '#fff'
     },
     
     unmounted() {
         const aboutContainer = document.getElementsByClassName('about-container')[0]
+        const canvasCircle1Text = document.getElementsByClassName('position-container__text__about-me')[0]
+        const canvasCircle2Text = document.getElementsByClassName('position-container__text__work-experience')[0]
+        const canvasCircle3Text = document.getElementsByClassName('position-container__text__education')[0]
         aboutContainer.removeEventListener('scroll', this.handleScroll)
+        canvasCircle1Text.removeEventListener('mouseover', () => {
+            canvasCircle1Text.style.color = '#40826d'
+            canvasCircle1.style.backgroundColor = '#40826d'
+        })
+        canvasCircle1Text.removeEventListener('mouseout', () => {
+            this.handleScroll()
+        })
+        canvasCircle2Text.removeEventListener('mouseover', () => {
+            canvasCircle2Text.style.color = '#40826d'
+            canvasCircle2.style.backgroundColor = '#40826d'
+        })
+        canvasCircle2Text.removeEventListener('mouseout', () => {
+            this.handleScroll()
+        })
+        canvasCircle3Text.removeEventListener('mouseover', () => {
+            canvasCircle3Text.style.color = '#40826d'
+            canvasCircle3.style.backgroundColor = '#40826d'
+        })
+        canvasCircle3Text.removeEventListener('mouseout', () => {
+            this.handleScroll()
+        })
     },
 }
 </script>
@@ -235,7 +292,7 @@ export default {
 <style lang="scss" scoped>
 .position-container {
     position: absolute;
-    width: 10rem;
+    width: 6rem;
     box-sizing: border-box;
     bottom: 2.5rem;
     display: grid;
@@ -245,12 +302,12 @@ export default {
         position: absolute;
         height: 100%;
         left: 1rem;
-        color: #fff;
         font-size: 1rem;
 
         &__about-me, &__work-experience, &__education {
             position: absolute;
-            cursor: pointer;
+            cursor: default;
+            transition: color 0.3s ease-in-out;
         }
     }
 }
@@ -283,6 +340,7 @@ export default {
         height: 10px;
         border-radius: 50%;
         background-color: #888;
+        transition: background-color 0.3s ease-in-out;
     }
 }
 </style>
