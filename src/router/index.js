@@ -3,6 +3,7 @@ import LandingPage from '@/views/LandingPage.vue'
 import ContentView from '@/views/ContentView.vue'
 import AboutView from '@/views/AboutView.vue'
 import SkillsetView from '@/views/SkillsetView.vue'
+import ProejctsView from '@/views/ProjectsView.vue'
 import ContactView from '@/views/ContactView.vue'
 
 const router = createRouter({
@@ -27,6 +28,11 @@ const router = createRouter({
           path: 'skillset',
           name: 'skillset',
           component: SkillsetView,
+        },
+        {
+          path: 'projects',
+          name: 'projects',
+          component: ProejctsView,
         },
         {
           path: 'contact',
