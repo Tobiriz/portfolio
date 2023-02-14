@@ -44,9 +44,10 @@ import { RouterLink } from 'vue-router'
             color: rgba($color: #fff, $alpha: .5);
             text-decoration: none;
             transition: color .3s ease-in-out;
+            cursor: default;
 
             &:hover {
-                color: #fff;
+                color: #40826d;
             }
         }
     }
