@@ -19,7 +19,7 @@ export default {
 
 <template>
     <div class="skill">
-        <div class="skill__title" @click="$emit('toggle')">
+        <div class="skill__title" :class="{ isActive : isActive }" @click="$emit('toggle')">
             <h3>{{ title }}</h3>
         </div>
 
@@ -44,6 +44,7 @@ export default {
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.1rem;
+            transition: color .3s ease-in-out;
         }
 
         &:hover {
@@ -58,5 +59,9 @@ export default {
             font-weight: 400;
         }
     }
+}
+
+.isActive {
+    color: #fff;
 }
 </style>
