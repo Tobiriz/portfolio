@@ -7,6 +7,7 @@ import { RouterLink } from 'vue-router'
         <div class="navigation__links">
             <RouterLink :to="{ name: 'about' }">About</RouterLink>
             <RouterLink :to="{ name: 'skillset' }">Skillset</RouterLink>
+            <RouterLink :to="{ name: 'projects' }">Projects</RouterLink>
             <RouterLink :to="{ name: 'contact'}">Contact</RouterLink>
         </div>
     </div>
@@ -20,34 +21,34 @@ import { RouterLink } from 'vue-router'
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    background-color: #333;
-    color: #fff;
     font-size: 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     z-index: 5;
     
-        &__title {
-            h1 {
-                margin: 0;
-            }
+    &__title {
+        h1 {
+            margin: 0;
         }
-    
-        &__links {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            padding: 2rem 1rem;
+    }
 
-            a {
+    &__links {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem;
+
+        a {
+            font-size: 2rem;
+            color: rgba($color: #fff, $alpha: .5);
+            text-decoration: none;
+            transition: color .3s ease-in-out;
+
+            &:hover {
                 color: #fff;
-                text-decoration: none;
-    
-                &:hover {
-                    color: #ccc;
-                }
             }
         }
+    }
 }
 </style>
