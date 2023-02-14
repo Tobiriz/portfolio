@@ -1,9 +1,11 @@
 <script>
 import Skill from '@/components/Skill.vue'
+import ViewName from '@/components/ViewName.vue'
 
 export default {
     components: {
-        Skill
+        Skill,
+        ViewName
     },
 
     data() {
@@ -72,9 +74,16 @@ export default {
 </script>
 
 <template>
-    <div class="skillsets">
-        <Skill v-for="(skill, index) in skills" :key="index" :title="skill.title" :content="skill.content" :is-active="this.activeSkill === index" @toggle="toggleSkill(index)" />
-
+    <div>
+        <div class="skillsets">
+            <Skill v-for="(skill, index) in skills" :key="index" :title="skill.title" :content="skill.content" :is-active="this.activeSkill === index" @toggle="toggleSkill(index)" />
+        </div>
+        
+        <ViewName>
+            <template #view-name>
+                Skillset
+            </template>
+        </ViewName>
     </div>
 </template>
 
@@ -89,7 +98,6 @@ export default {
     gap: 2rem;
     flex-direction: column;
     align-items: flex-end;
-    color: #fff;
     padding: 2rem;
     box-sizing: border-box;
     overflow-y: auto;
