@@ -5,25 +5,6 @@ export default {
     components: {
         RouterLink
     },
-
-    methods: {
-        showChevron() {
-            const chevron = document.querySelector('.chevron')
-            chevron.style.opacity = 1
-        },
-        
-        hideChevron() {
-            const chevron = document.querySelector('.chevron')
-            chevron.style.opacity = 0
-        }
-    },
-
-    mounted() {
-        const chevron = document.querySelector('.chevron')
-        const titleCard = document.querySelector('.title-card')
-        const titleCardTop = titleCard.getBoundingClientRect().top
-        chevron.style.top = `${titleCardTop - 50}px`
-    }
 }
 </script>
 
