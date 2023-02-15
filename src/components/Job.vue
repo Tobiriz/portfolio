@@ -11,20 +11,28 @@ export default {
 
 <template>
     <div class="job">
+        <div class="job__duration">
+            {{ job.duration }}
+        </div>
         <div class="job__date">
             {{ job.date }}
         </div>
         <div class="job__title">
             {{ job.title }}
         </div>
-        <div class="job__company">
-            {{ job.company }}
-        </div>
-        <div class="job__location">
-            {{ job.location }}
-        </div>
         <div class="job__description">
-            {{ job.description }}
+            <div>
+                <div class="job__company">
+                    {{ job.company }}
+                </div>
+                <div class="job__location">
+                    {{ job.location }}
+                </div>
+                <div class="job__description">
+                    {{ job.description }}
+                </div>
+            </div>
+            <div><div class="line"></div></div>
         </div>
     </div>
 </template>
@@ -35,14 +43,22 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    color: #fff;
+    color: #ddd;
     cursor: default;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
+
+    &__duration {
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 0.1rem;
+        white-space: pre;
+    }
     
     &__date {
         font-size: 1.5rem;
         font-weight: 400;
         letter-spacing: 0.1rem;
+        white-space: pre;
     }
 
     &__title {
@@ -52,12 +68,21 @@ export default {
         letter-spacing: 0.1rem;
         color: #40826d;
         padding: .5rem 0;
+        white-space: pre;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 1rem;
     }
 
     &__company {
         font-size: 1.5rem;
         font-weight: 400;
         letter-spacing: 0.1rem;
+        white-space: pre;
     }
 
     &__location {
@@ -65,12 +90,21 @@ export default {
         font-weight: 400;
         letter-spacing: 0.1rem;
         padding-bottom: 1rem;
+        white-space: pre;
     }
 
     &__description {
         text-align: end;
         font-size: 1.2rem;
         font-weight: 400;
+        white-space: pre;
     }
+}
+
+.line {
+    width: 2px;
+    height: 100%;
+    background-color: #40826d;
+    margin-right: 1rem;
 }
 </style>
