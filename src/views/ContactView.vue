@@ -54,7 +54,7 @@ export default {
     padding: 2rem;
     box-sizing: border-box;
     overflow-y: auto;
-    color: #fff;
+    color: var(--secondary-color);
 
     &__section {
         text-align: center;
@@ -68,11 +68,11 @@ export default {
         h2 {
             padding-bottom: .5rem;
             cursor: default;
-            color: rgba($color: #fff, $alpha: .5);
+            color: var(--secondary-color-light);
             transition: color .3s ease-in-out;
 
             &:hover {
-                color: #40826d;
+                color:  var(--accent-color);
             }
         }
 

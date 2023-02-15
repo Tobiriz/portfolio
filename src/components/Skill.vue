@@ -35,7 +35,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    color: rgba($color: #fff, $alpha: .5);
+    color:  var(--secondary-color-light);
     cursor: default;
     
     &__title {
@@ -48,12 +48,14 @@ export default {
         }
 
         &:hover {
-            color: #40826d;
+            color:  var(--accent-color);
         }
     }
 
     &__content {
         text-align: end;
+        color: var(--secondary-color);
+
         p {
             font-size: 1.5rem;
             font-weight: 400;
@@ -62,6 +64,6 @@ export default {
 }
 
 .isActive {
-    color: #40826d;
+    color:  var(--secondary-color);
 }
 </style>

@@ -64,13 +64,13 @@ export default {
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-color: #191919;
+    background-color: var(--primary-color);
 }
 
 .chevron {
     position: absolute;
     font-size: 2rem;
-    color: #fff;
+    color: var(--secondary-color);
     transition: all 0.5s ease;
     opacity: 0;
     --fa-animation-delay: 2s;
@@ -88,7 +88,7 @@ export default {
     align-items: center;
     gap: 1rem;
     background-color: #333;
-    color: #fff;
+    color: var(--secondary-color);
     font-size: 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -110,6 +110,6 @@ export default {
 a {
     cursor: default;
     text-decoration: none;
-    color: #fff;
+    color: var(--secondary-color);
 }
 </style>

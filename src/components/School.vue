@@ -39,7 +39,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: #ddd;
+    color:  var(--secondary-color);
     cursor: default;
     padding-bottom: 3rem;
 
@@ -62,7 +62,7 @@ export default {
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.1rem;
-        color: #40826d;
+        color:  var(--accent-color);
         padding: .5rem 0;
         width: 50%;
         white-space: pre;
@@ -93,7 +93,7 @@ export default {
 .line {
     width: 2px;
     height: 100%;
-    background-color: #40826d;
+    background-color:  var(--accent-color);
     margin-left: 1rem;
 }
 </style>

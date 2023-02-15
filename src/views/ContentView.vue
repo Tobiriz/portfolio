@@ -44,7 +44,7 @@ export default {
         border: 2px solid #aaa;
         border-radius: 2px;
         box-sizing: border-box;
-        box-shadow: 0 0 20px 2px #aaa;
+        box-shadow: 0 0 20px 2px  var(--secondary-color);
     }
 }
 

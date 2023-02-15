@@ -20,7 +20,7 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.1rem;
-        color: #fff;
+        color:  var(--secondary-color);
     }
 }
 </style>

@@ -172,13 +172,13 @@ export default {
         &__title {
             font-size: 2rem;
             font-weight: 600;
-            color: #ccc;
+            color: var(--secondary-color);
         }
 
         &__content {
             font-size: 1.5rem;
             font-weight: 400;
-            color: #ddd;
+            color: var(--secondary-color);
         }
     }
     
@@ -192,7 +192,7 @@ export default {
         &__title {
             font-size: 2rem;
             font-weight: 600;
-            color: #ccc;
+            color: var(--secondary-color);
         }
     }
 
@@ -205,7 +205,7 @@ export default {
         &__title {
             font-size: 2rem;
             font-weight: 600;
-            color: #ccc;
+            color: var(--secondary-color);
         }
     }
 }

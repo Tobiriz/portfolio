@@ -41,13 +41,13 @@ import { RouterLink } from 'vue-router'
 
         a {
             font-size: 2rem;
-            color: rgba($color: #fff, $alpha: .5);
+            color: var(--secondary-color-light);
             text-decoration: none;
             transition: color .3s ease-in-out;
             cursor: default;
 
             &:hover {
-                color: #40826d;
+                color: var(--accent-color);
             }
         }
     }
