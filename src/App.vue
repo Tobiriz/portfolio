@@ -5,7 +5,7 @@ import { RouterView } from 'vue-router'
 <template>
     <div>
         <RouterView v-slot="{ Component, route }">
-            <Transition :name="route.meta.transition" mode="out-in">
+            <Transition :name="route.meta.transition" mode="in-out">
                 <Component :is="Component"/>
             </Transition>
         </RouterView>
@@ -13,23 +13,24 @@ import { RouterView } from 'vue-router'
 </template>
 
 <style lang="scss" scoped>
-.slide-enter-active,
-.slide-leave-active {
-    transition: transform .5s ease;
+.slide-left-enter-active,
+.slide-left-leave-active {
+    transition: all 1s ease-in-out;
 }
 
-.slide-enter-from,
-.slide-leave-to {
-    transform: translateY(-100%);
+.slide-left-enter-from {
+    transform: translateX(100%);
 }
 
-.fade-enter-active,
-.fade-leave-active {  
-    transition: opacity 0.5s ease;
+.slide-left-enter-to {
+    transform: translateX(0);
 }
 
-.fade-enter-from,
-.fade-leave-to {  
-    opacity: 0;
+.slide-left-leave-from {
+    transform: translateX(0);
+}
+
+.slide-left-leave-to {
+    transform: translateX(-100%);
 }
 </style>
