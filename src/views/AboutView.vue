@@ -41,7 +41,7 @@ export default {
                     company: 'R.PAPE GmbH',
                     location: 'Braunschweig, Germany',
                     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.',
-                }
+                },
             ],
             schools: [
                 {
