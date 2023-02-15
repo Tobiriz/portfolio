@@ -22,12 +22,15 @@ export default {
                 <h1>MEDIA</h1>
                 <a href="https://github.com/Tobiriz" target="_blank">
                     <h2>GitHub</h2>
+                    <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="icon" />
                 </a>
                 <a href="https://www.linkedin.com/in/tobias-weinlich-34aba0260/" target="_blank">
                     <h2>XING</h2>
+                    <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="icon" />
                 </a>
                 <a href="https://www.xing.com/profile/Tobias_Weinlich/cv" target="_blank">
                     <h2>LinkedIn</h2>
+                    <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="icon" />
                 </a>
             </div>
         </div>
@@ -67,7 +70,7 @@ export default {
 
         h2 {
             padding-bottom: .5rem;
-            cursor: default;
+            cursor: pointer;
             color: var(--secondary-color-light);
             transition: color .3s ease-in-out;
 
@@ -76,8 +79,23 @@ export default {
             }
         }
 
+        .icon {
+            color: var(--secondary-color-light);
+            transition: color .3s ease-in-out;
+        }
+
         a {
             text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            justify-content: center;
+
+            &:hover {
+                .icon {
+                    color: var(--accent-color);
+                }
+            }
         }
     }
 }
