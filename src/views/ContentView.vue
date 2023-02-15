@@ -26,7 +26,7 @@ export default {
 
 <style lang="scss" scoped>
 .content-container {
-    background-color: #191919;
+    background-color: var(--primary-color);
     position: absolute;
     top: 0;
     left: 0;
@@ -35,7 +35,7 @@ export default {
     overflow: hidden;
 
     &__border {
-        background: rgba($color: #000000, $alpha: 0);
+        background: rgba($color: #000, $alpha: 0);
         position: absolute;
         top: 2rem;
         left: 2rem;
