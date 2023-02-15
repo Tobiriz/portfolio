@@ -93,6 +93,7 @@ export default {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+    position: relative;
 
     &__name {
         h1 {
@@ -104,6 +105,25 @@ export default {
         h2 {
             font-size: 2rem;
         }
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(
+            to right,
+            transparent,
+            var(--accent-color)
+        );
+    }
+
+    &:hover:before {
+        transition: width 0.8s ease;
+        width: 100%;
     }
 }
 
