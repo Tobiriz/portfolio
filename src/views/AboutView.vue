@@ -18,6 +18,7 @@ export default {
                 {
                     id: 1,
                     date: 'September 2021 - October 2022',
+                    duration: '1 year 2 months',
                     title: 'Working Student in Sales',
                     company: 'LIDL Vertriebs-GmbH & Co. KG',
                     location: 'Braunschweig, Germany',
@@ -26,6 +27,7 @@ export default {
                 {
                     id: 2,
                     date: 'July 2015 - September 2018',
+                    duration: '3 years 3 months',
                     title: 'Service Technician',
                     company: 'TELCAT Multicom GmbH',
                     location: 'Peine, Germany',
@@ -34,6 +36,7 @@ export default {
                 {
                     id: 3,
                     date: 'September 2012 - July 2015',
+                    duration: '2 years 11 months',
                     title: 'Electronics Technician Trainee',
                     company: 'R.PAPE GmbH',
                     location: 'Braunschweig, Germany',
@@ -44,13 +47,15 @@ export default {
                 {
                     id: 1,
                     date: 'March 2022 - Present',
-                    title: 'Electrical Engineering and Information Technology',
+                    duration: '',
+                    title: 'Electrical Engineering and\nInformation Technology',
                     school: 'Ostfalia University of Applied Sciences',
                     location: 'Wolfenbüttel, Germany'
                 },
                 {
                     id: 2,
                     date: 'October 2019 - February 2022',
+                    duration: '2 years 5 months',
                     title: 'Mechanical Engineering',
                     school: 'Technical University of Braunshweig',
                     location: 'Braunshweig, Germany'
@@ -58,6 +63,7 @@ export default {
                 {
                     id: 3,
                     date: 'October 2018 - September 2019',
+                    duration: '1 year',
                     title: 'Physics',
                     school: 'Technical University of Braunshweig',
                     location: 'Braunshweig, Germany'
@@ -65,15 +71,17 @@ export default {
                 {
                     id: 4,
                     date: 'September 2012 - July 2015',
+                    duration: '2 years 11 months',
                     title: 'Electronics Technician Trainee',
-                    school: 'Vocation School for Metals Technology Electrical Engineering',
+                    school: 'BBS-ME Otto-Brenner-Schule\nVocational School for Metal Technology and Electrical Engineering',
                     location: 'Hannover, Germany'
                 },
                 {
                     id: 5,
                     date: 'August 2011 - August 2012',
-                    title: 'School',
-                    school: 'Vocation School for Business and Administration',
+                    duration: '1 year',
+                    title: 'High School',
+                    school: 'BBS3 Otto-Bennemann-Schule\nVocational School for Business and Administration',
                     location: 'Braunschweig, Germany'
                 },
                 {
