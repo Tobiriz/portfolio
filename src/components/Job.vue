@@ -20,6 +20,7 @@ export default {
         <div class="job__title">
             {{ job.title }}
         </div>
+        
         <div class="job__description">
             <div>
                 <div class="job__company">
@@ -43,6 +44,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    flex-wrap: nowrap;
     color: var(--secondary-color);
     cursor: default;
     padding-bottom: 3rem;
@@ -74,7 +76,6 @@ export default {
     &__description {
         display: flex;
         flex-direction: row;
-        width: 100%;
         gap: 1rem;
     }
 
