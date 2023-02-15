@@ -51,7 +51,7 @@ router.beforeEach((to, from) => {
   }
   //Slide transition when leaving LandingPage
   else if (from.name === 'landingPage') {
-    to.meta.transition = 'slide'
+    to.meta.transition = 'slide-left'
   }
 })
 
