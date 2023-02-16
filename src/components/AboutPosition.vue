@@ -40,36 +40,39 @@ export default {
             const canvasLinePositionHeight = Math.round(canvasLinePercentage * this.percentagePosition)
             canvasLinePosition.style.height = canvasLinePositionHeight + 'px'
 
+            const secondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color')
+            const secondaryColorLight = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color-light')
+
             if (canvasLinePositionHeight >= 0) {
-                canvasCircle1.style.backgroundColor = '#fff'
+                canvasCircle1.style.backgroundColor = secondaryColor
             } else {
-                canvasCircle1.style.backgroundColor = '#888'
+                canvasCircle1.style.backgroundColor = secondaryColorLight
             }
 
             if (canvasLinePositionHeight >= 0 && canvasLinePositionHeight <= this.circle2) {
-                canvasCircle1Text.style.color = '#fff'
+                canvasCircle1Text.style.color = secondaryColor
             } else {
-                canvasCircle1Text.style.color = '#888'
+                canvasCircle1Text.style.color = secondaryColorLight
             }
 
             if (canvasLinePositionHeight >= this.circle2) {
-                canvasCircle2.style.backgroundColor = '#fff'
+                canvasCircle2.style.backgroundColor = secondaryColor
             } else {
-                canvasCircle2.style.backgroundColor = '#888'
+                canvasCircle2.style.backgroundColor = secondaryColorLight
             }
 
             if (canvasLinePositionHeight >= this.circle2 && canvasLinePositionHeight <= this.circle3) {
-                canvasCircle2Text.style.color = '#fff'
+                canvasCircle2Text.style.color = secondaryColor
             } else {
-                canvasCircle2Text.style.color = '#888'
+                canvasCircle2Text.style.color = secondaryColorLight
             }
 
             if (canvasLinePositionHeight >= this.circle3) {
-                canvasCircle3Text.style.color = '#fff'
-                canvasCircle3.style.backgroundColor = '#fff'
+                canvasCircle3Text.style.color = secondaryColor
+                canvasCircle3.style.backgroundColor = secondaryColor
             } else {
-                canvasCircle3Text.style.color = '#888'
-                canvasCircle3.style.backgroundColor = '#888'
+                canvasCircle3Text.style.color = secondaryColorLight
+                canvasCircle3.style.backgroundColor = secondaryColorLight
             }
         },
         scrollTo(index) {
@@ -307,7 +310,6 @@ export default {
         &__about-me, &__work-experience, &__education {
             position: absolute;
             cursor: default;
-            transition: color 0.3s ease-in-out;
         }
     }
 }
@@ -323,14 +325,14 @@ export default {
         left: 0;
         width: 2px;
         height: 100%;
-        background-color: #888;
+        background-color: var(--secondary-color-light);
 
         &__position {
             position: absolute;
             top: 0;
             left: 0;
             width: 2px;
-            background-color: #fff;
+            background-color: var(--secondary-color);
         }
     }
 
@@ -339,8 +341,7 @@ export default {
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background-color: #888;
-        transition: background-color 0.3s ease-in-out;
+        background-color: var(--secondary-color-light);
     }
 }
 </style>
