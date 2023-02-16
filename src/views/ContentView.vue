@@ -41,10 +41,10 @@ export default {
         left: 2rem;
         width: calc(100% - 4rem);
         height: calc(100% - 4rem);
-        border: 2px solid #aaa;
+        border: 1px solid #aaa;
         border-radius: 2px;
         box-sizing: border-box;
-        box-shadow: 0 0 20px 2px  var(--secondary-color);
+        box-shadow: 0 0 20px 5px  var(--secondary-color);
     }
 }
 
