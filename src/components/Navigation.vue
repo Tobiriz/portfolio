@@ -1,11 +1,11 @@
 <script>
 import { RouterLink } from 'vue-router'
-import Options from '@/components/Options.vue'
+import Settings from '@/components/Settings.vue'
 
 export default {
     components: {
         RouterLink,
-        Options
+        Settings
     },
 }
 </script>
@@ -18,7 +18,7 @@ export default {
             <RouterLink :to="{ name: 'projects' }">Projects</RouterLink>
             <RouterLink :to="{ name: 'contact'}">Contact</RouterLink>
         </div>
-        <Options></Options>
+        <Settings></Settings>
     </div>
 </template>
 
