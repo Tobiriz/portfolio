@@ -1,274 +1,300 @@
 <script>
+import { useSettingsStore } from '@/stores/settingsStore'
+
 export default {
+    setup() {
+        const store = useSettingsStore()
+        const state = store.state
+        return { store, state }
+    },
+
     data() {
         return {
-            distance: null,
-            position: null,
-            percentagePosition: null,
-            difference: 66,
-            circle2: null,
-            circle3: null,
+            contentHeight: null,
+            travelDistance: null,
+            scrollPosition: null,
+            scrollPercentage: null,
+            padding: 65,
+            canvasLinePercentage: null,
+            circleDiameter: null,
+            circle2Position: null,
+            circle3Position: null,
+
+            secondaryColor: null,
+            canvasColor: null,
+            accentColor: null,
+
+            //Container boundries
+            container: null,
+            containerTop: null,
+            containerBottom: null,
+            containerTopAboutMe: null,
+            containerTopWorkExperience: null,
+            containerTopEducation: null,
+            containerBottomEducation: null,
+            containerViewNameHeight: null,
+            containerRightViewName: null,
+            containerBottomViewName: null,
+            
+            //Canvas
+            containerCanvas: null,
+            canvasLineHeight: null,
+            canvasLineWidth: null,
+            canvasPositionLine: null,
+            canvasCircle1: null,
+            canvasCircle1Text: null,
+            canvasCircle2: null,
+            canvasCircle2Text: null,
+            canvasCircle3: null,
+            canvasCircle3Text: null,
         }
     },
     methods: {
         handleScroll() {
-            const aboutMeTop = document.getElementsByClassName('about-container__about-me')[0].getBoundingClientRect().top
-
-            this.position = Math.abs(aboutMeTop - this.difference)
-            this.percentagePosition = Math.round((this.position / this.distance) * 100)
+            this.containerTopAboutMe = document.getElementsByClassName('about-container__about-me')[0].getBoundingClientRect().top
+            this.containerTopWorkExperience = document.getElementsByClassName('about-container__my-work-experience')[0].getBoundingClientRect().top
+            this.containerTopEducation = document.getElementsByClassName('about-container__my-education')[0].getBoundingClientRect().top
+            this.scrollPosition = Math.abs(this.containerTopAboutMe - this.padding)
+            this.scrollPercentage = Math.round((this.scrollPosition / this.travelDistance) * 100)
             
             //Get the line
-            const canvasLine = document.getElementsByClassName('canvas__line')[0]
-            const canvasLineHeight = canvasLine.getBoundingClientRect().height
-            const canvasLinePercentage = canvasLineHeight / 100
-
-            //Get the "line position"
-            const canvasLinePosition = document.getElementsByClassName('canvas__line__position')[0]
-
-            //Get the text of the circles
-            const canvasCircle1Text = document.getElementsByClassName('position-container__text__about-me')[0]
-            const canvasCircle2Text = document.getElementsByClassName('position-container__text__work-experience')[0]
-            const canvasCircle3Text = document.getElementsByClassName('position-container__text__education')[0]
+            const canvasLinePercentage = this.canvasLineHeight / 100
             
-            //Get the circles
-            const canvasCircles = document.getElementsByClassName('canvas__circle')
-            const canvasCircle1 = canvasCircles[0]
-            const canvasCircle2 = canvasCircles[1]
-            const canvasCircle3 = canvasCircles[2]
-
             //Set the height of the line position
-            const canvasLinePositionHeight = Math.round(canvasLinePercentage * this.percentagePosition)
-            canvasLinePosition.style.height = canvasLinePositionHeight + 'px'
+            const canvasPositionLineHeight = Math.round(canvasLinePercentage * this.scrollPercentage)
+            this.canvasPositionLine.style.height = canvasPositionLineHeight + 'px'
 
-            const secondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color')
-            const secondaryColorLight = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color-light')
-
-            if (canvasLinePositionHeight >= 0) {
-                canvasCircle1.style.backgroundColor = secondaryColor
+            //Set the color of the circles
+            if (canvasPositionLineHeight >= 0) {
+                this.canvasCircle1.style.backgroundColor = this.secondaryColor
             } else {
-                canvasCircle1.style.backgroundColor = secondaryColorLight
+                this.canvasCircle1.style.backgroundColor = this.canvasColor
             }
 
-            if (canvasLinePositionHeight >= 0 && canvasLinePositionHeight <= this.circle2) {
-                canvasCircle1Text.style.color = secondaryColor
+            if (canvasPositionLineHeight >= 0 && canvasPositionLineHeight <= this.circle2Position) {
+                this.canvasCircle1Text.style.color = this.secondaryColor
             } else {
-                canvasCircle1Text.style.color = secondaryColorLight
+                this.canvasCircle1Text.style.color = this.canvasColor
             }
 
-            if (canvasLinePositionHeight >= this.circle2) {
-                canvasCircle2.style.backgroundColor = secondaryColor
+            if (canvasPositionLineHeight >= this.circle2Position) {
+                this.canvasCircle2.style.backgroundColor = this.secondaryColor
             } else {
-                canvasCircle2.style.backgroundColor = secondaryColorLight
+                this.canvasCircle2.style.backgroundColor = this.canvasColor
             }
 
-            if (canvasLinePositionHeight >= this.circle2 && canvasLinePositionHeight <= this.circle3) {
-                canvasCircle2Text.style.color = secondaryColor
+            if (canvasPositionLineHeight >= this.circle2Position && canvasPositionLineHeight <= this.circle3Position) {
+                this.canvasCircle2Text.style.color = this.secondaryColor
             } else {
-                canvasCircle2Text.style.color = secondaryColorLight
+                this.canvasCircle2Text.style.color = this.canvasColor
             }
 
-            if (canvasLinePositionHeight >= this.circle3) {
-                canvasCircle3Text.style.color = secondaryColor
-                canvasCircle3.style.backgroundColor = secondaryColor
+            if (canvasPositionLineHeight >= this.circle3Position) {
+                this.canvasCircle3Text.style.color = this.secondaryColor
+                this.canvasCircle3.style.backgroundColor = this.secondaryColor
             } else {
-                canvasCircle3Text.style.color = secondaryColorLight
-                canvasCircle3.style.backgroundColor = secondaryColorLight
+                this.canvasCircle3Text.style.color = this.canvasColor
+                this.canvasCircle3.style.backgroundColor = this.canvasColor
             }
         },
         scrollTo(index) {
-            const aboutContainer = document.getElementsByClassName('about-container')[0]
-            const aboutMeTop = document.getElementsByClassName('about-container__about-me')[0].getBoundingClientRect().top
-            const myWorkExperienceTop = document.getElementsByClassName('about-container__my-work-experience')[0].getBoundingClientRect().top
-            const myEducationTop = document.getElementsByClassName('about-container__my-education')[0].getBoundingClientRect().top
-
             if (index === 1) {
-                aboutContainer.scrollTo({
+                this.container.scrollTo({
                     top: 0,
                     behavior: 'smooth'
                 })
             } else if (index === 2) {
-                aboutContainer.scrollTo({
-                    top: myWorkExperienceTop - aboutMeTop,
+                this.container.scrollTo({
+                    top: this.containerTopWorkExperience - this.containerTopAboutMe,
                     behavior: 'smooth'
                 })
             } else if (index === 3) {
-                aboutContainer.scrollTo({
-                    top: myEducationTop - aboutMeTop,
+                this.container.scrollTo({
+                    top: this.containerTopEducation - this.containerTopAboutMe,
                     behavior: 'smooth'
                 })
             }
-        }
+        },
+
+        handleThemeChange() {
+            this.secondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color')
+            this.canvasColor = getComputedStyle(document.documentElement).getPropertyValue('--canvas-color')
+            this.accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent-color')
+        },
+
+        handleResize() {
+            //Get the container boundries
+            this.container = document.getElementsByClassName('about-container')[0]
+            this.containerTop = document.getElementsByClassName('about-container')[0].getBoundingClientRect().top
+            this.containerBottom = document.getElementsByClassName('about-container')[0].getBoundingClientRect().bottom
+            this.containerTopAboutMe = document.getElementsByClassName('about-container__about-me')[0].getBoundingClientRect().top
+            this.containerTopWorkExperience = document.getElementsByClassName('about-container__my-work-experience')[0].getBoundingClientRect().top
+            this.containerTopEducation = document.getElementsByClassName('about-container__my-education')[0].getBoundingClientRect().top
+            this.containerBottomEducation = document.getElementsByClassName('about-container__my-education')[0].getBoundingClientRect().bottom
+            this.containerViewNameHeight = document.getElementsByClassName('view-name')[0].getBoundingClientRect().height
+            this.containerRightViewName = document.getElementsByClassName('view-name')[0].getBoundingClientRect().right
+            this.containerBottomViewName = document.getElementsByClassName('view-name')[0].getBoundingClientRect().bottom
+            
+            const lineHeight = this.containerViewNameHeight
+            document.getElementsByClassName('canvas__line')[0].style.height = lineHeight + 'px'
+        
+            //Get the canvas elements
+            this.containerCanvas = document.getElementsByClassName('position-container')[0]
+            this.canvasLineHeight = document.getElementsByClassName('canvas__line')[0].getBoundingClientRect().height
+            this.canvasLineWidth = document.getElementsByClassName('canvas__line')[0].getBoundingClientRect().width
+            this.canvasPositionLine = document.getElementsByClassName('canvas__line__position')[0]
+            this.canvasCircle1 = document.getElementsByClassName('canvas__circle')[0]
+            this.canvasCircle1Text = document.getElementsByClassName('position-container__text__about-me')[0]
+            this.canvasCircle2 = document.getElementsByClassName('canvas__circle')[1]
+            this.canvasCircle2Text = document.getElementsByClassName('position-container__text__work-experience')[0]
+            this.canvasCircle3 = document.getElementsByClassName('canvas__circle')[2]
+            this.canvasCircle3Text = document.getElementsByClassName('position-container__text__education')[0]
+            
+            //Position the canvas
+            this.containerCanvas.style.left = this.containerRightViewName + 'px'
+            this.containerCanvas.style.height = this.containerViewNameHeight + 'px'
+            
+            //Get 1% of the line height
+            this.canvasLinePercentage = this.canvasLineHeight / 100
+            
+            //Set the height of the position line to zero
+            this.canvasPositionLine.style.height = 0
+            this.canvasPositionLine.style.color = this.secondaryColor
+        
+            //Get diameter of the circles
+            this.circleDiameter = this.canvasCircle1.getBoundingClientRect().width
+            
+            //Calculate the height of the container
+            this.contentHeight = this.containerBottomEducation - this.containerTopAboutMe
+            
+            //Calculate the positions of the container
+            const workExperiencePosition = Math.round(((this.containerTopWorkExperience - this.containerTopAboutMe) / this.contentHeight) * 100)
+            const educationPosition = Math.round(((this.containerTopEducation - this.containerTopAboutMe) / this.contentHeight) * 100)
+            
+            //Calculate the position of the circles on the line
+            const canvasCircle1Top = (- this.circleDiameter / 2) + 'px'
+            const canvasCircle2Percentage = workExperiencePosition * this.canvasLinePercentage
+            const canvasCircle2Top = (canvasCircle2Percentage - (this.circleDiameter / 2)) + 'px'
+            const canvasCircle3Percentage = educationPosition * this.canvasLinePercentage
+            const canvasCircle3Top = (canvasCircle3Percentage - (this.circleDiameter / 2)) + 'px'
+            const canvasCircleLeft = (- this.circleDiameter / 2) + (this.canvasLineWidth / 2) + 'px'
+            
+            //Position the circles on the line
+            this.canvasCircle1.style.top = canvasCircle1Top
+            this.canvasCircle1.style.left = canvasCircleLeft
+            this.canvasCircle2.style.top = canvasCircle2Top
+            this.canvasCircle2.style.left = canvasCircleLeft
+            this.canvasCircle3.style.top = canvasCircle3Top
+            this.canvasCircle3.style.left = canvasCircleLeft
+        
+            this.circle2Position = canvasCircle2Top.replace('px', '')
+            this.circle3Position = canvasCircle3Top.replace('px', '')
+        
+            //Set the position of the text of the circles to zero
+            this.canvasCircle1Text.style.top = 0
+            this.canvasCircle2Text.style.top = 0
+            this.canvasCircle3Text.style.top = 0
+        
+            //Calculate the middle of the text
+            const canvasCircle1TextMiddle = this.canvasCircle1Text.getBoundingClientRect().top
+            const canvasCircle2TextMiddle = this.canvasCircle2Text.getBoundingClientRect().top 
+            const canvasCircle3TextMiddle = this.canvasCircle3Text.getBoundingClientRect().top
+        
+            //Calculate the middle of the circles on the line
+            const canvasCircle1Middle = this.canvasCircle1.getBoundingClientRect().top
+                - this.canvasCircle1.getBoundingClientRect().height / 2
+            const canvasCircle2Middle = this.canvasCircle2.getBoundingClientRect().top
+                - this.canvasCircle2.getBoundingClientRect().height / 2
+            const canvasCircle3Middle = this.canvasCircle3.getBoundingClientRect().top
+                - this.canvasCircle3.getBoundingClientRect().height / 2
+        
+            //Calculate the difference between the middle of the text and the middle of the circle
+            const canvasCircle1Difference = canvasCircle1Middle - canvasCircle1TextMiddle
+            const canvasCircle2Difference = canvasCircle2Middle - canvasCircle2TextMiddle
+            const canvasCircle3Difference = canvasCircle3Middle - canvasCircle3TextMiddle
+        
+            //Position the Text to the middle of the circle
+            this.canvasCircle1Text.style.top = canvasCircle1Difference + 'px'
+            this.canvasCircle2Text.style.top = canvasCircle2Difference + 'px'
+            this.canvasCircle3Text.style.top = canvasCircle3Difference + 'px'
+
+            this.travelDistance = (this.containerBottomEducation - this.containerTopAboutMe) - (this.containerBottom - this.containerTop) + this.padding
+        },
     },
+
+    //watch color change in the store
+    watch: {
+        'state.darkMode': function (oldValue, newValue) {
+            console.log('darkMode changed')
+            if (oldValue !== newValue) {
+                this.handleThemeChange()
+            }
+        },
+    },
+
     mounted () {
-        //Get boundries
-        const aboutContainer = document.getElementsByClassName('about-container')[0]
-        const aboutContainerTop = aboutContainer.getBoundingClientRect().top
-        const aboutContainerBottom = aboutContainer.getBoundingClientRect().bottom
-        const aboutMeTop = document.getElementsByClassName('about-container__about-me')[0].getBoundingClientRect().top
-        const myWorkExperienceTop = document.getElementsByClassName('about-container__my-work-experience')[0].getBoundingClientRect().top
-        const myEducationTop = document.getElementsByClassName('about-container__my-education')[0].getBoundingClientRect().top
-        const myEducationBottom = document.getElementsByClassName('about-container__my-education')[0].getBoundingClientRect().bottom
-    
-        //Get the right position of the view name
-        const aboutViewName = document.getElementsByClassName('view-name')[0]
-        const aboutViewNameRight = aboutViewName.getBoundingClientRect().right
-        const aboutViewNameBottom = aboutViewName.getBoundingClientRect().bottom
+        this.handleThemeChange()
+        this.handleResize()
         
-        //Set the position of the position container
-        const aboutPosition = document.getElementsByClassName('position-container')[0]
-        aboutPosition.style.left = aboutViewNameRight + 'px'
-    
-        //Set the height of the position container to the height of the aboutViewName
-        const aboutViewNameHeight = aboutViewName.getBoundingClientRect().height
-        aboutPosition.style.height = aboutViewNameHeight + 'px'
-    
-        //Get canvas line height and width
-        const canvasLine = document.getElementsByClassName('canvas__line')[0]
-        const canvasLineHeight = canvasLine.getBoundingClientRect().height
-        const canvasLineWidth = canvasLine.getBoundingClientRect().width
-        
-        const canvasLinePercentage = canvasLineHeight / 100
-        
-        //Get canvas line position
-        const canvasLinePosition = document.getElementsByClassName('canvas__line__position')[0]
-        
-        //Set the height of the line position to zero
-        canvasLinePosition.style.height = 0
-        
-        //Get canvas circles
-        const canvasCircles = document.getElementsByClassName('canvas__circle')
-        const canvasCircle1 = canvasCircles[0]
-        const canvasCircle2 = canvasCircles[1]
-        const canvasCircle3 = canvasCircles[2]
-    
-        //Get width and height of circles
-        const canvasCircleWidth = canvasCircle1.getBoundingClientRect().width
-        const canvasCircleHeight = canvasCircle1.getBoundingClientRect().height
-        
-        //Position the first circle on the line
-        canvasCircle1.style.top = (- canvasCircleHeight / 2) + 'px'
-        canvasCircle1.style.left = (- canvasCircleWidth / 2) + (canvasLineWidth / 2) + 'px'
-        
-        //Calculate the height of the container
-        const height = myEducationBottom - aboutMeTop
-        
-        //Calculate the positions of the container
-        const workExperiencePosition = Math.round(((myWorkExperienceTop - aboutMeTop) / height) * 100)
-        const educationPosition = Math.round(((myEducationTop - aboutMeTop) / height) * 100)
-        
-        //Calculate the position of the circles on the line
-        const circle2Position = workExperiencePosition * canvasLinePercentage
-        const circle3Position = educationPosition * canvasLinePercentage
-        
-        //Position the second circle on the line
-        canvasCircle2.style.top = (circle2Position - (canvasCircleHeight / 2)) + 'px'
-        canvasCircle2.style.left = (- canvasCircleWidth / 2) + (canvasLineWidth / 2) + 'px'
-        
-        //Position the third circle on the line
-        canvasCircle3.style.top = (circle3Position - (canvasCircleHeight / 2)) + 'px'
-        canvasCircle3.style.left = (- canvasCircleWidth / 2) + (canvasLineWidth / 2) + 'px'
-        
-        //Get the text of the circles
-        const canvasCircle1Text = document.getElementsByClassName('position-container__text__about-me')[0]
-        const canvasCircle2Text = document.getElementsByClassName('position-container__text__work-experience')[0]
-        const canvasCircle3Text = document.getElementsByClassName('position-container__text__education')[0]
-    
-        //Set the position of the text of the circles to zero
-        canvasCircle1Text.style.top = 0
-        canvasCircle2Text.style.top = 0
-        canvasCircle3Text.style.top = 0
-    
-        //Calculate the middle of the text
-        const canvasCircle1TextMiddle = canvasCircle1Text.getBoundingClientRect().top
-        const canvasCircle2TextMiddle = canvasCircle2Text.getBoundingClientRect().top
-        const canvasCircle3TextMiddle = canvasCircle3Text.getBoundingClientRect().top
-    
-        //Calculate the middle of the circles on the line
-        const canvasCircle1Middle = canvasCircle1.getBoundingClientRect().top
-            - canvasCircle1.getBoundingClientRect().height / 2
-        const canvasCircle2Middle = canvasCircle2.getBoundingClientRect().top
-            - canvasCircle2.getBoundingClientRect().height / 2
-        const canvasCircle3Middle = canvasCircle3.getBoundingClientRect().top
-            - canvasCircle3.getBoundingClientRect().height / 2
-    
-        //Calculate the difference between the middle of the text and the middle of the circle
-        const canvasCircle1Difference = canvasCircle1Middle - canvasCircle1TextMiddle
-        const canvasCircle2Difference = canvasCircle2Middle - canvasCircle2TextMiddle
-        const canvasCircle3Difference = canvasCircle3Middle - canvasCircle3TextMiddle
-    
-        //Position the Text to the middle of the circle
-        canvasCircle1Text.style.top = canvasCircle1Difference + 'px'
-        canvasCircle2Text.style.top = canvasCircle2Difference + 'px'
-        canvasCircle3Text.style.top = canvasCircle3Difference + 'px'
-        
-        //Set the data
-        this.distance = (myEducationBottom - aboutMeTop) - (aboutContainerBottom - aboutContainerTop) + this.difference
-        this.circle2 = circle2Position
-        this.circle3 = circle3Position
-        
-        canvasCircle1Text.addEventListener('mouseover', () => {
-            canvasCircle1Text.style.color = '#40826d'
-            canvasCircle1.style.backgroundColor = '#40826d'
+        this.canvasCircle1Text.addEventListener('mouseover', () => {
+            this.canvasCircle1Text.style.color = this.accentColor
+            this.canvasCircle1.style.backgroundColor = this.accentColor
         })
-        canvasCircle1Text.addEventListener('mouseout', () => {
+        this.canvasCircle1Text.addEventListener('mouseout', () => {
             this.handleScroll()
         })
 
-        canvasCircle2Text.addEventListener('mouseover', () => {
-            canvasCircle2Text.style.color = '#40826d'
-            canvasCircle2.style.backgroundColor = '#40826d'
+        this.canvasCircle2Text.addEventListener('mouseover', () => {
+            this.canvasCircle2Text.style.color = this.accentColor
+            this.canvasCircle2.style.backgroundColor = this.accentColor
         })
-        canvasCircle2Text.addEventListener('mouseout', () => {
+        this.canvasCircle2Text.addEventListener('mouseout', () => {
             this.handleScroll()
         })
 
-        canvasCircle3Text.addEventListener('mouseover', () => {
-            canvasCircle3Text.style.color = '#40826d'
-            canvasCircle3.style.backgroundColor = '#40826d'
+        this.canvasCircle3Text.addEventListener('mouseover', () => {
+            this.canvasCircle3Text.style.color = this.accentColor
+            this.canvasCircle3.style.backgroundColor = this.accentColor
         })
-        canvasCircle3Text.addEventListener('mouseout', () => {
+        this.canvasCircle3Text.addEventListener('mouseout', () => {
             this.handleScroll()
         })
 
-        canvasCircle1Text.style.color = '#fff'
-        canvasCircle2Text.style.color = '#888'
-        canvasCircle3Text.style.color = '#888'
-        canvasCircle1.style.backgroundColor = '#fff'
-        canvasCircle2.style.backgroundColor = '#888'
-        canvasCircle3.style.backgroundColor = '#888'
-        canvasLinePosition.style.backgroundColor = '#888'
+        this.canvasCircle1Text.style.color = this.secondaryColor
+        this.canvasCircle2Text.style.color = this.canvasColor
+        this.canvasCircle3Text.style.color = this.canvasColor
+        this.canvasCircle1.style.backgroundColor = this.secondaryColor
+        this.canvasCircle2.style.backgroundColor = this.canvasColor
+        this.canvasCircle3.style.backgroundColor = this.canvasColor
+        this.canvasPositionLine.style.backgroundColor = this.canvasColor
 
         //Add event listener to the about container
-        aboutContainer.addEventListener('scroll', this.handleScroll)
+        this.container.addEventListener('scroll', this.handleScroll)
         setTimeout(this.handleScroll, 500)
-        canvasLinePosition.style.backgroundColor = '#fff'
+        this.canvasPositionLine.style.backgroundColor = '#fff'
     },
     
     unmounted() {
-        const aboutContainer = document.getElementsByClassName('about-container')[0]
-        const canvasCircle1Text = document.getElementsByClassName('position-container__text__about-me')[0]
-        const canvasCircle2Text = document.getElementsByClassName('position-container__text__work-experience')[0]
-        const canvasCircle3Text = document.getElementsByClassName('position-container__text__education')[0]
-        aboutContainer.removeEventListener('scroll', this.handleScroll)
-        canvasCircle1Text.removeEventListener('mouseover', () => {
-            canvasCircle1Text.style.color = '#40826d'
-            canvasCircle1.style.backgroundColor = '#40826d'
+        this.container.removeEventListener('scroll', this.handleScroll)
+        this.canvasCircle1Text.removeEventListener('mouseover', () => {
+            this.canvasCircle1Text.style.color = this.accentColor
+            this.canvasCircle1.style.backgroundColor = this.accentColor
         })
-        canvasCircle1Text.removeEventListener('mouseout', () => {
+        this.canvasCircle1Text.removeEventListener('mouseout', () => {
             this.handleScroll()
         })
-        canvasCircle2Text.removeEventListener('mouseover', () => {
-            canvasCircle2Text.style.color = '#40826d'
-            canvasCircle2.style.backgroundColor = '#40826d'
+        this.canvasCircle2Text.removeEventListener('mouseover', () => {
+            this.canvasCircle2Text.style.color = this.accentColor
+            this.canvasCircle2.style.backgroundColor = this.accentColor
         })
-        canvasCircle2Text.removeEventListener('mouseout', () => {
+        this.canvasCircle2Text.removeEventListener('mouseout', () => {
             this.handleScroll()
         })
-        canvasCircle3Text.removeEventListener('mouseover', () => {
-            canvasCircle3Text.style.color = '#40826d'
-            canvasCircle3.style.backgroundColor = '#40826d'
+        this.canvasCircle3Text.removeEventListener('mouseover', () => {
+            this.canvasCircle3Text.style.color = this.accentColor
+            this.canvasCircle3.style.backgroundColor = this.accentColor
         })
-        canvasCircle3Text.removeEventListener('mouseout', () => {
+        this.canvasCircle3Text.removeEventListener('mouseout', () => {
             this.handleScroll()
         })
     },
@@ -285,9 +311,9 @@ export default {
             <div class="canvas__circle"></div>
         </div>
         <div class="position-container__text">
-            <div class="position-container__text__about-me" @click="scrollTo(1)">Me</div>
-            <div class="position-container__text__work-experience" @click="scrollTo(2)">Experience</div>
-            <div class="position-container__text__education" @click="scrollTo(3)">Education</div>
+            <div class="position-container__text__about-me" @click="scrollTo(1)">{{ store.canvasMe }}</div>
+            <div class="position-container__text__work-experience" @click="scrollTo(2)">{{ store.canvasExperience }}</div>
+            <div class="position-container__text__education" @click="scrollTo(3)">{{ store.canvasEducation }}</div>
         </div>
     </div>
 </template>
@@ -325,7 +351,7 @@ export default {
         left: 0;
         width: 2px;
         height: 100%;
-        background-color: var(--secondary-color-light);
+        background-color: var(--canvas-color);
 
         &__position {
             position: absolute;
@@ -341,7 +367,7 @@ export default {
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background-color: var(--secondary-color-light);
+        background-color: var(--canvas-color);
     }
 }
 </style>
