@@ -1,5 +1,6 @@
 <script>
 import { RouterLink } from 'vue-router'
+import { useSettingsStore } from '@/stores/settingsStore'
 import Settings from '@/components/Settings.vue'
 
 export default {
@@ -7,16 +8,29 @@ export default {
         RouterLink,
         Settings
     },
+    
+    setup() {
+        const store = useSettingsStore()
+        return { store }
+    }
 }
 </script>
 
 <template>
     <div class="navigation">
         <div class="navigation__links">
-            <RouterLink :to="{ name: 'about' }">About</RouterLink>
-            <RouterLink :to="{ name: 'skillset' }">Skillset</RouterLink>
-            <RouterLink :to="{ name: 'projects' }">Projects</RouterLink>
-            <RouterLink :to="{ name: 'contact'}">Contact</RouterLink>
+            <RouterLink :to="{ name: 'about' }">
+                {{ store.navigationAbout }}
+            </RouterLink>
+            <RouterLink :to="{ name: 'skillset' }">
+                {{ store.navigationSkillset }}
+            </RouterLink>
+            <RouterLink :to="{ name: 'projects' }">
+                {{ store.navigationProjects }}
+            </RouterLink>
+            <RouterLink :to="{ name: 'contact'}">
+                {{ store.navigationContact }}
+            </RouterLink>
         </div>
         <Settings></Settings>
     </div>
