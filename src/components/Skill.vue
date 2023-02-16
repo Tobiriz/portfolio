@@ -44,7 +44,6 @@ export default {
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.1rem;
-            transition: color .3s ease-in-out;
         }
 
         &:hover {
