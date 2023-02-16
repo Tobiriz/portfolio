@@ -72,7 +72,6 @@ export default {
             padding-bottom: .5rem;
             cursor: pointer;
             color: var(--secondary-color-light);
-            transition: color .3s ease-in-out;
 
             &:hover {
                 color:  var(--accent-color);
@@ -81,7 +80,6 @@ export default {
 
         .icon {
             color: var(--secondary-color-light);
-            transition: color .3s ease-in-out;
         }
 
         a {
