@@ -1,5 +1,13 @@
-<script setup>
+<script>
 import { RouterLink } from 'vue-router'
+import Options from '@/components/Options.vue'
+
+export default {
+    components: {
+        RouterLink,
+        Options
+    },
+}
 </script>
 
 <template>
@@ -10,6 +18,7 @@ import { RouterLink } from 'vue-router'
             <RouterLink :to="{ name: 'projects' }">Projects</RouterLink>
             <RouterLink :to="{ name: 'contact'}">Contact</RouterLink>
         </div>
+        <Options></Options>
     </div>
 </template>
 
@@ -19,6 +28,7 @@ import { RouterLink } from 'vue-router'
     top: calc(2rem + 2px);
     left: calc(2rem + 2px);
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     font-size: 1.5rem;
@@ -38,12 +48,12 @@ import { RouterLink } from 'vue-router'
         flex-direction: column;
         gap: 2rem;
         padding: 2rem;
+        padding-bottom: 0;
 
         a {
             font-size: 2rem;
             color: var(--secondary-color-light);
             text-decoration: none;
-            transition: color .3s ease-in-out;
             cursor: default;
 
             &:hover {
