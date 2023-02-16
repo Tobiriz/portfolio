@@ -17,6 +17,11 @@ export const useSettingsStore = defineStore('SettingsStore', {
                 },
                 aboutView: {
                     viewName: 'About',
+                    canvas: {
+                        me: 'Me',
+                        experience: 'Experience',
+                        education: 'Education',
+                    },
                     aboutMeHeading: 'About Me',
                     myWorkExperienceHeading: 'My Work Experience',
                     myEducationHeading: 'My Education',
@@ -120,7 +125,12 @@ export const useSettingsStore = defineStore('SettingsStore', {
                     contact: 'Kontakt',
                 },
                 aboutView: {
-                    viewName: 'Info',
+                    viewName: 'Über',
+                    canvas: {
+                        me: 'Mich',
+                        experience: 'Erfahrung',
+                        education: 'Ausbildung',
+                    },
                     aboutMeHeading: 'Über Mich',
                     myWorkExperienceHeading: 'Meine Berufserfahrung',
                     myEducationHeading: 'Meine Ausbildung',
@@ -214,7 +224,7 @@ export const useSettingsStore = defineStore('SettingsStore', {
                             location: 'Braunschweig, Deutschland'
                         }
                     ]
-                }
+                },
             },
         }
     },
@@ -253,6 +263,27 @@ export const useSettingsStore = defineStore('SettingsStore', {
                 return this.en.aboutView.viewName
             } else if (this.languageGerman) {
                 return this.de.aboutView.viewName
+            }
+        },
+        canvasMe() {
+            if (this.languageEnglish) {
+                return this.en.aboutView.canvas.me
+            } else if (this.languageGerman) {
+                return this.de.aboutView.canvas.me
+            }
+        },
+        canvasExperience() {
+            if (this.languageEnglish) {
+                return this.en.aboutView.canvas.experience
+            } else if (this.languageGerman) {
+                return this.de.aboutView.canvas.experience
+            }
+        },
+        canvasEducation() {
+            if (this.languageEnglish) {
+                return this.en.aboutView.canvas.education
+            } else if (this.languageGerman) {
+                return this.de.aboutView.canvas.education
             }
         },
         aboutMeHeading() {
@@ -307,6 +338,7 @@ export const useSettingsStore = defineStore('SettingsStore', {
             document.documentElement.style.setProperty('--primary-color', '#191919')
             document.documentElement.style.setProperty('--secondary-color', '#ccc')
             document.documentElement.style.setProperty('--secondary-color-light', '#cccccc88')
+            document.documentElement.style.setProperty('--canvas.color', '#888')
         },
 
         setLightMode() {
@@ -315,6 +347,7 @@ export const useSettingsStore = defineStore('SettingsStore', {
             document.documentElement.style.setProperty('--primary-color', '#eee')
             document.documentElement.style.setProperty('--secondary-color', '#191919')
             document.documentElement.style.setProperty('--secondary-color-light', '#191919aa')
+            document.documentElement.style.setProperty('--canvas.color', '#888')
         },
         setLanguageGerman() {
             this.languageEnglish = false
