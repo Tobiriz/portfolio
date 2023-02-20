@@ -1,9 +1,27 @@
 <script>
 import { RouterView } from 'vue-router'
+import { useSettingsStore } from '@/stores/settingsStore'
+import Overlay from '@/components/Overlay.vue'
+
+export default {
+    components: {
+        RouterView,
+        Overlay
+    },
+
+    setup() {
+        const store = useSettingsStore()
+        return { store }
+    },
+}
 </script>
 
 <template>
     <div>
+        <Transition name="fade">
+            <Overlay v-show="store.overlayActive" />
+        </Transition>
+
         <RouterView v-slot="{ Component, route }">
             <Transition :name="route.meta.transition" mode="in-out">
                 <Component :is="Component"/>
@@ -32,5 +50,22 @@ import { RouterView } from 'vue-router'
 
 .slide-left-leave-to {
     transform: translateX(-100%);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: all .5s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    background: var(--primary-color);
+    opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+    background: var(--primary-color);
+    opacity: 1;
 }
 </style>
