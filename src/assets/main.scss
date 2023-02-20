@@ -2,12 +2,17 @@
     --primary-color: #191919;
     --secondary-color: #ccc;
     --secondary-color-light: #cccccc88;
-    --canvas-color: #888;
+    --canvas-color: #666;
     --accent-color: #40826d;
+    --title-card-color: #333;
 }
 
 * {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    transition: color .3s ease-in-out, background-color 0.3s ease-in-out;
+    transition: 
+        color .3s ease-in-out,
+        background-color 0.3s ease-in-out,
+        border-color 0.3s ease-in-out,
+        box-shadow 0.3s ease-in-out;
 }
