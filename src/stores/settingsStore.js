@@ -7,6 +7,7 @@ export const useSettingsStore = defineStore('SettingsStore', {
             languageGerman: false,
             darkMode: true,
             lightMode: false,
+            overlayActive: false,
 
             en: {
                 navigation: {
@@ -115,6 +116,36 @@ export const useSettingsStore = defineStore('SettingsStore', {
                             location: 'Braunschweig, Germany'
                         }
                     ]
+                },
+                skillsetView: {
+                    viewName: 'Skills',
+                },
+                projectsView: {
+                    viewName: 'Projects',
+                    projects: [
+                        {
+                            id: 1,
+                            title: 'Project 1',
+                            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.',
+                            image: 'https://picsum.photos/200/300',
+                            link: 'https://www.google.com',
+                            linkText: 'Link to Project 1',
+                        },
+                        {
+                            id: 2,
+                            title: 'Project 2',
+                            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.',
+                            image: 'https://picsum.photos/200/300',
+                            link: 'https://www.google.com',
+                            linkText: 'Link to Project 2',
+                        },
+                    ],
+                },
+                contactView: {
+                    viewName: 'Contact',
+                    email: 'Email',
+                    emailAddress: 'contact@tobiasweinlich.com',
+                    media: 'Media',
                 }
             },
             de: {
@@ -225,11 +256,42 @@ export const useSettingsStore = defineStore('SettingsStore', {
                         }
                     ]
                 },
+                skillsetView: {
+                    viewName: 'Fähigkeiten',
+                },
+                projectsView: {
+                    viewName: 'Projekte',
+                    projects: [
+                        {
+                            id: 1,
+                            title: 'Projekt 1',
+                            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.',
+                            image: 'https://picsum.photos/200/300',
+                            link: 'https://www.google.de',
+                            linkText: 'Link zum Projekt'
+                        },
+                        {
+                            id: 2,
+                            title: 'Projekt 2',
+                            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.',
+                            image: 'https://picsum.photos/200/300',
+                            link: 'https://www.google.de',
+                            linkText: 'Link zum Projekt'
+                        },
+                    ],
+                },
+                contactView: {
+                    viewName: 'Kontakt',
+                    email: 'E-Mail',
+                    emailAddress: 'kontakt@tobiasweinlich.com',
+                    media: 'Medien',
+                }
             },
         }
     },
 
     getters: {
+/* ------------------------------ Navigation ------------------------------ */
         navigationAbout() {
             if (this.languageEnglish) {
                 return this.en.navigation.about
@@ -258,6 +320,8 @@ export const useSettingsStore = defineStore('SettingsStore', {
                 return this.de.navigation.contact
             }
         },
+
+/* ------------------------------ About ------------------------------ */
         aboutViewName() {
             if (this.languageEnglish) {
                 return this.en.aboutView.viewName
@@ -329,6 +393,61 @@ export const useSettingsStore = defineStore('SettingsStore', {
             }
         },
 
+/* ------------------------------ Skillset ------------------------------ */
+        skillsetViewName() {
+            if (this.languageEnglish) {
+                return this.en.skillsetView.viewName
+            } else if (this.languageGerman) {
+                return this.de.skillsetView.viewName
+            }
+        },
+
+
+/* ------------------------------ Projects ------------------------------ */
+        projectsViewName() {
+            if (this.languageEnglish) {
+                return this.en.projectsView.viewName
+            } else if (this.languageGerman) {
+                return this.de.projectsView.viewName
+            }
+        },
+        projects() {
+            if (this.languageEnglish) {
+                return this.en.projectsView.projects
+            } else if (this.languageGerman) {
+                return this.de.projectsView.projects
+            }
+        },
+
+/* ------------------------------ Contact ------------------------------ */
+        contactViewName() {
+            if (this.languageEnglish) {
+                return this.en.contactView.viewName
+            } else if (this.languageGerman) {
+                return this.de.contactView.viewName
+            }
+        },
+        contactEmail() {
+            if (this.languageEnglish) {
+                return this.en.contactView.email
+            } else if (this.languageGerman) {
+                return this.de.contactView.email
+            }
+        },
+        contactEmailAddress() {
+            if (this.languageEnglish) {
+                return this.en.contactView.emailAddress
+            } else if (this.languageGerman) {
+                return this.de.contactView.emailAddress
+            }
+        },
+        contactMedia() {
+            if (this.languageEnglish) {
+                return this.en.contactView.media
+            } else if (this.languageGerman) {
+                return this.de.contactView.media
+            }
+        },
     },
 
     actions: {
@@ -338,24 +457,32 @@ export const useSettingsStore = defineStore('SettingsStore', {
             document.documentElement.style.setProperty('--primary-color', '#191919')
             document.documentElement.style.setProperty('--secondary-color', '#ccc')
             document.documentElement.style.setProperty('--secondary-color-light', '#cccccc88')
-            document.documentElement.style.setProperty('--canvas.color', '#888')
+            document.documentElement.style.setProperty('--canvas-color', '#666')
+            document.documentElement.style.setProperty('--title-card-color', '#333')
         },
-
+        
         setLightMode() {
             this.darkMode = false
             setTimeout(() => {this.lightMode = true}, 150)
             document.documentElement.style.setProperty('--primary-color', '#eee')
             document.documentElement.style.setProperty('--secondary-color', '#191919')
             document.documentElement.style.setProperty('--secondary-color-light', '#191919aa')
-            document.documentElement.style.setProperty('--canvas.color', '#888')
+            document.documentElement.style.setProperty('--canvas-color', '#999')
+            document.documentElement.style.setProperty('--title-card-color', '#bbb')
         },
+
         setLanguageGerman() {
-            this.languageEnglish = false
-            setTimeout(() => {this.languageGerman = true}, 170)
+            this.overlayActive = true
+            setTimeout(() => {this.languageEnglish = false}, 500)
+            setTimeout(() => {this.languageGerman = true}, 600)
+            setTimeout(() => {this.overlayActive = false}, 800)
         },
+
         setLanguageEnglish() {
-            this.languageGerman = false
-            setTimeout(() => {this.languageEnglish = true}, 170)
+            this.overlayActive = true
+            setTimeout(() => {this.languageGerman = false}, 500)
+            setTimeout(() => {this.languageEnglish = true}, 600)
+            setTimeout(() => {this.overlayActive = false}, 800)
         }
     },
 })
