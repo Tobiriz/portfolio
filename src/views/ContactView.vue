@@ -1,9 +1,15 @@
 <script>
 import ViewName from '@/components/ViewName.vue'
+import { useSettingsStore } from '@/stores/settingsStore'
 
 export default {
     components: {
         ViewName
+    },
+
+    setup() {
+        const store = useSettingsStore()
+        return { store }
     }
 }
 </script>
@@ -12,14 +18,14 @@ export default {
     <div>
         <div class="contact-container">
             <div class="contact-container__section">
-                <h1>E-MAIL</h1>
+                <h1>{{ store.contactEmail }}</h1>
                 <a href="mailto:tobias.weinlich@mail.de">
-                    <h2>tobias.weinlich@mail.de</h2>
+                    <h2>{{ store.contactEmailAddress }}</h2>
                 </a>
             </div>
 
             <div class="contact-container__section">
-                <h1>MEDIA</h1>
+                <h1>{{ store.contactMedia }}</h1>
                 <a href="https://github.com/Tobiriz" target="_blank">
                     <h2>GitHub</h2>
                     <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="icon" />
@@ -36,7 +42,7 @@ export default {
         </div>
         <ViewName>
             <template #view-name>
-                Contact
+                {{ store.contactViewName }}
             </template>
         </ViewName>
     </div>
@@ -80,6 +86,8 @@ export default {
 
         .icon {
             color: var(--secondary-color-light);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
         }
 
         a {
@@ -91,7 +99,7 @@ export default {
 
             &:hover {
                 .icon {
-                    color: var(--accent-color);
+                    opacity: 1;
                 }
             }
         }
