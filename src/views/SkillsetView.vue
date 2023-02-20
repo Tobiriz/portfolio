@@ -1,11 +1,17 @@
 <script>
 import Skill from '@/components/Skill.vue'
 import ViewName from '@/components/ViewName.vue'
+import { useSettingsStore } from '@/stores/settingsStore'
 
 export default {
     components: {
         Skill,
         ViewName
+    },
+
+    setup() {
+        const store = useSettingsStore()
+        return { store }
     },
 
     data() {
@@ -81,7 +87,7 @@ export default {
         
         <ViewName>
             <template #view-name>
-                Skillset
+                {{ store.skillsetViewName }}
             </template>
         </ViewName>
     </div>
