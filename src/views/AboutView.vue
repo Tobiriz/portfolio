@@ -28,7 +28,13 @@ export default {
                     <h2>{{ store.aboutMeHeading }}</h2>
                 </div>
                 <div class="about-container__about-me__content">
-                    <p>{{ store.aboutMeContent }}</p>
+                    <p>
+                        <div class="about-container__about-me__content__image-container">
+                            <img src="@/assets/images/tobiasweinlich.jpg" alt="Tobias Weinlich" class="image">
+                            <div class="about-container__about-me__content__image-container__image-overlay"></div>
+                        </div>
+                        {{ store.aboutMeContent }}
+                    </p>
                 </div>
             </div>
 
@@ -98,7 +104,27 @@ export default {
             font-size: 1.3rem;
             font-weight: 400;
             color: var(--secondary-color);
-            line-height: 1.6rem;
+            line-height: 2rem;
+
+            &__image-container {
+                position: relative;
+                float: right;
+                margin: 0 0 1rem 1rem;
+                
+                .image {
+                    width: 250px;
+                    height: auto;
+                }
+                
+                &__image-overlay {
+                    position: absolute;
+                    width: 100%;
+                    height: 99%;
+                    top: 0;
+                    left: 0;
+                    box-shadow: inset 0 0 6px 8px var(--primary-color);
+                }
+            }
         }
     }
     
