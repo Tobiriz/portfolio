@@ -1,16 +1,27 @@
 <script>
 import { RouterLink } from 'vue-router'
+import Settings from '@/components/Settings.vue'
 
 export default {
     components: {
-        RouterLink
+        RouterLink,
+        Settings
+    },
+
+    mounted() {
+        const settings = document.getElementsByClassName('landing-page-settings')[0]
+        const titleCard = document.getElementsByClassName('title-card')[0]
+        const titleCardHeight = titleCard.offsetHeight
+        const titleCardBottom = titleCard.offsetTop
+
+        settings.style.top = (titleCardBottom + titleCardHeight) + 'px'
     },
 }
 </script>
 
 <template>
     <div class="body">
-        
+        <Settings class="landing-page-settings"></Settings>
         <RouterLink to="/portfolio">
             <div
             class="title-card"
@@ -48,6 +59,9 @@ export default {
     background-color: var(--primary-color);
 }
 
+.landing-page-settings {
+    position: absolute;
+}
 
 .title-card {
     box-sizing: border-box;
@@ -58,7 +72,7 @@ export default {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    background-color: #333;
+    background-color: var(--title-card-color);
     color: var(--secondary-color);
     font-size: 1.5rem;
     font-weight: 700;
