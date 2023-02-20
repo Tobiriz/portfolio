@@ -120,6 +120,9 @@ export default {
             this.secondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color')
             this.canvasColor = getComputedStyle(document.documentElement).getPropertyValue('--canvas-color')
             this.accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent-color')
+
+            //Doesnt work without??
+            this.canvasPositionLine.style.backgroundColor = this.secondaryColor
         },
 
         handleResize() {
@@ -222,19 +225,22 @@ export default {
         },
     },
 
-    //watch color change in the store
     watch: {
-        'state.darkMode': function (oldValue, newValue) {
-            console.log('darkMode changed')
-            if (oldValue !== newValue) {
-                this.handleThemeChange()
-            }
-        },
+        theme() {
+            this.handleThemeChange()
+            this.handleScroll()
+        }
+    },
+
+    computed: {
+        theme() {
+            return this.store.darkMode
+        }
     },
 
     mounted () {
-        this.handleThemeChange()
         this.handleResize()
+        this.handleThemeChange()
         
         this.canvasCircle1Text.addEventListener('mouseover', () => {
             this.canvasCircle1Text.style.color = this.accentColor
