@@ -3,7 +3,7 @@ import ViewName from '@/components/ViewName.vue'
 import AboutPosition from '@/components/AboutPosition.vue'
 import Job from '@/components/Job.vue'
 import School from '@/components/School.vue'
-import { useSettingsStore } from '@/stores/settingsStore'
+import { useAboutStore } from '@/stores/aboutStore'
 
 export default {
     components: {
@@ -14,8 +14,8 @@ export default {
     },
 
     setup() {
-        const store = useSettingsStore()
-        return { store }
+        const about = useAboutStore()
+        return { about }
     },
 }
 </script>
@@ -25,7 +25,7 @@ export default {
         <div class="about-container">
             <div class="about-container__about-me">
                 <div class="about-container__about-me__title">
-                    <h2>{{ store.aboutMeHeading }}</h2>
+                    <h2>{{ about.aboutMeHeading }}</h2>
                 </div>
                 <div class="about-container__about-me__content">
                     <p>
@@ -33,31 +33,31 @@ export default {
                             <img src="@/assets/images/tobiasweinlich.jpg" alt="Tobias Weinlich" class="image">
                             <div class="about-container__about-me__content__image-container__image-overlay"></div>
                         </div>
-                        {{ store.aboutMeContent }}
+                        {{ about.aboutMeContent }}
                     </p>
                 </div>
             </div>
 
             <div class="about-container__my-work-experience">
                 <div class="about-container__my-work-experience__title">
-                    <h2>{{ store.myWorkExperienceHeading }}</h2>
+                    <h2>{{ about.myWorkExperienceHeading }}</h2>
                 </div>
 
-                <Job v-for="job in store.jobs" :key="job.id" :job="job" />
+                <Job v-for="job in about.jobs" :key="job.id" :job="job" />
             </div>
 
             <div class="about-container__my-education">
                 <div class="about-container__my-education__title">
-                   <h2>{{ store.myEducationHeading }}</h2>
+                   <h2>{{ about.myEducationHeading }}</h2>
                 </div>
                 
-                <School v-for="school in store.schools" :key="school.id" :school="school" />
+                <School v-for="school in about.schools" :key="school.id" :school="school" />
             </div>
         </div>
 
         <ViewName>
             <template #view-name>
-                {{ store.aboutViewName }}
+                {{ about.viewName }}
             </template>
         </ViewName>
 
