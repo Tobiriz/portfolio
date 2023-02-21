@@ -1,7 +1,7 @@
 <script>
 import ViewName from '@/components/ViewName.vue'
 import Project from '@/components/Project.vue'
-import { useSettingsStore } from '@/stores/settingsStore'
+import { useProjectsStore } from '@/stores/projectsStore'
 
 export default {
     components: {
@@ -10,8 +10,8 @@ export default {
     },
 
     setup() {
-        const store = useSettingsStore()
-        return { store }
+        const projects = useProjectsStore()
+        return { projects }
     },
 }
 </script>
@@ -19,11 +19,11 @@ export default {
 <template>
     <div>
         <div class="projects-container">
-            <Project v-for="project in store.projects" :key="project.id" :project="project" />
+            <Project v-for="project in projects.projects" :key="project.id" :project="project" />
         </div>
         <ViewName>
             <template #view-name>
-                {{ store.projectsViewName }}
+                {{ projects.viewName }}
             </template>
         </ViewName>
     </div>
