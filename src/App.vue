@@ -13,17 +13,33 @@ export default {
         const store = useSettingsStore()
         return { store }
     },
+
+    mounted() {
+        const blob = document.getElementById('blob')
+        
+        document.body.onpointermove = event => {
+            const { clientX, clientY } = event
+
+            blob.animate({
+                left: `${clientX}px`,
+                top: `${clientY}px`
+            }, { duration: 3000, fill: "forwards" })
+        }
+    }
 }
 </script>
 
 <template>
     <div>
+        <div id="blob"></div>
+        <div id="blur"></div>
+
         <Transition name="fade">
             <Overlay v-show="store.overlayActive" />
         </Transition>
 
         <RouterView v-slot="{ Component, route }">
-            <Transition :name="route.meta.transition" mode="in-out">
+            <Transition :name="route.meta.transition" mode="default">
                 <Component :is="Component"/>
             </Transition>
         </RouterView>
@@ -31,6 +47,44 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+#blur {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    backdrop-filter: blur(200px);
+}
+
+#blob {
+    background: linear-gradient(
+        to right,
+        var(--primary-color),
+        #40826daa
+    );
+    height: 500px;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    animation: rotate 20s infinite;
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    50% {
+        scale: 1 1.5;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
 .slide-left-enter-active,
 .slide-left-leave-active {
     transition: all 1s ease-in-out;
