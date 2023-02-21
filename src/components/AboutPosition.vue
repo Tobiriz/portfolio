@@ -1,11 +1,12 @@
 <script>
 import { useSettingsStore } from '@/stores/settingsStore'
+import { useAboutStore } from '@/stores/aboutStore'
 
 export default {
     setup() {
         const store = useSettingsStore()
-        const state = store.state
-        return { store, state }
+        const about = useAboutStore()
+        return { store, about }
     },
 
     data() {
@@ -317,9 +318,9 @@ export default {
             <div class="canvas__circle"></div>
         </div>
         <div class="position-container__text">
-            <div class="position-container__text__about-me" @click="scrollTo(1)">{{ store.canvasMe }}</div>
-            <div class="position-container__text__work-experience" @click="scrollTo(2)">{{ store.canvasExperience }}</div>
-            <div class="position-container__text__education" @click="scrollTo(3)">{{ store.canvasEducation }}</div>
+            <div class="position-container__text__about-me" @click="scrollTo(1)">{{ about.canvasMe }}</div>
+            <div class="position-container__text__work-experience" @click="scrollTo(2)">{{ about.canvasExperience }}</div>
+            <div class="position-container__text__education" @click="scrollTo(3)">{{ about.canvasEducation }}</div>
         </div>
     </div>
 </template>
