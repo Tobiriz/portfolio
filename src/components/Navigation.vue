@@ -1,6 +1,6 @@
 <script>
 import { RouterLink } from 'vue-router'
-import { useSettingsStore } from '@/stores/settingsStore'
+import { useNavigationStore } from '@/stores/navigationStore'
 import Settings from '@/components/Settings.vue'
 
 export default {
@@ -10,8 +10,8 @@ export default {
     },
     
     setup() {
-        const store = useSettingsStore()
-        return { store }
+        const navigation = useNavigationStore()
+        return { navigation }
     }
 }
 </script>
@@ -20,16 +20,16 @@ export default {
     <div class="navigation">
         <div class="navigation__links">
             <RouterLink :to="{ name: 'about' }">
-                {{ store.navigationAbout }}
+                {{ navigation.about }}
             </RouterLink>
             <RouterLink :to="{ name: 'skillset' }">
-                {{ store.navigationSkillset }}
+                {{ navigation.skillset }}
             </RouterLink>
             <RouterLink :to="{ name: 'projects' }">
-                {{ store.navigationProjects }}
+                {{ navigation.projects }}
             </RouterLink>
             <RouterLink :to="{ name: 'contact'}">
-                {{ store.navigationContact }}
+                {{ navigation.contact }}
             </RouterLink>
         </div>
         <Settings></Settings>
