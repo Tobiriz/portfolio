@@ -1,7 +1,7 @@
 <script>
 import Skill from '@/components/Skill.vue'
 import ViewName from '@/components/ViewName.vue'
-import { useSettingsStore } from '@/stores/settingsStore'
+import { useSkillsetStore } from '@/stores/skillsetStore'
 
 export default {
     components: {
@@ -10,14 +10,13 @@ export default {
     },
 
     setup() {
-        const store = useSettingsStore()
-        return { store }
+        const skillsset = useSkillsetStore()
+        return { skillsset }
     },
 
     data() {
         return {
-            activeSkill: null,
-
+            activeSkill: null,           
             skillset: [
                 {
                     title: 'HTML',
@@ -87,7 +86,7 @@ export default {
         
         <ViewName>
             <template #view-name>
-                {{ store.skillsetViewName }}
+                {{ skillsset.viewName }}
             </template>
         </ViewName>
     </div>
