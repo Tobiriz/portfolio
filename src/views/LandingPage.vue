@@ -1,11 +1,17 @@
 <script>
 import { RouterLink } from 'vue-router'
 import Settings from '@/components/Settings.vue'
+import { useLandingPageStore } from '@/stores/landingPageStore'
 
 export default {
     components: {
         RouterLink,
         Settings
+    },
+
+    setup() {
+        const landingPage = useLandingPageStore()
+        return { landingPage }
     },
 
     mounted() {
@@ -30,11 +36,11 @@ export default {
             >
             
                 <div class="title-card__name">
-                    <h1>Tobias Weinlich</h1>
+                    <h1>{{ landingPage.name }}</h1>
                 </div>
                 
                 <div class="title-card__content">
-                    <h2>Frontend Developer</h2>
+                    <h2>{{ landingPage.occupation }}</h2>
                 </div>
                 
                 <font-awesome-icon
