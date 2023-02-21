@@ -26,25 +26,24 @@ export default {
 
 <style lang="scss" scoped>
 .content-container {
-    background-color: var(--primary-color);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
+    z-index: 3;
 
     &__border {
-        background: rgba($color: #000, $alpha: 0);
         position: absolute;
-        top: 2rem;
-        left: 2rem;
-        width: calc(100% - 4rem);
-        height: calc(100% - 4rem);
-        border: 1px solid #aaa;
+        top: 1.5rem;
+        left: 1.5rem;
+        width: calc(100% - 3rem);
+        height: calc(100% - 3rem);
+        border: 1px solid var(--secondary-color);
         border-radius: 2px;
         box-sizing: border-box;
-        box-shadow: 0 0 20px 5px  var(--secondary-color);
+        box-shadow: 0 0 20px 5px  var(--secondary-color), 0 0 0 50px var(--primary-color);
     }
 }
 
