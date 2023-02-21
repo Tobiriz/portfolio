@@ -333,6 +333,7 @@ export default {
     bottom: 2.5rem;
     display: grid;
     grid-template-columns: auto 1fr;
+    z-index: 3;
 
     &__text {
         position: absolute;
