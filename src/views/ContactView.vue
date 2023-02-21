@@ -1,6 +1,6 @@
 <script>
 import ViewName from '@/components/ViewName.vue'
-import { useSettingsStore } from '@/stores/settingsStore'
+import { useContactStore } from '@/stores/contactStore'
 
 export default {
     components: {
@@ -8,8 +8,8 @@ export default {
     },
 
     setup() {
-        const store = useSettingsStore()
-        return { store }
+        const contact = useContactStore()
+        return { contact }
     }
 }
 </script>
@@ -18,14 +18,14 @@ export default {
     <div>
         <div class="contact-container">
             <div class="contact-container__section">
-                <h1>{{ store.contactEmail }}</h1>
+                <h1>{{ contact.email }}</h1>
                 <a href="mailto:tobias.weinlich@mail.de">
-                    <h2>{{ store.contactEmailAddress }}</h2>
+                    <h2>{{ contact.emailAddress }}</h2>
                 </a>
             </div>
 
             <div class="contact-container__section">
-                <h1>{{ store.contactMedia }}</h1>
+                <h1>{{ contact.media }}</h1>
                 <a href="https://github.com/Tobiriz" target="_blank">
                     <h2>GitHub</h2>
                     <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="icon" />
@@ -42,7 +42,7 @@ export default {
         </div>
         <ViewName>
             <template #view-name>
-                {{ store.contactViewName }}
+                {{ contact.viewName }}
             </template>
         </ViewName>
     </div>
