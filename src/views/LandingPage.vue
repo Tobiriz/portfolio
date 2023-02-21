@@ -35,12 +35,14 @@ export default {
             @mouseleave="hideChevron"
             >
             
-                <div class="title-card__name">
-                    <h1>{{ landingPage.name }}</h1>
-                </div>
-                
                 <div class="title-card__content">
-                    <h2>{{ landingPage.occupation }}</h2>
+                    <div class="title-card__content__name">
+                        <h1>{{ landingPage.name }}</h1>
+                    </div>
+                    
+                    <div class="title-card__content__occupation">
+                        <h2>{{ landingPage.occupation }}</h2>
+                    </div>
                 </div>
                 
                 <font-awesome-icon
@@ -63,10 +65,12 @@ export default {
     width: 100vw;
     height: 100vh;
     background-color: var(--primary-color);
+    z-index: 3;
 }
 
 .landing-page-settings {
     position: absolute;
+    z-index: 4;
 }
 
 .title-card {
@@ -85,16 +89,30 @@ export default {
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     position: relative;
-    
-    &__name {
-        h1 {
-            font-size: 4rem;
-        }
-    }
-    
+    z-index: 3;
+
     &__content {
-        h2 {
-            font-size: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+        z-index: 4;
+        
+        &__name {
+            h1 {
+                font-size: 4rem;
+            }
+        }
+        
+        &__occupation {
+            h2 {
+                font-size: 2rem;
+            }
         }
     }
     
