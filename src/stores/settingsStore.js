@@ -20,6 +20,7 @@ export const useSettingsStore = defineStore('SettingsStore', {
             document.documentElement.style.setProperty('--secondary-color-light', '#cccccc88')
             document.documentElement.style.setProperty('--canvas-color', '#666')
             document.documentElement.style.setProperty('--title-card-color', '#333')
+            document.documentElement.style.setProperty('--blob-color', '#40826d99')
         },
         
         setLightMode() {
@@ -30,6 +31,7 @@ export const useSettingsStore = defineStore('SettingsStore', {
             document.documentElement.style.setProperty('--secondary-color-light', '#191919aa')
             document.documentElement.style.setProperty('--canvas-color', '#999')
             document.documentElement.style.setProperty('--title-card-color', '#bbb')
+            document.documentElement.style.setProperty('--blob-color', '#40826dff')
         },
 
         setLanguageGerman() {
