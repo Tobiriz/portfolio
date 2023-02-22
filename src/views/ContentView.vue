@@ -36,10 +36,10 @@ export default {
 
     &__border {
         position: absolute;
-        top: 1.5rem;
-        left: 1.5rem;
-        width: calc(100% - 3rem);
-        height: calc(100% - 3rem);
+        top: 1rem;
+        left: 1rem;
+        width: calc(100% - 2rem);
+        height: calc(100% - 2rem);
         border: 1px solid var(--secondary-color);
         border-radius: 2px;
         box-sizing: border-box;
