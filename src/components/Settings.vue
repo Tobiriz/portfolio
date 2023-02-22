@@ -6,12 +6,8 @@ const store = useSettingsStore()
 <template>
     <div class="options">
         <div>
-            <Transition>
-                <p v-show="store.languageEnglish" @click="store.setLanguageGerman()" class="language-selector">DE</p>
-            </Transition>
-            <Transition>
-                <p v-show="store.languageGerman" @click="store.setLanguageEnglish()" class="language-selector">EN</p>
-            </Transition>
+            <p v-show="store.languageEnglish" @click="store.setLanguageGerman()" class="language-selector">DE</p>
+            <p v-show="store.languageGerman" @click="store.setLanguageEnglish()" class="language-selector">EN</p>
         </div>
         <div>
             <Transition>
