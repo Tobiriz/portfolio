@@ -10,6 +10,20 @@ export default {
     setup() {
         const contact = useContactStore()
         return { contact }
+    },
+
+    mounted() {
+        const externalLinkHeader = document.getElementsByClassName('external-link__header')
+        const externalLinkIcon = document.getElementsByClassName('external-link__icon')
+
+        for (let i = 0; i < externalLinkHeader.length; i++) {
+            const header = externalLinkHeader[i]
+            const icon = externalLinkIcon[i]
+
+            const headerRight = header.getBoundingClientRect().right
+
+            icon.style.left = `${headerRight - 15}px`
+        }
     }
 }
 </script>
@@ -27,16 +41,16 @@ export default {
             <div class="contact-container__section">
                 <h1>{{ contact.media }}</h1>
                 <a href="https://github.com/Tobiriz" target="_blank">
-                    <h2>GitHub</h2>
-                    <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="icon" />
+                    <h2 class="external-link__header">GitHub</h2>
+                    <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="external-link__icon" />
                 </a>
                 <a href="https://www.linkedin.com/in/tobias-weinlich-34aba0260/" target="_blank">
-                    <h2>XING</h2>
-                    <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="icon" />
+                    <h2 class="external-link__header">XING</h2>
+                    <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="external-link__icon" />
                 </a>
                 <a href="https://www.xing.com/profile/Tobias_Weinlich/cv" target="_blank">
-                    <h2>LinkedIn</h2>
-                    <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="icon" />
+                    <h2 class="external-link__header">LinkedIn</h2>
+                    <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="external-link__icon" />
                 </a>
             </div>
         </div>
@@ -84,10 +98,11 @@ export default {
             }
         }
 
-        .icon {
+        .external-link__icon {
+            position: absolute;
             color: var(--secondary-color-light);
             opacity: 0;
-            transition: opacity 0.3s ease-in-out;
+            transition: opacity 0.2s ease-in-out;
         }
 
         a {
@@ -98,7 +113,7 @@ export default {
             justify-content: center;
 
             &:hover {
-                .icon {
+                .external-link__icon {
                     opacity: 1;
                 }
             }
