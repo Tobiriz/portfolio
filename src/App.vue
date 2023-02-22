@@ -59,10 +59,10 @@ export default {
     background: linear-gradient(
         to right,
         var(--primary-color),
-        #40826daa
+        var(--blob-color)
     );
     height: 500px;
-    aspect-ratio: 1;
+    width: 500px;
     position: absolute;
     left: 50%;
     top: 50%;
