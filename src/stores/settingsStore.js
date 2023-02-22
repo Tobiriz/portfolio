@@ -34,16 +34,20 @@ export const useSettingsStore = defineStore('SettingsStore', {
 
         setLanguageGerman() {
             this.overlayActive = true
-            setTimeout(() => {this.languageEnglish = false}, 500)
-            setTimeout(() => {this.languageGerman = true}, 600)
-            setTimeout(() => {this.overlayActive = false}, 800)
+            setTimeout(() => {
+                this.languageEnglish = false
+                this.languageGerman = true
+                this.overlayActive = false
+            }, 300)
         },
 
         setLanguageEnglish() {
             this.overlayActive = true
-            setTimeout(() => {this.languageGerman = false}, 500)
-            setTimeout(() => {this.languageEnglish = true}, 600)
-            setTimeout(() => {this.overlayActive = false}, 800)
+            setTimeout(() => {
+                this.languageGerman = false
+                this.languageEnglish = true
+                this.overlayActive = false
+            }, 300)
         }
     },
 })
