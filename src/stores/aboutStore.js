@@ -211,12 +211,9 @@ export const useAboutStore = defineStore('AboutStore', {
 
     getters: {
         viewName() {
-            console.log(this.settings.languageEnglish)
             if (this.settings.languageEnglish) {
-                console.log('viewName: ' + this.en.viewName)
                 return this.en.viewName
             } else if (this.settings.languageGerman) {
-                console.log('viewName: ' + this.de.viewName)
                 return this.de.viewName
             }
         },
