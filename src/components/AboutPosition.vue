@@ -121,9 +121,6 @@ export default {
             this.secondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color')
             this.canvasColor = getComputedStyle(document.documentElement).getPropertyValue('--canvas-color')
             this.accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent-color')
-
-            //Doesnt work without??
-            this.canvasPositionLine.style.backgroundColor = this.secondaryColor
         },
 
         handleResize() {
@@ -273,12 +270,10 @@ export default {
         this.canvasCircle1.style.backgroundColor = this.secondaryColor
         this.canvasCircle2.style.backgroundColor = this.canvasColor
         this.canvasCircle3.style.backgroundColor = this.canvasColor
-        this.canvasPositionLine.style.backgroundColor = this.canvasColor
 
         //Add event listener to the about container
         this.container.addEventListener('scroll', this.handleScroll)
         setTimeout(this.handleScroll, 500)
-        this.canvasPositionLine.style.backgroundColor = '#fff'
     },
     
     unmounted() {
@@ -340,6 +335,7 @@ export default {
         height: 100%;
         left: 1rem;
         font-size: 1rem;
+        color: var(--canvas-color);
 
         &__about-me, &__work-experience, &__education {
             position: absolute;
