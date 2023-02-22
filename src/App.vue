@@ -108,7 +108,7 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 .fade-enter-from,
