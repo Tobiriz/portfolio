@@ -21,7 +21,6 @@ export default {
             {{ school.title }}
         </div>
         <div class="school__description">
-            <div><div class="line"></div></div>
             <div>
                 <div class="school__school">
                     {{ school.school }}
@@ -39,6 +38,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     color:  var(--secondary-color);
     cursor: default;
     padding-bottom: 3rem;
@@ -60,19 +60,19 @@ export default {
     &__title {
         font-size: 2.5rem;
         font-weight: 700;
+        text-align: center;
         text-transform: uppercase;
         letter-spacing: 0.1rem;
         color:  var(--accent-color);
         padding: .5rem 0;
-        width: 50%;
         white-space: pre;
     }
 
     &__description {
         display: flex;
         flex-direction: row;
-        width: 100%;
         gap: 1rem;
+        text-align: center;
     }
     
     &__school {
@@ -88,12 +88,5 @@ export default {
         letter-spacing: 0.1rem;
         white-space: pre;
     }
-}
-
-.line {
-    width: 2px;
-    height: 100%;
-    background-color:  var(--accent-color);
-    margin-left: 1rem;
 }
 </style>
