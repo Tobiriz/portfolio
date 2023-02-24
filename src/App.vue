@@ -39,7 +39,7 @@ export default {
         </Transition>
 
         <RouterView v-slot="{ Component, route }">
-            <Transition :name="route.meta.transition" mode="default">
+            <Transition :name="route.meta.transition" mode="out-in">
                 <Component :is="Component"/>
             </Transition>
         </RouterView>
@@ -51,15 +51,15 @@ export default {
     height: 100%;
     width: 100%;
     position: absolute;
-    z-index: 2;
+    z-index: -1;
     backdrop-filter: blur(200px);
 }
 
 #blob {
     background: linear-gradient(
         to right,
-        var(--primary-color),
-        var(--blob-color)
+        var(--blob-color-1),
+        var(--blob-color-2)
     );
     height: 500px;
     width: 500px;
@@ -69,6 +69,7 @@ export default {
     translate: -50% -50%;
     border-radius: 50%;
     animation: rotate 20s infinite;
+    z-index: -2;
 }
 
 @keyframes rotate {
@@ -108,15 +109,13 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: all .3s ease-in-out;
+    transition: all .6s ease-in-out;
 }
-
 .fade-enter-from,
 .fade-leave-to {
     background: var(--primary-color);
     opacity: 0;
 }
-
 .fade-enter-to,
 .fade-leave-from {
     background: var(--primary-color);
