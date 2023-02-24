@@ -1,11 +1,9 @@
 <script>
-import ViewName from '@/components/ViewName.vue'
 import Project from '@/components/Project.vue'
 import { useProjectsStore } from '@/stores/projectsStore'
 
 export default {
     components: {
-        ViewName,
         Project
     },
 
@@ -21,11 +19,6 @@ export default {
         <div class="projects-container">
             <Project v-for="project in projects.projects" :key="project.id" :project="project" />
         </div>
-        <ViewName>
-            <template #view-name>
-                {{ projects.viewName }}
-            </template>
-        </ViewName>
     </div>
 </template>
 

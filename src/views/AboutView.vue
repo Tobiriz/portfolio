@@ -1,5 +1,4 @@
 <script>
-import ViewName from '@/components/ViewName.vue'
 import AboutPosition from '@/components/AboutPosition.vue'
 import Job from '@/components/Job.vue'
 import School from '@/components/School.vue'
@@ -7,7 +6,6 @@ import { useAboutStore } from '@/stores/aboutStore'
 
 export default {
     components: {
-        ViewName,
         AboutPosition,
         Job,
         School
@@ -54,28 +52,16 @@ export default {
                 <School v-for="school in about.schools" :key="school.id" :school="school" />
             </div>
         </div>
-
-        <ViewName>
-            <template #view-name>
-                {{ about.viewName }}
-            </template>
-        </ViewName>
-
-        <AboutPosition />
     </div>
 </template>
 
 <style lang="scss" scoped>
 .about-container {
-    width: 100%;
     height: 100%;
     position: absolute;
-    top: 0;
-    right: 0;
     display: flex;
-    gap: 6rem;
+    gap: 10rem;
     flex-direction: column;
-    align-items: flex-end;
     padding: 2rem 4rem 2rem 2rem;
     box-sizing: border-box;
     overflow-y: auto;
@@ -88,8 +74,6 @@ export default {
     }
 
     &__about-me {
-        width: 80%;
-        height: 100%;
         display: flex;
         flex-direction: column;
         gap: 2rem;
@@ -129,22 +113,21 @@ export default {
     }
     
     &__my-work-experience {
-        width: 80%;
         display: flex;
+        align-items: center;
         flex-direction: column;
-        align-items: flex-end;
         gap: 2rem;
-
+        
         &__title {
             font-size: 2rem;
             font-weight: 600;
             color: var(--secondary-color);
         }
     }
-
+    
     &__my-education {
-        width: 80%;
         display: flex;
+        align-items: center;
         flex-direction: column;
         gap: 2rem;
 

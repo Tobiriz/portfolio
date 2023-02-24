@@ -1,12 +1,10 @@
 <script>
 import Skill from '@/components/Skill.vue'
-import ViewName from '@/components/ViewName.vue'
 import { useSkillsetStore } from '@/stores/skillsetStore'
 
 export default {
     components: {
         Skill,
-        ViewName
     },
 
     setup() {
@@ -83,12 +81,6 @@ export default {
         <div class="skillsets">
             <Skill v-for="(skill, index) in skills" :key="index" :title="skill.title" :content="skill.content" :is-active="this.activeSkill === index" @toggle="toggleSkill(index)" />
         </div>
-        
-        <ViewName>
-            <template #view-name>
-                {{ skillsset.viewName }}
-            </template>
-        </ViewName>
     </div>
 </template>
 

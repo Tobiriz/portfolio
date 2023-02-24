@@ -1,12 +1,7 @@
 <script>
-import ViewName from '@/components/ViewName.vue'
 import { useContactStore } from '@/stores/contactStore'
 
 export default {
-    components: {
-        ViewName
-    },
-
     setup() {
         const contact = useContactStore()
         return { contact }
@@ -29,58 +24,46 @@ export default {
 </script>
 
 <template>
-    <div>
-        <div class="contact-container">
-            <div class="contact-container__section">
-                <h1>{{ contact.email }}</h1>
-                <a href="mailto:tobias.weinlich@mail.de">
-                    <h2>{{ contact.emailAddress }}</h2>
-                </a>
-            </div>
-
-            <div class="contact-container__section">
-                <h1>{{ contact.media }}</h1>
-                <a href="https://github.com/Tobiriz" target="_blank">
-                    <h2 class="external-link__header">GitHub</h2>
-                    <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="external-link__icon" />
-                </a>
-                <a href="https://www.linkedin.com/in/tobias-weinlich-34aba0260/" target="_blank">
-                    <h2 class="external-link__header">XING</h2>
-                    <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="external-link__icon" />
-                </a>
-                <a href="https://www.xing.com/profile/Tobias_Weinlich/cv" target="_blank">
-                    <h2 class="external-link__header">LinkedIn</h2>
-                    <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="external-link__icon" />
-                </a>
-            </div>
+    <div class="contact-container">
+        <div class="contact-container__section">
+            <h1>{{ contact.email }}</h1>
+            <a href="mailto:tobias.weinlich@mail.de">
+                <h2>{{ contact.emailAddress }}</h2>
+            </a>
         </div>
-        <ViewName>
-            <template #view-name>
-                {{ contact.viewName }}
-            </template>
-        </ViewName>
+
+        <div class="contact-container__section">
+            <h1>{{ contact.media }}</h1>
+            <a href="https://github.com/Tobiriz" target="_blank">
+                <h2 class="external-link__header">GitHub</h2>
+                <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="external-link__icon" />
+            </a>
+            <a href="https://www.linkedin.com/in/tobias-weinlich-34aba0260/" target="_blank">
+                <h2 class="external-link__header">XING</h2>
+                <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="external-link__icon" />
+            </a>
+            <a href="https://www.xing.com/profile/Tobias_Weinlich/cv" target="_blank">
+                <h2 class="external-link__header">LinkedIn</h2>
+                <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="external-link__icon" />
+            </a>
+        </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
 .contact-container {
-    width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
     display: flex;
-    gap: 6rem;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding: 2rem;
-    box-sizing: border-box;
-    overflow-y: auto;
+    align-items: center;
+    gap: 6rem;
+    padding: 0 2rem 2rem 0;
     color: var(--secondary-color);
 
     &__section {
         text-align: center;
+        width: fit-content;
 
         h1 {
             text-decoration: underline;
