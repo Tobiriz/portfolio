@@ -33,7 +33,6 @@ export default {
                     {{ job.description }}
                 </div>
             </div>
-            <div><div class="line"></div></div>
         </div>
     </div>
 </template>
@@ -43,7 +42,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     flex-wrap: nowrap;
     color: var(--secondary-color);
     cursor: default;
@@ -77,6 +76,7 @@ export default {
         display: flex;
         flex-direction: row;
         gap: 1rem;
+        text-align: center;
     }
 
     &__company {
@@ -95,17 +95,9 @@ export default {
     }
 
     &__description {
-        text-align: end;
         font-size: 1.2rem;
         font-weight: 400;
         white-space: pre;
     }
-}
-
-.line {
-    width: 2px;
-    height: 100%;
-    background-color: var(--accent-color);
-    margin-right: 1rem;
 }
 </style>
