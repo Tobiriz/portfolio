@@ -19,8 +19,10 @@ export const useSettingsStore = defineStore('SettingsStore', {
             document.documentElement.style.setProperty('--secondary-color', '#ccc')
             document.documentElement.style.setProperty('--secondary-color-light', '#cccccc88')
             document.documentElement.style.setProperty('--canvas-color', '#666')
+            document.documentElement.style.setProperty('--accent-color', '#3A98B9')
             document.documentElement.style.setProperty('--title-card-color', '#333')
-            document.documentElement.style.setProperty('--blob-color', '#40826d55')
+            document.documentElement.style.setProperty('--blob-color-1', '#95BDFF55')
+            document.documentElement.style.setProperty('--blob-color-2', '#DFFFD855')
         },
         
         setLightMode() {
@@ -30,8 +32,10 @@ export const useSettingsStore = defineStore('SettingsStore', {
             document.documentElement.style.setProperty('--secondary-color', '#191919')
             document.documentElement.style.setProperty('--secondary-color-light', '#191919aa')
             document.documentElement.style.setProperty('--canvas-color', '#999')
+            document.documentElement.style.setProperty('--accent-color', '#C74B50')
             document.documentElement.style.setProperty('--title-card-color', '#bbb')
-            document.documentElement.style.setProperty('--blob-color', '#40826d99')
+            document.documentElement.style.setProperty('--blob-color-1', '#712B7555')
+            document.documentElement.style.setProperty('--blob-color-2', '#D49B5455')
         },
 
         setLanguageGerman() {
@@ -40,7 +44,7 @@ export const useSettingsStore = defineStore('SettingsStore', {
                 this.languageEnglish = false
                 this.languageGerman = true
                 this.overlayActive = false
-            }, 300)
+            }, 600)
         },
 
         setLanguageEnglish() {
@@ -49,7 +53,7 @@ export const useSettingsStore = defineStore('SettingsStore', {
                 this.languageGerman = false
                 this.languageEnglish = true
                 this.overlayActive = false
-            }, 300)
+            }, 600)
         }
     },
 })
