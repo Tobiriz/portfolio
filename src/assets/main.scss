@@ -3,17 +3,18 @@
     --secondary-color: #ccc;
     --secondary-color-light: #cccccc88;
     --canvas-color: #666;
-    --accent-color: #40826d;
+    --accent-color: #3A98B9;
     --title-card-color: #333;
-    --blob-color: #40826d55;
+    --blob-color-1: #95BDFF55;
+    --blob-color-2: #DFFFD855;
 }
 
 * {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     transition: 
-        color .3s ease-in-out,
-        background-color 0.3s ease-in-out,
-        border-color 0.3s ease-in-out,
-        box-shadow 0.3s ease-in-out;
+        color .6s ease-in-out,
+        background-color 0.6s ease-in-out,
+        border-color 0.6s ease-in-out,
+        box-shadow 0.6s ease-in-out;
 }
