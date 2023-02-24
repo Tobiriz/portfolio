@@ -14,12 +14,20 @@ export default {
 <template>
     <div class="content-container">
         <div class="content-container__border">
-            <Navigation/>
-            <RouterView v-slot="{ Component }">
-                <Transition name="fade" mode="out-in">
-                    <Component :is="Component"/>
-                </Transition>
-            </RouterView>
+            <div class="content-container__content">
+                <section class="content-container__content__navigation">
+                    <Navigation />
+                </section>
+
+                <section class="content-container__content__view">
+                    <RouterView v-slot="{ Component }">
+                        <Transition name="fade" mode="out-in">
+                            <Component :is="Component"/>
+                        </Transition>
+                    </RouterView>
+                </section>
+                    
+            </div>
         </div>
     </div>
 </template>
@@ -27,10 +35,8 @@ export default {
 <style lang="scss" scoped>
 .content-container {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     height: 100%;
+    width: 100%;
     overflow: hidden;
     z-index: 3;
 
@@ -44,6 +50,13 @@ export default {
         border-radius: 2px;
         box-sizing: border-box;
         box-shadow: 0 0 20px 5px  var(--secondary-color), 0 0 0 50px var(--primary-color);
+    }
+
+    &__content {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 5fr;
     }
 }
 
