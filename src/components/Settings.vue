@@ -5,11 +5,11 @@ const store = useSettingsStore()
 
 <template>
     <div class="options">
-        <div>
+        <div class="options__language">
             <p v-show="store.languageEnglish" @click="store.setLanguageGerman()" class="language-selector">DE</p>
             <p v-show="store.languageGerman" @click="store.setLanguageEnglish()" class="language-selector">EN</p>
         </div>
-        <div>
+        <div class="options__theme">
             <Transition>
                 <font-awesome-icon icon="fa-solid fa-moon" class="icon" @click="store.setDarkMode()" v-show="store.lightMode" />
             </Transition>
@@ -28,6 +28,14 @@ const store = useSettingsStore()
     align-items: center;
     gap: 2rem;
     padding: 2rem;
+
+    &__language {
+        text-align: end;
+    }
+
+    &__theme {
+        text-align: start;
+    }
 
     .div {
         width: 100%;
