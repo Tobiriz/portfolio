@@ -15,17 +15,27 @@ export default {
     },
 
     mounted() {
+        const cursor = document.getElementById('cursor')
         const blob = document.getElementById('blob')
+
+        const body = document.body
+        if (cursor) {
+            body.style.cursor = 'none'
+        }
         
         document.body.onpointermove = event => {
             const { clientX, clientY } = event
+
+            cursor.style.transform = `translate(${clientX}px, ${clientY}px)`
 
             blob.animate({
                 left: `${clientX}px`,
                 top: `${clientY}px`
             }, { duration: 3000, fill: "forwards" })
         }
-    }
+
+        this.store.readLocalStorage()
+    },
 }
 </script>
 
@@ -33,6 +43,8 @@ export default {
     <div>
         <div id="blob"></div>
         <div id="blur"></div>
+
+        <div id="cursor"></div>
 
         <Transition name="fade">
             <Overlay v-show="store.overlayActive" />
@@ -47,6 +59,32 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+#cursor {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    translate: -50% -50%;
+    background: rgba(0, 0, 0, 0);
+    border: 2px solid var(--secondary-color);
+    z-index: 1000;
+    pointer-events: none;
+    transition: width .3s ease, height .3s ease;
+}
+
+.cursor {
+    &--active {
+        width: 20px !important;
+        height: 20px !important;
+        
+    }
+    
+    &--click {
+        width: 16px !important;
+        height: 16px !important;
+    }
+}
+
 #blur {
     height: 100%;
     width: 100%;
