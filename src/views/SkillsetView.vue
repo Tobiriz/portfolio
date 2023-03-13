@@ -8,69 +8,25 @@ export default {
     },
 
     setup() {
-        const skillsset = useSkillsetStore()
-        return { skillsset }
+        const skillset = useSkillsetStore()
+        return { skillset }
     },
 
     data() {
         return {
             activeSkill: null,           
-            skillset: [
-                {
-                    title: 'HTML',
-                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
-                },
-                {
-                    title: 'CSS',
-                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
-                },
-                {
-                    title: 'JavaScript',
-                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
-                },
-                {
-                    title: 'Vue',
-                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
-                },
-                {
-                    title: 'Java',
-                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
-                },
-                {
-                    title: 'Problem Solving',
-                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
-                },
-                {
-                    title: 'Teamwork',
-                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
-                },
-                {
-                    title: 'Communication',
-                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
-                },
-                {
-                    title: 'Leadership',
-                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
-                },
-                {
-                    title: 'Time Management',
-                    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
-                }
-            ]
         }
     },
 
     methods: {
         toggleSkill (index) {
-            console.log(index)
             this.activeSkill = this.activeSkill === index ? null : index
-            console.log(this.activeSkill === index)
         }
     },
 
     computed: {
         skills () {
-            return this.skillset.sort((a, b) => a.title.localeCompare(b.title))
+            return this.skillset.skillset.sort((a, b) => a.title.localeCompare(b.title))
         }
     }
 }
@@ -92,7 +48,7 @@ export default {
     top: 0;
     right: 0;
     display: flex;
-    gap: 2rem;
+    gap: 3vh;
     flex-direction: column;
     align-items: flex-end;
     padding: 2rem;
