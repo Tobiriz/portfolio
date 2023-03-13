@@ -1,12 +1,44 @@
 :root {
-    --primary-color: #191919;
-    --secondary-color: #ccc;
-    --secondary-color-light: #cccccc88;
-    --canvas-color: #666;
-    --accent-color: #3A98B9;
-    --title-card-color: #333;
-    --blob-color-1: #95BDFF55;
-    --blob-color-2: #DFFFD855;
+    --c-black: #191919;
+    --c-black-transparent: #191919aa;
+    --c-black-soft: #333;
+    --c-white: #eee;
+    --c-white-mute: #ccc;
+    --c-white-mute-transparent: #cccccc88;
+    --c-white-soft: #bbb;
+    --c-grey: #666;
+    --c-grey-soft: #999;
+    --c-greyish: #DFFFD855;
+    --c-violet-dark: #712B7555;
+    --c-orange-dark: #D49B5455;
+    --c-red: #C74B50;
+    --c-blue-light: #3A98B9;
+    --c-blue-dark: #95BDFF55;
+
+}
+
+:root {
+    --primary-color: var(--c-black);
+    --secondary-color: var(--c-white-mute);
+    --secondary-color-light: var(--c-white-mute-transparent);
+    --canvas-color: var(--c-grey);
+    --accent-color: var(--c-blue-light);
+    --title-card-color: var(--c-black-soft);
+    --blob-color-1: var(--c-blue-dark);
+    --blob-color-2: var(--c-greyish);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --primary-color: var(--c-white);
+        --secondary-color: var(--c-black:);
+        --secondary-color-light: var(--c-black-transparent);
+        --canvas-color: var(--c-grey-soft);
+        --accent-color: var(--c-red);
+        --title-card-color: var(--c-white-soft);
+        --blob-color-1: var(--c-violet-dark);
+        --blob-color-2: var(--c-orange-dark);
+    }
 }
 
 * {
@@ -17,4 +49,5 @@
         background-color 0.6s ease-in-out,
         border-color 0.6s ease-in-out,
         box-shadow 0.6s ease-in-out;
+    cursor: none;
 }
