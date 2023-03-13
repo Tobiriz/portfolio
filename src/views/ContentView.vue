@@ -19,6 +19,10 @@ export default {
                     <Navigation />
                 </section>
 
+                <section>
+                    <div class="content-container__content__line"></div>
+                </section>
+
                 <section class="content-container__content__view">
                     <RouterView v-slot="{ Component }">
                         <Transition name="fade" mode="out-in">
@@ -46,7 +50,7 @@ export default {
         left: 1rem;
         width: calc(100% - 2rem);
         height: calc(100% - 2rem);
-        border: 1px solid var(--secondary-color);
+        border: 1px solid var(--canvas-color);
         border-radius: 2px;
         box-sizing: border-box;
         box-shadow: 0 0 20px 5px  var(--secondary-color), 0 0 0 50px var(--primary-color);
@@ -55,8 +59,22 @@ export default {
     &__content {
         width: 100%;
         height: 100%;
-        display: grid;
-        grid-template-columns: 1fr 5fr;
+        display: flex;
+        flex-direction: row;
+
+        &__navigation {
+            width: 15vw;
+        }
+
+        &__line {
+            width: 1px;
+            height: 100%;
+            background-color: var(--canvas-color);
+        }
+
+        &__view {
+            width: 85vw;
+        }
     }
 }
 
