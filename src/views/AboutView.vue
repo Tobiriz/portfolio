@@ -2,6 +2,7 @@
 import AboutPosition from '@/components/AboutPosition.vue'
 import Job from '@/components/Job.vue'
 import School from '@/components/School.vue'
+import { useSettingsStore } from '../stores/settingsStore'
 import { useAboutStore } from '@/stores/aboutStore'
 
 export default {
@@ -12,46 +13,51 @@ export default {
     },
 
     setup() {
+        const settings = useSettingsStore()
         const about = useAboutStore()
-        return { about }
+        return { settings, about }
     },
+
+    updated() {
+        this.settings.contentUpdateTrigger()
+    }
 }
 </script>
 
 <template>
-    <div>
-        <div class="about-container">
-            <div class="about-container__about-me">
-                <div class="about-container__about-me__title">
-                    <h2>{{ about.aboutMeHeading }}</h2>
-                </div>
-                <div class="about-container__about-me__content">
-                    <p>
-                        <div class="about-container__about-me__content__image-container">
-                            <img src="@/assets/images/tobiasweinlich.jpg" alt="Tobias Weinlich" class="image">
-                            <div class="about-container__about-me__content__image-container__image-overlay"></div>
-                        </div>
-                        {{ about.aboutMeContent }}
-                    </p>
-                </div>
+    <div class="about-container">
+        <div class="about-container__about-me">
+            <div class="about-container__about-me__title">
+                <h2>{{ about.aboutMeHeading }}</h2>
             </div>
-
-            <div class="about-container__my-work-experience">
-                <div class="about-container__my-work-experience__title">
-                    <h2>{{ about.myWorkExperienceHeading }}</h2>
-                </div>
-
-                <Job v-for="job in about.jobs" :key="job.id" :job="job" />
-            </div>
-
-            <div class="about-container__my-education">
-                <div class="about-container__my-education__title">
-                   <h2>{{ about.myEducationHeading }}</h2>
-                </div>
-                
-                <School v-for="school in about.schools" :key="school.id" :school="school" />
+            <div class="about-container__about-me__content">
+                <p>
+                    <div class="about-container__about-me__content__image-container">
+                        <img src="@/assets/images/tobiasweinlich.jpg" alt="Tobias Weinlich" class="image">
+                        <div class="about-container__about-me__content__image-container__image-overlay"></div>
+                    </div>
+                    {{ about.aboutMeContent }}
+                </p>
             </div>
         </div>
+
+        <div class="about-container__my-work-experience">
+            <div class="about-container__my-work-experience__title">
+                <h2>{{ about.myWorkExperienceHeading }}</h2>
+            </div>
+
+            <Job v-for="job in about.jobs" :key="job.id" :job="job" />
+        </div>
+
+        <div class="about-container__my-education">
+            <div class="about-container__my-education__title">
+                <h2>{{ about.myEducationHeading }}</h2>
+            </div>
+            
+            <School v-for="school in about.schools" :key="school.id" :school="school" />
+        </div>
+
+        <AboutPosition />
     </div>
 </template>
 
@@ -62,7 +68,7 @@ export default {
     display: flex;
     gap: 10rem;
     flex-direction: column;
-    padding: 2rem 4rem 2rem 2rem;
+    padding: 4rem;
     box-sizing: border-box;
     overflow-y: auto;
 
