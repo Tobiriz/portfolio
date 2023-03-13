@@ -109,7 +109,7 @@ export const useAboutStore = defineStore('AboutStore', {
         de: {
             viewName: 'Über',
             canvas: {
-                me: 'Mich',
+                me: 'Ich',
                 experience: 'Erfahrung',
                 education: 'Ausbildung',
             },
