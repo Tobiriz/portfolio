@@ -45,7 +45,6 @@ export default {
     align-items: center;
     flex-wrap: nowrap;
     color: var(--secondary-color);
-    cursor: default;
     padding-bottom: 3rem;
 
     &__duration {

@@ -1,6 +1,77 @@
-<script setup>
+<script>
 import { useSettingsStore } from '@/stores/settingsStore'
-const store = useSettingsStore()
+
+export default {
+    setup() {
+        const store = useSettingsStore()
+        return { store }
+    },
+
+    methods: {
+        handleMouseOver() {
+            const cursor = document.getElementById('cursor')
+            cursor.classList.add('cursor--active')
+        },
+
+        handleMouseLeave() {
+            const cursor = document.getElementById('cursor')
+            cursor.classList.remove('cursor--active')
+        },
+
+        handleMouseClick() {
+            const cursor = document.getElementById('cursor')
+            cursor.classList.add('cursor--click')
+            setTimeout(() => {
+                cursor.classList.remove('cursor--click')
+            }, 300)
+        },
+    },
+
+    mounted() {
+        const languageSelector = document.getElementsByClassName('language-selector')
+        const icons = document.getElementsByClassName('icon')
+
+        //combine languageSelextor and icons into one array
+        const elements = [...languageSelector, ...icons]
+
+        for (let i = 0; i < elements.length; i++) {
+            elements[i].addEventListener('mouseover', () => {
+                this.handleMouseOver()
+            })
+
+            elements[i].addEventListener('mouseleave', () => {
+                this.handleMouseLeave()
+            })
+
+            elements[i].addEventListener('click', () => {
+                this.handleMouseClick()
+            })
+        }
+       
+    },
+
+    unmounted() {
+        const languageSelector = document.getElementsByClassName('language-selector')
+        const icons = document.getElementsByClassName('icon')
+
+        //combine languageSelextor and icons into one array
+        const elements = [...languageSelector, ...icons]
+
+        for (let i = 0; i < elements.length; i++) {
+            elements[i].removeEventListener('mouseover', () => {
+                this.handleMouseOver()
+            })
+
+            elements[i].removeEventListener('mouseleave', () => {
+                this.handleMouseLeave()
+            })
+
+            elements[i].removeEventListener('click', () => {
+                this.handleMouseClick()
+            })
+        }
+    }
+}
 </script>
 
 <template>
@@ -43,7 +114,6 @@ const store = useSettingsStore()
 
     .icon {
         color: var(--secondary-color-light);
-        cursor: default;
 
         &:hover {
             color: var(--accent-color);
@@ -51,7 +121,6 @@ const store = useSettingsStore()
     }
     .language-selector {
         color: var(--secondary-color-light);
-        cursor: default;
     
         &:hover {
             color: var(--accent-color);

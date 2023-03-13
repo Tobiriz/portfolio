@@ -12,6 +12,62 @@ export default {
     setup() {
         const navigation = useNavigationStore()
         return { navigation }
+    },
+
+    methods: {
+        handleMouseOver() {
+            const cursor = document.getElementById('cursor')
+            cursor.classList.add('cursor--active')
+        },
+
+        handleMouseLeave() {
+            const cursor = document.getElementById('cursor')
+            cursor.classList.remove('cursor--active')
+        },
+
+        handleMouseClick() {
+            const cursor = document.getElementById('cursor')
+            cursor.classList.add('cursor--click')
+            setTimeout(() => {
+                cursor.classList.remove('cursor--click')
+            }, 300)
+        },
+    },
+
+    mounted() {
+        const cursor = document.getElementById('cursor')
+
+        const links = document.getElementsByClassName('navigation__links')[0].children
+
+        for (let link of links) {
+            link.addEventListener('mouseover', () => {
+                this.handleMouseOver()
+            })
+            
+            link.addEventListener('mouseleave', () => {
+                this.handleMouseLeave()
+            })
+
+            link.addEventListener('click', () => {
+                this.handleMouseClick()
+            })
+        }
+    },
+
+    unmounted() {
+        const cursor = document.getElementById('cursor')
+
+        const links = document.getElementsByClassName('navigation__links')[0].children
+
+        for (let i = 0; i < links.length; i++) {
+            links[i].removeEventListener('mouseover', () => {
+                this.handleMouseOver()
+            })
+
+            links[i].removeEventListener('mouseleave', () => {
+                this.handleMouseLeave()
+            })
+        }
     }
 }
 </script>
@@ -39,8 +95,8 @@ export default {
 <style lang="scss" scoped>
 .navigation {
     position: fixed;
-    top: calc(2rem + 2px);
-    left: calc(2rem + 2px);
+    top: 2rem;
+    left: 1vw;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -50,12 +106,6 @@ export default {
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     z-index: 5;
-    
-    &__title {
-        h1 {
-            margin: 0;
-        }
-    }
 
     &__links {
         display: flex;
@@ -65,10 +115,9 @@ export default {
         padding-bottom: 0;
 
         a {
-            font-size: 2rem;
+            font-size: 1.8vw;
             color: var(--secondary-color-light);
             text-decoration: none;
-            cursor: default;
 
             &:hover {
                 color: var(--accent-color);

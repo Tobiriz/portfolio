@@ -13,7 +13,6 @@
     bottom: 2rem;
     transform: rotate(-90deg);
     transform-origin: 10%;
-    cursor: default;
 
     &__text {
         font-size: 4rem;

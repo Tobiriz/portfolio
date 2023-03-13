@@ -31,7 +31,6 @@ export default {
     flex-direction: column;
     justify-content: center;
     color:  var(--secondary-color);
-    cursor: default;
     padding-bottom: 3rem;
 
     &__title {

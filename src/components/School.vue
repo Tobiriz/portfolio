@@ -40,7 +40,6 @@ export default {
     justify-content: center;
     align-items: center;
     color:  var(--secondary-color);
-    cursor: default;
     padding-bottom: 3rem;
 
     &__duration {

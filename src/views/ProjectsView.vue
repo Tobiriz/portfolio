@@ -31,6 +31,5 @@ export default {
     padding-top: 3rem;
     padding-bottom: 3rem;
     color: var(--secondary-color);
-    cursor: default;
 }
 </style>

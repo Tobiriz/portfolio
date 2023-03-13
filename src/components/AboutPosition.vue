@@ -4,9 +4,9 @@ import { useAboutStore } from '@/stores/aboutStore'
 
 export default {
     setup() {
-        const store = useSettingsStore()
+        const settings = useSettingsStore()
         const about = useAboutStore()
-        return { store, about }
+        return { settings, about }
     },
 
     data() {
@@ -15,7 +15,7 @@ export default {
             travelDistance: null,
             scrollPosition: null,
             scrollPercentage: null,
-            padding: 65,
+            padding: 50,
             canvasLinePercentage: null,
             circleDiameter: null,
             circle2Position: null,
@@ -33,9 +33,6 @@ export default {
             containerTopWorkExperience: null,
             containerTopEducation: null,
             containerBottomEducation: null,
-            containerViewNameHeight: null,
-            containerRightViewName: null,
-            containerBottomViewName: null,
             
             //Canvas
             containerCanvas: null,
@@ -62,7 +59,7 @@ export default {
             const canvasLinePercentage = this.canvasLineHeight / 100
             
             //Set the height of the line position
-            const canvasPositionLineHeight = Math.round(canvasLinePercentage * this.scrollPercentage)
+            const canvasPositionLineHeight = Math.min(this.canvasLineHeight, Math.round(canvasLinePercentage * this.scrollPercentage))
             this.canvasPositionLine.style.height = canvasPositionLineHeight + 'px'
 
             //Set the color of the circles
@@ -132,12 +129,6 @@ export default {
             this.containerTopWorkExperience = document.getElementsByClassName('about-container__my-work-experience')[0].getBoundingClientRect().top
             this.containerTopEducation = document.getElementsByClassName('about-container__my-education')[0].getBoundingClientRect().top
             this.containerBottomEducation = document.getElementsByClassName('about-container__my-education')[0].getBoundingClientRect().bottom
-            this.containerViewNameHeight = document.getElementsByClassName('view-name')[0].getBoundingClientRect().height
-            this.containerRightViewName = document.getElementsByClassName('view-name')[0].getBoundingClientRect().right
-            this.containerBottomViewName = document.getElementsByClassName('view-name')[0].getBoundingClientRect().bottom
-            
-            const lineHeight = this.containerViewNameHeight
-            document.getElementsByClassName('canvas__line')[0].style.height = lineHeight + 'px'
         
             //Get the canvas elements
             this.containerCanvas = document.getElementsByClassName('position-container')[0]
@@ -150,10 +141,6 @@ export default {
             this.canvasCircle2Text = document.getElementsByClassName('position-container__text__work-experience')[0]
             this.canvasCircle3 = document.getElementsByClassName('canvas__circle')[2]
             this.canvasCircle3Text = document.getElementsByClassName('position-container__text__education')[0]
-            
-            //Position the canvas
-            this.containerCanvas.style.left = this.containerRightViewName + 'px'
-            this.containerCanvas.style.height = this.containerViewNameHeight + 'px'
             
             //Get 1% of the line height
             this.canvasLinePercentage = this.canvasLineHeight / 100
@@ -221,18 +208,44 @@ export default {
 
             this.travelDistance = (this.containerBottomEducation - this.containerTopAboutMe) - (this.containerBottom - this.containerTop) + this.padding
         },
+
+        handleMouseOver() {
+            const cursor = document.getElementById('cursor')
+            cursor.classList.add('cursor--active')
+        },
+
+        handleMouseLeave() {
+            const cursor = document.getElementById('cursor')
+            cursor.classList.remove('cursor--active')
+        },
+
+        handleMouseClick() {
+            const cursor = document.getElementById('cursor')
+            cursor.classList.add('cursor--click')
+            setTimeout(() => {
+                cursor.classList.remove('cursor--click')
+            }, 300)
+        },
     },
 
     watch: {
         theme() {
             this.handleThemeChange()
             this.handleScroll()
+        },
+
+        contentUpdate() {
+            this.handleResize()
         }
     },
 
     computed: {
         theme() {
-            return this.store.darkMode
+            return this.settings.darkMode
+        },
+
+        contentUpdate() {
+            return this.settings.contentUpdate
         }
     },
 
@@ -243,25 +256,40 @@ export default {
         this.canvasCircle1Text.addEventListener('mouseover', () => {
             this.canvasCircle1Text.style.color = this.accentColor
             this.canvasCircle1.style.backgroundColor = this.accentColor
+            this.handleMouseOver()
         })
         this.canvasCircle1Text.addEventListener('mouseout', () => {
             this.handleScroll()
+            this.handleMouseLeave()
+        })
+        this.canvasCircle1Text.addEventListener('click', () => {
+            this.handleMouseClick()
         })
 
         this.canvasCircle2Text.addEventListener('mouseover', () => {
             this.canvasCircle2Text.style.color = this.accentColor
             this.canvasCircle2.style.backgroundColor = this.accentColor
+            this.handleMouseOver()
         })
         this.canvasCircle2Text.addEventListener('mouseout', () => {
             this.handleScroll()
+            this.handleMouseLeave()
+        })
+        this.canvasCircle2Text.addEventListener('click', () => {
+            this.handleMouseClick()
         })
 
         this.canvasCircle3Text.addEventListener('mouseover', () => {
             this.canvasCircle3Text.style.color = this.accentColor
             this.canvasCircle3.style.backgroundColor = this.accentColor
+            this.handleMouseOver()
         })
         this.canvasCircle3Text.addEventListener('mouseout', () => {
             this.handleScroll()
+            this.handleMouseLeave()
+        })
+        this.canvasCircle3Text.addEventListener('click', () => {
+            this.handleMouseClick()
         })
 
         this.canvasCircle1Text.style.color = this.secondaryColor
@@ -281,23 +309,40 @@ export default {
         this.canvasCircle1Text.removeEventListener('mouseover', () => {
             this.canvasCircle1Text.style.color = this.accentColor
             this.canvasCircle1.style.backgroundColor = this.accentColor
+            this.handleMouseOver()
         })
         this.canvasCircle1Text.removeEventListener('mouseout', () => {
             this.handleScroll()
+            this.handleMouseLeave()
         })
+        this.canvasCircle1Text.removeEventListener('mouseout', () => {
+            this.handleMouseClick()
+        })
+
         this.canvasCircle2Text.removeEventListener('mouseover', () => {
             this.canvasCircle2Text.style.color = this.accentColor
             this.canvasCircle2.style.backgroundColor = this.accentColor
+            this.handleMouseOver()
         })
         this.canvasCircle2Text.removeEventListener('mouseout', () => {
             this.handleScroll()
+            this.handleMouseLeave()
         })
+        this.canvasCircle2Text.removeEventListener('mouseout', () => {
+            this.handleMouseClick()
+        })
+
         this.canvasCircle3Text.removeEventListener('mouseover', () => {
             this.canvasCircle3Text.style.color = this.accentColor
             this.canvasCircle3.style.backgroundColor = this.accentColor
+            this.handleMouseOver()
         })
         this.canvasCircle3Text.removeEventListener('mouseout', () => {
             this.handleScroll()
+            this.handleMouseLeave()
+        })
+        this.canvasCircle3Text.removeEventListener('mouseout', () => {
+            this.handleMouseClick()
         })
     },
 }
@@ -305,6 +350,11 @@ export default {
 
 <template>
     <div class="position-container">
+        <div class="position-container__text">
+            <div class="position-container__text__about-me" @click="scrollTo(1)">{{ about.canvasMe }}</div>
+            <div class="position-container__text__work-experience" @click="scrollTo(2)">{{ about.canvasExperience }}</div>
+            <div class="position-container__text__education" @click="scrollTo(3)">{{ about.canvasEducation }}</div>
+        </div>
         <div class="canvas">
             <div class="canvas__line"></div>
             <div class="canvas__line__position"></div>
@@ -312,34 +362,32 @@ export default {
             <div class="canvas__circle"></div>
             <div class="canvas__circle"></div>
         </div>
-        <div class="position-container__text">
-            <div class="position-container__text__about-me" @click="scrollTo(1)">{{ about.canvasMe }}</div>
-            <div class="position-container__text__work-experience" @click="scrollTo(2)">{{ about.canvasExperience }}</div>
-            <div class="position-container__text__education" @click="scrollTo(3)">{{ about.canvasEducation }}</div>
-        </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
 .position-container {
-    position: absolute;
-    width: 6rem;
+    position: fixed;
+    left: 8rem;
+    bottom: 4rem;
+    height: 20rem;
+    width: 10rem;
     box-sizing: border-box;
-    bottom: 2.5rem;
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto auto;
     z-index: 3;
 
     &__text {
-        position: absolute;
+        position: relative;
         height: 100%;
         left: 1rem;
         font-size: 1rem;
         color: var(--canvas-color);
+        text-align: end;
+        padding-right: 2rem;
 
         &__about-me, &__work-experience, &__education {
-            position: absolute;
-            cursor: default;
+            position: relative;
         }
     }
 }

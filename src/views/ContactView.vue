@@ -7,6 +7,26 @@ export default {
         return { contact }
     },
 
+    methods: {
+        handleMouseOver() {
+            const cursor = document.getElementById('cursor')
+            cursor.classList.add('cursor--active')
+        },
+
+        handleMouseLeave() {
+            const cursor = document.getElementById('cursor')
+            cursor.classList.remove('cursor--active')
+        },
+
+        handleMouseClick() {
+            const cursor = document.getElementById('cursor')
+            cursor.classList.add('cursor--click')
+            setTimeout(() => {
+                cursor.classList.remove('cursor--click')
+            }, 300)
+        },
+    },
+
     mounted() {
         const externalLinkHeader = document.getElementsByClassName('external-link__header')
         const externalLinkIcon = document.getElementsByClassName('external-link__icon')
@@ -19,6 +39,70 @@ export default {
 
             icon.style.left = `${headerRight - 15}px`
         }
+
+        const cursor = document.getElementById('cursor')
+
+        for (let i = 0; i < externalLinkHeader.length; i++) {
+            externalLinkHeader[i].addEventListener('mouseover', () => {
+                this.handleMouseOver()
+            })
+
+            externalLinkHeader[i].addEventListener('mouseleave', () => {
+                this.handleMouseLeave()
+            })
+
+            externalLinkHeader[i].addEventListener('click', () => {
+                this.handleMouseClick()
+            })
+        }
+
+        const email = document.getElementById('email')
+
+        email.addEventListener('mouseover', () => {
+            this.handleMouseOver()
+        })
+
+        email.addEventListener('mouseleave', () => {
+            this.handleMouseLeave()
+        })
+
+        email.addEventListener('click', () => {
+            this.handleMouseClick()
+        })
+    },
+
+    unmounted() {
+        const cursor = document.getElementById('cursor')
+
+        const links = document.getElementsByClassName('navigation__links')[0].children
+
+        for (let i = 0; i < links.length; i++) {
+            links[i].removeEventListener('mouseover', () => {
+                this.handleMouseOver()
+            })
+
+            links[i].removeEventListener('mouseleave', () => {
+                this.handleMouseLeave()
+            })
+
+            links[i].removeEventListener('click', () => {
+                this.handleMouseClick()
+            })
+        }
+
+        const email = document.getElementById('email')
+
+        email.removeEventListener('mouseover', () => {
+            this.handleMouseOver()
+        })
+
+        email.removeEventListener('mouseleave', () => {
+            this.handleMouseLeave()
+        })
+
+        email.removeEventListener('click', () => {
+            this.handleMouseClick()
+        })
     }
 }
 </script>
@@ -27,7 +111,7 @@ export default {
     <div class="contact-container">
         <div class="contact-container__section">
             <h1>{{ contact.email }}</h1>
-            <a href="mailto:tobias.weinlich@mail.de">
+            <a href="mailto:tobias.weinlich@mail.de" id="email">
                 <h2>{{ contact.emailAddress }}</h2>
             </a>
         </div>
@@ -68,12 +152,10 @@ export default {
         h1 {
             text-decoration: underline;
             padding-bottom: 1rem;
-            cursor: default;
         }
 
         h2 {
             padding-bottom: .5rem;
-            cursor: pointer;
             color: var(--secondary-color-light);
 
             &:hover {
