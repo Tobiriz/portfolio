@@ -82,7 +82,7 @@ export const useSkillsetStore = defineStore('SkillsetStore', {
             },
 
             de: {
-                viewName: 'Fähigkeiten',
+                viewName: 'Skills',
 
                 skillset: [
                     {

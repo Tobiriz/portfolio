@@ -107,7 +107,7 @@ export const useAboutStore = defineStore('AboutStore', {
         },
 
         de: {
-            viewName: 'Über',
+            viewName: 'Über mich',
             canvas: {
                 me: 'Ich',
                 experience: 'Erfahrung',
@@ -116,18 +116,23 @@ export const useAboutStore = defineStore('AboutStore', {
             aboutMeHeading: 'Über Mich',
             myWorkExperienceHeading: 'Meine Berufserfahrung',
             myEducationHeading: 'Meine Ausbildung',
-            aboutMeContent: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt "
-                + "ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. "
-                + "Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, "
-                + "consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "
-                + "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum "
-                + "dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et "
-                + "dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, "
-                + "no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse "
-                + "molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit "
-                + "praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, "
-                + "sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud "
-                + "exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse",
+            aboutMeContent: {
+                section1: 
+                    "Mein Name ist Tobias und ich bin ein begeisterter und lösungsorientierter Entwickler mit umfangreichen Kenntnissen in "
+                    + "HTML, CSS, JavaScript, Vue.js, und Java. Mein beruflicher Werdegang begann als Elektroniker und Servicetechniker, "
+                    + "bevor ich mich für ein Studium in den MINT-Fächern entschieden habe. Ich habe Physik, Maschinenbau, Elektrotechnik und Informatik studiert, "
+                    + "was mir ein breites technisches Verständnis und analytisches Denken vermittelt hat.",
+                section2: 
+                    "Während meines Bildungsweges habe ich meine Leidenschaft für das Coden entdeckt und diese in meinem derzeitigen Studium erneut entfacht. "
+                    + "Ich bin ein neugieriger und kreativer Entwickler mit einem ausgeprägten Sinn für Teamwork, Kommunikation und Zeitmanagement. "
+                    + "Meine Fähigkeiten in Kundenservice, Sprachen (Englisch, Deutsch) und Empathie helfen mir, mich auf die Bedürfnisse anderer zu "
+                    + "konzentrieren und agil auf Veränderungen zu reagieren.",
+                section3: 
+                    "Ich bin immer bestrebt, mein technisches Wissen zu erweitern und meine Fähigkeiten als Entwickler zu verbessern. "
+                    + "Ich bin davon überzeugt, dass meine breite Erfahrung und meine Leidenschaft für die Entwicklung mich zu einem wertvollen Mitglied "
+                    + "jedes Teams machen, dem ich beitrete.",
+                
+            },
             jobs: [
                 {
                     id: 1,
