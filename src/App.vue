@@ -1,173 +1,175 @@
 <script>
-import { RouterView } from 'vue-router'
-import { useSettingsStore } from '@/stores/settingsStore'
-import Overlay from '@/components/Overlay.vue'
+import { RouterView } from "vue-router";
+import { useSettingsStore } from "@/stores/settingsStore";
+import Overlay from "@/components/Overlay.vue";
 
 export default {
-    components: {
-        RouterView,
-        Overlay
-    },
+  components: {
+    RouterView,
+    Overlay,
+  },
 
-    setup() {
-        const store = useSettingsStore()
-        return { store }
-    },
+  setup() {
+    const store = useSettingsStore();
+    return { store };
+  },
 
-    mounted() {
-        const cursor = document.getElementById('cursor')
-        const blob = document.getElementById('blob')
+  mounted() {
+    const cursor = document.getElementById("cursor");
+    const blob = document.getElementById("blob");
 
-        const body = document.body
-        if (cursor && this.store.screenWidth < 768) {
-            body.style.cursor = 'none'
-        }
-        
-        document.body.onpointermove = event => {
-            const { clientX, clientY } = event
+    const body = document.body;
+    if (cursor && this.store.screenWidth < 768) {
+      body.style.cursor = "none";
+    }
 
-            cursor.style.transform = `translate(${clientX}px, ${clientY}px)`
+    document.body.onpointermove = (event) => {
+      const { clientX, clientY } = event;
 
-            blob.animate({
-                left: `${clientX}px`,
-                top: `${clientY}px`
-            }, { duration: 3000, fill: "forwards" })
-        }
+      cursor.style.transform = `translate(${clientX}px, ${clientY}px)`;
 
-        this.store.readLocalStorage()
-    },
-}
+      blob.animate(
+        {
+          left: `${clientX}px`,
+          top: `${clientY}px`,
+        },
+        { duration: 3000, fill: "forwards" }
+      );
+    };
+
+    this.store.readLocalStorage();
+  },
+};
 </script>
 
 <template>
-    <div>
-        <div id="blob"></div>
-        <div id="blur"></div>
+  <div>
+    <div id="blob"></div>
+    <div id="blur"></div>
 
-        <div id="cursor"></div>
+    <div id="cursor"></div>
 
-        <Transition name="fade">
-            <Overlay v-show="store.overlayActive" />
-        </Transition>
+    <Transition name="fade">
+      <Overlay v-show="store.overlayActive" />
+    </Transition>
 
-        <RouterView v-slot="{ Component, route }">
-            <Transition :name="route.meta.transition" mode="out-in">
-                <Component :is="Component"/>
-            </Transition>
-        </RouterView>
-    </div>
+    <RouterView v-slot="{ Component, route }">
+      <Transition :name="route.meta.transition" mode="out-in">
+        <Component :is="Component" />
+      </Transition>
+    </RouterView>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 #cursor {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    translate: -50% -50%;
-    background: rgba(0, 0, 0, 0);
-    border: 2px solid var(--secondary-color);
-    z-index: 1000;
-    pointer-events: none;
-    transition: width .3s ease, height .3s ease;
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  translate: -50% -50%;
+  background: rgba(0, 0, 0, 0);
+  border: 2px solid var(--secondary-color);
+  z-index: 1000;
+  pointer-events: none;
+  transition: width 0.3s ease, height 0.3s ease;
 }
 
 .cursor {
-    &--active {
-        width: 20px !important;
-        height: 20px !important;
-        
-    }
-    
-    &--click {
-        width: 16px !important;
-        height: 16px !important;
-    }
+  &--active {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  &--click {
+    width: 16px !important;
+    height: 16px !important;
+  }
 }
 
 #blur {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: -1;
-    backdrop-filter: blur(200px);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  backdrop-filter: blur(200px);
 }
 
 #blob {
-    background: linear-gradient(
-        to right,
-        var(--blob-color-1),
-        var(--blob-color-2)
-    );
-    height: 500px;
-    width: 500px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
-    border-radius: 50%;
-    animation: rotate 20s infinite;
-    z-index: -2;
+  background: linear-gradient(
+    to right,
+    var(--blob-color-1),
+    var(--blob-color-2)
+  );
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  animation: rotate 20s infinite;
+  z-index: -2;
 }
 
 @keyframes rotate {
-    from {
-        rotate: 0deg;
-    }
+  from {
+    rotate: 0deg;
+  }
 
-    50% {
-        scale: 1 1.5;
-    }
+  50% {
+    scale: 1 1.5;
+  }
 
-    to {
-        rotate: 360deg;
-    }
+  to {
+    rotate: 360deg;
+  }
 }
 
 //screen width < 768px
 @media screen and (max-width: 768px), screen and (max-height: 600px) {
-    #blob {
-        display: none;
-    }
+  #blob {
+    display: none;
+  }
 
-    #cursor {
-        display: none;
-    }
+  #cursor {
+    display: none;
+  }
 }
 
 .slide-left-enter-active,
 .slide-left-leave-active {
-    transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .slide-left-enter-from {
-    transform: translateX(100%);
+  transform: translateX(100%);
 }
 
 .slide-left-enter-to {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 .slide-left-leave-from {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 .slide-left-leave-to {
-    transform: translateX(-100%);
+  transform: translateX(-100%);
 }
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: all .6s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 .fade-enter-from,
 .fade-leave-to {
-    background: var(--primary-color);
-    opacity: 0;
+  background: var(--primary-color);
+  opacity: 0;
 }
 .fade-enter-to,
 .fade-leave-from {
-    background: var(--primary-color);
-    opacity: 1;
+  background: var(--primary-color);
+  opacity: 1;
 }
 </style>
