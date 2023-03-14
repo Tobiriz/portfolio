@@ -27,13 +27,6 @@ export default {
     },
 
     mounted() {
-        const settings = document.getElementsByClassName('landing-page-settings')[0]
-        const titleCard = document.getElementsByClassName('title-card')[0]
-        const titleCardHeight = titleCard.offsetHeight
-        const titleCardBottom = titleCard.offsetTop
-
-        settings.style.top = (titleCardBottom + titleCardHeight) + 'px'
-
         const link = document.getElementById('routerLink')
 
         this.firstName = document.getElementById('first-name')
@@ -225,8 +218,7 @@ export default {
 
 .body {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
     width: 100vw;
@@ -235,7 +227,6 @@ export default {
 }
 
 .landing-page-settings {
-    position: absolute;
     font-size: 1.2rem;
     z-index: 4;
 }
@@ -251,7 +242,6 @@ export default {
     gap: 1rem;
     background-color: var(--title-card-color);
     color: var(--secondary-color);
-    font-size: 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
@@ -272,13 +262,13 @@ export default {
         
         &__name {
             h1 {
-                font-size: 4rem;
+                font-size: 5vw;
             }
         }
         
         &__occupation {
             h2 {
-                font-size: 2rem;
+                font-size: 2vw;
             }
         }
     }
@@ -286,7 +276,7 @@ export default {
     &__chevron {
         position: absolute;
         left: 0;
-        font-size: 2rem;
+        font-size: 4vw;
         color: var(--secondary-color);
         opacity: 0;
         transition: opacity 0.4s ease, left 0.8s ease;
@@ -320,5 +310,43 @@ export default {
 a {
     text-decoration: none;
     color: var(--secondary-color);
+}
+
+//screen size < 768px
+@media only screen and (max-width: 768px) {
+    .title-card {
+        &__content {
+            &__name {
+                h1 {
+                    font-size: 7vw;
+                }
+            }
+            
+            &__occupation {
+                h2 {
+                    font-size: 4vw;
+                }
+            }
+        }
+    }
+}
+
+//screen height < 600px
+@media only screen and (max-height: 600px) {
+    .title-card {
+        &__content {
+            &__name {
+                h1 {
+                    font-size: 8vh;
+                }
+            }
+            
+            &__occupation {
+                h2 {
+                    font-size: 4vh;
+                }
+            }
+        }
+    }
 }
 </style>

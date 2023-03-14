@@ -103,6 +103,7 @@ export default {
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.1rem;
+            text-align: end;
         }
 
         &:hover {
@@ -118,6 +119,23 @@ export default {
         p {
             font-size: 1.8vw;
             font-weight: 400;
+        }
+    }
+}
+
+//screen width < 768px
+@media screen and (max-width: 768px) {
+    .skill {
+        &__title {
+            h3 {
+                font-size: 8vw;
+            }
+        }
+
+        &__content {
+            p {
+                font-size: 3.5vw;
+            }
         }
     }
 }

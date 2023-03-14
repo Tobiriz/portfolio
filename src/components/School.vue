@@ -40,31 +40,29 @@ export default {
     justify-content: center;
     align-items: center;
     color:  var(--secondary-color);
-    padding-bottom: 3rem;
+    padding-bottom: 5vh;
+    width: 100%;
 
     &__duration {
-        font-size: 1rem;
+        font-size: 1.2vw;
         font-weight: 400;
         letter-spacing: 0.1rem;
-        white-space: pre;
     }
     
     &__date {
-        font-size: 1.5rem;
+        font-size: 1.6vw;
         font-weight: 400;
         letter-spacing: 0.1rem;
-        white-space: pre;
     }
     
     &__title {
-        font-size: 2.5rem;
+        font-size: 2.5vw;
         font-weight: 700;
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 0.1rem;
         color:  var(--accent-color);
         padding: .5rem 0;
-        white-space: pre;
     }
 
     &__description {
@@ -75,17 +73,43 @@ export default {
     }
     
     &__school {
-        font-size: 1.5rem;
+        font-size: 1.6vw;
         font-weight: 400;
         letter-spacing: 0.1rem;
-        white-space: pre;
     }
     
     &__location {
-        font-size: 1.2rem;
+        font-size: 1.2vw;
         font-weight: 400;
         letter-spacing: 0.1rem;
-        white-space: pre;
+    }
+}
+
+//screen width < 768px
+@media screen and (max-width: 768px) {
+    .school {
+        padding: 0 1rem;
+        padding-bottom: 3vh;
+
+        &__duration {
+            font-size: 2vw;
+        }
+        
+        &__date {
+            font-size: 3vw;
+        }
+        
+        &__title {
+            font-size: 4vw;
+        }
+        
+        &__school {
+            font-size: 3vw;
+        }
+        
+        &__location {
+            font-size: 2vw;
+        }
     }
 }
 </style>

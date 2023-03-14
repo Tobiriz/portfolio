@@ -98,4 +98,10 @@ export const useSettingsStore = defineStore('SettingsStore', {
             }
         }
     },
+
+    getters: {
+        screenWidth() {
+            return window.innerWidth
+        }
+    }
 })

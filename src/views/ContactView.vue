@@ -29,17 +29,6 @@ export default {
 
     mounted() {
         const externalLinkHeader = document.getElementsByClassName('external-link__header')
-        const externalLinkIcon = document.getElementsByClassName('external-link__icon')
-
-        for (let i = 0; i < externalLinkHeader.length; i++) {
-            const header = externalLinkHeader[i]
-            const icon = externalLinkIcon[i]
-
-            const headerRight = header.getBoundingClientRect().right
-
-            icon.style.left = `${headerRight - 15}px`
-        }
-
         const cursor = document.getElementById('cursor')
 
         for (let i = 0; i < externalLinkHeader.length; i++) {
@@ -120,15 +109,12 @@ export default {
             <h1>{{ contact.media }}</h1>
             <a href="https://github.com/Tobiriz" target="_blank">
                 <h2 class="external-link__header">GitHub</h2>
-                <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="external-link__icon" />
             </a>
             <a href="https://www.linkedin.com/in/tobias-weinlich-34aba0260/" target="_blank">
                 <h2 class="external-link__header">XING</h2>
-                <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="external-link__icon" />
             </a>
             <a href="https://www.xing.com/profile/Tobias_Weinlich/cv" target="_blank">
                 <h2 class="external-link__header">LinkedIn</h2>
-                <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" class="external-link__icon" />
             </a>
         </div>
     </div>
@@ -163,13 +149,6 @@ export default {
             }
         }
 
-        .external-link__icon {
-            position: absolute;
-            color: var(--secondary-color-light);
-            opacity: 0;
-            transition: opacity 0.2s ease-in-out;
-        }
-
         a {
             text-decoration: none;
             display: flex;
@@ -183,6 +162,32 @@ export default {
                 }
             }
         }
+    }
+}
+
+//screen width < 768px
+@media screen and (max-height: 600px), screen and (max-width: 768px) {
+    .contact-container {
+        padding: 0;
+        height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .contact-container {
+        padding: 0;
+        height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 3vh;
+        gap: 2rem;
     }
 }
 </style>

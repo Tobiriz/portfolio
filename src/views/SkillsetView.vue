@@ -62,4 +62,14 @@ export default {
         display: none;
     }
 }
+
+//screen width < 768px
+@media only screen and (max-width: 768px) {
+    .skillsets {
+        padding: 5vh 1vw 5vh 4vw;
+        width: 100dvw;
+        box-sizing: border-box;
+        gap: 5vw;
+    }
+}
 </style>

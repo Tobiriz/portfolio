@@ -18,6 +18,13 @@
     body {
       background-color: var(--primary-color);
       overflow: hidden;
+      cursor: none;
+    }
+
+    @media screen and (max-width: 768px), screen and (max-height: 600px) {
+      body {
+        cursor: default !important;
+      }
     }
   </style>
 </html>

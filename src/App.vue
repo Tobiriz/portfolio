@@ -19,7 +19,7 @@ export default {
         const blob = document.getElementById('blob')
 
         const body = document.body
-        if (cursor) {
+        if (cursor && this.store.screenWidth < 768) {
             body.style.cursor = 'none'
         }
         
@@ -121,6 +121,17 @@ export default {
 
     to {
         rotate: 360deg;
+    }
+}
+
+//screen width < 768px
+@media screen and (max-width: 768px), screen and (max-height: 600px) {
+    #blob {
+        display: none;
+    }
+
+    #cursor {
+        display: none;
     }
 }
 

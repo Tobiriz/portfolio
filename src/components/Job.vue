@@ -45,30 +45,27 @@ export default {
     align-items: center;
     flex-wrap: nowrap;
     color: var(--secondary-color);
-    padding-bottom: 3rem;
+    padding-bottom: 3vh;
 
     &__duration {
-        font-size: 1rem;
+        font-size: 1.2vw;
         font-weight: 400;
         letter-spacing: 0.1rem;
-        white-space: pre;
     }
     
     &__date {
-        font-size: 1.5rem;
+        font-size: 1.6vw;
         font-weight: 400;
         letter-spacing: 0.1rem;
-        white-space: pre;
     }
 
     &__title {
-        font-size: 2.5rem;
+        font-size: 2.5vw;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.1rem;
         color: var(--accent-color);
         padding: .5rem 0;
-        white-space: pre;
     }
 
     &__description {
@@ -79,24 +76,53 @@ export default {
     }
 
     &__company {
-        font-size: 1.5rem;
+        font-size: 1.6vw;
         font-weight: 400;
         letter-spacing: 0.1rem;
-        white-space: pre;
     }
 
     &__location {
-        font-size: 1.2rem;
+        font-size: 1.2vw;
         font-weight: 400;
         letter-spacing: 0.1rem;
         padding-bottom: 1rem;
-        white-space: pre;
     }
 
     &__description {
-        font-size: 1.2rem;
+        font-size: 1.2vw;
         font-weight: 400;
-        white-space: pre;
+    }
+}
+
+//screen width < 768px
+@media screen and (max-width: 48rem) {
+    .job {
+        padding: 0 1rem;
+        padding-bottom: 3vh;
+
+        &__duration {
+            font-size: 2vw;
+        }
+        
+        &__date {
+            font-size: 3vw;
+        }
+
+        &__title {
+            font-size: 4vw;
+        }
+
+        &__company {
+            font-size: 3vw;
+        }
+
+        &__location {
+            font-size: 2vw;
+        }
+
+        &__description {
+            font-size: 2.5vw;
+        }
     }
 }
 </style>

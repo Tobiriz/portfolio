@@ -78,6 +78,34 @@ export default {
     }
 }
 
+//screen width < 768px
+@media screen and (max-width: 768px), screen and (max-height: 600px) {
+    .content-container {
+        overflow-y: hidden;
+        overflow-x: hidden;
+
+        &__border {
+            top: 0;
+            left: 0;
+            width: 100dvw;
+            height: 100dvh;
+            border: none;
+        }
+
+        &__content {
+            flex-direction: column;
+
+            &__line {
+                display: none;
+            }
+
+            &__view {
+                width: 100%;
+            }
+        }
+    }
+}
+
 .fade-enter-active,
 .fade-leave-active {  
     transition: opacity 0.5s ease;

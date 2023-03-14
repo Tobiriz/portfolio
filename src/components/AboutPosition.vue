@@ -249,59 +249,67 @@ export default {
         }
     },
 
-    mounted () {
+    updated() {
         this.handleResize()
-        this.handleThemeChange()
-        
-        this.canvasCircle1Text.addEventListener('mouseover', () => {
-            this.canvasCircle1Text.style.color = this.accentColor
-            this.canvasCircle1.style.backgroundColor = this.accentColor
-            this.handleMouseOver()
-        })
-        this.canvasCircle1Text.addEventListener('mouseout', () => {
-            this.handleScroll()
-            this.handleMouseLeave()
-        })
-        this.canvasCircle1Text.addEventListener('click', () => {
-            this.handleMouseClick()
-        })
+    },
 
-        this.canvasCircle2Text.addEventListener('mouseover', () => {
-            this.canvasCircle2Text.style.color = this.accentColor
-            this.canvasCircle2.style.backgroundColor = this.accentColor
-            this.handleMouseOver()
-        })
-        this.canvasCircle2Text.addEventListener('mouseout', () => {
-            this.handleScroll()
-            this.handleMouseLeave()
-        })
-        this.canvasCircle2Text.addEventListener('click', () => {
-            this.handleMouseClick()
-        })
+    mounted () {
+        if (this.settings.screenWidth < 768) {
+            document.getElementsByClassName('position-container')[0].style.display = 'none'
+        } else {
+            this.handleResize()
+            this.handleThemeChange()
+            
+            this.canvasCircle1Text.addEventListener('mouseover', () => {
+                this.canvasCircle1Text.style.color = this.accentColor
+                this.canvasCircle1.style.backgroundColor = this.accentColor
+                this.handleMouseOver()
+            })
+            this.canvasCircle1Text.addEventListener('mouseout', () => {
+                this.handleScroll()
+                this.handleMouseLeave()
+            })
+            this.canvasCircle1Text.addEventListener('click', () => {
+                this.handleMouseClick()
+            })
 
-        this.canvasCircle3Text.addEventListener('mouseover', () => {
-            this.canvasCircle3Text.style.color = this.accentColor
-            this.canvasCircle3.style.backgroundColor = this.accentColor
-            this.handleMouseOver()
-        })
-        this.canvasCircle3Text.addEventListener('mouseout', () => {
-            this.handleScroll()
-            this.handleMouseLeave()
-        })
-        this.canvasCircle3Text.addEventListener('click', () => {
-            this.handleMouseClick()
-        })
+            this.canvasCircle2Text.addEventListener('mouseover', () => {
+                this.canvasCircle2Text.style.color = this.accentColor
+                this.canvasCircle2.style.backgroundColor = this.accentColor
+                this.handleMouseOver()
+            })
+            this.canvasCircle2Text.addEventListener('mouseout', () => {
+                this.handleScroll()
+                this.handleMouseLeave()
+            })
+            this.canvasCircle2Text.addEventListener('click', () => {
+                this.handleMouseClick()
+            })
 
-        this.canvasCircle1Text.style.color = this.secondaryColor
-        this.canvasCircle2Text.style.color = this.canvasColor
-        this.canvasCircle3Text.style.color = this.canvasColor
-        this.canvasCircle1.style.backgroundColor = this.secondaryColor
-        this.canvasCircle2.style.backgroundColor = this.canvasColor
-        this.canvasCircle3.style.backgroundColor = this.canvasColor
+            this.canvasCircle3Text.addEventListener('mouseover', () => {
+                this.canvasCircle3Text.style.color = this.accentColor
+                this.canvasCircle3.style.backgroundColor = this.accentColor
+                this.handleMouseOver()
+            })
+            this.canvasCircle3Text.addEventListener('mouseout', () => {
+                this.handleScroll()
+                this.handleMouseLeave()
+            })
+            this.canvasCircle3Text.addEventListener('click', () => {
+                this.handleMouseClick()
+            })
 
-        //Add event listener to the about container
-        this.container.addEventListener('scroll', this.handleScroll)
-        setTimeout(this.handleScroll, 500)
+            this.canvasCircle1Text.style.color = this.secondaryColor
+            this.canvasCircle2Text.style.color = this.canvasColor
+            this.canvasCircle3Text.style.color = this.canvasColor
+            this.canvasCircle1.style.backgroundColor = this.secondaryColor
+            this.canvasCircle2.style.backgroundColor = this.canvasColor
+            this.canvasCircle3.style.backgroundColor = this.canvasColor
+
+            //Add event listener to the about container
+            this.container.addEventListener('scroll', this.handleScroll)
+            setTimeout(this.handleScroll, 500)
+        }
     },
     
     unmounted() {
@@ -368,10 +376,10 @@ export default {
 <style lang="scss" scoped>
 .position-container {
     position: fixed;
-    left: 8rem;
+    left: 2vw;
     bottom: 4rem;
-    height: 20rem;
-    width: 10rem;
+    height: 30vh;
+    width: 10vw;
     box-sizing: border-box;
     display: grid;
     grid-template-columns: auto auto;
@@ -380,11 +388,11 @@ export default {
     &__text {
         position: relative;
         height: 100%;
-        left: 1rem;
-        font-size: 1rem;
+        bottom: 1%;
+        font-size: 1.2vw;
         color: var(--canvas-color);
         text-align: end;
-        padding-right: 2rem;
+        padding-right: 1rem;
 
         &__about-me, &__work-experience, &__education {
             position: relative;
@@ -420,6 +428,12 @@ export default {
         height: 10px;
         border-radius: 50%;
         background-color: var(--canvas-color);
+    }
+}
+
+@media screen and (max-width: 768px), screen and (max-height: 600px) {
+    .position-container {
+        display: none;
     }
 }
 </style>

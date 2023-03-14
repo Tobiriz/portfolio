@@ -98,7 +98,7 @@ export default {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 2rem;
-    padding: 2rem;
+    padding: 5vh 2vw;
 
     &__language {
         text-align: end;
@@ -114,16 +114,45 @@ export default {
 
     .icon {
         color: var(--secondary-color-light);
-
+        font-size: 1.5vw;
+        vertical-align: middle;
+        
         &:hover {
             color: var(--accent-color);
         }
     }
     .language-selector {
         color: var(--secondary-color-light);
+        font-size: 1.5vw;
+        vertical-align: baseline;
     
         &:hover {
             color: var(--accent-color);
+        }
+    }
+}
+
+//screen width < 768px
+@media screen and (max-width: 768px) {
+    .options {
+
+        .icon {
+            font-size: 5vw;
+        }
+        .language-selector {
+            font-size: 5vw;
+        }
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .options {
+
+        .icon {
+            font-size: 5vh;
+        }
+        .language-selector {
+            font-size: 5vh;
         }
     }
 }
