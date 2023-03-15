@@ -17,7 +17,7 @@ export const useSettingsStore = defineStore("SettingsStore", {
       this.lightMode = false;
       setTimeout(() => {
         this.darkMode = true;
-      }, 200);
+      }, 162);
       document.documentElement.style.setProperty(
         "--primary-color",
         "var(--c-black)"
@@ -60,7 +60,7 @@ export const useSettingsStore = defineStore("SettingsStore", {
       this.darkMode = false;
       setTimeout(() => {
         this.lightMode = true;
-      }, 200);
+      }, 162);
       document.documentElement.style.setProperty(
         "--primary-color",
         "var(--c-white)"

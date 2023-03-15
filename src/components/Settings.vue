@@ -76,38 +76,42 @@ export default {
 </script>
 
 <template>
-  <div class="options grid gap-2">
+  <div class="options flex flex-row gap-2 justify-content-center align-items-center">
     <div class="options__language text-left">
       <p
         v-show="store.languageEnglish"
         @click="store.setLanguageGerman()"
-        class="language-selector color-secondary-light color-accent-hover font-size-1-5"
+        class="language-selector color-secondary-light color-accent-hover font-size-1-5 flex flex-row"
       >
-        DE
+        <font-awesome-icon icon="fa-solid fa-d" />
+        <font-awesome-icon icon="fa-solid fa-e" />
+        <font-awesome-icon icon="fa-solid fa-u" />
       </p>
       <p
         v-show="store.languageGerman"
         @click="store.setLanguageEnglish()"
-        class="language-selector color-secondary-light color-accent-hover font-size-1-5"
+        class="language-selector color-secondary-light color-accent-hover font-size-1-5 flex flex-row"
       >
-        EN
+        <font-awesome-icon icon="fa-solid fa-e" />
+        <font-awesome-icon icon="fa-solid fa-n" />
+        <font-awesome-icon icon="fa-solid fa-g" />
       </p>
     </div>
-    <div class="options__theme justify-content-end align-tems-end">
+    <div class="options__theme">
       <Transition>
         <font-awesome-icon
           icon="fa-solid fa-moon"
-          class="icon color-secondary-light color-accent-hover font-size-1-5"
+          class="icon color-secondary-light color-accent-hover font-size-1-5 pos-rel"
           @click="store.setDarkMode()"
-          v-show="store.lightMode"
+          v-if="store.lightMode"
         />
       </Transition>
       <Transition>
         <font-awesome-icon
           icon="fa-solid fa-sun"
-          class="icon color-secondary-light color-accent-hover font-size-1-5"
+          class="icon color-secondary-light color-accent-hover font-size-1-5 pos-rel"
           @click="store.setLightMode()"
-          v-show="store.darkMode"
+          v-if="store.darkMode"
         />
       </Transition>
     </div>
@@ -115,14 +119,12 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.language-selector {
+  gap: 1px;
+}
 .options {
   align-self: center;
-  grid-template-columns: 1fr 1fr;
-  padding: 2vh 2vw 5vh 2vw;
-
-  &__theme {
-    text-align: start;
-  }
+  padding: 2vh 0 5vh 0;
 
   .div {
     width: 100%;
