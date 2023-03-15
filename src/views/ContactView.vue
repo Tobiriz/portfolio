@@ -26,70 +26,6 @@ export default {
       }, 300);
     },
   },
-
-  mounted() {
-    const links = document.getElementsByClassName("contact-external-link");
-
-    for (let i = 0; i < links.length; i++) {
-      links[i].addEventListener("mouseover", () => {
-        this.handleMouseOver();
-      });
-
-      links[i].addEventListener("mouseleave", () => {
-        this.handleMouseLeave();
-      });
-
-      links[i].addEventListener("click", () => {
-        this.handleMouseClick();
-      });
-    }
-
-    const email = document.getElementById("email");
-
-    email.addEventListener("mouseover", () => {
-      this.handleMouseOver();
-    });
-
-    email.addEventListener("mouseleave", () => {
-      this.handleMouseLeave();
-    });
-
-    email.addEventListener("click", () => {
-      this.handleMouseClick();
-    });
-  },
-
-  unmounted() {
-    const links = document.getElementsByClassName("contact-external-link");
-
-    for (let i = 0; i < links.length; i++) {
-      links[i].removeEventListener("mouseover", () => {
-        this.handleMouseOver();
-      });
-
-      links[i].removeEventListener("mouseleave", () => {
-        this.handleMouseLeave();
-      });
-
-      links[i].removeEventListener("click", () => {
-        this.handleMouseClick();
-      });
-    }
-
-    const email = document.getElementById("email");
-
-    email.removeEventListener("mouseover", () => {
-      this.handleMouseOver();
-    });
-
-    email.removeEventListener("mouseleave", () => {
-      this.handleMouseLeave();
-    });
-
-    email.removeEventListener("click", () => {
-      this.handleMouseClick();
-    });
-  },
 };
 </script>
 
@@ -103,6 +39,9 @@ export default {
         href="mailto:contact@tobiasweinlich.com"
         id="email"
         class="color-secondary-light color-accent-hover cursor-none deco-none"
+        @mouseover="handleMouseOver()"
+        @mouseleave="handleMouseLeave()"
+        @click="handleMouseClick()"
       >
         <h2 class="font-size-1-75">
           {{ contact.emailAddress }}
@@ -121,6 +60,9 @@ export default {
             href="https://github.com/Tobiriz"
             target="_blank"
             class="contact-external-link flex flex-col color-secondary-light color-accent-hover cursor-none deco-none"
+            @mouseover="handleMouseOver()"
+            @mouseleave="handleMouseLeave()"
+            @click="handleMouseClick()"
           >
             <font-awesome-icon icon="fa-brands fa-github" class="font-size-2" />
             <h2 class="external-link__header font-size-1-5">GitHub</h2>
@@ -132,6 +74,9 @@ export default {
             href="https://www.linkedin.com/in/tobias-weinlich-34aba0260/"
             target="_blank"
             class="contact-external-link flex flex-col color-secondary-light color-accent-hover cursor-none deco-none"
+            @mouseover="handleMouseOver()"
+            @mouseleave="handleMouseLeave()"
+            @click="handleMouseClick()"
           >
             <font-awesome-icon
               icon="fa-brands fa-linkedin"
@@ -146,6 +91,9 @@ export default {
             href="https://www.xing.com/profile/Tobias_Weinlich/cv"
             target="_blank"
             class="contact-external-link flex flex-col color-secondary-light color-accent-hover cursor-none deco-none"
+            @mouseover="handleMouseOver()"
+            @mouseleave="handleMouseLeave()"
+            @click="handleMouseClick()"
           >
             <font-awesome-icon icon="fa-brands fa-xing" class="font-size-2" />
             <h2 class="external-link__header font-size-1-5">Xing</h2>

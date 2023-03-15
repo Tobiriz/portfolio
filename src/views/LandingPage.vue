@@ -27,8 +27,6 @@ export default {
   },
 
   mounted() {
-    const link = document.getElementById("routerLink");
-
     this.firstName = document.getElementById("first-name");
     this.lastName = document.getElementById("last-name");
 
@@ -39,25 +37,6 @@ export default {
       .getElementById("last-name")
       .innerText.split("");
 
-    link.addEventListener("mouseenter", () => {
-      if (!this.endEffect) {
-        this.startHackerEffect();
-        this.handleMouseOver();
-      }
-    });
-
-    link.addEventListener("mouseleave", () => {
-      if (!this.endEffect) {
-        this.stopHackerEffect();
-        this.handleMouseLeave();
-      }
-    });
-
-    link.addEventListener("click", () => {
-      this.endHackerEffect();
-      this.handleMouseClick();
-    });
-
     const clickNotice = document.getElementById("click-notice");
     setTimeout(() => {
       clickNotice.style.opacity = 1;
@@ -65,27 +44,6 @@ export default {
   },
 
   unmounted() {
-    const link = document.getElementById("routerLink");
-
-    link.removeEventListener("mouseenter", () => {
-      if (!this.endEffect) {
-        this.startHackerEffect();
-        this.handleMouseOver();
-      }
-    });
-
-    link.removeEventListener("mouseleave", () => {
-      if (!this.endEffect) {
-        this.stopHackerEffect();
-        this.handleMouseLeave();
-      }
-    });
-
-    link.removeEventListener("click", () => {
-      this.endHackerEffect();
-      this.handleMouseClick();
-    });
-
     this.handleMouseLeave();
   },
 
@@ -117,6 +75,7 @@ export default {
     endHackerEffect() {
       if (this.endEffect) {
         this.$router.push("/portfolio");
+        return
       }
 
       this.stopHackerEffect();
@@ -125,8 +84,6 @@ export default {
       const nameLength = this.firstNameText.length + this.lastNameText.length;
       let iterations = 0;
       let count = 0;
-
-      console.log("endHackerEffect");
 
       this.interval = setInterval(() => {
         this.firstName.innerText = this.firstName.innerText
@@ -183,16 +140,23 @@ export default {
     },
 
     handleMouseOver() {
+      if (!this.endEffect) {
+        this.startHackerEffect();
+      }
       const cursor = document.getElementById("cursor");
       cursor.classList.add("cursor--active");
     },
 
     handleMouseLeave() {
+      if (!this.endEffect) {
+        this.stopHackerEffect();
+      }
       const cursor = document.getElementById("cursor");
       cursor.classList.remove("cursor--active");
     },
 
     handleMouseClick() {
+      this.endHackerEffect();
       const cursor = document.getElementById("cursor");
       cursor.classList.add("cursor--click");
       setTimeout(() => {
@@ -216,7 +180,11 @@ export default {
       <font-awesome-icon icon="fa-solid fa-chevron-down" bounce />
     </div>
 
-    <div id="routerLink">
+    <div id="routerLink"
+      @mouseover="handleMouseOver"
+      @mouseleave="handleMouseLeave"
+      @click="handleMouseClick"
+    >
       <div
         class="title-card width100vw flex flex-col justify-content-center align-items-center gap-1 bg-title-card color-secondary text-uppercase pos-rel weight-7 spacing-1"
         @mouseenter="showChevron"

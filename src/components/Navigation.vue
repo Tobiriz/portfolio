@@ -55,64 +55,6 @@ export default {
       this.navigationActive = !this.navigationActive;
     },
   },
-
-  mounted() {
-    const cursor = document.getElementById("cursor");
-
-    const links =
-      document.getElementsByClassName("navigation__links")[0].children;
-
-    for (let link of links) {
-      link.addEventListener("mouseover", () => {
-        this.handleMouseOver();
-      });
-
-      link.addEventListener("mouseleave", () => {
-        this.handleMouseLeave();
-      });
-
-      link.addEventListener("click", () => {
-        this.handleMouseClick();
-      });
-    }
-
-    const navigationButton =
-      document.getElementsByClassName("navigation__links")[0].children;
-    for (let button of navigationButton) {
-      button.addEventListener("click", () => {
-        this.toggleMenu();
-      });
-    }
-  },
-
-  unmounted() {
-    const cursor = document.getElementById("cursor");
-
-    const links =
-      document.getElementsByClassName("navigation__links")[0].children;
-
-    for (let i = 0; i < links.length; i++) {
-      links[i].removeEventListener("mouseover", () => {
-        this.handleMouseOver();
-      });
-
-      links[i].removeEventListener("mouseleave", () => {
-        this.handleMouseLeave();
-      });
-
-      links[i].removeEventListener("click", () => {
-        this.handleMouseClick();
-      });
-    }
-
-    const navigationButton =
-      document.getElementsByClassName("navigation__links")[0].children;
-    for (let button of navigationButton) {
-      button.removeEventListener("click", () => {
-        this.toggleMenu();
-      });
-    }
-  },
 };
 </script>
 
@@ -140,24 +82,36 @@ export default {
       <RouterLink
         :to="{ name: 'about' }"
         class="color-secondary-light color-accent-hover deco-none cursor-none"
+        @mouseover="handleMouseOver()"
+        @mouseleave="handleMouseLeave()"
+        @click="handleMouseClick()"
       >
         {{ about.viewName }}
       </RouterLink>
       <RouterLink
         :to="{ name: 'skillset' }"
         class="color-secondary-light color-accent-hover deco-none cursor-none"
+        @mouseover="handleMouseOver()"
+        @mouseleave="handleMouseLeave()"
+        @click="handleMouseClick()"
       >
         {{ skillset.viewName }}
       </RouterLink>
       <RouterLink
         :to="{ name: 'projects' }"
         class="color-secondary-light color-accent-hover deco-none cursor-none"
+        @mouseover="handleMouseOver()"
+        @mouseleave="handleMouseLeave()"
+        @click="handleMouseClick()"
       >
         {{ projects.viewName }}
       </RouterLink>
       <RouterLink
         :to="{ name: 'contact' }"
         class="color-secondary-light color-accent-hover deco-none cursor-none"
+        @mouseover="handleMouseOver()"
+        @mouseleave="handleMouseLeave()"
+        @click="handleMouseClick()"
       >
         {{ contact.viewName }}
       </RouterLink>
@@ -183,6 +137,10 @@ export default {
   top: 1rem;
   left: 1rem;
   z-index: 6;
+}
+
+.router-link-exact-active {
+  color: var(--secondary-color);
 }
 
 //screen width < 768px

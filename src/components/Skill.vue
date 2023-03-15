@@ -27,48 +27,13 @@ export default {
     },
 
     handleMouseClick() {
+      this.$emit("toggle");
       const cursor = document.getElementById("cursor");
       cursor.classList.add("cursor--click");
       setTimeout(() => {
         cursor.classList.remove("cursor--click");
       }, 300);
     },
-  },
-
-  mounted() {
-    const titles = document.getElementsByClassName("skill__title");
-
-    for (let title of titles) {
-      title.addEventListener("mouseover", () => {
-        this.handleMouseOver();
-      });
-
-      title.addEventListener("mouseleave", () => {
-        this.handleMouseLeave();
-      });
-
-      title.addEventListener("click", () => {
-        this.handleMouseClick();
-      });
-    }
-  },
-
-  unmounted() {
-    const titles = document.getElementsByClassName("skill__title");
-
-    for (let title of titles) {
-      title.removeEventListener("mouseover", () => {
-        this.handleMouseOver();
-      });
-
-      title.removeEventListener("mouseleave", () => {
-        this.handleMouseLeave();
-      });
-
-      title.removeEventListener("click", () => {
-        this.handleMouseClick();
-      });
-    }
   },
 };
 </script>
@@ -80,7 +45,9 @@ export default {
     <div
       class="skill__title color-accent-hover font-size-4 weight-7 text-uppercase spacing-1 text-end"
       :class="{ isActive: isActive }"
-      @click="$emit('toggle')"
+      @mouseover="handleMouseOver()"
+      @mouseleave="handleMouseLeave()"
+      @click="handleMouseClick()"
     >
       <h3>{{ title }}</h3>
     </div>

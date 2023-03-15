@@ -35,19 +35,17 @@ export default {
 </script>
 
 <template>
-  <div>
-    <div
-      class="skillsets height100p pos-abs top right flex flex-col align-items-end gap-2-5"
-    >
-      <Skill
-        v-for="(skill, index) in skills"
-        :key="index"
-        :title="skill.title"
-        :content="skill.content"
-        :is-active="this.activeSkill === index"
-        @toggle="toggleSkill(index)"
-      />
-    </div>
+  <div
+    class="skillsets height100p pos-abs top right flex flex-col align-items-end gap-2-5"
+  >
+    <Skill
+      v-for="(skill, index) in skills"
+      :key="index"
+      :title="skill.title"
+      :content="skill.content"
+      :is-active="this.activeSkill === index"
+      @toggle="toggleSkill(index)"
+    />
   </div>
 </template>
 

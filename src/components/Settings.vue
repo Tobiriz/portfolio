@@ -18,59 +18,23 @@ export default {
       cursor.classList.remove("cursor--active");
     },
 
-    handleMouseClick() {
+    handleMouseClick(setting) {
+      if (setting === "setLanguageEnglish") {
+        this.store.setLanguageEnglish();
+      } else if (setting === "setLanguageGerman") {
+        this.store.setLanguageGerman();
+      } else if (setting === "setLightMode") {
+        this.store.setLightMode();
+      } else if (setting === "setDarkMode") {
+        this.store.setDarkMode();
+      }
+
       const cursor = document.getElementById("cursor");
       cursor.classList.add("cursor--click");
       setTimeout(() => {
         cursor.classList.remove("cursor--click");
       }, 300);
     },
-  },
-
-  mounted() {
-    const languageSelector =
-      document.getElementsByClassName("language-selector");
-    const icons = document.getElementsByClassName("icon");
-
-    //combine languageSelextor and icons into one array
-    const elements = [...languageSelector, ...icons];
-
-    for (let i = 0; i < elements.length; i++) {
-      elements[i].addEventListener("mouseover", () => {
-        this.handleMouseOver();
-      });
-
-      elements[i].addEventListener("mouseleave", () => {
-        this.handleMouseLeave();
-      });
-
-      elements[i].addEventListener("click", () => {
-        this.handleMouseClick();
-      });
-    }
-  },
-
-  unmounted() {
-    const languageSelector =
-      document.getElementsByClassName("language-selector");
-    const icons = document.getElementsByClassName("icon");
-
-    //combine languageSelextor and icons into one array
-    const elements = [...languageSelector, ...icons];
-
-    for (let i = 0; i < elements.length; i++) {
-      elements[i].removeEventListener("mouseover", () => {
-        this.handleMouseOver();
-      });
-
-      elements[i].removeEventListener("mouseleave", () => {
-        this.handleMouseLeave();
-      });
-
-      elements[i].removeEventListener("click", () => {
-        this.handleMouseClick();
-      });
-    }
   },
 };
 </script>
@@ -82,8 +46,10 @@ export default {
     <div class="options__language text-left">
       <p
         v-show="store.languageEnglish"
-        @click="store.setLanguageGerman()"
         class="language-selector color-secondary-light color-accent-hover font-size-1-5 flex flex-row"
+        @mouseover="handleMouseOver()"
+        @mouseleave="handleMouseLeave()"
+        @click="handleMouseClick('setLanguageGerman')"
       >
         <font-awesome-icon icon="fa-solid fa-d" />
         <font-awesome-icon icon="fa-solid fa-e" />
@@ -91,8 +57,10 @@ export default {
       </p>
       <p
         v-show="store.languageGerman"
-        @click="store.setLanguageEnglish()"
         class="language-selector color-secondary-light color-accent-hover font-size-1-5 flex flex-row"
+        @mouseover="handleMouseOver()"
+        @mouseleave="handleMouseLeave()"
+        @click="handleMouseClick('setLanguageEnglish')"
       >
         <font-awesome-icon icon="fa-solid fa-e" />
         <font-awesome-icon icon="fa-solid fa-n" />
@@ -104,7 +72,9 @@ export default {
         <font-awesome-icon
           icon="fa-solid fa-moon"
           class="icon color-secondary-light color-accent-hover font-size-1-5 pos-rel"
-          @click="store.setDarkMode()"
+          @mouseover="handleMouseOver()"
+          @mouseleave="handleMouseLeave()"
+          @click="handleMouseClick('setDarkMode')"
           v-if="store.lightMode"
         />
       </Transition>
@@ -112,7 +82,9 @@ export default {
         <font-awesome-icon
           icon="fa-solid fa-sun"
           class="icon color-secondary-light color-accent-hover font-size-1-5 pos-rel"
-          @click="store.setLightMode()"
+          @mouseover="handleMouseOver()"
+          @mouseleave="handleMouseLeave()"
+          @click="handleMouseClick('setLightMode')"
           v-if="store.darkMode"
         />
       </Transition>
