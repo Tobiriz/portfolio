@@ -12,7 +12,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 /* import specific icons */
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -25,6 +25,7 @@ import {
 /* add icons to the library */
 library.add(
   faChevronRight,
+  faChevronDown,
   faArrowUpRightFromSquare,
   faSun,
   faMoon,

@@ -98,16 +98,16 @@ export default {
     class="contact-container height100p flex flex-col justify-content-center align-items-center gap-6 color-secondary"
   >
     <div class="contact-container__section text-center">
-      <h1 class="deco-underlined">{{ contact.email }}</h1>
-      <a href="mailto:contact@tobiasweinlich.com" id="email">
-        <h2 class="color-secondary-light color-accent-hover cursor-none">
+      <h1 class="deco-underlined font-size-2">{{ contact.email }}</h1>
+      <a href="mailto:contact@tobiasweinlich.com" id="email" class="color-secondary-light color-accent-hover cursor-none deco-none">
+        <h2 class="font-size-1-75">
           {{ contact.emailAddress }}
         </h2>
       </a>
     </div>
 
     <div class="contact-container__section text-center">
-      <h1 class="deco-underlined">{{ contact.media }}</h1>
+      <h1 class="deco-underlined font-size-2">{{ contact.media }}</h1>
 
       <div
         class="contact-container__section__external grid justify-content-center align-items-center gap-2"
@@ -116,7 +116,7 @@ export default {
           <a
             href="https://github.com/Tobiriz"
             target="_blank"
-            class="contact-external-link flex flex-col color-secondary-light color-accent-hover cursor-none"
+            class="contact-external-link flex flex-col color-secondary-light color-accent-hover cursor-none deco-none"
           >
             <font-awesome-icon icon="fa-brands fa-github" class="font-size-2" />
             <h2 class="external-link__header font-size-1-5">GitHub</h2>
@@ -127,7 +127,7 @@ export default {
           <a
             href="https://www.linkedin.com/in/tobias-weinlich-34aba0260/"
             target="_blank"
-            class="contact-external-link flex flex-col color-secondary-light color-accent-hover cursor-none"
+            class="contact-external-link flex flex-col color-secondary-light color-accent-hover cursor-none deco-none"
           >
             <font-awesome-icon
               icon="fa-brands fa-linkedin"
@@ -141,7 +141,7 @@ export default {
           <a
             href="https://www.xing.com/profile/Tobias_Weinlich/cv"
             target="_blank"
-            class="contact-external-link flex flex-col color-secondary-light color-accent-hover cursor-none"
+            class="contact-external-link flex flex-col color-secondary-light color-accent-hover cursor-none deco-none"
           >
             <font-awesome-icon icon="fa-brands fa-xing" class="font-size-2" />
             <h2 class="external-link__header font-size-1-5">Xing</h2>
@@ -154,8 +154,6 @@ export default {
 
 <style lang="scss" scoped>
 .contact-container {
-  padding: 0 2rem 2rem 0;
-
   &__section {
     &__external {
       grid-template-columns: repeat(3, 1fr);
@@ -170,7 +168,6 @@ export default {
     }
 
     a {
-      text-decoration: none;
       gap: 5px;
     }
   }

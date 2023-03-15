@@ -81,14 +81,14 @@ export default {
       <p
         v-show="store.languageEnglish"
         @click="store.setLanguageGerman()"
-        class="color-secondary-light color-accent-hover font-size-1-5"
+        class="language-selector color-secondary-light color-accent-hover font-size-1-5"
       >
         DE
       </p>
       <p
         v-show="store.languageGerman"
         @click="store.setLanguageEnglish()"
-        class="color-secondary-light color-accent-hover font-size-1-5"
+        class="language-selector color-secondary-light color-accent-hover font-size-1-5"
       >
         EN
       </p>
@@ -97,7 +97,7 @@ export default {
       <Transition>
         <font-awesome-icon
           icon="fa-solid fa-moon"
-          class="color-secondary-light color-accent-hover font-size-1-5"
+          class="icon color-secondary-light color-accent-hover font-size-1-5"
           @click="store.setDarkMode()"
           v-show="store.lightMode"
         />
@@ -105,7 +105,7 @@ export default {
       <Transition>
         <font-awesome-icon
           icon="fa-solid fa-sun"
-          class="color-secondary-light color-accent-hover font-size-1-5"
+          class="icon color-secondary-light color-accent-hover font-size-1-5"
           @click="store.setLightMode()"
           v-show="store.darkMode"
         />
@@ -118,7 +118,7 @@ export default {
 .options {
   align-self: center;
   grid-template-columns: 1fr 1fr;
-  padding: 5vh 2vw;
+  padding: 2vh 2vw 5vh 2vw;
 
   &__theme {
     text-align: start;

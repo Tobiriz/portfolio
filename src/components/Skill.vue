@@ -87,7 +87,7 @@ export default {
 
     <Transition>
       <div
-        class="skill__content text-end color-secondary font-size-1-75 weight-4"
+        class="skill__content text-end color-secondary font-size-1-75 weight-4 line-height-1-5"
         v-show="isActive"
       >
         <p>{{ content }}</p>

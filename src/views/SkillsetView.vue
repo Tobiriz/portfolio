@@ -37,7 +37,7 @@ export default {
 <template>
   <div>
     <div
-      class="skillsets width100p height100p pos-abs top right flex flex-col align-items-end gap-2-5"
+      class="skillsets height100p pos-abs top right flex flex-col align-items-end gap-2-5"
     >
       <Skill
         v-for="(skill, index) in skills"
@@ -53,10 +53,10 @@ export default {
 
 <style lang="scss" scoped>
 .skillsets {
-  width: 100%;
   padding: 2rem;
   box-sizing: border-box;
   overflow-y: auto;
+  width: 80%;
 
   -ms-overflow-style: none;
   scrollbar-width: none;
