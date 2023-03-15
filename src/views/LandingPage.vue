@@ -57,6 +57,11 @@ export default {
       this.endHackerEffect();
       this.handleMouseClick();
     });
+
+    const clickNotice = document.getElementById("click-notice");
+    setTimeout(() => {
+      clickNotice.style.opacity = 1;
+    }, 10000);
   },
 
   unmounted() {
@@ -200,17 +205,22 @@ export default {
 
 <template>
   <div
-    class="landing-page flex flex-col-rev justify-content-center align-items-center width100vw height100vh"
+    class="landing-page flex flex-col justify-content-center align-items-center width100vw height100vh"
   >
-    <Settings class="landing-page-settings font-size-1-25"></Settings>
+    <div class="click-notice flex flex-row justify-content-between color-secondary-light" id="click-notice">
+      <font-awesome-icon icon="fa-solid fa-chevron-down" bounce />
+      <font-awesome-icon icon="fa-solid fa-chevron-down" bounce />
+      <font-awesome-icon icon="fa-solid fa-chevron-down" bounce />
+    </div>
+
     <div id="routerLink">
       <div
-        class="title-card width100vw flex flex-col justify-content-center align-items-center gap-1 bg-title-card color-secondary text-uppercase pos-rel"
-        @mouseenter="showChevron"
-        @mouseleave="hideChevron"
+      class="title-card width100vw flex flex-col justify-content-center align-items-center gap-1 bg-title-card color-secondary text-uppercase pos-rel weight-7 spacing-1"
+      @mouseenter="showChevron"
+      @mouseleave="hideChevron"
       >
         <div
-          class="title-card__content flex flex-col gap-1 justify-content-center align-items-center width100p height100p"
+        class="title-card__content flex flex-col gap-1 justify-content-center align-items-center width100p height100p"
         >
           <div class="title-card__content__name font-size-3">
             <h1>
@@ -219,19 +229,21 @@ export default {
               <span id="last-name">Weinlich</span>
             </h1>
           </div>
-
+          
           <div class="title-card__content__occupation font-size-1-5">
             <h2 id="title-card-occupation">{{ landingPage.occupation }}</h2>
           </div>
         </div>
-
+        
         <font-awesome-icon
-          icon="fa-solid fa-chevron-right"
-          size="10x"
-          class="title-card__chevron pos-abs left font-size-2 color-secondary"
+        icon="fa-solid fa-chevron-right"
+        size="10x"
+        class="title-card__chevron pos-abs left font-size-2 color-secondary"
         />
       </div>
     </div>
+
+    <Settings class="landing-page-settings font-size-1-25"></Settings>
   </div>
 </template>
 
@@ -247,6 +259,12 @@ export default {
   z-index: 3;
 }
 
+.click-notice {
+  opacity: 0;
+  width: 60vw;
+  padding-bottom: .5rem;
+}
+
 .landing-page-settings {
   z-index: 4;
 }
@@ -254,8 +272,6 @@ export default {
 .title-card {
   box-sizing: border-box;
   height: 30vh;
-  font-weight: 700;
-  letter-spacing: 0.1rem;
   z-index: 3;
 
   &__content {
