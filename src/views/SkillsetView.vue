@@ -54,6 +54,7 @@ export default {
 <style lang="scss" scoped>
 .skillsets {
   padding: 2rem;
+  padding-bottom: 10rem;
   box-sizing: border-box;
   overflow-y: auto;
   width: 80%;
