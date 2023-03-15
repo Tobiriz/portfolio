@@ -76,7 +76,9 @@ export default {
 </script>
 
 <template>
-  <div class="options flex flex-row gap-2 justify-content-center align-items-center">
+  <div
+    class="options flex flex-row gap-2 justify-content-center align-items-center"
+  >
     <div class="options__language text-left">
       <p
         v-show="store.languageEnglish"

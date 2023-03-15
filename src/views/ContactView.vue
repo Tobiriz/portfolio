@@ -99,7 +99,11 @@ export default {
   >
     <div class="contact-container__section text-center">
       <h1 class="deco-underlined font-size-2">{{ contact.email }}</h1>
-      <a href="mailto:contact@tobiasweinlich.com" id="email" class="color-secondary-light color-accent-hover cursor-none deco-none">
+      <a
+        href="mailto:contact@tobiasweinlich.com"
+        id="email"
+        class="color-secondary-light color-accent-hover cursor-none deco-none"
+      >
         <h2 class="font-size-1-75">
           {{ contact.emailAddress }}
         </h2>
