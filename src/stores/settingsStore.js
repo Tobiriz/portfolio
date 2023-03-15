@@ -50,7 +50,7 @@ export const useSettingsStore = defineStore("SettingsStore", {
         "--blob-color-2",
         "var(--c-greyish)"
       );
-      this.setFavicon("./public/favicon-dark.ico");
+      this.setFavicon("/favicon-dark.ico");
 
       //Store the current theme in local storage
       localStorage.setItem("theme", "dark");
@@ -93,7 +93,7 @@ export const useSettingsStore = defineStore("SettingsStore", {
         "--blob-color-2",
         "var(--c-orange-dark)"
       );
-      this.setFavicon("./public/favicon-light.ico");
+      this.setFavicon("/favicon-light.ico");
 
       //Store the current theme in local storage
       localStorage.setItem("theme", "light");
