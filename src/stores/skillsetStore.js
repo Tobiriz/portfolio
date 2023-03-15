@@ -11,12 +11,12 @@ export const useSkillsetStore = defineStore("SkillsetStore", {
 
         skillset: [
           {
-            title: "HTML",
+            title: "Hypertext Markup Language",
             content:
               "I have extensive knowledge of HTML and can use it to create professional, dynamic websites with complex structures and interactions.",
           },
           {
-            title: "CSS",
+            title: "Cascading Style Sheets",
             content:
               "CSS allows me to customize the look of my web pages and give them a responsive design.",
           },
@@ -103,12 +103,12 @@ export const useSkillsetStore = defineStore("SkillsetStore", {
 
         skillset: [
           {
-            title: "HTML",
+            title: "Hypertext Markup Language",
             content:
               "Ich habe umfangreiche Kenntnisse in HTML und kann damit professionelle, dynamische Webseiten mit komplexen Strukturen und Interaktionen erstellen.",
           },
           {
-            title: "CSS",
+            title: "Cascading Style Sheets",
             content:
               "Mit CSS kann ich das Aussehen meiner Webseiten anpassen und ihnen ein ansprechendes Design verleihen.",
           },
