@@ -1,6 +1,6 @@
 <script>
-import Project from "@/components/Project.vue";
 import { useProjectsStore } from "@/stores/projectsStore";
+import Project from "@/components/Project.vue";
 
 export default {
   components: {
@@ -11,14 +11,22 @@ export default {
     const projects = useProjectsStore();
     return { projects };
   },
+
+  computed: {
+    projects() {
+      return this.projects.projects;
+    },
+  },
 };
 </script>
 
 <template>
-  <div>
-    <div class="projects-container">
+  <div class="projects flex flex-col height100p">
+    <div
+      class="projects-container flex flex-row gap-2 flex-wrap justify-content-between"
+    >
       <Project
-        v-for="project in projects.projects"
+        v-for="project in projects"
         :key="project.id"
         :project="project"
       />
@@ -27,13 +35,16 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.projects-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  color: var(--secondary-color);
+.projects {
+  padding: 5rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 </style>
