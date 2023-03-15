@@ -263,6 +263,7 @@ export default {
   opacity: 0;
   width: 60vw;
   padding-bottom: .5rem;
+  transition: opacity 0.4s ease;
 }
 
 .landing-page-settings {
