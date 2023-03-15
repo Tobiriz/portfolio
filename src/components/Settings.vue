@@ -76,28 +76,28 @@ export default {
 </script>
 
 <template>
-  <div class="options">
-    <div class="options__language">
+  <div class="options grid gap-2">
+    <div class="options__language text-left">
       <p
         v-show="store.languageEnglish"
         @click="store.setLanguageGerman()"
-        class="language-selector"
+        class="color-secondary-light color-accent-hover font-size-1-5"
       >
         DE
       </p>
       <p
         v-show="store.languageGerman"
         @click="store.setLanguageEnglish()"
-        class="language-selector"
+        class="color-secondary-light color-accent-hover font-size-1-5"
       >
         EN
       </p>
     </div>
-    <div class="options__theme">
+    <div class="options__theme justify-content-end align-tems-end">
       <Transition>
         <font-awesome-icon
           icon="fa-solid fa-moon"
-          class="icon"
+          class="color-secondary-light color-accent-hover font-size-1-5"
           @click="store.setDarkMode()"
           v-show="store.lightMode"
         />
@@ -105,7 +105,7 @@ export default {
       <Transition>
         <font-awesome-icon
           icon="fa-solid fa-sun"
-          class="icon"
+          class="color-secondary-light color-accent-hover font-size-1-5"
           @click="store.setLightMode()"
           v-show="store.darkMode"
         />
@@ -117,15 +117,8 @@ export default {
 <style lang="scss" scoped>
 .options {
   align-self: center;
-  display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 2rem;
   padding: 5vh 2vw;
-
-  &__language {
-    text-align: end;
-  }
 
   &__theme {
     text-align: start;
@@ -133,25 +126,6 @@ export default {
 
   .div {
     width: 100%;
-  }
-
-  .icon {
-    color: var(--secondary-color-light);
-    font-size: 1.5vw;
-    vertical-align: middle;
-
-    &:hover {
-      color: var(--accent-color);
-    }
-  }
-  .language-selector {
-    color: var(--secondary-color-light);
-    font-size: 1.5vw;
-    vertical-align: baseline;
-
-    &:hover {
-      color: var(--accent-color);
-    }
   }
 }
 

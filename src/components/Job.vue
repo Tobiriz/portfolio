@@ -10,26 +10,30 @@ export default {
 </script>
 
 <template>
-  <div class="job">
-    <div class="job__duration">
+  <div
+    class="job flex flex-col justify-content-center align-items-center flex-nowrap color-secondary"
+  >
+    <div class="job__duration font-size-1-25 weight-4 spacing-1">
       {{ job.duration }}
     </div>
-    <div class="job__date">
+    <div class="job__date font-size-1-5 weight-4 spacing-1">
       {{ job.date }}
     </div>
-    <div class="job__title">
+    <div
+      class="job__title font-size-2-5 weight-7 spacing-1 text-uppercase color-accent text-center"
+    >
       {{ job.title }}
     </div>
 
-    <div class="job__description">
+    <div class="job__description flex flex-row gap-1 text-center">
       <div>
-        <div class="job__company">
+        <div class="job__company font-size-1-5 weight-4 spacing-1">
           {{ job.company }}
         </div>
-        <div class="job__location">
+        <div class="job__location font-size-1-25 weight-4 spacing-1">
           {{ job.location }}
         </div>
-        <div class="job__description">
+        <div class="job__details font-size-1-25 weight-4">
           {{ job.description }}
         </div>
       </div>
@@ -39,58 +43,14 @@ export default {
 
 <style lang="scss" scoped>
 .job {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  color: var(--secondary-color);
-  padding-bottom: 3vh;
-
-  &__duration {
-    font-size: 1.2vw;
-    font-weight: 400;
-    letter-spacing: 0.1rem;
-  }
-
-  &__date {
-    font-size: 1.6vw;
-    font-weight: 400;
-    letter-spacing: 0.1rem;
-  }
+  padding-bottom: 3rem;
 
   &__title {
-    font-size: 2.5vw;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    color: var(--accent-color);
     padding: 0.5rem 0;
   }
 
-  &__description {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    text-align: center;
-  }
-
-  &__company {
-    font-size: 1.6vw;
-    font-weight: 400;
-    letter-spacing: 0.1rem;
-  }
-
-  &__location {
-    font-size: 1.2vw;
-    font-weight: 400;
-    letter-spacing: 0.1rem;
-    padding-bottom: 1rem;
-  }
-
-  &__description {
-    font-size: 1.2vw;
-    font-weight: 400;
+  &__details {
+    padding: 1rem 0;
   }
 }
 

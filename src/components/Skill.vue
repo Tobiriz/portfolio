@@ -74,9 +74,11 @@ export default {
 </script>
 
 <template>
-  <div class="skill">
+  <div
+    class="skill flex flex-col justify-content-center align-items-end color-secondary-light"
+  >
     <div
-      class="skill__title"
+      class="skill__title color-accent-hover font-size-4 weight-7 text-uppercase spacing-1 text-end"
       :class="{ isActive: isActive }"
       @click="$emit('toggle')"
     >
@@ -84,7 +86,10 @@ export default {
     </div>
 
     <Transition>
-      <div class="skill__content" v-show="isActive">
+      <div
+        class="skill__content text-end color-secondary font-size-1-75 weight-4"
+        v-show="isActive"
+      >
         <p>{{ content }}</p>
       </div>
     </Transition>
@@ -93,37 +98,7 @@ export default {
 
 <style lang="scss" scoped>
 .skill {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  color: var(--secondary-color-light);
-  width: 100%;
-
-  &__title {
-    h3 {
-      font-size: 5vw;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1rem;
-      text-align: end;
-    }
-
-    &:hover {
-      color: var(--accent-color);
-    }
-  }
-
-  &__content {
-    text-align: end;
-    color: var(--secondary-color);
-    max-width: 80%;
-
-    p {
-      font-size: 1.8vw;
-      font-weight: 400;
-    }
-  }
+  width: 80%;
 }
 
 //screen width < 768px

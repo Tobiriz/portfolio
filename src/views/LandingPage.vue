@@ -199,16 +199,20 @@ export default {
 </script>
 
 <template>
-  <div class="body">
-    <Settings class="landing-page-settings"></Settings>
+  <div
+    class="landing-page flex flex-col-rev justify-content-center align-items-center width100vw height100vh"
+  >
+    <Settings class="landing-page-settings font-size-1-25"></Settings>
     <div id="routerLink">
       <div
-        class="title-card"
+        class="title-card width100vw flex flex-col justify-content-center align-items-center gap-1 bg-title-card color-secondary text-uppercase pos-rel"
         @mouseenter="showChevron"
         @mouseleave="hideChevron"
       >
-        <div class="title-card__content">
-          <div class="title-card__content__name">
+        <div
+          class="title-card__content flex flex-col gap-1 justify-content-center align-items-center width100p height100p"
+        >
+          <div class="title-card__content__name font-size-3">
             <h1>
               <span id="first-name">Tobias</span>
               <span>&nbsp;</span>
@@ -216,7 +220,7 @@ export default {
             </h1>
           </div>
 
-          <div class="title-card__content__occupation">
+          <div class="title-card__content__occupation font-size-1-5">
             <h2 id="title-card-occupation">{{ landingPage.occupation }}</h2>
           </div>
         </div>
@@ -224,7 +228,7 @@ export default {
         <font-awesome-icon
           icon="fa-solid fa-chevron-right"
           size="10x"
-          class="title-card__chevron"
+          class="title-card__chevron pos-abs left font-size-2 color-secondary"
         />
       </div>
     </div>
@@ -239,68 +243,28 @@ export default {
   font-family: "Martian Mono", monospace;
 }
 
-.body {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
+.landing-page {
   z-index: 3;
 }
 
 .landing-page-settings {
-  font-size: 1.2rem;
   z-index: 4;
 }
 
 .title-card {
   box-sizing: border-box;
-  width: 100vw;
   height: 30vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  background-color: var(--title-card-color);
-  color: var(--secondary-color);
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.1rem;
-  position: relative;
   z-index: 3;
 
   &__content {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
     padding: 1rem;
     box-sizing: border-box;
     z-index: 4;
-
-    &__name {
-      h1 {
-        font-size: 5vw;
-      }
-    }
-
-    &__occupation {
-      h2 {
-        font-size: 2vw;
-      }
-    }
   }
 
   &__chevron {
-    position: absolute;
-    left: 0;
-    font-size: 4vw;
-    color: var(--secondary-color);
     opacity: 0;
     transition: opacity 0.4s ease, left 0.8s ease;
   }

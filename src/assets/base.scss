@@ -1,0 +1,457 @@
+@import url("main.scss");
+
+/* ------------------------------------ */
+/* Display */
+/* ------------------------------------ */
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-rev {
+  flex-direction: row-reverse;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-col-rev {
+  flex-direction: column-reverse;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap-rev {
+  flex-wrap: wrap-reverse;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.grid {
+  display: grid;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.gap-1-5 {
+  gap: 1.5rem;
+}
+
+.gap-2 {
+  gap: 2rem;
+}
+
+.gap-2-5 {
+  gap: 2.5rem;
+}
+
+.gap-3 {
+  gap: 3rem;
+}
+
+.gap-3-5 {
+  gap: 3.5rem;
+}
+
+.gap-4 {
+  gap: 4rem;
+}
+
+.gap-4-5 {
+  gap: 4.5rem;
+}
+
+.gap-5 {
+  gap: 5rem;
+}
+
+.gap-6 {
+  gap: 6rem;
+}
+
+.gap-7 {
+  gap: 7rem;
+}
+
+.gap-8 {
+  gap: 8rem;
+}
+
+.gap-9 {
+  gap: 9rem;
+}
+
+.gap-10 {
+  gap: 10rem;
+}
+
+/* ------------------------------------ */
+/* Flexbox Alignment */
+/* ------------------------------------ */
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+/* ------------------------------------ */
+/* Size */
+/* ------------------------------------ */
+.height100p {
+  height: 100%;
+}
+
+.height100vh {
+  height: 100vh;
+}
+
+.width100p {
+  width: 100%;
+}
+
+.width100vw {
+  width: 100vw;
+}
+
+/* ------------------------------------ */
+/* Positioning */
+/* ------------------------------------ */
+.pos-rel {
+  position: relative;
+}
+
+.pos-abs {
+  position: absolute;
+}
+
+.pos-fix {
+  position: fixed;
+}
+
+.top {
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+}
+
+/* ------------------------------------ */
+/* Overflow */
+/* ------------------------------------ */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+/* ------------------------------------ */
+/* Coloring */
+/* ------------------------------------ */
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color);
+}
+
+.bg-secondary-light {
+  background-color: var(--secondary-color-light);
+}
+
+.bg-canvas {
+  background-color: var(--canvas-color);
+}
+
+.bg-accent {
+  background-color: var(--accent-color);
+}
+
+.bg-title-card {
+  background-color: var(--title-card-color);
+}
+
+.color-primary {
+  color: var(--primary-color);
+}
+
+.color-secondary {
+  color: var(--secondary-color);
+}
+
+.color-secondary-light {
+  color: var(--secondary-color-light);
+}
+
+.color-canvas {
+  color: var(--canvas-color);
+}
+
+.color-accent {
+  color: var(--accent-color);
+}
+
+.color-accent-hover:hover {
+  color: var(--accent-color);
+}
+
+/* ------------------------------------ */
+/* Borders */
+/* ------------------------------------ */
+.border-standard {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--canvas-color);
+}
+
+.border-1 {
+  border-width: 1px;
+}
+
+.border-solid {
+  border-style: solid;
+}
+
+.border-primary {
+  border-color: var(--primary-color);
+}
+
+.border-secondary {
+  border-color: var(--secondary-color);
+}
+
+.border-canvas {
+  border-color: var(--canvas-color);
+}
+
+.border-accent {
+  border-color: var(--accent-color);
+}
+
+/* ------------------------------------ */
+/* Typography */
+/* ------------------------------------ */
+.font-size-1 {
+  font-size: 1rem;
+}
+
+.font-size-1-25 {
+  font-size: 1.25rem;
+}
+
+.font-size-1-5 {
+  font-size: 1.5rem;
+}
+
+.font-size-1-75 {
+  font-size: 1.75rem;
+}
+
+.font-size-2 {
+  font-size: 2rem;
+}
+
+.font-size-2-25 {
+  font-size: 2.25rem;
+}
+
+.font-size-2-5 {
+  font-size: 2.5rem;
+}
+
+.font-size-2-75 {
+  font-size: 2.75rem;
+}
+
+.font-size-3 {
+  font-size: 3rem;
+}
+
+.font-size-3-25 {
+  font-size: 3.25rem;
+}
+
+.font-size-3-5 {
+  font-size: 3.5rem;
+}
+
+.font-size-3-75 {
+  font-size: 3.75rem;
+}
+
+.font-size-4 {
+  font-size: 4rem;
+}
+
+.font-size-4-25 {
+  font-size: 4.25rem;
+}
+
+.font-size-4-5 {
+  font-size: 4.5rem;
+}
+
+.font-size-4-75 {
+  font-size: 4.75rem;
+}
+
+.font-size-5 {
+  font-size: 5rem;
+}
+
+.line-height-1 {
+  line-height: 1em;
+}
+
+.line-height-1-25 {
+  line-height: 1.25em;
+}
+
+.line-height-1-5 {
+  line-height: 1.5em;
+}
+
+.line-height-1-75 {
+  line-height: 1.75em;
+}
+
+.line-height-2 {
+  line-height: 2em;
+}
+
+.line-height-2-25 {
+  line-height: 2.25em;
+}
+
+.line-height-2-5 {
+  line-height: 2.5em;
+}
+
+.weight-1 {
+  font-weight: 100;
+}
+
+.weight-2 {
+  font-weight: 200;
+}
+
+.weight-3 {
+  font-weight: 300;
+}
+
+.weight-4 {
+  font-weight: 400;
+}
+
+.weight-5 {
+  font-weight: 500;
+}
+
+.weight-6 {
+  font-weight: 600;
+}
+
+.weight-7 {
+  font-weight: 700;
+}
+
+.weight-8 {
+  font-weight: 800;
+}
+
+.weight-9 {
+  font-weight: 900;
+}
+
+.spacing-1 {
+  letter-spacing: 1px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.deco-underlined {
+  text-decoration: underline;
+}
+
+.deco-none {
+  text-decoration: none;
+}
+
+.cursor-none {
+  cursor: none;
+}

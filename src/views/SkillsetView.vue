@@ -36,7 +36,9 @@ export default {
 
 <template>
   <div>
-    <div class="skillsets">
+    <div
+      class="skillsets width100p height100p pos-abs top right flex flex-col align-items-end gap-2-5"
+    >
       <Skill
         v-for="(skill, index) in skills"
         :key="index"
@@ -52,14 +54,6 @@ export default {
 <style lang="scss" scoped>
 .skillsets {
   width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  gap: 3vh;
-  flex-direction: column;
-  align-items: flex-end;
   padding: 2rem;
   box-sizing: border-box;
   overflow-y: auto;

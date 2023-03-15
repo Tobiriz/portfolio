@@ -10,22 +10,26 @@ export default {
 </script>
 
 <template>
-  <div class="school">
-    <div class="school__duration">
+  <div
+    class="school flex flex-col justify-content-center align-items-center color-secondary"
+  >
+    <div class="school__duration font-size-1-25 weight-4 spacing-1">
       {{ school.duration }}
     </div>
-    <div class="school__date">
+    <div class="school__date font-size-1-5 weight-4 spacing-1">
       {{ school.date }}
     </div>
-    <div class="school__title">
+    <div
+      class="school__title font-size-2-5 weight-7 spacing-1 text-uppercase color-accent text-center"
+    >
       {{ school.title }}
     </div>
-    <div class="school__description">
+    <div class="school__description flex flex-row gap-1 text-center">
       <div>
-        <div class="school__school">
+        <div class="school__school font-size-1-5 weight-4 spacing-1">
           {{ school.school }}
         </div>
-        <div class="school__location">
+        <div class="school__location font-size-1-25 weight-4 spacing-1">
           {{ school.location }}
         </div>
       </div>
@@ -35,53 +39,10 @@ export default {
 
 <style lang="scss" scoped>
 .school {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: var(--secondary-color);
-  padding-bottom: 5vh;
-  width: 100%;
-
-  &__duration {
-    font-size: 1.2vw;
-    font-weight: 400;
-    letter-spacing: 0.1rem;
-  }
-
-  &__date {
-    font-size: 1.6vw;
-    font-weight: 400;
-    letter-spacing: 0.1rem;
-  }
+  padding-bottom: 3rem;
 
   &__title {
-    font-size: 2.5vw;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    color: var(--accent-color);
     padding: 0.5rem 0;
-  }
-
-  &__description {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    text-align: center;
-  }
-
-  &__school {
-    font-size: 1.6vw;
-    font-weight: 400;
-    letter-spacing: 0.1rem;
-  }
-
-  &__location {
-    font-size: 1.2vw;
-    font-weight: 400;
-    letter-spacing: 0.1rem;
   }
 }
 

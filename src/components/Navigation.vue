@@ -120,31 +120,45 @@ export default {
   <font-awesome-icon
     v-if="!this.navigationActive"
     icon="fa-solid fa-bars"
-    class="icon"
+    class="icon pos-fix color-secondary"
     @click="toggleMenu"
     size="2x"
   />
   <font-awesome-icon
     v-else
     icon="fa-solid fa-xmark"
-    class="icon"
+    class="icon pos-fix color-secondary"
     @click="toggleMenu"
     size="2x"
   />
   <div class="navigation-blur" @click="toggleMenu()"></div>
 
-  <div class="navigation">
-    <div class="navigation__links">
-      <RouterLink :to="{ name: 'about' }">
+  <div
+    class="navigation height100p flex flex-col justify-content-between align-items-start font-size-1-5 weight-7 text-uppercase spacing-1"
+  >
+    <div class="navigation__links flex flex-col gap-2 font-size-2">
+      <RouterLink
+        :to="{ name: 'about' }"
+        class="color-secondary-light color-accent-hover deco-none cursor-none"
+      >
         {{ about.viewName }}
       </RouterLink>
-      <RouterLink :to="{ name: 'skillset' }">
+      <RouterLink
+        :to="{ name: 'skillset' }"
+        class="color-secondary-light color-accent-hover deco-none cursor-none"
+      >
         {{ skillset.viewName }}
       </RouterLink>
-      <RouterLink :to="{ name: 'projects' }">
+      <RouterLink
+        :to="{ name: 'projects' }"
+        class="color-secondary-light color-accent-hover deco-none cursor-none"
+      >
         {{ projects.viewName }}
       </RouterLink>
-      <RouterLink :to="{ name: 'contact' }">
+      <RouterLink
+        :to="{ name: 'contact' }"
+        class="color-secondary-light color-accent-hover deco-none cursor-none"
+      >
         {{ contact.viewName }}
       </RouterLink>
     </div>
@@ -154,44 +168,20 @@ export default {
 
 <style lang="scss" scoped>
 .navigation {
-  position: fixed;
   top: 2vh;
   left: 1vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
   z-index: 5;
 
   &__links {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
     padding: 5vh 2vw;
     padding-bottom: 0;
-
-    a {
-      font-size: 1.8vw;
-      color: var(--secondary-color-light);
-      text-decoration: none;
-
-      &:hover {
-        color: var(--accent-color);
-      }
-    }
   }
 }
 
 .icon {
   display: none;
-  position: fixed;
   top: 1rem;
   left: 1rem;
-  color: var(--secondary-color);
   z-index: 6;
 }
 

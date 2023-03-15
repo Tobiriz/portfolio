@@ -12,17 +12,21 @@ export default {
 </script>
 
 <template>
-  <div class="content-container">
-    <div class="content-container__content">
-      <section class="content-container__content__navigation">
+  <div class="content-container pos-abs height100vh width100vw overflow-hidden">
+    <div
+      class="content-container__content pos-abs flex flex-row border-standard"
+    >
+      <section class="content-container__content__navigation height100p">
         <Navigation />
       </section>
 
       <section>
-        <div class="content-container__content__line"></div>
+        <div
+          class="content-container__content__line height100p bg-canvas"
+        ></div>
       </section>
 
-      <section class="content-container__content__view">
+      <section class="content-container__content__view height100p">
         <RouterView v-slot="{ Component }">
           <Transition name="fade" mode="out-in">
             <Component :is="Component" />
@@ -35,40 +39,28 @@ export default {
 
 <style lang="scss" scoped>
 .content-container {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
   z-index: 1;
 
   &__content {
-    position: absolute;
     top: 1rem;
     left: 1rem;
     width: calc(100% - 2rem);
     height: calc(100% - 2rem);
-    border: 1px solid var(--canvas-color);
     border-radius: 2px;
     box-sizing: border-box;
     box-shadow: 0 0 20px 5px var(--secondary-color),
       0 0 0 50px var(--primary-color);
-    display: flex;
-    flex-direction: row;
 
     &__navigation {
       width: 15vw;
-      height: 100%;
     }
 
     &__line {
       width: 1px;
-      height: 100%;
-      background-color: var(--canvas-color);
     }
 
     &__view {
       width: 85vw;
-      height: 100%;
     }
   }
 }

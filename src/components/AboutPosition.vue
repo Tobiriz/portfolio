@@ -460,10 +460,10 @@ export default {
 
 <style lang="scss" scoped>
 .position-container {
-  position: fixed;
-  left: 2vw;
+  position: absolute;
+  right: 2vw;
   bottom: 4rem;
-  height: 30vh;
+  height: 25vh;
   width: 10vw;
   box-sizing: border-box;
   display: grid;
