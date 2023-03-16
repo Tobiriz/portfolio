@@ -45,7 +45,7 @@ export default {
 <template>
   <div>
     <div id="blob"></div>
-    <div id="blur"></div>
+    <div id="blob-blur"></div>
 
     <div id="cursor">
       <div id="cursor-shadow"></div>
@@ -65,27 +65,27 @@ export default {
 
 <style lang="scss" scoped>
 #cursor {
-  position: absolute;
+  position: fixed;
   width: 4px;
   height: 4px;
   border-radius: 50%;
   translate: -50% -50%;
   background: rgba(0, 0, 0, 0);
-  border: 2px solid var(--secondary-color);
+  border: 2px solid var(--color-secondary);
   z-index: 1000;
   pointer-events: none;
   transition: width 0.3s ease, height 0.3s ease;
 
   #cursor-shadow {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     width: 0px;
     height: 0px;
     border-radius: 50%;
     z-index: 999;
-    box-shadow: 0 0 5px 5px var(--accent-color);
+    box-shadow: 0 0 5px 5px var(--color-accent);
   }
 }
 
@@ -105,10 +105,10 @@ export default {
   }
 }
 
-#blur {
-  height: 100%;
-  width: 100%;
-  position: absolute;
+#blob-blur {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
   z-index: -1;
   backdrop-filter: blur(200px);
 }
@@ -121,7 +121,7 @@ export default {
   );
   height: 500px;
   width: 500px;
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   translate: -50% -50%;

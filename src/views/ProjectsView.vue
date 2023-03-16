@@ -21,10 +21,8 @@ export default {
 </script>
 
 <template>
-  <div class="projects flex flex-col height100p pad-5 border-box">
-    <div
-      class="projects-container flex flex-row gap-2 flex-wrap justify-content-between"
-    >
+  <div class="projects">
+    <div class="projects-container">
       <Project
         v-for="project in projects"
         :key="project.id"
@@ -36,7 +34,10 @@ export default {
 
 <style lang="scss" scoped>
 .projects {
-  overflow-y: auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
 
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -44,5 +45,15 @@ export default {
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-auto-rows: minmax(300px, auto);
+  grid-gap: 2rem;
+  column-gap: 2rem;
+  justify-items: start;
+  align-items: center;
 }
 </style>

@@ -35,9 +35,7 @@ export default {
 </script>
 
 <template>
-  <div
-    class="skillsets height100p pos-abs top right flex flex-col align-items-end gap-2-5"
-  >
+  <div class="skillsets">
     <Skill
       v-for="(skill, index) in skills"
       :key="index"
@@ -53,25 +51,29 @@ export default {
 .skillsets {
   padding: 2rem;
   padding-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2.5rem;
   box-sizing: border-box;
   overflow-y: auto;
-  width: 80%;
+}
 
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
+@media screen and (max-width: 1279px) {
+  .skillsets {
+    gap: 2rem;
   }
 }
 
-//screen width < 768px
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 700px) {
   .skillsets {
-    padding: 5vh 1vw 5vh 4vw;
-    width: 100dvw;
-    box-sizing: border-box;
-    gap: 5vw;
+    padding-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .skillsets {
+    padding: 1rem;
   }
 }
 </style>

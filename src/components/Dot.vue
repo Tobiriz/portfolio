@@ -37,7 +37,7 @@ export default {
 
 <template>
   <div
-    class="dot bg-secondary-light bg-accent-hover border-box"
+    class="dot"
     :class="{ 'dot--active': index === active }"
     @click="handleMouseClick"
     @mouseover="handleMouseOver"
@@ -50,10 +50,16 @@ export default {
   width: 0.6rem;
   height: 0.6rem;
   border-radius: 50%;
+  background-color: var(--color-secondary-light);
+  box-sizing: border-box;
   transition: all 0.3s ease-in-out;
 
   &--active {
     background-color: var(--secondary-color);
+  }
+
+  &:hover {
+    background-color: var(--accent-color);
   }
 }
 </style>

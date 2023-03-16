@@ -40,13 +40,11 @@ export default {
 </script>
 
 <template>
-  <div
-    class="options flex flex-row gap-2 justify-content-center align-items-center"
-  >
-    <div class="options__language text-left">
+  <div class="options">
+    <div class="options__language">
       <p
         v-show="store.languageEnglish"
-        class="language-selector color-secondary-light color-accent-hover font-size-1-5 flex flex-row"
+        class="language-selector"
         @mouseover="handleMouseOver()"
         @mouseleave="handleMouseLeave()"
         @click="handleMouseClick('setLanguageGerman')"
@@ -57,7 +55,7 @@ export default {
       </p>
       <p
         v-show="store.languageGerman"
-        class="language-selector color-secondary-light color-accent-hover font-size-1-5 flex flex-row"
+        class="language-selector"
         @mouseover="handleMouseOver()"
         @mouseleave="handleMouseLeave()"
         @click="handleMouseClick('setLanguageEnglish')"
@@ -71,7 +69,7 @@ export default {
       <Transition>
         <font-awesome-icon
           icon="fa-solid fa-moon"
-          class="icon color-secondary-light color-accent-hover font-size-1-5 pos-rel"
+          class="icon"
           @mouseover="handleMouseOver()"
           @mouseleave="handleMouseLeave()"
           @click="handleMouseClick('setDarkMode')"
@@ -81,7 +79,7 @@ export default {
       <Transition>
         <font-awesome-icon
           icon="fa-solid fa-sun"
-          class="icon color-secondary-light color-accent-hover font-size-1-5 pos-rel"
+          class="icon"
           @mouseover="handleMouseOver()"
           @mouseleave="handleMouseLeave()"
           @click="handleMouseClick('setLightMode')"
@@ -93,38 +91,57 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.language-selector {
-  gap: 1px;
-}
 .options {
-  align-self: center;
-  padding: 2vh 0 5vh 0;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
 
-  .div {
-    width: 100%;
+  .options__language {
+    text-align: start;
+
+    .language-selector {
+      display: flex;
+      flex-direction: row;
+      gap: 2px;
+      color: var(--color-secondary-light);
+      font-size: 1.5rem;
+
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+
+  .options__theme {
+    .icon {
+      position: relative;
+      color: var(--color-secondary-light);
+      font-size: 1.5rem;
+
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
   }
 }
 
 //screen width < 768px
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1279px) {
   .options {
+    align-self: flex-start;
+    padding-left: 2rem;
     .icon {
-      font-size: 5vw;
+      font-size: 2rem;
     }
     .language-selector {
-      font-size: 5vw;
+      font-size: 2rem;
     }
   }
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-width: 500px) {
   .options {
-    .icon {
-      font-size: 5vh;
-    }
-    .language-selector {
-      font-size: 5vh;
-    }
+    align-self: center;
   }
 }
 

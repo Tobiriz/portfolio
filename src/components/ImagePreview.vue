@@ -176,14 +176,11 @@ export default {
 </script>
 
 <template>
-  <div class="image-preview pos-fix top-left width100p height100p grid">
-    <div
-      class="overlay pos-fix top-left width100p height100p"
-      @click="$emit('close')"
-    ></div>
+  <div class="image-preview">
+    <div class="overlay" @click="$emit('close')"></div>
 
     <div
-      class="close-preview color-secondary-light pos-rel"
+      class="close-preview"
       @click="$emit('close')"
       @mouseover="handleCloseIconMouseOver"
       @mouseleave="handleCloseIconMouseLeave"
@@ -192,12 +189,12 @@ export default {
       <font-awesome-icon
         icon="fa-solid fa-xmark"
         size="2x"
-        class="icon--close pos-abs color-secondary-light"
+        class="icon--close"
       />
     </div>
 
     <div
-      class="cicle-image prev-image color-secondary-light pos-rel"
+      class="cicle-image prev-image"
       @click="previousImage"
       @mouseover="handlePrevIconMouseOver"
       @mouseleave="handlePrevIconMouseLeave"
@@ -206,26 +203,20 @@ export default {
       <div class="shadow shadow--prev"></div>
       <font-awesome-icon
         icon="fa-solid fa-chevron-left"
-        class="icon--cicle icon--prev pos-abs color-secondary-light"
+        class="icon--cicle icon--prev"
         size="2x"
       />
     </div>
 
-    <div
-      class="preview-container pos-rel bg-primary flex flex-col justify-content-start align-items-center gap-1 pad-1 border-box"
-    >
-      <div
-        class="image-container flex flex-row justify-content-center align-items-center"
-      >
-        <div class="image width100p height100p">
+    <div class="preview-container">
+      <div class="image-container">
+        <div class="image">
           <img :src="image" alt="image" />
         </div>
       </div>
 
-      <div
-        class="image-description width100p color-secondary flex flex-col gap-0-5 width100p justify-content-center align-items-center"
-      >
-        <div class="active-image-index flex flex-row gap-2">
+      <div class="image-description">
+        <div class="active-image-index">
           <Dot
             v-for="(dot, index) in imageArrayLength"
             :key="index"
@@ -235,13 +226,13 @@ export default {
             v-if="imageArrayLength > 1"
           />
         </div>
-        <div class="font-size-1-5 weight-7">{{ title }}</div>
-        <div class="font-size-1 weight-4">{{ description }}</div>
+        <div class="image-title">{{ title }}</div>
+        <div class="image-text">{{ description }}</div>
       </div>
     </div>
 
     <div
-      class="cicle-image next-image color-secondary-light pos-rel"
+      class="cicle-image next-image"
       @click="nextImage"
       @mouseover="handleNextIconMouseOver"
       @mouseleave="handleNextIconMouseLeave"
@@ -250,7 +241,7 @@ export default {
       <div class="shadow shadow--next"></div>
       <font-awesome-icon
         icon="fa-solid fa-chevron-right"
-        class="icon--cicle icon--next pos-abs color-secondary-light"
+        class="icon--cicle icon--next"
         size="2x"
       />
     </div>
@@ -261,44 +252,80 @@ export default {
 
 <style lang="scss" scoped>
 .image-preview {
-  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
   grid-template-columns: 1fr auto 1fr;
   grid-template-rows: 1fr auto 1fr;
   justify-self: center;
+  z-index: 100;
 
   .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 100;
   }
 
-  .placeholder {
-    grid-column: 2;
-    grid-row: 3;
-    height: 5rem;
-  }
-
   .close-preview {
+    position: relative;
     bottom: -50%;
     width: 90%;
     height: clamp(2rem, 70%, 4rem);
+    color: var(--color-secondary-light);
+    transform: translateY(-50%);
     grid-column: 2;
     grid-row: 1;
     place-self: center center;
     z-index: 101;
-    transform: translateY(-50%);
 
     .icon--close {
+      position: absolute;
       top: 50%;
       left: 50%;
+      color: var(--color-secondary-light);
       transform: translate(-50%, -50%);
       transition: color 0.3s ease-in-out;
       z-index: 102;
     }
   }
 
+  .shadow {
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.6s ease, box-shadow 0.6s ease;
+    opacity: 0.5;
+    z-index: 100;
+
+    &--active {
+      background-color: var(--color-border);
+      box-shadow: 0 0 20px 5px var(--color-border);
+    }
+
+    &--prev {
+      border-radius: 50% 0 0 50%;
+    }
+
+    &--next {
+      border-radius: 0 50% 50% 0;
+    }
+
+    &--close {
+      border-radius: 50% 50% 0 0;
+    }
+  }
+
   .cicle-image {
+    position: relative;
     width: clamp(2rem, 70%, 5rem);
     height: 90%;
+    color: var(--color-secondary-light);
   }
 
   .prev-image {
@@ -320,72 +347,93 @@ export default {
   }
 
   .icon--cicle {
+    position: absolute;
     top: 50%;
     left: 50%;
+    color: var(--color-secondary-light);
     transform: translate(-50%, -50%);
     transition: color 0.3s ease-in-out;
     z-index: 102;
   }
 
   .icon--active {
-    color: var(--accent-color) !important;
-  }
-
-  .shadow {
-    width: 100%;
-    height: 100%;
-    transition: background-color 0.6s ease, box-shadow 0.6s ease;
-    opacity: 0.5;
-    z-index: 100;
-
-    &--active {
-      background-color: var(--canvas-color);
-      box-shadow: 0 0 20px 5px var(--canvas-color);
-    }
-
-    &--prev {
-      border-radius: 50% 0 0 50%;
-    }
-
-    &--next {
-      border-radius: 0 50% 50% 0;
-    }
-
-    &--close {
-      border-radius: 50% 50% 0 0;
-    }
+    color: var(--color-accent) !important;
   }
 
   .preview-container {
+    position: relative;
     max-width: 70vw;
+    padding: 1rem;
+    background-color: var(--color-primary);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
     grid-column: 2;
     grid-row: 2;
     place-self: center center;
-    box-shadow: 0 0 3px 1px var(--canvas-color);
+
+    box-sizing: border-box;
+    box-shadow: 0 0 3px 1px var(--color-border);
     z-index: 101;
 
     .image-container {
       height: 80%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
 
       .image {
-        border: 1px solid var(--canvas-color);
-        box-shadow: 0 0 10px 0 var(--canvas-color);
+        height: 100%;
+        width: 100%;
+        border: 1px solid var(--color-border);
+        box-shadow: 0 0 10px 0 var(--color-border);
 
         img {
           border-radius: 5px;
           height: 100%;
           width: 100%;
-
           object-fit: contain;
         }
       }
+    }
 
-      .image-description {
-        justify-self: center;
+    .image-description {
+      width: 100%;
+      color: var(--color-secondary);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      justify-self: center;
+
+      .active-image-index {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        padding-bottom: 1rem;
+      }
+
+      .image-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      .image-text {
+        font-size: 1rem;
+        font-weight: 400;
       }
     }
-    .active-image-index {
-      padding-bottom: 1rem;
+
+    .placeholder {
+      grid-column: 2;
+      grid-row: 3;
+      height: 5rem;
     }
   }
 }

@@ -10,30 +10,26 @@ export default {
 </script>
 
 <template>
-  <div
-    class="job flex flex-col justify-content-center align-items-center flex-nowrap color-secondary"
-  >
-    <div class="job__duration font-size-1-25 weight-4 spacing-1">
+  <div class="job">
+    <div class="job__duration">
       {{ job.duration }}
     </div>
-    <div class="job__date font-size-1-5 weight-4 spacing-1">
+    <div class="job__date">
       {{ job.date }}
     </div>
-    <div
-      class="job__title font-size-2-5 weight-7 spacing-1 text-uppercase color-accent text-center"
-    >
+    <div class="job__title">
       {{ job.title }}
     </div>
 
-    <div class="job__description flex flex-row gap-1 text-center">
+    <div class="job__description">
       <div>
-        <div class="job__company font-size-1-5 weight-4 spacing-1">
+        <div class="job__company">
           {{ job.company }}
         </div>
-        <div class="job__location font-size-1-25 weight-4 spacing-1">
+        <div class="job__location">
           {{ job.location }}
         </div>
-        <div class="job__details font-size-1-25 weight-4">
+        <div class="job__details">
           {{ job.description }}
         </div>
       </div>
@@ -43,45 +39,114 @@ export default {
 
 <style lang="scss" scoped>
 .job {
-  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  color: var(--color-secondary);
+  text-align: center;
+
+  &__duration {
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+
+  &__date {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
 
   &__title {
-    padding: 0.5rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin: 0.5rem;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  &__company {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+
+  &__location {
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 1px;
   }
 
   &__details {
-    padding: 1rem 0;
+    font-size: 1.25rem;
+    font-weight: 400;
   }
 }
 
-//screen width < 768px
-@media screen and (max-width: 48rem) {
+@media screen and (max-width: 1366px) {
   .job {
-    padding: 0 1rem;
-    padding-bottom: 3vh;
+    max-width: 90%;
 
     &__duration {
-      font-size: 2vw;
+      font-size: 1rem;
     }
 
     &__date {
-      font-size: 3vw;
+      font-size: 1.25rem;
     }
 
     &__title {
-      font-size: 4vw;
+      font-size: 2rem;
     }
 
     &__company {
-      font-size: 3vw;
+      font-size: 1.25rem;
     }
 
     &__location {
-      font-size: 2vw;
+      font-size: 1rem;
     }
 
-    &__description {
-      font-size: 2.5vw;
+    &__details {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+@media screen and (max-width: 412px) {
+  .job {
+    &__duration {
+      font-size: 0.75rem;
+    }
+
+    &__date {
+      font-size: 1rem;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+    }
+
+    &__company {
+      font-size: 1rem;
+    }
+
+    &__location {
+      font-size: 0.75rem;
+    }
+
+    &__details {
+      font-size: 1rem;
     }
   }
 }

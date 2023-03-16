@@ -83,10 +83,8 @@ export default {
 </script>
 
 <template>
-  <div
-    class="project flex flex-col gap-2 pad-3 justify-content-start align-items-start color-secondary"
-  >
-    <div class="project__image-container width100p" v-if="image">
+  <div class="project">
+    <div class="project__image-container" v-if="image">
       <img
         :src="image"
         alt="project image"
@@ -96,15 +94,15 @@ export default {
       />
     </div>
 
-    <div class="project__title font-size-2 weight-7 spacing-1">
+    <div class="project__title">
       {{ title }}
     </div>
 
-    <div class="project__details flex flex-col">
-      <div class="project__details__description font-size-1 weight-4 spacing-1">
+    <div class="project__details">
+      <div class="project__details__description">
         {{ description }}
       </div>
-      <div class="project__details__link font-size-1 weight-4">
+      <div class="project__details__link">
         {{ link }}
       </div>
     </div>
@@ -119,30 +117,55 @@ export default {
 
 <style lang="scss" scoped>
 .project {
-  flex: 1 1 40%;
-  max-width: 40%;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+  color: var(--color-secondary);
 
   &__image-container {
+    width: 100%;
     border-radius: 1px;
     transition: outline-offset 0.3s ease-in-out, outline-width 0.2s ease-in-out;
     outline-offset: 0px;
     outline-width: 0px;
 
     &:hover {
-      outline: 2px solid var(--accent-color);
+      outline: 2px solid var(--color-accent);
       outline-offset: 5px;
     }
 
     img {
       width: 100%;
       object-fit: contain;
-      border: 2px solid var(--canvas-color);
+      border: 2px solid var(--color-accent);
       box-sizing: border-box;
     }
   }
 
-  &details {
-    padding-top: 1rem;
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &__description {
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.1rem;
+    }
+
+    &__link {
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
   }
 }
 </style>

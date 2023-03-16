@@ -41,27 +41,23 @@ export default {
 </script>
 
 <template>
-  <div class="about-container flex flex-col height100p gap-10">
-    <div class="about-container__about-me flex flex-col gap-3">
-      <div class="about-container__about-me__title font-size-3">
+  <div class="about-container">
+    <div class="about-container__about-me">
+      <div class="about-container__about-me__title">
         <h2>{{ about.aboutMeHeading }}</h2>
       </div>
-      <div class="about-container__about-me__content color-secondary">
-        <div
-          class="about-container__about-me__content__image-container pos-rel"
-        >
+      <div class="about-container__about-me__content">
+        <div class="about-container__about-me__content__image-container">
           <img
             src="@/assets/images/tobiasweinlich.jpg"
             alt="Tobias Weinlich"
             class="image"
           />
           <div
-            class="about-container__about-me__content__image-container__image-overlay pos-abs width100p top-left"
+            class="about-container__about-me__content__image-container__image-overlay"
           ></div>
         </div>
-        <div
-          class="about-container__about-me__content__text font-size-1-5 line-height-1-5"
-        >
+        <div class="about-container__about-me__content__text">
           <p>
             {{ section1 }}
           </p>
@@ -75,28 +71,22 @@ export default {
       </div>
     </div>
 
-    <div
-      class="about-container__my-work-experience flex flex-col align-items-center gap-5"
-    >
-      <div class="about-container__my-work-experience__title font-size-3">
+    <div class="about-container__my-work-experience">
+      <div class="about-container__my-work-experience__title">
         <h2>{{ about.myWorkExperienceHeading }}</h2>
       </div>
 
-      <div
-        class="about-container__my-work-experience__jobs flex flex-col gap-5"
-      >
+      <div class="about-container__my-work-experience__jobs">
         <Job v-for="job in about.jobs" :key="job.id" :job="job" />
       </div>
     </div>
 
-    <div
-      class="about-container__my-education flex flex-col align-items-center gap-5"
-    >
-      <div class="about-container__my-education__title font-size-3">
+    <div class="about-container__my-education">
+      <div class="about-container__my-education__title">
         <h2>{{ about.myEducationHeading }}</h2>
       </div>
 
-      <div class="about-container__my-education__schools flex flex-col gap-5">
+      <div class="about-container__my-education__schools">
         <School
           v-for="school in about.schools"
           :key="school.id"
@@ -114,144 +104,247 @@ h2 {
 }
 
 .about-container {
-  padding: 5vh 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+  padding: 3rem 2rem;
+  padding-bottom: 10rem;
   box-sizing: border-box;
-  overflow-y: auto;
+  color: var(--color-secondary);
 
+  /*
   -ms-overflow-style: none;
   scrollbar-width: none;
 
   &::-webkit-scrollbar {
     display: none;
   }
+  */
 
-  &__about-me__content {
-    font-weight: 400;
-    text-align: justify;
+  &__about-me {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    &__title {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    &__content {
+      font-weight: 400;
+      text-align: justify;
+
+      &__image-container {
+        position: relative;
+        margin: 0 0 1rem 1rem;
+        float: right;
+        z-index: -1;
+
+        .image {
+          width: 15vw;
+          height: auto;
+          z-index: -1;
+        }
+
+        &__image-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          box-shadow: inset 0 0 6px 8px var(--primary-color);
+        }
+      }
+
+      &__text {
+        font-size: 1.5rem;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  &__my-work-experience {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+
+    &__title {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    &__jobs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6rem;
+    }
+  }
+
+  &__my-education {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+
+    &__title {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    &__schools {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1536px) {
+  .about-container {
+    gap: 7rem;
+
+    &__about-me {
+      &__title {
+        font-size: 2.25rem;
+      }
+
+      &__content__text {
+        font-size: 1.25rem;
+      }
+    }
+
+    &__my-work-experience {
+      &__title {
+        font-size: 2.25rem;
+      }
+
+      &__jobs {
+        gap: 2rem;
+      }
+    }
+
+    &__my-education {
+      &__title {
+        font-size: 2.25rem;
+      }
+
+      &__schools {
+        gap: 2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .about-container {
+    gap: 7rem;
+
+    &__content {
+      flex-direction: column;
+    }
+
+    &__about-me {
+      &__title {
+        font-size: 2rem;
+      }
+
+      &__content__text {
+        font-size: 1.25rem;
+        line-height: 1.6rem;
+      }
+    }
+
+    &__my-work-experience {
+      gap: 3rem;
+
+      &__title {
+        font-size: 2rem;
+      }
+
+      &__jobs {
+        gap: 2rem;
+      }
+    }
+
+    &__my-education {
+      gap: 3rem;
+
+      &__title {
+        font-size: 2rem;
+      }
+
+      &__schools {
+        gap: 2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .about-container {
+    gap: 7rem;
+
+    &__about-me {
+      align-items: center;
+
+      &__content {
+        &__title {
+          font-size: 1.75rem;
+        }
+
+        &__text {
+          font-size: 1.1rem;
+          line-height: 1.4rem;
+        }
+      }
+    }
+
+    &__my-work-experience {
+      gap: 3rem;
+
+      &__title {
+        font-size: 1.75rem;
+        text-align: center;
+      }
+
+      &__jobs {
+        gap: 4rem;
+      }
+    }
+
+    &__my-education {
+      gap: 3rem;
+
+      &__title {
+        font-size: 1.75rem;
+        text-align: center;
+      }
+
+      &__schools {
+        gap: 4rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .about-container__about-me__content {
+    flex-direction: column;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 1rem;
 
     &__image-container {
-      float: right;
-      margin: 0 0 1rem 1rem;
+      float: none;
 
       .image {
-        width: 15vw;
+        width: clamp(100px, 30vw, 200px);
         height: auto;
-      }
-
-      &__image-overlay {
-        height: 99%;
-        box-shadow: inset 0 0 6px 8px var(--primary-color);
-      }
-    }
-  }
-}
-
-//screen width < 768px
-@media screen and (max-width: 768px), screen and (max-height: 600px) {
-  .about-container {
-    gap: 3rem;
-    padding: 4vh 2vw;
-    width: 100dvw;
-    height: 100dvh;
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    &__about-me {
-      gap: 1rem;
-
-      &__title {
-        font-size: 4vw;
-        text-align: center;
-      }
-
-      &__content {
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-
-        &__text {
-          font-size: 2.5vw;
-          line-height: 3.5vw;
-          padding: 0 1rem;
-        }
-
-        &__image-container {
-          margin: 0 0 1rem 1rem;
-
-          .image {
-            width: 20vw;
-            height: auto;
-          }
-        }
-      }
-    }
-
-    &__my-work-experience {
-      &__title {
-        font-size: 4vw;
-      }
-    }
-
-    &__my-education {
-      &__title {
-        font-size: 4vw;
-      }
-    }
-  }
-}
-
-@media screen and (max-height: 600px) {
-  .about-container {
-    gap: 3rem;
-    padding: 4vh 2vw;
-    width: 100dvw;
-    height: 100dvh;
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    &__about-me {
-      gap: 1rem;
-
-      &__title {
-        font-size: 8vh;
-        text-align: center;
-      }
-
-      &__content {
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-
-        &__text {
-          font-size: 4vh;
-          line-height: 6vh;
-          padding: 0 1rem;
-        }
-
-        &__image-container {
-          margin: 0 0 1rem 1rem;
-
-          .image {
-            width: 20vw;
-            height: auto;
-          }
-        }
-      }
-    }
-
-    &__my-work-experience {
-      &__title {
-        font-size: 4vw;
-      }
-    }
-
-    &__my-education {
-      &__title {
-        font-size: 4vw;
       }
     }
   }

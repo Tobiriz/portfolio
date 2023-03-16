@@ -10,26 +10,23 @@ export default {
 </script>
 
 <template>
-  <div
-    class="school flex flex-col justify-content-center align-items-center color-secondary"
-  >
-    <div class="school__duration font-size-1-25 weight-4 spacing-1">
+  <div class="school">
+    <div class="school__duration">
       {{ school.duration }}
     </div>
-    <div class="school__date font-size-1-5 weight-4 spacing-1">
+    <div class="school__date">
       {{ school.date }}
     </div>
-    <div
-      class="school__title font-size-2-5 weight-7 spacing-1 text-uppercase color-accent text-center"
-    >
+    <div class="school__title">
       {{ school.title }}
     </div>
-    <div class="school__description flex flex-row gap-1 text-center">
+
+    <div class="school__description">
       <div>
-        <div class="school__school font-size-1-5 weight-4 spacing-1">
+        <div class="school__school">
           {{ school.school }}
         </div>
-        <div class="school__location font-size-1-25 weight-4 spacing-1">
+        <div class="school__location">
           {{ school.location }}
         </div>
       </div>
@@ -39,37 +36,99 @@ export default {
 
 <style lang="scss" scoped>
 .school {
-  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--color-secondary);
+
+  &__duration {
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+  }
+
+  &__date {
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+  }
 
   &__title {
-    padding: 0.5rem 0;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin: 0.5rem;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  &__school {
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+  }
+
+  &__location {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
   }
 }
 
-//screen width < 768px
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1366px) {
   .school {
-    padding: 0 1rem;
-    padding-bottom: 3vh;
+    max-width: 90%;
 
     &__duration {
-      font-size: 2vw;
+      font-size: 1rem;
     }
 
     &__date {
-      font-size: 3vw;
+      font-size: 1.25rem;
     }
 
     &__title {
-      font-size: 4vw;
+      font-size: 2rem;
     }
 
     &__school {
-      font-size: 3vw;
+      font-size: 1.25rem;
     }
 
     &__location {
-      font-size: 2vw;
+      font-size: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 412px) {
+  .school {
+    &__duration {
+      font-size: 0.75rem;
+    }
+
+    &__date {
+      font-size: 1rem;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+    }
+
+    &__school {
+      font-size: 1rem;
+    }
+
+    &__location {
+      font-size: 0.75rem;
     }
   }
 }

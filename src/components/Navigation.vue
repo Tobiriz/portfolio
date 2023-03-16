@@ -45,14 +45,23 @@ export default {
       setTimeout(() => {
         cursor.classList.remove("cursor--click");
       }, 300);
+      this.closeMenu();
     },
 
-    toggleMenu() {
+    openMenu() {
       const navigation = document.getElementsByClassName("navigation")[0];
       const blur = document.getElementsByClassName("navigation-blur")[0];
-      navigation.classList.toggle("navigation--active");
-      blur.classList.toggle("navigation-blur--active");
-      this.navigationActive = !this.navigationActive;
+      navigation.classList.add("navigation--active");
+      blur.classList.add("navigation-blur--active");
+      this.navigationActive = true;
+    },
+
+    closeMenu() {
+      const navigation = document.getElementsByClassName("navigation")[0];
+      const blur = document.getElementsByClassName("navigation-blur")[0];
+      navigation.classList.remove("navigation--active");
+      blur.classList.remove("navigation-blur--active");
+      this.navigationActive = false;
     },
   },
 };
@@ -62,26 +71,23 @@ export default {
   <font-awesome-icon
     v-if="!this.navigationActive"
     icon="fa-solid fa-bars"
-    class="icon pos-fix color-secondary"
-    @click="toggleMenu"
+    class="icon"
+    @click="openMenu"
     size="2x"
   />
   <font-awesome-icon
     v-else
     icon="fa-solid fa-xmark"
-    class="icon pos-fix color-secondary"
-    @click="toggleMenu"
+    class="icon"
+    @click="closeMenu"
     size="2x"
   />
   <div class="navigation-blur" @click="toggleMenu()"></div>
 
-  <div
-    class="navigation height100p flex flex-col justify-content-between align-items-start font-size-1-5 weight-7 text-uppercase spacing-1"
-  >
-    <div class="navigation__links flex flex-col gap-2 font-size-2">
+  <div class="navigation">
+    <div class="navigation__links">
       <RouterLink
         :to="{ name: 'about' }"
-        class="color-secondary-light color-accent-hover deco-none cursor-none"
         @mouseover="handleMouseOver()"
         @mouseleave="handleMouseLeave()"
         @click="handleMouseClick()"
@@ -90,7 +96,6 @@ export default {
       </RouterLink>
       <RouterLink
         :to="{ name: 'skillset' }"
-        class="color-secondary-light color-accent-hover deco-none cursor-none"
         @mouseover="handleMouseOver()"
         @mouseleave="handleMouseLeave()"
         @click="handleMouseClick()"
@@ -99,7 +104,6 @@ export default {
       </RouterLink>
       <RouterLink
         :to="{ name: 'projects' }"
-        class="color-secondary-light color-accent-hover deco-none cursor-none"
         @mouseover="handleMouseOver()"
         @mouseleave="handleMouseLeave()"
         @click="handleMouseClick()"
@@ -108,7 +112,6 @@ export default {
       </RouterLink>
       <RouterLink
         :to="{ name: 'contact' }"
-        class="color-secondary-light color-accent-hover deco-none cursor-none"
         @mouseover="handleMouseOver()"
         @mouseleave="handleMouseLeave()"
         @click="handleMouseClick()"
@@ -121,99 +124,114 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.navigation {
-  top: 2vh;
-  left: 1vw;
+.icon {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem;
+  color: var(--color-secondary);
+  background-color: var(--color-secondary-light);
+  border-radius: 50%;
+  aspect-ratio: 1/1;
   z-index: 5;
+}
 
-  &__links {
-    padding: 5vh 2vw;
-    padding-bottom: 0;
+.navigation-blur {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease-in-out;
+  z-index: 0;
+
+  &--active {
+    display: block;
   }
 }
 
-.icon {
-  display: none;
-  top: 1rem;
-  left: 1rem;
-  z-index: 6;
+.navigation {
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  z-index: 5;
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 5rem;
+    align-items: flex-start;
+
+    a {
+      font-size: 2rem;
+      text-decoration: none;
+      color: var(--color-secondary-light);
+      font-size: 2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .navigation__links {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .icon {
+    display: block;
+  }
+
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20rem;
+    height: 100vh;
+    padding-top: 4rem;
+    padding-left: 3rem;
+    background-color: var(--color-primary);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+
+    &--active {
+      transform: translateX(0);
+    }
+
+    &__links {
+      padding-bottom: 0;
+      font-size: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navigation {
+    align-items: center;
+    width: 100vw;
+    padding-top: 5rem;
+
+    &__links {
+      text-align: center;
+    }
+  }
 }
 
 .router-link-exact-active {
   color: var(--secondary-color);
-}
-
-//screen width < 768px
-@media screen and (max-height: 600px), screen and (max-width: 768px) {
-  .icon {
-    display: block;
-  }
-  .navigation {
-    transform: translateX(-100%);
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    border: 2px solid var(--secondary-color-light);
-    background-color: var(--primary-color);
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 2rem;
-    z-index: 5;
-    transition: all 0.3s ease-in-out;
-
-    &__links {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      padding: 10vh 2vw;
-
-      a {
-        font-size: 5vw;
-        color: var(--secondary-color-light);
-        text-decoration: none;
-
-        &:hover {
-          color: var(--accent-color);
-        }
-      }
-    }
-
-    &--active {
-      transform: translateX(0);
-      display: flex;
-    }
-  }
-
-  .navigation-blur {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--secondary-color-light);
-    backdrop-filter: blur(2px);
-    z-index: 5;
-
-    &--active {
-      display: block;
-    }
-  }
-}
-
-@media screen and (max-height: 600px) {
-  .navigation {
-    &__links {
-      padding: 5vh 2vw;
-      padding-bottom: 0;
-      gap: 1rem;
-
-      a {
-        font-size: 5vh;
-      }
-    }
-  }
 }
 </style>

@@ -3,7 +3,7 @@ import { createPinia } from "pinia";
 import App from "./App.vue";
 import Router from "./router";
 
-import "./assets/base.scss";
+import "./assets/main.scss";
 
 /* import the fontawesome core */
 import { library } from "@fortawesome/fontawesome-svg-core";

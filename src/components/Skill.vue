@@ -39,11 +39,9 @@ export default {
 </script>
 
 <template>
-  <div
-    class="skill flex flex-col justify-content-center align-items-end color-secondary-light"
-  >
+  <div class="skill">
     <div
-      class="skill__title color-accent-hover font-size-4 weight-7 text-uppercase spacing-1 text-end"
+      class="skill__title"
       :class="{ isActive: isActive }"
       @mouseover="handleMouseOver()"
       @mouseleave="handleMouseLeave()"
@@ -53,10 +51,7 @@ export default {
     </div>
 
     <Transition>
-      <div
-        class="skill__content text-end color-secondary font-size-1-75 weight-4 line-height-1-5"
-        v-show="isActive"
-      >
+      <div class="skill__content" v-show="isActive">
         <p>{{ content }}</p>
       </div>
     </Transition>
@@ -64,19 +59,66 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-//screen width < 768px
-@media screen and (max-width: 768px) {
+.skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  color: var(--color-secondary-light);
+
+  &__title {
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: end;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  &__content {
+    font-size: 1.75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: end;
+    color: var(--color-secondary);
+  }
+}
+
+@media screen and (max-width: 1500px) {
   .skill {
     &__title {
-      h3 {
-        font-size: 8vw;
-      }
+      font-size: 3rem;
     }
 
     &__content {
-      p {
-        font-size: 3.5vw;
-      }
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .skill {
+    &__title {
+      font-size: 2.5rem;
+    }
+
+    &__content {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill {
+    &__title {
+      font-size: 1.75rem;
+    }
+
+    &__content {
+      font-size: 1rem;
     }
   }
 }

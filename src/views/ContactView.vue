@@ -31,14 +31,13 @@ export default {
 
 <template>
   <div
-    class="contact-container height100p flex flex-col justify-content-center align-items-center gap-6 color-secondary"
+    class="contact-container"
   >
-    <div class="contact-container__section text-center">
-      <h1 class="deco-underlined font-size-2">{{ contact.email }}</h1>
+    <div class="contact-container__section">
+      <h1 class="contact-container__section__header">{{ contact.email }}</h1>
       <a
         href="mailto:contact@tobiasweinlich.com"
         id="email"
-        class="color-secondary-light color-accent-hover cursor-none deco-none"
         @mouseover="handleMouseOver()"
         @mouseleave="handleMouseLeave()"
         @click="handleMouseClick()"
@@ -49,23 +48,23 @@ export default {
       </a>
     </div>
 
-    <div class="contact-container__section text-center">
-      <h1 class="deco-underlined font-size-2">{{ contact.media }}</h1>
+    <div class="contact-container__section">
+      <h1 class="contact-container__section__header">{{ contact.media }}</h1>
 
       <div
-        class="contact-container__section__external grid justify-content-center align-items-center gap-2"
+        class="contact-container__section__external"
       >
         <div class="contact-container__section__external__github">
           <a
             href="https://github.com/Tobiriz"
             target="_blank"
-            class="contact-external-link flex flex-col color-secondary-light color-accent-hover cursor-none deco-none"
+            class="contact-container__section__external__link"
             @mouseover="handleMouseOver()"
             @mouseleave="handleMouseLeave()"
             @click="handleMouseClick()"
           >
-            <font-awesome-icon icon="fa-brands fa-github" class="font-size-2" />
-            <h2 class="external-link__header font-size-1-5">GitHub</h2>
+            <font-awesome-icon icon="fa-brands fa-github" class="icon" />
+            <h2 class="external-link__header">GitHub</h2>
           </a>
         </div>
 
@@ -73,16 +72,16 @@ export default {
           <a
             href="https://www.linkedin.com/in/tobias-weinlich-34aba0260/"
             target="_blank"
-            class="contact-external-link flex flex-col color-secondary-light color-accent-hover cursor-none deco-none"
+            class="contact-container__section__external__link"
             @mouseover="handleMouseOver()"
             @mouseleave="handleMouseLeave()"
             @click="handleMouseClick()"
           >
             <font-awesome-icon
               icon="fa-brands fa-linkedin"
-              class="font-size-2"
+              class="icon"
             />
-            <h2 class="external-link__header font-size-1-5">LinkedIn</h2>
+            <h2 class="external-link__header">LinkedIn</h2>
           </a>
         </div>
 
@@ -90,13 +89,13 @@ export default {
           <a
             href="https://www.xing.com/profile/Tobias_Weinlich/cv"
             target="_blank"
-            class="contact-external-link flex flex-col color-secondary-light color-accent-hover cursor-none deco-none"
+            class="contact-container__section__external__link"
             @mouseover="handleMouseOver()"
             @mouseleave="handleMouseLeave()"
             @click="handleMouseClick()"
           >
-            <font-awesome-icon icon="fa-brands fa-xing" class="font-size-2" />
-            <h2 class="external-link__header font-size-1-5">Xing</h2>
+            <font-awesome-icon icon="fa-brands fa-xing" class="icon" />
+            <h2 class="external-link__header">Xing</h2>
           </a>
         </div>
       </div>
@@ -106,21 +105,59 @@ export default {
 
 <style lang="scss" scoped>
 .contact-container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+  color: var(--color-secondary);
+
   &__section {
+    text-align: center;
+
+    &__header {
+      text-decoration: underline;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    #email {
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: var(--color-secondary-light);
+
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+
     &__external {
+      display: grid;
       grid-template-columns: repeat(3, 1fr);
-    }
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
 
-    h1 {
-      padding-bottom: 1rem;
-    }
+      &__link {
+        display: flex;
+        flex-direction: column;
+        color: var(--color-secondary-light);
+        text-decoration: none;
+        font-size: 2rem;
 
-    h2 {
-      padding-bottom: 0.5rem;
-    }
+        &:hover {
+          color: var(--color-accent);
+        }
 
-    a {
-      gap: 5px;
+        .icon {
+          font-size: 2rem;
+        }
+
+        .external-link__header {
+          font-size: 1.5rem;
+        }
+      }
     }
   }
 }
