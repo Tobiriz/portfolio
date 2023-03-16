@@ -28,10 +28,10 @@ export default {
     }
   },
 
-    beforeUnmount() {
-        this.handleMouseLeave();
-        this.deactivateCursorShadow();
-    },
+  beforeUnmount() {
+    this.handleMouseLeave();
+    this.deactivateCursorShadow();
+  },
 
   computed: {
     image() {
@@ -102,10 +102,17 @@ export default {
 </script>
 
 <template>
-  <div class="image-preview pos-fix top-left width100p height100p flex flex-col justify-content-center align-items-center">
-    <div class="overlay pos-fix top-left width100p height100p" @click="$emit('close')"></div>
+  <div
+    class="image-preview pos-fix top-left width100p height100p flex flex-col justify-content-center align-items-center"
+  >
+    <div
+      class="overlay pos-fix top-left width100p height100p"
+      @click="$emit('close')"
+    ></div>
 
-    <div class="preview-container pos-rel bg-primary flex flex-col justify-content-start align-items-start gap-1 pad-1 border-box">
+    <div
+      class="preview-container pos-rel bg-primary flex flex-col justify-content-start align-items-start gap-1 pad-1 border-box"
+    >
       <font-awesome-icon
         icon="fa-solid fa-xmark"
         size="2x"
@@ -115,7 +122,9 @@ export default {
         @mouseleave="handleMouseLeave"
       />
 
-      <div class="image-container flex flex-row justify-content-center align-items-center">
+      <div
+        class="image-container flex flex-row justify-content-center align-items-center"
+      >
         <div
           class="cicle-image prev-image pos-abs flex flex-row justify-content-start align-items-center color-secondary"
           @click="previousImage"
