@@ -15,32 +15,43 @@ export const useProjectsStore = defineStore("ProjectsStore", {
             description:
               "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
             image: "/src/assets/images/dnd-diary-preview-english-overview.png",
-            images: {
-              overview: {
-                image:
-                  "/src/assets/images/dnd-diary-preview-english-overview.png",
-                alt: "Overview",
+            images: [
+              {
+                src: "/src/assets/images/dnd-diary-preview-english-overview.png",
+                alt: {
+                  title: "Overview",
+                  description: "Overview of the app",
+                },
               },
-              sessions: {
-                image:
-                  "/src/assets/images/dnd-diary-preview-english-sessions.png",
-                alt: "Sessions",
+              {
+                src: "/src/assets/images/dnd-diary-preview-english-sessions.png",
+                alt: {
+                  title: "Sessions",
+                  description: "Overview of all sessions",
+                },
               },
-              persons: {
-                image:
-                  "/src/assets/images/dnd-diary-preview-english-persons.png",
-                alt: "Persons",
+              {
+                src: "/src/assets/images/dnd-diary-preview-english-persons.png",
+                alt: {
+                  title: "Persons",
+                  description: "Overview of all persons",
+                },
               },
-              locations: {
-                image:
-                  "/src/assets/images/dnd-diary-preview-english-locations.png",
-                alt: "Locations",
+              {
+                src: "/src/assets/images/dnd-diary-preview-english-locations.png",
+                alt: {
+                  title: "Locations",
+                  description: "Overview of all locations",
+                },
               },
-              notes: {
-                image: "/src/assets/images/dnd-diary-preview-english-notes.png",
-                alt: "Notes",
+              {
+                src: "/src/assets/images/dnd-diary-preview-english-notes.png",
+                alt: {
+                  title: "Notes",
+                  description: "Overview of all notes",
+                },
               },
-            },
+            ],
             link: "https://www.google.com",
             linkText: "Link to Project 1",
           },
@@ -59,6 +70,15 @@ export const useProjectsStore = defineStore("ProjectsStore", {
             description:
               "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
             image: "/src/assets/images/addressbook-preview.png",
+            images: [
+              {
+                src: "/src/assets/images/addressbook-preview.png",
+                alt: {
+                  title: "Overview",
+                  description: "Overview of the app",
+                },
+              },
+            ],
             link: "https://www.google.com",
             linkText: "Link to Project 2",
           },
@@ -74,32 +94,43 @@ export const useProjectsStore = defineStore("ProjectsStore", {
             description:
               "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
             image: "/src/assets/images/dnd-diary-preview-german-overview.png",
-            images: {
-              overview: {
-                image:
-                  "/src/assets/images/dnd-diary-preview-german-overview.png",
-                alt: "Übersicht",
+            images: [
+              {
+                src: "/src/assets/images/dnd-diary-preview-german-overview.png",
+                alt: {
+                  title: "Übersicht",
+                  description: "Übersicht der App",
+                },
               },
-              sessions: {
-                image:
-                  "/src/assets/images/dnd-diary-preview-german-sessions.png",
-                alt: "Spieltage",
+              {
+                src: "/src/assets/images/dnd-diary-preview-german-sessions.png",
+                alt: {
+                  title: "Sitzungen",
+                  description: "Übersicht aller Sitzungen",
+                },
               },
-              persons: {
-                image:
-                  "/src/assets/images/dnd-diary-preview-german-persons.png",
-                alt: "Personen",
+              {
+                src: "/src/assets/images/dnd-diary-preview-german-persons.png",
+                alt: {
+                  title: "Personen",
+                  description: "Übersicht aller Personen",
+                },
               },
-              locations: {
-                image:
-                  "/src/assets/images/dnd-diary-preview-german-locations.png",
-                alt: "Orte",
+              {
+                src: "/src/assets/images/dnd-diary-preview-german-locations.png",
+                alt: {
+                  title: "Orte",
+                  description: "Übersicht aller Orte",
+                },
               },
-              notes: {
-                image: "/src/assets/images/dnd-diary-preview-german-notes.png",
-                alt: "Notizen",
+              {
+                src: "/src/assets/images/dnd-diary-preview-german-notes.png",
+                alt: {
+                  title: "Notizen",
+                  description: "Übersicht aller Notizen",
+                },
               },
-            },
+            ],
             link: "https://www.google.de",
             linkText: "Link zum Projekt",
           },
@@ -118,6 +149,15 @@ export const useProjectsStore = defineStore("ProjectsStore", {
             description:
               "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
             image: "/src/assets/images/addressbook-preview.png",
+            images: [
+              {
+                src: "/src/assets/images/addressbook-preview.png",
+                alt: {
+                  title: "Übersicht",
+                  description: "Übersicht der App",
+                },
+              },
+            ],
             link: "https://www.google.de",
             linkText: "Link zum Projekt",
           },
