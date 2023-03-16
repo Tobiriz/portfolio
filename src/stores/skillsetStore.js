@@ -95,6 +95,26 @@ export const useSkillsetStore = defineStore("SkillsetStore", {
             content:
               "I am able to gather, analyze, and interpret complex information to make informed decisions.",
           },
+          {
+            title: "Critical Thinking",
+            content:
+              "I can think critically and look at problems from different perspectives.",
+          },
+          {
+            title: "Design",
+            content:
+              "I have a good eye for design and can create appealing, user-friendly interfaces.",
+          },
+          {
+            title: "Project Management",
+            content:
+              "I have experience with project management and can plan and organize projects efficiently.",
+          },
+          {
+            title: "Collaboration with AI",
+            content:
+              "I have experience working with AI tools and technologies to make data-driven decisions and solve complex problems more effectively.",
+          },
         ],
       },
 
@@ -186,6 +206,26 @@ export const useSkillsetStore = defineStore("SkillsetStore", {
             title: "Analytisches Denken",
             content:
               "Ich bin in der Lage, komplexe Informationen zu sammeln, zu analysieren und zu interpretieren, um fundierte Entscheidungen zu treffen.",
+          },
+          {
+            title: "Kritisches Denken",
+            content:
+              "Ich kann kritisch denken und Probleme aus verschiedenen Perspektiven betrachten.",
+          },
+          {
+            title: "Design",
+            content:
+              "Ich habe ein gutes Auge für Design und kann ansprechende, benutzerfreundliche Oberflächen erstellen.",
+          },
+          {
+            title: "Projektmanagement",
+            content:
+              "Ich habe Erfahrung mit Projektmanagement und kann Projekte effizient planen und organisieren.",
+          },
+          {
+            title: "Zusammenarbeit mit KI",
+            content:
+              "Ich habe Erfahrung in der Arbeit mit KI-Tools und -Technologien, um datengesteuerte Entscheidungen zu treffen und komplexe Probleme effektiver zu lösen.",
           },
         ],
       },
