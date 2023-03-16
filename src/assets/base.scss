@@ -228,6 +228,10 @@
   background-color: var(--title-card-color);
 }
 
+.bg-accent-hover:hover {
+  background-color: var(--accent-color);
+}
+
 .color-primary {
   color: var(--primary-color);
 }
