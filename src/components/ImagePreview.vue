@@ -1,6 +1,12 @@
 <script>
+import Dot from "@/components/Dot.vue";
+
 export default {
   name: "ImagePreview",
+
+  components: {
+    Dot,
+  },
 
   props: {
     previewImages: {
@@ -52,6 +58,10 @@ export default {
   },
 
   methods: {
+    selectImage(index) {
+      this.activeImage = index;
+    },
+
     activateCursorShadow() {
       const cursorShadow = document.getElementById("cursor-shadow");
       cursorShadow.classList.add("cursor-shadow--active");
@@ -111,7 +121,7 @@ export default {
     ></div>
 
     <div
-      class="preview-container pos-rel bg-primary flex flex-col justify-content-start align-items-start gap-1 pad-1 border-box"
+      class="preview-container pos-rel bg-primary flex flex-col justify-content-start align-items-start gap-1 pad-2 border-box"
     >
       <font-awesome-icon
         icon="fa-solid fa-xmark"
@@ -159,10 +169,20 @@ export default {
       </div>
 
       <div
-        class="image-description width100p color-secondary-light flex flex-col gap-0-5 width100p justify-content-center align-items-center"
+        class="image-description width100p color-secondary flex flex-col gap-0-5 width100p justify-content-center align-items-center"
       >
+        <div class="active-image-index flex flex-row gap-2">
+          <Dot
+            v-for="(dot, index) in imageArrayLength"
+            :key="index"
+            :index="index"
+            :active="activeImage"
+            @select="selectImage"
+            v-if="imageArrayLength > 1"
+          />
+        </div>
         <div class="font-size-1-5 weight-7">{{ title }}</div>
-        <div class="wight-4">{{ description }}</div>
+        <div class="font-size-1 weight-4">{{ description }}</div>
       </div>
     </div>
   </div>
@@ -178,20 +198,22 @@ export default {
 
   .preview-container {
     height: 90%;
+    box-shadow: 0 0 3px 1px var(--canvas-color);
 
     .close-icon {
-      top: 0.5rem;
-      right: 0.5rem;
+      top: 5px;
+      right: 5px;
+      z-index: 110;
     }
 
     .image-container {
-      height: 90%;
+      height: 80%;
 
       .cicle-image {
         top: 45%;
         transform: translateY(-50%);
         width: 8rem;
-        height: 70%;
+        height: 65%;
         opacity: 0.5;
         transition: opacity 0.3s ease-in-out;
 
@@ -201,28 +223,31 @@ export default {
       }
 
       .prev-image:hover ~ .image {
-        box-shadow: -50px 0 50px -10px var(--accent-color);
+        box-shadow: -80px 0 50px -30px var(--accent-color);
       }
 
       .next-image:hover ~ .image {
-        box-shadow: 50px 0 50px -10px var(--accent-color);
+        box-shadow: 80px 0 50px -30px var(--accent-color);
       }
 
       .prev-image {
-        left: -1rem;
+        left: -0.5rem;
+        transform: translateY(-55%);
       }
 
       .next-image {
-        right: -1rem;
+        right: -0.5rem;
+        transform: translateY(-55%);
       }
 
       .image {
+        border: 1px solid var(--canvas-color);
+        box-shadow: 0 0 10px 0 var(--canvas-color);
+
         img {
-          border: 1px solid var(--canvas-color);
-          box-shadow: 0 0 10px 0 var(--canvas-color);
           border-radius: 5px;
-          width: 100%;
           height: 100%;
+          width: 100%;
 
           object-fit: contain;
         }
@@ -230,8 +255,10 @@ export default {
 
       .image-description {
         justify-self: center;
-        height: 10%;
       }
+    }
+    .active-image-index {
+      padding-bottom: 1rem;
     }
   }
 }
