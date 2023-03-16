@@ -19,35 +19,35 @@ export const useSettingsStore = defineStore("SettingsStore", {
         this.darkMode = true;
       }, 162);
       document.documentElement.style.setProperty(
-        "--primary-color",
+        "--color-primary",
         "var(--c-black)"
       );
       document.documentElement.style.setProperty(
-        "--secondary-color",
+        "--color-secondary",
         "var(--c-white-mute)"
       );
       document.documentElement.style.setProperty(
-        "--secondary-color-light",
+        "--color-secondary-light",
         "var(--c-white-mute-transparent)"
       );
       document.documentElement.style.setProperty(
-        "--canvas-color",
+        "--color-canvas",
         "var(--c-grey)"
       );
       document.documentElement.style.setProperty(
-        "--accent-color",
+        "--color-accent",
         "var(--c-blue-light)"
       );
       document.documentElement.style.setProperty(
-        "--title-card-color",
+        "--color-title-card",
         "var(--c-black-soft)"
       );
       document.documentElement.style.setProperty(
-        "--blob-color-1",
+        "--color-blob-1",
         "var(--c-blue-dark)"
       );
       document.documentElement.style.setProperty(
-        "--blob-color-2",
+        "--color-blob-2",
         "var(--c-greyish)"
       );
       this.setFavicon("/favicon-dark.ico");
@@ -62,35 +62,35 @@ export const useSettingsStore = defineStore("SettingsStore", {
         this.lightMode = true;
       }, 162);
       document.documentElement.style.setProperty(
-        "--primary-color",
+        "--color-primary",
         "var(--c-white)"
       );
       document.documentElement.style.setProperty(
-        "--secondary-color",
+        "--color-secondary",
         "var(--c-black)"
       );
       document.documentElement.style.setProperty(
-        "--secondary-color-light",
+        "--color-secondary-light",
         "var(--c-black-transparent)"
       );
       document.documentElement.style.setProperty(
-        "--canvas-color",
+        "--color-canvas",
         "var(--c-grey-soft)"
       );
       document.documentElement.style.setProperty(
-        "--accent-color",
+        "--color-accent",
         "var(--c-red)"
       );
       document.documentElement.style.setProperty(
-        "--title-card-color",
+        "--color-title-card",
         "var(--c-white-soft)"
       );
       document.documentElement.style.setProperty(
-        "--blob-color-1",
+        "--color-blob-1",
         "var(--c-violet-dark)"
       );
       document.documentElement.style.setProperty(
-        "--blob-color-2",
+        "--color-blob-2",
         "var(--c-orange-dark)"
       );
       this.setFavicon("/favicon-light.ico");

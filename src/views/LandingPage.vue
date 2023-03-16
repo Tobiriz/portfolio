@@ -169,10 +169,10 @@ export default {
 
 <template>
   <div
-    class="landing-page flex flex-col justify-content-center align-items-center width100vw height100vh"
+    class="landing-page"
   >
     <div
-      class="click-notice flex flex-row justify-content-between color-secondary-light"
+      class="click-notice"
       id="click-notice"
     >
       <font-awesome-icon icon="fa-solid fa-chevron-down" bounce />
@@ -187,14 +187,14 @@ export default {
       @click="handleMouseClick"
     >
       <div
-        class="title-card width100vw flex flex-col justify-content-center align-items-center gap-1 bg-title-card color-secondary text-uppercase pos-rel weight-7 spacing-1"
+        class="title-card"
         @mouseenter="showChevron"
         @mouseleave="hideChevron"
       >
         <div
-          class="title-card__content flex flex-col gap-1 justify-content-center align-items-center width100p height100p"
+          class="title-card__content"
         >
-          <div class="title-card__content__name font-size-3">
+          <div class="title-card__content__name">
             <h1>
               <span id="first-name">Tobias</span>
               <span>&nbsp;</span>
@@ -202,20 +202,19 @@ export default {
             </h1>
           </div>
 
-          <div class="title-card__content__occupation font-size-1-5">
+          <div class="title-card__content__occupation">
             <h2 id="title-card-occupation">{{ landingPage.occupation }}</h2>
           </div>
         </div>
 
         <font-awesome-icon
           icon="fa-solid fa-chevron-right"
-          size="10x"
-          class="title-card__chevron pos-abs left font-size-2 color-secondary"
+          class="title-card__chevron"
         />
       </div>
     </div>
 
-    <Settings class="landing-page-settings font-size-1-25"></Settings>
+    <Settings class="landing-page-settings"></Settings>
   </div>
 </template>
 
@@ -228,32 +227,79 @@ export default {
 }
 
 .landing-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
   z-index: 3;
-}
-
-.click-notice {
-  opacity: 0;
-  width: 60vw;
-  padding-bottom: 0.5rem;
-  transition: opacity 0.4s ease;
+  
+  .click-notice {
+    width: 60vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    color: var(--color-secondary-light);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
 }
 
 .landing-page-settings {
+  font-size: 1.25rem;
   z-index: 4;
 }
 
 .title-card {
-  box-sizing: border-box;
+  position: relative;
   height: 30vh;
+  width: 100vw;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-secondary);
+  background: var(--color-title-card);
+  box-sizing: border-box;
   z-index: 3;
 
   &__content {
+    height: 100%;
+    width: 100%;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     box-sizing: border-box;
     z-index: 4;
+
+    &__name {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 1rem;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    &__occupation {
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.5rem;
+      text-align: center;
+    }
   }
 
   &__chevron {
+    position: absolute;
+    left: 0;
+    font-size: 3rem;
+    color: var(--color-secondary);
     opacity: 0;
     transition: opacity 0.4s ease, left 0.8s ease;
   }
@@ -271,7 +317,7 @@ export default {
     width: 0%;
     height: 100%;
     transition: width 0.8s ease;
-    background: linear-gradient(to right, transparent, var(--accent-color));
+    background: linear-gradient(to right, transparent, var(--color-accent));
   }
 
   &:hover:before {
@@ -281,7 +327,7 @@ export default {
 
 a {
   text-decoration: none;
-  color: var(--secondary-color);
+  color: var(--color-secondary);
 }
 
 //screen size < 768px

@@ -9,7 +9,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--primary-color);
-  z-index: 100;
+  background: var(--color-primary);
+  z-index: 10000;
 }
 </style>

@@ -170,19 +170,23 @@ export default {
     align-items: flex-start;
 
     a {
-      font-size: 2rem;
       text-decoration: none;
-      color: var(--color-secondary-light);
       font-size: 2rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1rem;
+      cursor: none;
+      color: var(--color-secondary-light);
 
       &:hover {
         color: var(--color-accent);
       }
     }
   }
+}
+
+.router-link-exact-active {
+  color: var(--color-secondary) !important;
 }
 
 @media screen and (max-width: 1500px) {
@@ -229,9 +233,5 @@ export default {
       text-align: center;
     }
   }
-}
-
-.router-link-exact-active {
-  color: var(--secondary-color);
 }
 </style>

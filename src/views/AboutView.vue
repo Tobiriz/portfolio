@@ -98,11 +98,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-h2 {
-  font-weight: 600;
-  color: var(--secondary-color);
-}
-
 .about-container {
   display: flex;
   flex-direction: column;
@@ -111,15 +106,6 @@ h2 {
   padding-bottom: 10rem;
   box-sizing: border-box;
   color: var(--color-secondary);
-
-  /*
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  */
 
   &__about-me {
     display: flex;
@@ -153,7 +139,7 @@ h2 {
           left: 0;
           width: 100%;
           height: 100%;
-          box-shadow: inset 0 0 6px 8px var(--primary-color);
+          box-shadow: inset 0 0 6px 8px var(--color-primary);
         }
       }
 

@@ -304,8 +304,8 @@ export default {
     z-index: 100;
 
     &--active {
-      background-color: var(--color-border);
-      box-shadow: 0 0 20px 5px var(--color-border);
+      background-color: var(--color-secondary-light);
+      box-shadow: 0 0 20px 10px var(--color-secondary-light);
     }
 
     &--prev {

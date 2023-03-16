@@ -224,27 +224,6 @@ export const useAboutStore = defineStore("AboutStore", {
         return this.de.viewName;
       }
     },
-    canvasMe() {
-      if (this.settings.languageEnglish) {
-        return this.en.canvas.me;
-      } else if (this.settings.languageGerman) {
-        return this.de.canvas.me;
-      }
-    },
-    canvasExperience() {
-      if (this.settings.languageEnglish) {
-        return this.en.canvas.experience;
-      } else if (this.settings.languageGerman) {
-        return this.de.canvas.experience;
-      }
-    },
-    canvasEducation() {
-      if (this.settings.languageEnglish) {
-        return this.en.canvas.education;
-      } else if (this.settings.languageGerman) {
-        return this.de.canvas.education;
-      }
-    },
     aboutMeHeading() {
       if (this.settings.languageEnglish) {
         return this.en.aboutMeHeading;

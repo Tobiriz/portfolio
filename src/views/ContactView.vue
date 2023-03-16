@@ -126,6 +126,7 @@ export default {
       font-size: 1.5rem;
       text-decoration: none;
       color: var(--color-secondary-light);
+      cursor: none;
 
       &:hover {
         color: var(--color-accent);
@@ -145,6 +146,7 @@ export default {
         color: var(--color-secondary-light);
         text-decoration: none;
         font-size: 2rem;
+        cursor: none;
 
         &:hover {
           color: var(--color-accent);

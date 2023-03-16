@@ -45,7 +45,7 @@ export default {
 <template>
   <div>
     <div id="blob"></div>
-    <div id="blob-blur"></div>
+    <div id="blur"></div>
 
     <div id="cursor">
       <div id="cursor-shadow"></div>
@@ -95,8 +95,8 @@ export default {
 
 .cursor {
   &--active {
-    width: 20px !important;
-    height: 20px !important;
+    width: 26px !important;
+    height: 26px !important;
   }
 
   &--click {
@@ -105,9 +105,9 @@ export default {
   }
 }
 
-#blob-blur {
-  height: 100vh;
-  width: 100vw;
+#blur {
+  height: 100%;
+  width: 100%;
   position: fixed;
   z-index: -1;
   backdrop-filter: blur(200px);
@@ -116,8 +116,8 @@ export default {
 #blob {
   background: linear-gradient(
     to right,
-    var(--blob-color-1),
-    var(--blob-color-2)
+    var(--color-blob-1),
+    var(--color-blob-2)
   );
   height: 500px;
   width: 500px;
@@ -182,12 +182,12 @@ export default {
 }
 .fade-enter-from,
 .fade-leave-to {
-  background: var(--primary-color);
+  background: var(--color-primary);
   opacity: 0;
 }
 .fade-enter-to,
 .fade-leave-from {
-  background: var(--primary-color);
+  background: var(--color-primary);
   opacity: 1;
 }
 </style>
