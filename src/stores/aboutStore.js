@@ -13,7 +13,7 @@ export const useAboutStore = defineStore("AboutStore", {
         section1:
           "My name is Tobias and I am an enthusiastic and solution-oriented developer with extensive knowledge in " +
           "HTML, CSS, JavaScript, Vue.js, and Java. My professional career started as an electronics technician and service engineer " +
-          "before I decided to study STEM subjects. I studied physics, mechanical engineering, electrical engineering, and computer science, " +
+          "before I decided to study STEM subjects. I have studied physics, mechanical engineering, electrical engineering, and computer science, " +
           "which gave me a broad technical understanding and analytical thinking.",
         section2:
           "During my educational journey, I discovered my passion for coding and reignited it in my current studies. " +
@@ -118,7 +118,7 @@ export const useAboutStore = defineStore("AboutStore", {
         section1:
           "Mein Name ist Tobias und ich bin ein begeisterter und lösungsorientierter Entwickler mit umfangreichen Kenntnissen in " +
           "HTML, CSS, JavaScript, Vue.js, sowie Java. Mein beruflicher Werdegang begann als Elektroniker und Servicetechniker, " +
-          "bevor ich mich für ein Studium in den MINT-Fächern entschieden habe. Ich habe Physik, Maschinenbau, Elektrotechnik und Informatik studiert, " +
+          "bevor ich mich für ein Studium in den MINT-Fächern entschieden habe. Ich habe die Studiengänge Physik, Maschinenbau, Elektrotechnik und Informatik belegt, " +
           "was mir ein breites technisches Verständnis und analytisches Denken vermittelt hat.",
         section2:
           "Während meines Bildungsweges habe ich meine Leidenschaft für das Coden entdeckt und diese in meinem derzeitigen Studium erneut entfacht. " +
