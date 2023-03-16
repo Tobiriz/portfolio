@@ -47,11 +47,15 @@ export default {
     },
 
     handleMouseOver() {
+      this.activateCursorShadow();
       const cursor = document.getElementById("cursor");
       cursor.classList.add("cursor--active");
     },
 
     handleMouseLeave() {
+      if (!this.previewActive) {
+        this.deactivateCursorShadow();
+      }
       const cursor = document.getElementById("cursor");
       cursor.classList.remove("cursor--active");
     },
@@ -64,19 +68,28 @@ export default {
         cursor.classList.remove("cursor--click");
       }, 300);
     },
+
+    activateCursorShadow() {
+      const cursorShadow = document.getElementById("cursor-shadow");
+      cursorShadow.classList.add("cursor-shadow--active");
+    },
+
+    deactivateCursorShadow() {
+      const cursorShadow = document.getElementById("cursor-shadow");
+      cursorShadow.classList.remove("cursor-shadow--active");
+    },
   },
 };
 </script>
 
 <template>
   <div
-    class="project flex flex-col gap-2 justify-content-start align-items-start color-secondary"
+    class="project flex flex-col gap-2 pad-3 justify-content-start align-items-start color-secondary"
   >
-    <div class="project__image-container" v-if="image">
+    <div class="project__image-container width100p" v-if="image">
       <img
         :src="image"
         alt="project image"
-        class=""
         @click="handleMouseClick()"
         @mouseover="handleMouseOver()"
         @mouseleave="handleMouseLeave()"
@@ -96,25 +109,35 @@ export default {
       </div>
     </div>
 
-    <ImagePreview v-if="previewActive" :previewImages="images" />
+    <ImagePreview
+      v-if="previewActive"
+      :previewImages="images"
+      @close="togglePreview()"
+    />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .project {
-  padding: 3rem;
   flex: 1 1 40%;
   max-width: 40%;
 
   &__image-container {
-    width: 100%;
     border-radius: 1px;
-    outline: 2px solid var(--accent-color);
-    outline-offset: 5px;
+    transition: outline-offset 0.3s ease-in-out, outline-width 0.2s ease-in-out;
+    outline-offset: 0px;
+    outline-width: 0px;
+
+    &:hover {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 5px;
+    }
 
     img {
       width: 100%;
       object-fit: contain;
+      border: 2px solid var(--canvas-color);
+      box-sizing: border-box;
     }
   }
 
