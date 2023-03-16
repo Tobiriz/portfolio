@@ -43,6 +43,10 @@
   display: grid;
 }
 
+.gap-0-5 {
+  gap: 0.5rem;
+}
+
 .gap-1 {
   gap: 1rem;
 }
@@ -454,4 +458,53 @@
 
 .cursor-none {
   cursor: none;
+}
+
+
+/* ------------------------------------ */
+/* Spacing */
+/* ------------------------------------ */
+
+.border-box {
+  box-sizing: border-box;
+}
+
+.pad-0-5 {
+  padding: 0.5rem;
+}
+
+.pad-1 {
+  padding: 1rem;
+}
+
+.pad-1-5 {
+  padding: 1.5rem;
+}
+
+.pad-2 {
+  padding: 2rem;
+}
+
+.pad-2-5 {
+  padding: 2.5rem;
+}
+
+.pad-3 {
+  padding: 3rem;
+}
+
+.pad-3-5 {
+  padding: 3.5rem;
+}
+
+.pad-4 {
+  padding: 4rem;
+}
+
+.pad-4-5 {
+  padding: 4.5rem;
+}
+
+.pad-5 {
+  padding: 5rem;
 }
