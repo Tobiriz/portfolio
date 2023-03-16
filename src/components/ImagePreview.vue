@@ -32,11 +32,27 @@ export default {
       this.titleArray.push(image.alt.title);
       this.descriptionArray.push(image.alt.description);
     }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") {
+        this.nextImage();
+      } else if (e.key === "ArrowLeft") {
+        this.previousImage();
+      }
+    });
   },
 
   beforeUnmount() {
     this.handleMouseLeave();
     this.deactivateCursorShadow();
+
+    document.removeEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") {
+        this.nextImage();
+      } else if (e.key === "ArrowLeft") {
+        this.previousImage();
+      }
+    });
   },
 
   computed: {
@@ -107,62 +123,100 @@ export default {
         cursor.classList.remove("cursor--click");
       }, 300);
     },
+
+    handleCloseIconMouseOver() {
+      this.handleMouseOver();
+      const closeIcon = document.querySelector(".icon--close");
+      const closeShadow = document.querySelector(".shadow--close");
+      closeIcon.classList.add("icon--active");
+      closeShadow.classList.add("shadow--active");
+    },
+
+    handleCloseIconMouseLeave() {
+      this.handleMouseLeave();
+      const closeIcon = document.querySelector(".icon--close");
+      const closeShadow = document.querySelector(".shadow--close");
+      closeIcon.classList.remove("icon--active");
+      closeShadow.classList.remove("shadow--active");
+    },
+
+    handlePrevIconMouseOver() {
+      this.handleMouseOver();
+      const prevIcon = document.querySelector(".icon--prev");
+      const prevShadow = document.querySelector(".shadow--prev");
+      prevIcon.classList.add("icon--active");
+      prevShadow.classList.add("shadow--active");
+    },
+
+    handlePrevIconMouseLeave() {
+      this.handleMouseLeave();
+      const prevIcon = document.querySelector(".icon--prev");
+      const prevShadow = document.querySelector(".shadow--prev");
+      prevIcon.classList.remove("icon--active");
+      prevShadow.classList.remove("shadow--active");
+    },
+
+    handleNextIconMouseOver() {
+      this.handleMouseOver();
+      const nextIcon = document.querySelector(".icon--next");
+      const nextShadow = document.querySelector(".shadow--next");
+      nextIcon.classList.add("icon--active");
+      nextShadow.classList.add("shadow--active");
+    },
+
+    handleNextIconMouseLeave() {
+      this.handleMouseLeave();
+      const nextIcon = document.querySelector(".icon--next");
+      const nextShadow = document.querySelector(".shadow--next");
+      nextIcon.classList.remove("icon--active");
+      nextShadow.classList.remove("shadow--active");
+    },
   },
 };
 </script>
 
 <template>
-  <div
-    class="image-preview pos-fix top-left width100p height100p flex flex-col justify-content-center align-items-center"
-  >
+  <div class="image-preview pos-fix top-left width100p height100p grid">
     <div
       class="overlay pos-fix top-left width100p height100p"
       @click="$emit('close')"
     ></div>
 
     <div
-      class="preview-container pos-rel bg-primary flex flex-col justify-content-start align-items-start gap-1 pad-2 border-box"
+      class="close-preview color-secondary-light pos-rel"
+      @click="$emit('close')"
+      @mouseover="handleCloseIconMouseOver"
+      @mouseleave="handleCloseIconMouseLeave"
     >
+      <div class="shadow shadow--close"></div>
       <font-awesome-icon
         icon="fa-solid fa-xmark"
         size="2x"
-        class="close-icon pos-abs color-secondary-light color-accent-hover"
-        @click="$emit('close')"
-        @mouseover="handleMouseOver"
-        @mouseleave="handleMouseLeave"
+        class="icon--close pos-abs color-secondary-light"
       />
+    </div>
 
+    <div
+      class="cicle-image prev-image color-secondary-light pos-rel"
+      @click="previousImage"
+      @mouseover="handlePrevIconMouseOver"
+      @mouseleave="handlePrevIconMouseLeave"
+      v-if="imageArrayLength > 1"
+    >
+      <div class="shadow shadow--prev"></div>
+      <font-awesome-icon
+        icon="fa-solid fa-chevron-left"
+        class="icon--cicle icon--prev pos-abs color-secondary-light"
+        size="2x"
+      />
+    </div>
+
+    <div
+      class="preview-container pos-rel bg-primary flex flex-col justify-content-start align-items-center gap-1 pad-1 border-box"
+    >
       <div
         class="image-container flex flex-row justify-content-center align-items-center"
       >
-        <div
-          class="cicle-image prev-image pos-abs flex flex-row justify-content-start align-items-center color-secondary"
-          @click="previousImage"
-          @mouseover="handleMouseOver"
-          @mouseleave="handleMouseLeave"
-          v-if="imageArrayLength > 1"
-        >
-          <font-awesome-icon
-            icon="fa-solid fa-chevron-left"
-            class="icon icon-prev pad-1"
-            size="2x"
-          />
-        </div>
-
-        <div
-          class="cicle-image next-image pos-abs flex flex-row justify-content-end align-items-center color-secondary"
-          @click="nextImage"
-          @mouseover="handleMouseOver"
-          @mouseleave="handleMouseLeave"
-          v-if="imageArrayLength > 1"
-        >
-          <font-awesome-icon
-            icon="fa-solid fa-chevron-right"
-            class="icon icon-next pad-1"
-            size="2x"
-          />
-        </div>
-
         <div class="image width100p height100p">
           <img :src="image" alt="image" />
         </div>
@@ -185,60 +239,133 @@ export default {
         <div class="font-size-1 weight-4">{{ description }}</div>
       </div>
     </div>
+
+    <div
+      class="cicle-image next-image color-secondary-light pos-rel"
+      @click="nextImage"
+      @mouseover="handleNextIconMouseOver"
+      @mouseleave="handleNextIconMouseLeave"
+      v-if="imageArrayLength > 1"
+    >
+      <div class="shadow shadow--next"></div>
+      <font-awesome-icon
+        icon="fa-solid fa-chevron-right"
+        class="icon--cicle icon--next pos-abs color-secondary-light"
+        size="2x"
+      />
+    </div>
+
+    <div class="placeholder"></div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .image-preview {
   z-index: 100;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 1fr auto 1fr;
+  justify-self: center;
 
   .overlay {
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+  }
+
+  .placeholder {
+    grid-column: 2;
+    grid-row: 3;
+    height: 5rem;
+  }
+
+  .close-preview {
+    bottom: -50%;
+    width: 90%;
+    height: clamp(2rem, 70%, 4rem);
+    grid-column: 2;
+    grid-row: 1;
+    place-self: center center;
+    z-index: 101;
+    transform: translateY(-50%);
+
+    .icon--close {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: color 0.3s ease-in-out;
+      z-index: 102;
+    }
+  }
+
+  .cicle-image {
+    width: clamp(2rem, 70%, 5rem);
+    height: 90%;
+  }
+
+  .prev-image {
+    right: -50%;
+    grid-column: 1;
+    grid-row: 2;
+    place-self: center center;
+    z-index: 101;
+    transform: translateX(-50%);
+  }
+
+  .next-image {
+    left: -50%;
+    grid-column: 3;
+    grid-row: 2;
+    place-self: center center;
+    z-index: 101;
+    transform: translateX(50%);
+  }
+
+  .icon--cicle {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: color 0.3s ease-in-out;
+    z-index: 102;
+  }
+
+  .icon--active {
+    color: var(--accent-color) !important;
+  }
+
+  .shadow {
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.6s ease, box-shadow 0.6s ease;
+    opacity: 0.5;
+    z-index: 100;
+
+    &--active {
+      background-color: var(--canvas-color);
+      box-shadow: 0 0 20px 5px var(--canvas-color);
+    }
+
+    &--prev {
+      border-radius: 50% 0 0 50%;
+    }
+
+    &--next {
+      border-radius: 0 50% 50% 0;
+    }
+
+    &--close {
+      border-radius: 50% 50% 0 0;
+    }
   }
 
   .preview-container {
-    height: 90%;
+    max-width: 70vw;
+    grid-column: 2;
+    grid-row: 2;
+    place-self: center center;
     box-shadow: 0 0 3px 1px var(--canvas-color);
-
-    .close-icon {
-      top: 5px;
-      right: 5px;
-      z-index: 110;
-    }
+    z-index: 101;
 
     .image-container {
       height: 80%;
-
-      .cicle-image {
-        top: 45%;
-        transform: translateY(-50%);
-        width: 8rem;
-        height: 65%;
-        opacity: 0.5;
-        transition: opacity 0.3s ease-in-out;
-
-        &:hover {
-          opacity: 1;
-        }
-      }
-
-      .prev-image:hover ~ .image {
-        box-shadow: -80px 0 50px -30px var(--accent-color);
-      }
-
-      .next-image:hover ~ .image {
-        box-shadow: 80px 0 50px -30px var(--accent-color);
-      }
-
-      .prev-image {
-        left: -0.5rem;
-        transform: translateY(-55%);
-      }
-
-      .next-image {
-        right: -0.5rem;
-        transform: translateY(-55%);
-      }
 
       .image {
         border: 1px solid var(--canvas-color);

@@ -37,7 +37,7 @@ export default {
 
 <template>
   <div
-    class="dot bg-secondary-light bg-accent-hover pad-0-5 border-box"
+    class="dot bg-secondary-light bg-accent-hover border-box"
     :class="{ 'dot--active': index === active }"
     @click="handleMouseClick"
     @mouseover="handleMouseOver"
@@ -47,8 +47,8 @@ export default {
 
 <style lang="scss" scoped>
 .dot {
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.6rem;
+  height: 0.6rem;
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
 
