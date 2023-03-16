@@ -88,6 +88,7 @@ export default {
   }
 
   &__details {
+    margin-top: 1rem;
     font-size: 1.25rem;
     font-weight: 400;
   }
