@@ -6,12 +6,7 @@ export const useAboutStore = defineStore("AboutStore", {
     settings: useSettingsStore(),
     en: {
       viewName: "About",
-      canvas: {
-        me: "Me",
-        experience: "Experience",
-        education: "Education",
-      },
-      aboutMeHeading: "About Me",
+      aboutMeHeading: "Tobias Weinlich",
       myWorkExperienceHeading: "My Work Experience",
       myEducationHeading: "My Education",
       aboutMeContent: {
@@ -116,12 +111,7 @@ export const useAboutStore = defineStore("AboutStore", {
 
     de: {
       viewName: "Über mich",
-      canvas: {
-        me: "Ich",
-        experience: "Erfahrung",
-        education: "Ausbildung",
-      },
-      aboutMeHeading: "Über Mich",
+      aboutMeHeading: "Tobias Weinlich",
       myWorkExperienceHeading: "Meine Berufserfahrung",
       myEducationHeading: "Meine Ausbildung",
       aboutMeContent: {
