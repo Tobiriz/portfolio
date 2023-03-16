@@ -47,7 +47,9 @@ export default {
     <div id="blob"></div>
     <div id="blur"></div>
 
-    <div id="cursor"></div>
+    <div id="cursor">
+      <div id="cursor-shadow"></div>
+    </div>
 
     <Transition name="fade">
       <Overlay v-show="store.overlayActive" />
@@ -73,6 +75,22 @@ export default {
   z-index: 1000;
   pointer-events: none;
   transition: width 0.3s ease, height 0.3s ease;
+
+  #cursor-shadow {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    z-index: 999;
+    box-shadow: 0 0 5px 5px var(--accent-color);
+  }
+}
+
+.cursor-shadow--active {
+  display: block !important;
 }
 
 .cursor {
