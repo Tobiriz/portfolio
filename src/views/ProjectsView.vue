@@ -21,7 +21,7 @@ export default {
 </script>
 
 <template>
-  <div class="projects flex flex-col height100p">
+  <div class="projects flex flex-col height100p pad-5 border-box">
     <div
       class="projects-container flex flex-row gap-2 flex-wrap justify-content-between"
     >
@@ -36,8 +36,6 @@ export default {
 
 <style lang="scss" scoped>
 .projects {
-  padding: 5rem;
-  box-sizing: border-box;
   overflow-y: auto;
 
   -ms-overflow-style: none;

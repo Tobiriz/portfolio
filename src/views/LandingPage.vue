@@ -75,7 +75,7 @@ export default {
     endHackerEffect() {
       if (this.endEffect) {
         this.$router.push("/portfolio");
-        return
+        return;
       }
 
       this.stopHackerEffect();
@@ -180,7 +180,8 @@ export default {
       <font-awesome-icon icon="fa-solid fa-chevron-down" bounce />
     </div>
 
-    <div id="routerLink"
+    <div
+      id="routerLink"
       @mouseover="handleMouseOver"
       @mouseleave="handleMouseLeave"
       @click="handleMouseClick"
