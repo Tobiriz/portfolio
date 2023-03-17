@@ -127,21 +127,23 @@ export default {
 
   &__image-container {
     width: 100%;
-    border-radius: 1px;
-    transition: outline-offset 0.3s ease-in-out, outline-width 0.2s ease-in-out;
+    transition: outline-offset 0.2s ease-in-out, outline-width 0.1s ease-in-out;
     outline-offset: 0px;
     outline-width: 0px;
-
+    border-radius: 0.5rem;
+    
     &:hover {
-      outline: 2px solid var(--color-accent);
+      outline: 3px solid var(--color-accent);
       outline-offset: 5px;
     }
-
+    
     img {
       width: 100%;
-      object-fit: contain;
+      height: 100%;
       border: 2px solid var(--color-accent);
+      box-shadow: 0 0 2px 1px var(--color-accent);
       box-sizing: border-box;
+      border-radius: inherit;
     }
   }
 
