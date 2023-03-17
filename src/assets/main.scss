@@ -12,15 +12,15 @@
   --c-violet-dark: #712b7555;
   --c-orange-dark: #d49b5455;
   --c-red: #c74b50;
-  --c-red-variant-1: #DE5D49;
-  --c-red-variant-2: #D46E46;
-  --c-red-variant-3: #DE4998;
-  --c-red-variant-4: #D146D4;
+  --c-red-variant-1: #de5d49;
+  --c-red-variant-2: #d46e46;
+  --c-red-variant-3: #de4998;
+  --c-red-variant-4: #d146d4;
   --c-blue-light: #3a98b9;
-  --c-blue-light-variant-1: #367FD1;
-  --c-blue-light-variant-2: #3452C7;
-  --c-blue-light-variant-3: #36D1D1;
-  --c-blue-light-variant-4: #34C79E;
+  --c-blue-light-variant-1: #367fd1;
+  --c-blue-light-variant-2: #3452c7;
+  --c-blue-light-variant-3: #36d1d1;
+  --c-blue-light-variant-4: #34c79e;
   --c-blue-dark: #95bdff55;
 }
 
@@ -67,4 +67,16 @@
   font-family: "Roboto", sans-serif;
   transition: color 0.6s ease-in-out, background-color 0.6s ease-in-out,
     border-color 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
+}
+
+.visually-hidden {
+  display: none;
+}
+
+a:focus {
+  outline: 2px solid var(--color-accent);
+}
+
+button:focus {
+  outline: 2px solid var(--color-accent);
 }
