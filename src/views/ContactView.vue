@@ -30,9 +30,7 @@ export default {
 </script>
 
 <template>
-  <div
-    class="contact-container"
-  >
+  <div class="contact-container">
     <div class="contact-container__section">
       <h1 class="contact-container__section__header">{{ contact.email }}</h1>
       <a
@@ -42,18 +40,14 @@ export default {
         @mouseleave="handleMouseLeave()"
         @click="handleMouseClick()"
       >
-        <h2 class="font-size-1-75">
-          {{ contact.emailAddress }}
-        </h2>
+        {{ contact.emailAddress }}
       </a>
     </div>
 
     <div class="contact-container__section">
       <h1 class="contact-container__section__header">{{ contact.media }}</h1>
 
-      <div
-        class="contact-container__section__external"
-      >
+      <div class="contact-container__section__external">
         <div class="contact-container__section__external__github">
           <a
             href="https://github.com/Tobiriz"
@@ -77,10 +71,7 @@ export default {
             @mouseleave="handleMouseLeave()"
             @click="handleMouseClick()"
           >
-            <font-awesome-icon
-              icon="fa-brands fa-linkedin"
-              class="icon"
-            />
+            <font-awesome-icon icon="fa-brands fa-linkedin" class="icon" />
             <h2 class="external-link__header">LinkedIn</h2>
           </a>
         </div>
@@ -123,7 +114,8 @@ export default {
     }
 
     #email {
-      font-size: 1.5rem;
+      font-size: 2rem;
+      font-weight: 700;
       text-decoration: none;
       color: var(--color-secondary-light);
       cursor: none;

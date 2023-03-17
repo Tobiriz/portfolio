@@ -1,4 +1,5 @@
 <script>
+import { useSettingsStore } from "../stores/settingsStore";
 import Dot from "@/components/Dot.vue";
 
 export default {
@@ -6,6 +7,11 @@ export default {
 
   components: {
     Dot,
+  },
+
+  setup() {
+    const store = useSettingsStore();
+    return { store };
   },
 
   props: {
@@ -40,6 +46,12 @@ export default {
         this.previousImage();
       }
     });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        this.$emit("close");
+      }
+    });
   },
 
   beforeUnmount() {
@@ -51,6 +63,12 @@ export default {
         this.nextImage();
       } else if (e.key === "ArrowLeft") {
         this.previousImage();
+      }
+    });
+
+    document.removeEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        this.$emit("close");
       }
     });
   },
@@ -70,6 +88,30 @@ export default {
 
     imageArrayLength() {
       return this.imageArray.length;
+    },
+
+    closePreviewText() {
+      if (this.store.languageIsEnglish) {
+        return "Close preview";
+      } else {
+        return "Vorschau schließen";
+      }
+    },
+
+    previousImageText() {
+      if (this.store.languageIsEnglish) {
+        return "Previous image";
+      } else {
+        return "Vorheriges Bild";
+      }
+    },
+
+    nextImageText() {
+      if (this.store.languageIsEnglish) {
+        return "Next image";
+      } else {
+        return "Nächstes Bild";
+      }
     },
   },
 
@@ -186,11 +228,10 @@ export default {
       @mouseleave="handleCloseIconMouseLeave"
     >
       <div class="shadow shadow--close"></div>
-      <font-awesome-icon
-        icon="fa-solid fa-xmark"
-        size="2x"
-        class="icon--close"
-      />
+      <button type="button" class="icon--close">
+        <font-awesome-icon icon="fa-solid fa-xmark" size="2x" />
+        <span class="visually-hidden">{{ closePreviewText }}</span>
+      </button>
     </div>
 
     <div
@@ -201,11 +242,10 @@ export default {
       v-if="imageArrayLength > 1"
     >
       <div class="shadow shadow--prev"></div>
-      <font-awesome-icon
-        icon="fa-solid fa-chevron-left"
-        class="icon--cicle icon--prev"
-        size="2x"
-      />
+      <button type="button" class="icon--cicle icon--prev">
+        <font-awesome-icon icon="fa-solid fa-chevron-left" size="2x" />
+        <span class="visually-hidden">{{ previousImageText }}</span>
+      </button>
     </div>
 
     <div class="preview-container">
@@ -237,11 +277,10 @@ export default {
       v-if="imageArrayLength > 1"
     >
       <div class="shadow shadow--next"></div>
-      <font-awesome-icon
-        icon="fa-solid fa-chevron-right"
-        class="icon--cicle icon--next"
-        size="2x"
-      />
+      <button type="button" class="icon--cicle icon--next">
+        <font-awesome-icon icon="fa-solid fa-chevron-right" size="2x" />
+        <span class="visually-hidden">{{ nextImageText }}</span>
+      </button>
     </div>
 
     <div class="placeholder"></div>
@@ -249,6 +288,14 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+button {
+  all: unset;
+
+  &:focus {
+    outline: 2px solid var(--color-accent);
+  }
+}
+
 .image-preview {
   position: fixed;
   top: 0;
@@ -383,7 +430,7 @@ export default {
       height: 80%;
       width: 100%;
       border-radius: inherit;
-        
+
       img {
         height: 100%;
         width: 100%;

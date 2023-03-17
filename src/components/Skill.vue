@@ -40,15 +40,16 @@ export default {
 
 <template>
   <div class="skill">
-    <div
+    <button
+      type="button"
       class="skill__title"
-      :class="{ isActive: isActive }"
+      :class="{ active: isActive }"
       @mouseover="handleMouseOver()"
       @mouseleave="handleMouseLeave()"
       @click="handleMouseClick()"
     >
       <h3>{{ title }}</h3>
-    </div>
+    </button>
 
     <Transition>
       <div class="skill__content" v-show="isActive">
@@ -59,6 +60,9 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.active {
+  color: var(--color-secondary) !important;
+}
 .skill {
   display: flex;
   flex-direction: column;
@@ -67,6 +71,7 @@ export default {
   color: var(--color-secondary-light);
 
   &__title {
+    all: unset;
     font-size: 4rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -74,7 +79,11 @@ export default {
     text-align: end;
 
     &:hover {
-      color: var(--color-accent);
+      color: var(--color-accent) !important;
+    }
+
+    &:focus {
+      color: var(--color-secondary);
     }
   }
 

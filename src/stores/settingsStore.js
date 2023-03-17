@@ -191,5 +191,37 @@ export const useSettingsStore = defineStore("SettingsStore", {
     screenWidth() {
       return window.innerWidth;
     },
+
+    languageSeletorText() {
+      if (this.languageEnglish) {
+        return "Auf Deutsch wechseln";
+      } else if (this.languageGerman) {
+        return "Switch to English";
+      }
+    },
+
+    themeSelectorText() {
+      if (this.languageEnglish) {
+        if (this.darkMode) {
+          return "Switch to light mode";
+        } else if (this.lightMode) {
+          return "Switch to dark mode";
+        }
+      } else if (this.languageGerman) {
+        if (this.darkMode) {
+          return "Zum hellen Modus wechseln";
+        } else if (this.lightMode) {
+          return "Zum dunklen Modus wechseln";
+        }
+      }
+    },
+
+    languageIsEnglish() {
+      return this.languageEnglish;
+    },
+
+    languageIsGerman() {
+      return this.languageGerman;
+    },
   },
 });

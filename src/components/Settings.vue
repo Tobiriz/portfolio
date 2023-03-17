@@ -18,7 +18,7 @@ export default {
       cursor.classList.remove("cursor--active");
     },
 
-    handleMouseClick(setting) {
+    handleClick(setting) {
       if (setting === "setLanguageEnglish") {
         this.store.setLanguageEnglish();
       } else if (setting === "setLanguageGerman") {
@@ -42,55 +42,99 @@ export default {
 <template>
   <div class="options">
     <div class="options__language">
-      <p
-        v-show="store.languageEnglish"
-        class="language-selector"
-        @mouseover="handleMouseOver()"
-        @mouseleave="handleMouseLeave()"
-        @click="handleMouseClick('setLanguageGerman')"
+      <button
+      tabindex="5"
+        type="button"
+        v-if="store.languageEnglish"
+        @keydown.enter="handleClick('setLanguageGerman')"
       >
-        <font-awesome-icon icon="fa-solid fa-d" />
-        <font-awesome-icon icon="fa-solid fa-e" />
-        <font-awesome-icon icon="fa-solid fa-u" />
-      </p>
-      <p
-        v-show="store.languageGerman"
-        class="language-selector"
-        @mouseover="handleMouseOver()"
-        @mouseleave="handleMouseLeave()"
-        @click="handleMouseClick('setLanguageEnglish')"
+        <p
+          class="language-selector"
+          @mouseover="handleMouseOver()"
+          @mouseleave="handleMouseLeave()"
+          @click="handleClick('setLanguageGerman')"
+        >
+          <font-awesome-icon icon="fa-solid fa-d" />
+          <font-awesome-icon icon="fa-solid fa-e" />
+          <font-awesome-icon icon="fa-solid fa-u" />
+        </p>
+        <span class="visually-hidden">
+          {{ store.languageSelectorText }}
+        </span>
+      </button>
+
+      <button
+      tabindex="5"
+        type="button"
+        v-if="store.languageGerman"
+        @keydown.enter="handleClick('setLanguageEnglish')"
       >
-        <font-awesome-icon icon="fa-solid fa-e" />
-        <font-awesome-icon icon="fa-solid fa-n" />
-        <font-awesome-icon icon="fa-solid fa-g" />
-      </p>
+        <p
+          class="language-selector"
+          @mouseover="handleMouseOver()"
+          @mouseleave="handleMouseLeave()"
+          @click="handleClick('setLanguageEnglish')"
+        >
+          <font-awesome-icon icon="fa-solid fa-e" />
+          <font-awesome-icon icon="fa-solid fa-n" />
+          <font-awesome-icon icon="fa-solid fa-g" />
+        </p>
+        <span class="visually-hidden">
+          {{ store.languageSelectorText }}
+        </span>
+      </button>
     </div>
+
     <div class="options__theme">
       <Transition>
-        <font-awesome-icon
-          icon="fa-solid fa-moon"
-          class="icon"
-          @mouseover="handleMouseOver()"
-          @mouseleave="handleMouseLeave()"
-          @click="handleMouseClick('setDarkMode')"
+        <button
+        tabindex="6"
+          type="button"
           v-if="store.lightMode"
-        />
+          @keydown.enter="handleClick('setDarkMode')"
+        >
+          <font-awesome-icon
+            icon="fa-solid fa-moon"
+            class="icon"
+            @mouseover="handleMouseOver()"
+            @mouseleave="handleMouseLeave()"
+            @click="handleClick('setDarkMode')"
+          />
+          <span class="visually-hidden">
+            {{ store.themeSelectorText }}
+          </span>
+        </button>
       </Transition>
+
       <Transition>
-        <font-awesome-icon
-          icon="fa-solid fa-sun"
-          class="icon"
-          @mouseover="handleMouseOver()"
-          @mouseleave="handleMouseLeave()"
-          @click="handleMouseClick('setLightMode')"
+        <button
+        tabindex="6"
+          type="button"
           v-if="store.darkMode"
-        />
+          @keydown.enter="handleClick('setLightMode')"
+        >
+          <font-awesome-icon
+            icon="fa-solid fa-sun"
+            class="icon"
+            @mouseover="handleMouseOver()"
+            @mouseleave="handleMouseLeave()"
+            @click="handleClick('setLightMode')"
+            v-if="store.darkMode"
+          />
+          <span class="visually-hidden">
+            {{ store.themeSelectorText }}
+          </span>
+        </button>
       </Transition>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+button {
+  all: unset;
+}
+
 .options {
   display: flex;
   flex-direction: row;

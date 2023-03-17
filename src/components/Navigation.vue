@@ -68,25 +68,28 @@ export default {
 </script>
 
 <template>
-  <font-awesome-icon
-    v-if="!this.navigationActive"
-    icon="fa-solid fa-bars"
-    class="icon"
-    @click="openMenu"
-    size="2x"
-  />
-  <font-awesome-icon
-    v-else
-    icon="fa-solid fa-xmark"
-    class="icon"
-    @click="closeMenu"
-    size="2x"
-  />
+  <button class="menu-button">
+    <font-awesome-icon
+      v-if="!this.navigationActive"
+      icon="fa-solid fa-bars"
+      class="icon"
+      @click="openMenu"
+      size="2x"
+    />
+    <font-awesome-icon
+      v-else
+      icon="fa-solid fa-xmark"
+      class="icon"
+      @click="closeMenu"
+      size="2x"
+    />
+  </button>
   <div class="navigation-blur" @click="toggleMenu()"></div>
 
   <div class="navigation">
     <div class="navigation__links">
       <RouterLink
+        tabindex="1"
         :to="{ name: 'about' }"
         @mouseover="handleMouseOver()"
         @mouseleave="handleMouseLeave()"
@@ -95,6 +98,7 @@ export default {
         {{ about.viewName }}
       </RouterLink>
       <RouterLink
+      tabindex="2"
         :to="{ name: 'skillset' }"
         @mouseover="handleMouseOver()"
         @mouseleave="handleMouseLeave()"
@@ -103,6 +107,7 @@ export default {
         {{ skillset.viewName }}
       </RouterLink>
       <RouterLink
+      tabindex="3"
         :to="{ name: 'projects' }"
         @mouseover="handleMouseOver()"
         @mouseleave="handleMouseLeave()"
@@ -111,6 +116,7 @@ export default {
         {{ projects.viewName }}
       </RouterLink>
       <RouterLink
+      tabindex="4"
         :to="{ name: 'contact' }"
         @mouseover="handleMouseOver()"
         @mouseleave="handleMouseLeave()"
@@ -124,15 +130,19 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.icon {
+.menu-button {
+  all: unset;
   display: none;
   position: fixed;
   top: 1rem;
   left: 1rem;
+  border-radius: 50%;
+}
+
+.icon {
   padding: 0.5rem;
   color: var(--color-secondary);
   background-color: var(--color-secondary-light);
-  border-radius: 50%;
   aspect-ratio: 1/1;
   z-index: 5;
 }
@@ -196,7 +206,7 @@ export default {
 }
 
 @media screen and (max-width: 1279px) {
-  .icon {
+  .menu-button {
     display: block;
   }
 

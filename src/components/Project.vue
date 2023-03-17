@@ -1,9 +1,15 @@
 <script>
+import { useSettingsStore } from "../stores/settingsStore";
 import ImagePreview from "@/components/ImagePreview.vue";
 
 export default {
   components: {
     ImagePreview,
+  },
+
+  setup() {
+    const store = useSettingsStore();
+    return { store };
   },
 
   props: {
@@ -38,6 +44,14 @@ export default {
 
     link() {
       return this.project.link;
+    },
+
+    previewImagesText() {
+      if (this.store.languageIsEnglish) {
+        return "Preview images";
+      } else if (this.store.languageIsGerman) {
+        return "Vorschau-Bilder";
+      }
     },
   },
 
@@ -84,7 +98,12 @@ export default {
 
 <template>
   <div class="project">
-    <div class="project__image-container" v-if="image">
+    <button
+      type="button"
+      class="project__image-container"
+      v-if="image"
+      @keydown.enter="handleMouseClick()"
+    >
       <img
         :src="image"
         alt="project image"
@@ -92,7 +111,10 @@ export default {
         @mouseover="handleMouseOver()"
         @mouseleave="handleMouseLeave()"
       />
-    </div>
+      <span class="visually-hidden">
+        {{ previewImagesText }}
+      </span>
+    </button>
 
     <div class="project__title">
       {{ title }}
@@ -116,6 +138,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+button {
+  all: unset;
+}
+
 .project {
   padding: 3rem;
   display: flex;
@@ -131,12 +157,13 @@ export default {
     outline-offset: 0px;
     outline-width: 0px;
     border-radius: 0.5rem;
-    
-    &:hover {
+
+    &:hover,
+    &:focus {
       outline: 3px solid var(--color-accent);
       outline-offset: 5px;
     }
-    
+
     img {
       width: 100%;
       height: 100%;

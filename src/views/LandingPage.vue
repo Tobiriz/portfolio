@@ -155,7 +155,7 @@ export default {
       cursor.classList.remove("cursor--active");
     },
 
-    handleMouseClick() {
+    handleClick() {
       // this.endHackerEffect();
       this.$router.push("/portfolio");
       const cursor = document.getElementById("cursor");
@@ -169,38 +169,31 @@ export default {
 </script>
 
 <template>
-  <div
-    class="landing-page"
-  >
-    <div
-      class="click-notice"
-      id="click-notice"
-    >
+  <div class="landing-page">
+    <div class="click-notice" id="click-notice">
       <font-awesome-icon icon="fa-solid fa-chevron-down" bounce />
       <font-awesome-icon icon="fa-solid fa-chevron-down" bounce />
       <font-awesome-icon icon="fa-solid fa-chevron-down" bounce />
     </div>
 
-    <a
+    <div
       id="routerLink"
       @mouseover="handleMouseOver"
       @mouseleave="handleMouseLeave"
-      @click="handleMouseClick"
+      @click="handleClick"
     >
       <div
         class="title-card"
         @mouseenter="showChevron"
         @mouseleave="hideChevron"
       >
-        <div
-          class="title-card__content"
-        >
+        <div class="title-card__content">
           <div class="title-card__content__name">
-            <h1>
+            <a @keydown.enter="handleClick()" href="#">
               <span id="first-name">Tobias</span>
               <span>&nbsp;</span>
               <span id="last-name">Weinlich</span>
-            </h1>
+            </a>
           </div>
 
           <div class="title-card__content__occupation">
@@ -213,7 +206,7 @@ export default {
           class="title-card__chevron"
         />
       </div>
-    </a>
+    </div>
 
     <Settings class="landing-page-settings"></Settings>
   </div>
@@ -227,6 +220,16 @@ export default {
   font-family: "Martian Mono", monospace;
 }
 
+a {
+  text-decoration: none;
+  color: var(--color-secondary);
+  cursor: none;
+  
+  &:focus {
+    outline: 2px solid var(--color-accent);
+  }
+}
+
 .landing-page {
   display: flex;
   flex-direction: column;
@@ -235,7 +238,7 @@ export default {
   width: 100vw;
   height: 100vh;
   z-index: 3;
-  
+
   .click-notice {
     width: 60vw;
     display: flex;
@@ -281,7 +284,7 @@ export default {
     z-index: 4;
 
     &__name {
-      font-size: 3rem;
+      font-size: 4rem;
       font-weight: 700;
       letter-spacing: 1rem;
       text-transform: uppercase;
@@ -324,11 +327,6 @@ export default {
   &:hover:before {
     width: 100%;
   }
-}
-
-a {
-  text-decoration: none;
-  color: var(--color-secondary);
 }
 
 //screen size < 768px

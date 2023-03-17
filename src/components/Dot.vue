@@ -1,5 +1,12 @@
 <script>
+import { useSettingsStore } from "../stores/settingsStore";
+
 export default {
+  setup() {
+    const store = useSettingsStore();
+    return { store };
+  },
+
   props: {
     index: {
       type: Number,
@@ -9,6 +16,16 @@ export default {
     active: {
       type: Number,
       required: true,
+    },
+  },
+
+  computed: {
+    dotText() {
+      if (this.store.languageIsEnglish) {
+        return "Image " + (this.index + 1);
+      } else if (this.store.languageIsGerman) {
+        return "Bild " + (this.index + 1);
+      }
     },
   },
 
@@ -36,16 +53,22 @@ export default {
 </script>
 
 <template>
-  <div
+  <button
     class="dot"
     :class="{ 'dot--active': index === active }"
     @click="handleMouseClick"
     @mouseover="handleMouseOver"
     @mouseleave="handleMouseLeave"
-  ></div>
+  >
+    <span class="visually-hidden">{{ dotText }}</span>
+  </button>
 </template>
 
 <style lang="scss" scoped>
+button {
+  all: unset;
+}
+
 .dot {
   width: 0.6rem;
   height: 0.6rem;
