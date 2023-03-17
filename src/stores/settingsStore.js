@@ -39,6 +39,22 @@ export const useSettingsStore = defineStore("SettingsStore", {
         "var(--c-blue-light)"
       );
       document.documentElement.style.setProperty(
+        "--color-accent-variant-1",
+        "var(--c-blue-light-variant-1)"
+      );
+      document.documentElement.style.setProperty(
+        "--color-accent-variant-2",
+        "var(--c-blue-light-variant-2)"
+      );
+      document.documentElement.style.setProperty(
+        "--color-accent-variant-3",
+        "var(--c-blue-light-variant-3)"
+      );
+      document.documentElement.style.setProperty(
+        "--color-accent-variant-4",
+        "var(--c-blue-light-variant-4)"
+      );
+      document.documentElement.style.setProperty(
         "--color-title-card",
         "var(--c-black-soft)"
       );
@@ -80,6 +96,22 @@ export const useSettingsStore = defineStore("SettingsStore", {
       document.documentElement.style.setProperty(
         "--color-accent",
         "var(--c-red)"
+      );
+      document.documentElement.style.setProperty(
+        "--color-accent-variant-1",
+        "var(--c-red-variant-1)"
+      );
+      document.documentElement.style.setProperty(
+        "--color-accent-variant-2",
+        "var(--c-red-variant-2)"
+      );
+      document.documentElement.style.setProperty(
+        "--color-accent-variant-3",
+        "var(--c-red-variant-3)"
+      );
+      document.documentElement.style.setProperty(
+        "--color-accent-variant-4",
+        "var(--c-red-variant-4)"
       );
       document.documentElement.style.setProperty(
         "--color-title-card",
