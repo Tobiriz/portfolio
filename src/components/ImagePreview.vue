@@ -210,9 +210,7 @@ export default {
 
     <div class="preview-container">
       <div class="image-container">
-        <div class="image">
-          <img :src="image" alt="image" />
-        </div>
+        <img :src="image" alt="image" />
       </div>
 
       <div class="image-description">
@@ -377,28 +375,21 @@ export default {
     place-self: center center;
 
     box-sizing: border-box;
-    box-shadow: 0 0 3px 1px var(--color-border);
+    box-shadow: 0 0 10px 5px var(--color-border);
+    border-radius: 0.5rem;
     z-index: 101;
 
     .image-container {
       height: 80%;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-
-      .image {
+      width: 100%;
+      border-radius: inherit;
+        
+      img {
         height: 100%;
         width: 100%;
-        border: 1px solid var(--color-border);
-        box-shadow: 0 0 10px 0 var(--color-border);
-
-        img {
-          border-radius: 5px;
-          height: 100%;
-          width: 100%;
-          object-fit: contain;
-        }
+        border-radius: inherit;
+        border: 1px solid var(--color-accent);
+        box-shadow: 0 0 2px 1px var(--color-accent);
       }
     }
 
