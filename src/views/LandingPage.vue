@@ -140,23 +140,24 @@ export default {
     },
 
     handleMouseOver() {
-      if (!this.endEffect) {
-        this.startHackerEffect();
-      }
+      // if (!this.endEffect) {
+      //   this.startHackerEffect();
+      // }
       const cursor = document.getElementById("cursor");
       cursor.classList.add("cursor--active");
     },
 
     handleMouseLeave() {
-      if (!this.endEffect) {
-        this.stopHackerEffect();
-      }
+      // if (!this.endEffect) {
+      //   this.stopHackerEffect();
+      // }
       const cursor = document.getElementById("cursor");
       cursor.classList.remove("cursor--active");
     },
 
     handleMouseClick() {
-      this.endHackerEffect();
+      // this.endHackerEffect();
+      this.$router.push("/portfolio");
       const cursor = document.getElementById("cursor");
       cursor.classList.add("cursor--click");
       setTimeout(() => {
@@ -180,7 +181,7 @@ export default {
       <font-awesome-icon icon="fa-solid fa-chevron-down" bounce />
     </div>
 
-    <div
+    <a
       id="routerLink"
       @mouseover="handleMouseOver"
       @mouseleave="handleMouseLeave"
@@ -212,7 +213,7 @@ export default {
           class="title-card__chevron"
         />
       </div>
-    </div>
+    </a>
 
     <Settings class="landing-page-settings"></Settings>
   </div>
