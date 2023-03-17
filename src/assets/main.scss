@@ -73,10 +73,10 @@
   display: none;
 }
 
-a:focus {
+a:focus-visible {
   outline: 2px solid var(--color-accent);
 }
 
-button:focus {
+button:focus-visible {
   outline: 2px solid var(--color-accent);
 }
