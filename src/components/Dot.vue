@@ -55,11 +55,11 @@ export default {
   transition: all 0.3s ease-in-out;
 
   &--active {
-    background-color: var(--secondary-color);
+    background-color: var(--color-secondary);
   }
 
   &:hover {
-    background-color: var(--accent-color);
+    background-color: var(--color-accent);
   }
 }
 </style>
