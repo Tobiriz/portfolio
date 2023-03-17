@@ -146,6 +146,10 @@ export default {
       &__text {
         font-size: 1.5rem;
         line-height: 1.5;
+
+        p {
+          margin-bottom: 1rem;
+        }
       }
     }
   }
