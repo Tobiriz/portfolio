@@ -150,32 +150,44 @@ export const useSkillsetStore = defineStore("SkillsetStore", {
           {
             title: "Problemlösung",
             content:
-              "Ich habe ein Talent für die Identifizierung von Problemen und das Entwickeln von kreativen Lösungen.",
+              "Ich bin sehr geschickt darin, Probleme zu identifizieren und kreative Lösungen zu entwickeln. "
+              + "Ich arbeite jedoch auch daran, meine Fähigkeiten zur Datenaufnahme, Ursachenanalyse und Implementierung von Lösungen zu verbessern. "
+              + "Problemlösung ist ein iterativer Prozess, und ich bin bereit, mich anzupassen und flexibel zu sein, um die bestmögliche Lösung zu finden.",
           },
           {
             title: "Technisches Verständnis",
             content:
-              "Ich habe ein tiefes Verständnis für technische Konzepte und kann mich schnell in neue Technologien einarbeiten.",
+              "Mein technisches Verständnis zeichnet sich durch meine Fähigkeit aus, technische Probleme zu identifizieren, "
+              +"zu analysieren und kreative Lösungen zu entwickeln. Ich besitze Fähigkeiten im kritischen Denken und Problemlösung, "
+              + "die es mir ermöglichen, Daten zu sammeln und Ursachenanalysen durchzuführen, um die bestmögliche Lösung zu finden.",
           },
           {
             title: "Neugierde",
             content:
-              "Ich bin immer neugierig auf neue Technologien und Trends und bemühe mich ständig, mein Wissen zu erweitern.",
+              "Meine Neugierde ist eine wertvolle Eigenschaft, die mich antreibt, die Welt um mich herum zu erkunden und zu verstehen. "
+              +"Ich stelle gerne Fragen und sammle Wissen, und probiere auch gerne neue Dinge aus, um mich weiterzuentwickeln. "
+              + "Durch meine Neugierde konnte ich meine Fähigkeiten verbessern und meine Perspektive in vielen Bereichen des Lebens erweitern.",
           },
           {
             title: "Teamwork",
             content:
-              "Ich arbeite gerne in Teams und kann mich schnell an unterschiedliche Arbeitsstile und Persönlichkeiten anpassen.",
+              "Ich kann effektiv mit anderen zusammenarbeiten, um gemeinsame Ziele zu erreichen. Ich kommuniziere klar und kooperiere gut mit anderen, "
+              + "um sicherzustellen, dass wir aufeinander abgestimmt arbeiten. Ich bin auch bereit, Feedback zu geben und anzunehmen sowie Konflikte konstruktiv zu lösen. "
+              + "Durch mein effektives Teamwork können wir unsere vielfältigen Perspektiven und Fähigkeiten kombinieren, um die bestmöglichen Ergebnisse zu erzielen.",
           },
           {
             title: "Kommunikation",
             content:
-              "Ich verfüge über ausgezeichnete kommunikative Fähigkeiten und kann komplexe technische Konzepte verständlich und präzise erklären.",
+              "Ich verfüge über ausgezeichnete kommunikative Fähigkeiten und kann meine Gedanken und Ideen klar und präzise vermitteln. "
+              + "Ich höre anderen aktiv zu und kann komplexe Konzepte in einfache, leicht verständliche Sprache übersetzen, "
+              + "um sicherzustellen, dass alle Beteiligten auf derselben Seite sind.",
           },
           {
             title: "Zeitmanagement",
             content:
-              "Ich bin sehr gut darin, meine Zeit effektiv zu nutzen und Prioritäten zu setzen, um Projekte termingerecht abzuschließen.",
+              "Ich plane meine Arbeit im Voraus und nutze meine Zeit effizient, um sicherzustellen, "
+              + "dass ich meine Aufgaben rechtzeitig und qualitativ hochwertig erledige. Durch meine Fähigkeiten im Zeitmanagement kann "
+              + "ich produktiv bleiben und meine Ziele erfolgreich erreichen.",
           },
           {
             title: "Kreativität",
@@ -185,7 +197,9 @@ export const useSkillsetStore = defineStore("SkillsetStore", {
           {
             title: "Kundenservice",
             content:
-              "Ich bin erfahren im Kundenservice und kann freundlich und effektiv auf die Bedürfnisse von Kunden eingehen.",
+              "Ich bin kreativ und habe ein Talent dafür, innovative Lösungen zu finden und neue Ideen zu generieren. "
+              + "Meine Neugier und Offenheit für neue Erfahrungen fördern meine Kreativität und ermöglichen es mir, "
+              + "Grenzen zu überschreiten. Ich nutze meine Fähigkeiten in verschiedenen Bereichen und verbessere meine Fähigkeiten durch meine Kreativität.",
           },
           {
             title: "Sprachen",
@@ -195,22 +209,30 @@ export const useSkillsetStore = defineStore("SkillsetStore", {
           {
             title: "Empathie",
             content:
-              "Ich habe die Fähigkeit, mich in andere hineinzuversetzen und ihre Perspektiven und Bedürfnisse zu verstehen, um effektiv zu kommunizieren und zu arbeiten.",
+              "Ich bin empathisch und einfühlsam und kann mich gut in die Gefühle und Bedürfnisse anderer hineinversetzen. "
+              + "Ich höre aktiv zu und bemühe mich, die Perspektive anderer zu verstehen, um eine erfolgreiche Zusammenarbeit zu fördern. "
+              + "Durch meine Fähigkeiten in Empathie kann ich gute Beziehungen aufbauen und ein positives Arbeitsumfeld schaffen.",
           },
           {
             title: "Agilität",
             content:
-              "Ich bin flexibel und anpassungsfähig und kann damit schnell auf sich ändernde Anforderungen und Bedingungen reagieren.",
+              "Ich bin agil und kann mich schnell an veränderte Umstände und Anforderungen anpassen. "
+              + "Ich arbeite gut unter Druck und kann auch in stressigen Situationen meine Leistung aufrechterhalten. "
+              + "Durch meine Fähigkeiten in Agilität kann ich flexibel bleiben und erfolgreich in einem sich schnell verändernden Arbeitsumfeld arbeiten.",
           },
           {
             title: "Analytisches Denken",
             content:
-              "Ich bin in der Lage, komplexe Informationen zu sammeln, zu analysieren und zu interpretieren, um fundierte Entscheidungen zu treffen.",
+              "Ich verfüge über ausgezeichnete Fähigkeiten im analytischen Denken und kann komplexe Probleme systematisch und logisch angehen. "
+              + "Ich bin in der Lage, Daten zu analysieren und Muster zu erkennen, um fundierte Entscheidungen zu treffen und effektive Lösungen zu finden. "
+              + "Durch meine Fähigkeiten im analytischen Denken kann ich erfolgreich in verschiedenen Bereichen arbeiten und komplexe Herausforderungen meistern.",
           },
           {
             title: "Kritisches Denken",
             content:
-              "Ich kann kritisch denken und Probleme aus verschiedenen Perspektiven betrachten.",
+              "Ich bin in der Lage, kritisches Denken anzuwenden, um komplexe Probleme zu analysieren und fundierte Entscheidungen zu treffen. "
+              + "Ich hinterfrage Annahmen und suche nach verschiedenen Perspektiven, um eine umfassende Sichtweise zu erhalten und mögliche Risiken zu minimieren. "
+              + "Meine Fähigkeiten im kritischen Denken ermöglichen es mir, Herausforderungen effektiv zu bewältigen und innovative Lösungen zu finden.",
           },
           {
             title: "Design",

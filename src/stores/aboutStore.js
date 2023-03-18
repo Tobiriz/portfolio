@@ -118,7 +118,7 @@ export const useAboutStore = defineStore("AboutStore", {
         section1:
           "Mein Name ist Tobias und ich bin ein begeisterter und lösungsorientierter Entwickler mit umfangreichen Kenntnissen in " +
           "HTML, CSS, JavaScript, Vue.js, sowie Java. Mein beruflicher Werdegang begann als Elektroniker und Servicetechniker, " +
-          "bevor ich mich für ein Studium in den MINT-Fächern entschieden habe. Ich habe die Studiengänge Physik, Maschinenbau, Elektrotechnik und Informatik belegt, " +
+          "bevor ich mich für ein Studium in den MINT (Mathematik, Informatik, Naturwissenschaft und Technik) -Fächern entschieden habe. Ich habe die Studiengänge Physik, Maschinenbau, Elektrotechnik und Informatik belegt, " +
           "was mir ein breites technisches Verständnis und analytisches Denken vermittelt hat.",
         section2:
           "Während meines Bildungsweges habe ich meine Leidenschaft für das Coden entdeckt und diese in meinem derzeitigen Studium erneut entfacht. " +
