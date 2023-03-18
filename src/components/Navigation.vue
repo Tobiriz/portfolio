@@ -98,7 +98,7 @@ export default {
         {{ about.viewName }}
       </RouterLink>
       <RouterLink
-      tabindex="2"
+        tabindex="2"
         :to="{ name: 'skillset' }"
         @mouseover="handleMouseOver()"
         @mouseleave="handleMouseLeave()"
@@ -107,7 +107,7 @@ export default {
         {{ skillset.viewName }}
       </RouterLink>
       <RouterLink
-      tabindex="3"
+        tabindex="3"
         :to="{ name: 'projects' }"
         @mouseover="handleMouseOver()"
         @mouseleave="handleMouseLeave()"
@@ -116,7 +116,7 @@ export default {
         {{ projects.viewName }}
       </RouterLink>
       <RouterLink
-      tabindex="4"
+        tabindex="4"
         :to="{ name: 'contact' }"
         @mouseover="handleMouseOver()"
         @mouseleave="handleMouseLeave()"

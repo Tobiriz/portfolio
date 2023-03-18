@@ -43,7 +43,7 @@ export default {
   <div class="options">
     <div class="options__language">
       <button
-      tabindex="5"
+        tabindex="5"
         type="button"
         v-if="store.languageEnglish"
         @keydown.enter="handleClick('setLanguageGerman')"
@@ -64,7 +64,7 @@ export default {
       </button>
 
       <button
-      tabindex="5"
+        tabindex="5"
         type="button"
         v-if="store.languageGerman"
         @keydown.enter="handleClick('setLanguageEnglish')"
@@ -88,7 +88,7 @@ export default {
     <div class="options__theme">
       <Transition>
         <button
-        tabindex="6"
+          tabindex="6"
           type="button"
           v-if="store.lightMode"
           @keydown.enter="handleClick('setDarkMode')"
@@ -108,7 +108,7 @@ export default {
 
       <Transition>
         <button
-        tabindex="6"
+          tabindex="6"
           type="button"
           v-if="store.darkMode"
           @keydown.enter="handleClick('setLightMode')"
