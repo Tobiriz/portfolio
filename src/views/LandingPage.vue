@@ -36,11 +36,6 @@ export default {
     this.lastNameText = document
       .getElementById("last-name")
       .innerText.split("");
-
-    const clickNotice = document.getElementById("click-notice");
-    setTimeout(() => {
-      clickNotice.style.opacity = 1;
-    }, 10000);
   },
 
   unmounted() {
@@ -170,12 +165,6 @@ export default {
 
 <template>
   <div class="landing-page">
-    <div class="click-notice" id="click-notice">
-      <font-awesome-icon icon="fa-solid fa-chevron-down" bounce />
-      <font-awesome-icon icon="fa-solid fa-chevron-down" bounce />
-      <font-awesome-icon icon="fa-solid fa-chevron-down" bounce />
-    </div>
-
     <div
       id="routerLink"
       @mouseover="handleMouseOver"
@@ -224,7 +213,7 @@ a {
   text-decoration: none;
   color: var(--color-secondary);
   cursor: none;
-  
+
   &:focus {
     outline: 2px solid var(--color-accent);
   }
