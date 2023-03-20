@@ -98,41 +98,112 @@ export default {
   }
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (min-width: 2560px) {
   .skill {
+    width: 90%;
+
     &__title {
-      font-size: 3rem;
+      font-size: 4rem;
+      letter-spacing: 1px;
+      padding-bottom: 0.5rem;
     }
 
     &__content {
-      font-size: 1.5rem;
+      font-size: 2rem;
+      line-height: 1.5;
     }
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1440px) {
   .skill {
+    width: 95%;
+
     &__title {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
+      letter-spacing: 1px;
+      padding-bottom: 0.5rem;
     }
 
     &__content {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .skill {
+    width: 95%;
+
+    &__title {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      padding-bottom: 0.5rem;
+    }
+
+    &__content {
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .skill {
+    width: 100%;
+
+    &__title {
+      font-size: 1.8rem;
+      letter-spacing: 0;
+      padding-bottom: 0.5rem;
+    }
+
+    &__content {
+      font-size: 1rem;
+      line-height: 1.3;
     }
   }
 }
 
 @media screen and (max-width: 500px) {
   .skill {
+    width: 100%;
+    align-items: center;
+
     &__title {
-      font-size: 1.75rem;
+      text-align: center;
+      font-size: 1.3rem;
+      padding-bottom: 0.5rem;
     }
 
     &__content {
+      text-align: justify;
       font-size: 1rem;
+      line-height: 1.3;
     }
   }
 }
+
+@media screen and (max-width: 350px) {
+  .skill {
+    width: 100%;
+    align-items: center;
+
+    &__title {
+      text-align: center;
+      font-size: 1.1rem;
+      padding-bottom: 0.5rem;
+    }
+
+    &__content {
+      text-align: justify;
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+  }
+}
+
 
 .isActive {
   color: var(--secondary-color);

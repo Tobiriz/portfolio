@@ -169,23 +169,75 @@ button {
   }
 }
 
-//screen width < 768px
-@media screen and (max-width: 1279px) {
+@media screen and (min-width: 2560px) {
   .options {
-    align-self: flex-start;
-    padding-left: 2rem;
-    .icon {
-      font-size: 2rem;
+    gap: 3rem;
+
+    .options__language {
+      .language-selector {
+        font-size: 2.2rem;
+      }
     }
-    .language-selector {
-      font-size: 2rem;
+
+    .options__theme {
+      .icon {
+        font-size: 2.2rem;
+      }
     }
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1440px) {
   .options {
-    align-self: center;
+    gap: 1.6rem;
+
+    .options__language {
+      .language-selector {
+        font-size: 1.2rem;
+      }
+    }
+
+    .options__theme {
+      .icon {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .options {
+    gap: 1.3rem;
+
+    .options__language {
+      .language-selector {
+        font-size: 1rem;
+      }
+    }
+
+    .options__theme {
+      .icon {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .options {
+    gap: 2rem;
+
+    .options__language {
+      .language-selector {
+        font-size: 1.5rem;
+      }
+    }
+
+    .options__theme {
+      .icon {
+        font-size: 1.5rem;
+      }
+    }
   }
 }
 

@@ -161,6 +161,7 @@ export default {
     gap: 5rem;
 
     &__title {
+      text-align: center;
       font-size: 3rem;
       font-weight: 700;
     }
@@ -180,6 +181,7 @@ export default {
     gap: 5rem;
 
     &__title {
+      text-align: center;
       font-size: 3rem;
       font-weight: 700;
     }
@@ -193,112 +195,170 @@ export default {
   }
 }
 
-@media screen and (max-width: 1536px) {
+@media screen and (min-width: 2560px) {
   .about-container {
-    gap: 7rem;
+    gap: 15rem;
+    padding: 3rem 2rem;
+    padding-bottom: 10rem;
 
     &__about-me {
-      &__title {
-        font-size: 2.25rem;
-      }
-
-      &__content__text {
-        font-size: 1.25rem;
-      }
-    }
-
-    &__my-work-experience {
-      &__title {
-        font-size: 2.25rem;
-      }
-
-      &__jobs {
-        gap: 2rem;
-      }
-    }
-
-    &__my-education {
-      &__title {
-        font-size: 2.25rem;
-      }
-
-      &__schools {
-        gap: 2rem;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1366px) {
-  .about-container {
-    gap: 7rem;
-
-    &__content {
-      flex-direction: column;
-    }
-
-    &__about-me {
-      &__title {
-        font-size: 2rem;
-      }
-
-      &__content__text {
-        font-size: 1.25rem;
-        line-height: 1.6rem;
-      }
-    }
-
-    &__my-work-experience {
-      gap: 3rem;
+      gap: 4rem;
 
       &__title {
-        font-size: 2rem;
+        font-size: 4.5rem;
       }
-
-      &__jobs {
-        gap: 2rem;
-      }
-    }
-
-    &__my-education {
-      gap: 3rem;
-
-      &__title {
-        font-size: 2rem;
-      }
-
-      &__schools {
-        gap: 2rem;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1279px) {
-  .about-container {
-    gap: 7rem;
-
-    &__about-me {
-      align-items: center;
 
       &__content {
-        &__title {
-          font-size: 1.75rem;
+        &__image-container {
+          position: relative;
+          margin: 0 0 1rem 1rem;
+          float: right;
+
+          .image {
+            width: 15vw;
+          }
+        }
+
+        &__text {
+          font-size: 1.9rem;
+          line-height: 1.4;
+
+          p {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+
+    &__my-work-experience {
+      gap: 6rem;
+
+      &__title {
+        font-size: 4.5rem;
+        font-weight: 700;
+      }
+
+      &__jobs {
+        gap: 8rem;
+      }
+    }
+
+    &__my-education {
+      gap: 6rem;
+
+      &__title {
+        font-size: 4.5rem;
+        font-weight: 700;
+      }
+
+      &__schools {
+        gap: 8rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .about-container {
+    gap: 6rem;
+    padding: 2rem 1rem;
+    padding-bottom: 10rem;
+
+    &__about-me {
+      gap: 3rem;
+
+      &__title {
+        font-size: 2.6rem;
+      }
+
+      &__content {
+        &__image-container {
+          position: relative;
+          margin: 0 0 1rem 1rem;
+          float: right;
+
+          .image {
+            width: 15vw;
+          }
+        }
+
+        &__text {
+          font-size: 1.2rem;
+          line-height: 1.3;
+
+          p {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+
+    &__my-work-experience {
+      gap: 4rem;
+
+      &__title {
+        font-size: 2.6rem;
+      }
+
+      &__jobs {
+        gap: 4rem;
+      }
+    }
+
+    &__my-education {
+      gap: 4rem;
+
+      &__title {
+        font-size: 2.6rem;
+      }
+
+      &__schools {
+        gap: 4rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .about-container {
+    gap: 6rem;
+    padding: 2rem 1rem;
+    padding-bottom: 6rem;
+
+    &__about-me {
+      gap: 2rem;
+
+      &__title {
+        font-size: 2.2rem;
+      }
+
+      &__content {
+        &__image-container {
+          position: relative;
+          margin: 0 0 0 1rem;
+          float: right;
+
+          .image {
+            width: 18vw;
+          }
         }
 
         &__text {
           font-size: 1.1rem;
-          line-height: 1.4rem;
+          line-height: 1.2;
+
+          p {
+            margin-bottom: .7rem;
+          }
         }
       }
     }
 
     &__my-work-experience {
-      gap: 3rem;
+      gap: 2rem;
 
       &__title {
-        font-size: 1.75rem;
-        text-align: center;
+        font-size: 2.2rem;
       }
 
       &__jobs {
@@ -307,11 +367,10 @@ export default {
     }
 
     &__my-education {
-      gap: 3rem;
+      gap: 2rem;
 
       &__title {
-        font-size: 1.75rem;
-        text-align: center;
+        font-size: 2.2rem;
       }
 
       &__schools {
@@ -321,20 +380,130 @@ export default {
   }
 }
 
-@media screen and (max-width: 1023px) {
-  .about-container__about-me__content {
-    flex-direction: column;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 1rem;
+@media screen and (max-width: 768px) {
+  .about-container {
+    gap: 5rem;
+    padding: 3rem 1rem;
+    padding-bottom: 4rem;
 
-    &__image-container {
-      float: none;
+    &__about-me {
+      gap: 1rem;
 
-      .image {
-        width: clamp(100px, 30vw, 200px);
-        height: auto;
+      &__title {
+        font-size: 2rem;
+      }
+
+      &__content {
+        &__image-container {
+          position: relative;
+          margin: 0 0 0 1rem;
+          float: right;
+
+          .image {
+            width: 18vw;
+          }
+        }
+
+        &__text {
+          font-size: 1rem;
+          line-height: 1.3;
+
+          p {
+            margin-bottom: .7rem;
+          }
+        }
+      }
+    }
+
+    &__my-work-experience {
+      gap: 2rem;
+
+      &__title {
+        font-size: 2rem;
+      }
+
+      &__jobs {
+        gap: 3rem;
+      }
+    }
+
+    &__my-education {
+      gap: 2rem;
+
+      &__title {
+        font-size: 2rem;
+      }
+
+      &__schools {
+        gap: 3rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .about-container {
+    gap: 5rem;
+    padding: 3rem 0.5rem;
+    padding-bottom: 4rem;
+
+    &__about-me {
+      gap: 1rem;
+      align-items: center;
+
+      &__title {
+        text-align: center;
+        font-size: 1.6rem;
+      }
+
+      &__content {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 1rem;
+
+        &__image-container {
+          position: relative;
+          margin: 0;
+          float: none;
+
+          .image {
+            width: 40vw;
+          }
+        }
+
+        &__text {
+          font-size: 1rem;
+          line-height: 1.3;
+
+          p {
+            margin-bottom: .7rem;
+          }
+        }
+      }
+    }
+
+    &__my-work-experience {
+      gap: 1rem;
+
+      &__title {
+        font-size: 1.6rem;
+      }
+
+      &__jobs {
+        gap: 3rem;
+      }
+    }
+
+    &__my-education {
+      gap: 1rem;
+
+      &__title {
+        font-size: 1.6rem;
+      }
+
+      &__schools {
+        gap: 3rem;
       }
     }
   }

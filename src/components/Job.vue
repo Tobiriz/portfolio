@@ -93,16 +93,81 @@ export default {
   }
 }
 
-@media screen and (max-width: 1366px) {
+@media screen and (min-width: 2560px) {
   .job {
-    max-width: 90%;
+    max-width: 100%;
+
+    &__duration {
+      font-size: 2rem;
+      letter-spacing: 0.15rem;
+    }
+
+    &__date {
+      font-size: 2.3rem;
+      letter-spacing: 0.15rem;
+    }
+
+    &__title {
+      font-size: 3.4rem;
+      letter-spacing: 0.15rem;
+    }
+
+    &__company {
+      font-size: 2.3rem;
+      letter-spacing: 0.15rem;
+    }
+
+    &__location {
+      font-size: 2rem;
+      letter-spacing: 0.15rem;
+    }
+
+    &__details {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .job {
+    max-width: 100%;
+
+    &__duration {
+      font-size: 1.25rem;
+    }
+
+    &__date {
+      font-size: 1.5rem;
+    }
+
+    &__title {
+      font-size: 2.5rem;
+    }
+
+    &__company {
+      font-size: 1.5rem;
+    }
+
+    &__location {
+      font-size: 1.25rem;
+    }
+
+    &__details {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .job {
+    max-width: 100%;
 
     &__duration {
       font-size: 1rem;
     }
 
     &__date {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
     }
 
     &__title {
@@ -110,7 +175,7 @@ export default {
     }
 
     &__company {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
     }
 
     &__location {
@@ -118,15 +183,18 @@ export default {
     }
 
     &__details {
-      font-size: 1.25rem;
+      font-size: 1rem;
     }
   }
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 768px) {
   .job {
+    max-width: 100%;
+    word-break: break-word;
+
     &__duration {
-      font-size: 0.75rem;
+      font-size: .8rem;
     }
 
     &__date {
@@ -134,7 +202,8 @@ export default {
     }
 
     &__title {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+      margin: .1rem;
     }
 
     &__company {
@@ -142,12 +211,28 @@ export default {
     }
 
     &__location {
-      font-size: 0.75rem;
+      font-size: .8rem;
     }
 
     &__details {
-      font-size: 1rem;
+      font-size: .8rem;
     }
   }
 }
+
+
+@media screen and (max-width: 500px) {
+  .job div {
+    letter-spacing: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .job {
+    &__title {
+      font-size: 1.5rem;
+    }
+  }
+}
+
 </style>

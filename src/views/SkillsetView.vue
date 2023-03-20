@@ -108,7 +108,7 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="skillset">
     <div class="skillsets" v-for="(skill, index) in skills" :key="index">
       <Skill
         :title="skill.title"
@@ -122,6 +122,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.skillset {
+  padding: 2rem 0;
+}
+
 .skillsets {
   padding: 2rem;
   display: flex;
@@ -134,24 +138,63 @@ export default {
 
 .line {
   border-top: 1px solid var(--color-secondary-light);
-  width: clamp(100px, 15%, 300px);
+  width: clamp(50px, 15%, 300px);
 }
 
-@media screen and (max-width: 1279px) {
+@media screen and (min-width: 2560px) {
+  .skillset {
+    padding: 2rem 0;
+  }
+
   .skillsets {
-    gap: 2rem;
+    padding: 2rem;
+    gap: 4rem;
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1440px) {
+  .skillset {
+    padding: 2rem 0;
+  }
+
   .skillsets {
-    padding-left: 1rem;
+    padding: 1rem 1rem;
+    gap: 1.5rem;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1024px) {
+  .skillset {
+    padding: 2rem 0;
+  }
+
   .skillsets {
-    padding: 1rem;
+    padding: 1rem 0.5rem;
+    gap: 1.5rem;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .skillset {
+    padding: 4rem 0;
+  }
+
+  .skillsets {
+    padding: 1rem 0.5rem;
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skillset {
+    padding: 4rem 0;
+  }
+
+  .skillsets {
+    align-items: center;
+    padding: .8rem 0.5rem;
+    gap: 1rem;
+  }
+}
+
 </style>

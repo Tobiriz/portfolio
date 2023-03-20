@@ -96,7 +96,7 @@ export default {
 
 <style lang="scss" scoped>
 .contact-container {
-  min-height: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -156,29 +156,141 @@ export default {
   }
 }
 
-//screen width < 768px
-@media screen and (max-height: 600px), screen and (max-width: 768px) {
+@media screen and (min-width: 2560px) {
   .contact-container {
-    padding: 0;
-    height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 4vw;
+    gap: 8rem;
+
+    &__section {
+      &__header {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+      }
+
+      #email {
+        font-size: 4rem;
+      }
+
+      &__external {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem;
+
+        &__link {
+          font-size: 4rem;
+
+          .icon {
+            font-size: 4rem;
+          }
+
+          .external-link__header {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
   }
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-width: 1440px) {
   .contact-container {
-    padding: 0;
-    height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 3vh;
-    gap: 2rem;
+    gap: 5rem;
+
+    &__section {
+      &__header {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      #email {
+        font-size: 2rem;
+      }
+
+      &__external {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+
+        &__link {
+          font-size: 2rem;
+
+          .icon {
+            font-size: 2rem;
+          }
+
+          .external-link__header {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contact-container {
+    gap: 5rem;
+
+    &__section {
+      &__header {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      #email {
+        font-size: 1.5rem;
+      }
+
+      &__external {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 2rem;
+
+        &__link {
+          font-size: 2rem;
+
+          .icon {
+            font-size: 2rem;
+          }
+
+          .external-link__header {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .contact-container {
+    gap: 5rem;
+
+    &__section {
+      &__header {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+      }
+
+      #email {
+        font-size: 1.2rem;
+      }
+
+      &__external {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 2rem;
+
+        &__link {
+          font-size: 1.6rem;
+
+          .icon {
+            font-size: 1.5rem;
+          }
+
+          .external-link__header {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
   }
 }
 </style>

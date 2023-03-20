@@ -57,6 +57,10 @@ export default {
 
   methods: {
     togglePreview() {
+      const screenWidth = document.documentElement.clientWidth;
+      if (screenWidth <= 800) {
+        return
+      }
       this.previewActive = !this.previewActive;
     },
 
@@ -194,6 +198,164 @@ button {
     &__link {
       font-size: 1.5rem;
       font-weight: 400;
+    }
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .project {
+    padding: 3rem;
+    gap: 2rem;
+
+    &__title {
+      font-size: 2.8rem;
+      letter-spacing: 1px;
+    }
+
+    &__details {
+      gap: 1rem;
+
+      &__description {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+      }
+
+      &__link {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .project {
+    padding: 1rem;
+    gap: 2rem;
+
+    &__title {
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+
+    &__details {
+      gap: 1rem;
+
+      &__description {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+      }
+
+      &__link {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .project {
+    padding: 1rem;
+    gap: 2rem;
+
+    &__title {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    &__details {
+      gap: 1rem;
+
+      &__description {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+      }
+
+      &__link {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .project {
+    padding: 1rem;
+    gap: 2rem;
+
+    &__image-container {
+      &:hover,
+      &:focus {
+        outline: none;
+        outline-offset: 5px;
+      }
+    }
+
+    &__title {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    &__details {
+      gap: 1rem;
+
+      &__description {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+      }
+
+      &__link {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .project {
+    padding: 0;
+    gap: 1rem;
+
+    &__title {
+      font-size: 1.8rem;
+      letter-spacing: 0;
+    }
+
+    &__details {
+      gap: 1rem;
+
+      &__description {
+        font-size: 1.2rem;
+        letter-spacing: 0;
+      }
+
+      &__link {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .project {
+    padding: 0;
+    gap: 1rem;
+
+    &__title {
+      font-size: 1.5rem;
+      letter-spacing: 0;
+    }
+
+    &__details {
+      gap: 1rem;
+
+      &__description {
+        font-size: 1rem;
+        letter-spacing: 0;
+      }
+
+      &__link {
+        font-size: 1rem;
+      }
     }
   }
 }

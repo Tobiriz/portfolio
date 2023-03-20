@@ -49,28 +49,63 @@ export default {
       position: relative;
       margin-left: 15vw;
       width: 100%;
-      min-height: 100vh;
+      min-height: 90vh;
       padding: 5rem;
       box-sizing: border-box;
     }
   }
 }
 
-//screen width < 768px
-@media screen and (max-width: 1279px) {
+@media screen and (min-width: 2560px) {
   .content-container {
     &__content {
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      &__view {
+        padding: 6rem;
+      }
+    }
+  }
+}
 
+@media screen and (max-width: 1440px) {
+  .content-container {
+    &__content {
+      &__view {
+        padding: 3rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .content-container {
+    &__content {
+      &__view {
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content-container {
+    &__content {
       &__navigation {
-        width: 0%;
+        width: 0;
       }
 
       &__view {
-        width: 100%;
+        padding: 1rem;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .content-container {
+    &__content {
+      &__view {
+        padding: 0.5rem;
       }
     }
   }

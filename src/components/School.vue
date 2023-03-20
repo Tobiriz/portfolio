@@ -82,52 +82,99 @@ export default {
   }
 }
 
-@media screen and (max-width: 1366px) {
+@media screen and (min-width: 2560px) {
   .school {
     max-width: 90%;
 
     &__duration {
-      font-size: 1rem;
-    }
-
-    &__date {
-      font-size: 1.25rem;
-    }
-
-    &__title {
       font-size: 2rem;
+      letter-spacing: 0.15rem;
     }
-
+    
+    &__date {
+      font-size: 2.3rem;
+      letter-spacing: 0.15rem;
+    }
+    
+    &__title {
+      font-size: 3.4rem;
+    }
+    
     &__school {
-      font-size: 1.25rem;
+      font-size: 2.3rem;
+      letter-spacing: 0.15rem;
     }
-
+    
     &__location {
-      font-size: 1rem;
+      font-size: 2rem;
+      letter-spacing: 0.15rem;
     }
   }
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 1440px) {
   .school {
-    &__duration {
-      font-size: 0.75rem;
-    }
+    max-width: 90%;
 
+    &__duration {
+      font-size: 1.25rem;
+    }
+    
+    &__date {
+      font-size: 1.5rem;
+    }
+    
+    &__title {
+      font-size: 2.5rem;
+    }
+    
+    &__school {
+      font-size: 1.5rem;
+    }
+    
+    &__location {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .school {
+    max-width: 90%;
+
+    &__duration {
+      font-size: .8rem;
+    }
+    
     &__date {
       font-size: 1rem;
     }
-
+    
     &__title {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+      margin: .1rem;
     }
-
+    
     &__school {
       font-size: 1rem;
     }
-
+    
     &__location {
-      font-size: 0.75rem;
+      font-size: .8rem;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .school div {
+    letter-spacing: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .school {
+    &__title {
+      font-size: 1.5rem;
     }
   }
 }

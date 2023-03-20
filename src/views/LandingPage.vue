@@ -27,15 +27,15 @@ export default {
   },
 
   mounted() {
-    this.firstName = document.getElementById("first-name");
-    this.lastName = document.getElementById("last-name");
+    // this.firstName = document.getElementById("first-name");
+    // this.lastName = document.getElementById("last-name");
 
-    this.firstNameText = document
-      .getElementById("first-name")
-      .innerText.split("");
-    this.lastNameText = document
-      .getElementById("last-name")
-      .innerText.split("");
+    // this.firstNameText = document
+    //   .getElementById("first-name")
+    //   .innerText.split("");
+    // this.lastNameText = document
+    //   .getElementById("last-name")
+    //   .innerText.split("");
   },
 
   unmounted() {
@@ -179,9 +179,7 @@ export default {
         <div class="title-card__content">
           <div class="title-card__content__name">
             <a @keydown.enter="handleClick()" href="#">
-              <span id="first-name">Tobias</span>
-              <span>&nbsp;</span>
-              <span id="last-name">Weinlich</span>
+              <h1>Tobias Weinlich</h1>
             </a>
           </div>
 
@@ -214,7 +212,7 @@ a {
   color: var(--color-secondary);
   cursor: none;
 
-  &:focus {
+  &:focus-visible {
     outline: 2px solid var(--color-accent);
   }
 }
@@ -273,7 +271,7 @@ a {
     z-index: 4;
 
     &__name {
-      font-size: 4rem;
+      font-size: 3rem;
       font-weight: 700;
       letter-spacing: 1rem;
       text-transform: uppercase;
@@ -318,39 +316,113 @@ a {
   }
 }
 
-//screen size < 768px
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 2560px) {
   .title-card {
+    height: 23rem;
+
     &__content {
       &__name {
-        h1 {
-          font-size: 7vw;
-        }
+          font-size: 5rem;
       }
 
       &__occupation {
-        h2 {
-          font-size: 4vw;
-        }
+          font-size: 2.6rem;
       }
     }
   }
 }
 
-//screen height < 600px
-@media only screen and (max-height: 600px) {
+@media only screen and (max-width: 1440px) {
   .title-card {
+    height: 18rem;
+
     &__content {
       &__name {
-        h1 {
-          font-size: 8vh;
-        }
+          font-size: 2.5rem;
+          letter-spacing: .8rem;
       }
 
       &__occupation {
-        h2 {
-          font-size: 4vh;
-        }
+          font-size: 1.6rem;
+          letter-spacing: .4rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .title-card {
+    height: 14rem;
+
+    &__content {
+      &__name {
+          font-size: 1.8rem;
+          letter-spacing: .6rem;
+      }
+
+      &__occupation {
+          font-size: 1.2rem;
+          letter-spacing: .3rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .title-card {
+    height: 15rem;
+
+    &__content {
+      &__name {
+          font-size: 1.8rem;
+          letter-spacing: .4rem;
+      }
+
+      &__occupation {
+          font-size: 1.2rem;
+          letter-spacing: .2rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .title-card {
+    height: 18rem;
+    
+    &__content {
+      gap: 2rem;
+
+      &__name {
+          font-size: 1.5rem;
+          line-height: 3.5rem;
+          letter-spacing: .2rem;
+      }
+
+      &__occupation {
+          font-size: 1.1rem;
+          letter-spacing: .1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .title-card {
+    height: 18rem;
+    
+    &__content {
+      gap: 2rem;
+
+      &__name {
+          font-size: 1.4rem;
+          line-height: 3rem;
+          letter-spacing: 0;
+      }
+
+      &__occupation {
+          font-size: 1rem;
+          letter-spacing: 0;
       }
     }
   }

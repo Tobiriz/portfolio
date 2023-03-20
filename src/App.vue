@@ -14,6 +14,13 @@ export default {
     return { store };
   },
 
+  beforeMount() {
+    const screenWidth = document.documentElement.clientWidth;
+    if (screenWidth <= 800) {
+      this.$router.push("/portfolio");
+    }
+  },
+
   mounted() {
     const cursor = document.getElementById("cursor");
     const blob = document.getElementById("blob");
@@ -106,9 +113,11 @@ export default {
 }
 
 #blur {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   position: fixed;
+  left: 0;
+  top: 0;
   z-index: -1;
   backdrop-filter: blur(200px);
 }
