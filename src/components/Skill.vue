@@ -69,6 +69,7 @@ export default {
   justify-content: center;
   align-items: flex-end;
   color: var(--color-secondary-light);
+  width: 90%;
 
   &__title {
     all: unset;
@@ -77,12 +78,13 @@ export default {
     text-transform: uppercase;
     letter-spacing: 1px;
     text-align: end;
+    padding-bottom: 0.5rem;
 
     &:hover {
       color: var(--color-accent) !important;
     }
 
-    &:focus {
+    &:focus-visible {
       color: var(--color-secondary);
     }
   }
