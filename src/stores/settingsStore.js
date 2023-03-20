@@ -223,5 +223,9 @@ export const useSettingsStore = defineStore("SettingsStore", {
     languageIsGerman() {
       return this.languageGerman;
     },
+
+    overlayIsActive() {
+      return this.overlayActive;
+    },
   },
 });
