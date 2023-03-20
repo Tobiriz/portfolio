@@ -61,7 +61,6 @@ export default {
     letter-spacing: 0.1rem;
     text-transform: uppercase;
     color: var(--color-accent);
-    margin: 0.5rem;
   }
 
   &__description {
