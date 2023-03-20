@@ -13,107 +13,67 @@ export const useSkillsetStore = defineStore("SkillsetStore", {
           {
             title: "Hypertext Markup Language",
             content:
-              "I have extensive knowledge of HTML and can use it to create professional, dynamic websites with complex structures and interactions.",
+              "I have extensive knowledge in HTML, the basic markup language for web pages. Through self-study and experience in web development, I have continuously improved my skills in HTML. I am capable of creating and maintaining complex HTML structures to develop attractive and user-friendly websites.",
           },
           {
-            title: "Cascading Style Sheets",
+            title: "Cascading Style Sheets and Design",
             content:
-              "CSS allows me to customize the look of my web pages and give them a responsive design.",
+              "I have a good eye for design and can implement complex layouts using HTML and CSS. During my time as a service technician, I also assisted in the installation of security systems and developed a sense of aesthetics and design. I enjoy using these skills to create visually appealing and intuitive websites and user interfaces.",
           },
           {
             title: "JavaScript",
             content:
-              "I can use JavaScript to create interactive elements on web pages and program complex functions.",
+              "JavaScript is one of my core competencies as I have worked with it in several projects. Through my academic background, I have a deep understanding of mathematical concepts and algorithms that are relevant for working with JavaScript.",
           },
           {
             title: "Vue.js",
             content:
-              "I have experience with the Vue.js framework and can use it to develop modern, scalable web applications.",
+              "I have extensive experience in Vue.js, one of the leading JavaScript frameworks for web application development. My broad technical understanding and analytical skills enable me to understand the complex architecture of Vue.js and work with it effectively",
           },
           {
             title: "Java",
             content:
-              "As a programming language, I am proficient in Java and can use it to develop robust, cross-platform applications.",
-          },
-          {
-            title: "Problem Solving",
-            content:
-              "I have a knack for identifying problems and developing creative solutions.",
-          },
-          {
-            title: "Technical Understanding",
-            content:
-              "I have a deep understanding of technical concepts and can quickly learn new technologies.",
-          },
-          {
-            title: "Curiosity",
-            content:
-              "I am always curious about new technologies and trends and constantly strive to expand my knowledge.",
+              "I have extensive experience in developing Java applications. I am able to write complex algorithms and have knowledge in working with frameworks such as Spring. My deep understanding of object-oriented programming and ability to diagnose and fix errors quickly enable me to write high-quality and reliable code.",
           },
           {
             title: "Teamwork",
             content:
-              "I enjoy working in teams and can quickly adapt to different work styles and personalities.",
+              "I am a dedicated team player and have gained a lot of experience working in teams throughout my career. As a service technician for security technology, I was often part of project teams that worked together to realize complex projects. These experiences have strengthened my collaboration skills and made me a valuable team member.",
           },
           {
-            title: "Communication",
+            title: "Version control with Git",
             content:
-              "I have excellent communication skills and can explain complex technical concepts in a clear and concise manner.",
+              "I have extensive knowledge in version control with Git, an important technology for collaboration in software development projects. My project management skills help me to work effectively with Git and ensure that all project stakeholders are up-to-date.",
           },
           {
-            title: "Time Management",
+            title: "Time management",
             content:
-              "I am very good at using my time effectively and prioritizing to complete projects on time.",
+              "I am an experienced project manager and have extensive skills in time management. Through my work as a service technician for security technology, I have learned to effectively handle limited resources and tight schedules, which benefits me in my work as a software developer.",
           },
           {
-            title: "Creativity",
+            title: "Project management",
             content:
-              "I am very creative and can develop innovative solutions that go beyond the scope of traditional ways of thinking.",
+              "As an electronics technician for information and telecommunications technology and former service technician in the field of security technology, I have gained experience in project management. I am able to define goals, set priorities, and effectively utilize resources. I can motivate and coordinate project teams while keeping the end goal in mind. I also understand the importance of identifying and assessing risks and opportunities to ensure successful project implementation.",
           },
           {
-            title: "Customer Service",
+            title: "Technical Understanding and Abstraction Capability",
             content:
-              "I am experienced in customer service and can respond to customer needs in a friendly and effective manner.",
+              "Due to my education as an Electronics Technician for Information and Telecommunication Technology and my studies in Mechanical Engineering, Electrical Engineering, and Computer Science, I possess a profound technical understanding and abstraction capability. I am capable of comprehending complex technical situations and translating them into easily understandable language. I also have the ability to recognize abstract concepts and connections and apply them to practical applications.",
           },
           {
-            title: "Languages",
+            title: "Analytical Thinking and Problem-Solving",
             content:
-              "Besides my mother tongue German, I speak fluent English and can therefore successfully communicate with clients and colleagues from different countries and cultures.",
+              "As an Electronics Technician and former Service Technician, I have learned to think analytically and solve problems systematically. I can break down complex problems into smaller parts, enabling me to find solutions more quickly and effectively. My ability to recognize patterns and draw logical conclusions aids me in diagnosing and solving technical problems. Additionally, when it comes to developing and implementing software solutions, I am able to take a systematic approach.",
           },
           {
-            title: "Empathy",
+            title: "Critical and Logical Thinking",
             content:
-              "I have the ability to empathize with others and understand their perspectives and needs in order to communicate and work effectively.",
+              "Through my education and studies, I have learned to think critically and logically. I can analyze complex situations and connections and draw conclusions from them. Additionally, when it comes to evaluating information and data, I can approach it critically to avoid making mistakes. My ability to understand complex situations and recognize connections also aids me in solving technical problems and developing software solutions.",
           },
           {
-            title: "Agility",
+            title: "Mathematics",
             content:
-              "I am flexible and adaptable and can therefore react quickly to changing requirements and conditions.",
-          },
-          {
-            title: "Analytical Thinking",
-            content:
-              "I am able to gather, analyze, and interpret complex information to make informed decisions.",
-          },
-          {
-            title: "Critical Thinking",
-            content:
-              "I can think critically and look at problems from different perspectives.",
-          },
-          {
-            title: "Design",
-            content:
-              "I have a good eye for design and can create appealing, user-friendly interfaces.",
-          },
-          {
-            title: "Project Management",
-            content:
-              "I have experience with project management and can plan and organize projects efficiently.",
-          },
-          {
-            title: "Collaboration with AI",
-            content:
-              "I have experience working with AI tools and technologies to make data-driven decisions and solve complex problems more effectively.",
+              "Through my studies in Physics, Mechanical Engineering, and Electrical Engineering, I have acquired a solid understanding of mathematics. In school, I already enjoyed Mathematics and Computer Science and was able to demonstrate my analytical abilities in solving mathematical problems. These skills are also beneficial to me when it comes to programming and solving technical challenges.",
           },
         ],
       },
@@ -125,129 +85,67 @@ export const useSkillsetStore = defineStore("SkillsetStore", {
           {
             title: "Hypertext Markup Language",
             content:
-              "Ich habe umfangreiche Kenntnisse in HTML und kann damit professionelle, dynamische Webseiten mit komplexen Strukturen und Interaktionen erstellen.",
+              "Ich habe umfangreiche Kenntnisse in HTML, der grundlegenden Auszeichnungssprache für Webseiten. Durch mein Selbststudium und meine Erfahrungen in der Entwicklung von Webseiten konnte ich meine Fähigkeiten in HTML stetig verbessern. Ich bin in der Lage, komplexe HTML-Strukturen zu erstellen und zu pflegen, um attraktive und benutzerfreundliche Webseiten zu entwickeln.",
           },
           {
-            title: "Cascading Style Sheets",
+            title: "Cascading Style Sheets und Design",
             content:
-              "Mit CSS kann ich das Aussehen meiner Webseiten anpassen und ihnen ein ansprechendes Design verleihen.",
+              "Ich habe ein gutes Auge für Design und kann komplexe Layouts mit HTML und CSS umsetzen. Während meiner Zeit als Servicetechniker habe ich auch an der Installation von Sicherheitssystemen mitgearbeitet und dabei ein Gespür für Ästhetik und Design entwickelt. Diese Fähigkeiten setze ich auch gerne ein, um Webseiten und Benutzeroberflächen ansprechend und intuitiv zu gestalten.",
           },
           {
             title: "JavaScript",
             content:
-              "Ich kann mit JavaScript interaktive Elemente auf Webseiten erstellen und komplexe Funktionen programmieren.",
+              "JavaScript ist eine meiner Kernkompetenzen, da ich bereits in mehreren Projekten damit gearbeitet habe. Durch meine akademische Laufbahn verfüge ich über ein tiefes Verständnis für mathematische Konzepte und Algorithmen, die für die Arbeit mit JavaScript relevant sind.",
           },
           {
             title: "Vue.js",
             content:
-              "Ich habe Erfahrung mit dem Framework Vue.js und kann damit moderne, skalierbare Webanwendungen entwickeln.",
+              "Ich habe umfangreiche Erfahrung in Vue.js, einem der führenden JavaScript-Frameworks für die Entwicklung von Webanwendungen. Mein breites technisches Verständnis und meine analytischen Fähigkeiten helfen mir dabei, die komplexe Architektur von Vue.js zu verstehen und effektiv damit zu arbeiten.",
           },
           {
             title: "Java",
             content:
-              "Als Programmiersprache beherrsche ich Java und kann damit robuste, plattformübergreifende Anwendungen entwickeln.",
-          },
-          {
-            title: "Problemlösung",
-            content:
-              "Ich bin sehr geschickt darin, Probleme zu identifizieren und kreative Lösungen zu entwickeln. "
-              + "Ich arbeite jedoch auch daran, meine Fähigkeiten zur Datenaufnahme, Ursachenanalyse und Implementierung von Lösungen zu verbessern. "
-              + "Problemlösung ist ein iterativer Prozess, und ich bin bereit, mich anzupassen und flexibel zu sein, um die bestmögliche Lösung zu finden.",
-          },
-          {
-            title: "Technisches Verständnis",
-            content:
-              "Mein technisches Verständnis zeichnet sich durch meine Fähigkeit aus, technische Probleme zu identifizieren, "
-              +"zu analysieren und kreative Lösungen zu entwickeln. Ich besitze Fähigkeiten im kritischen Denken und Problemlösung, "
-              + "die es mir ermöglichen, Daten zu sammeln und Ursachenanalysen durchzuführen, um die bestmögliche Lösung zu finden.",
-          },
-          {
-            title: "Neugierde",
-            content:
-              "Meine Neugierde ist eine wertvolle Eigenschaft, die mich antreibt, die Welt um mich herum zu erkunden und zu verstehen. "
-              +"Ich stelle gerne Fragen und sammle Wissen, und probiere auch gerne neue Dinge aus, um mich weiterzuentwickeln. "
-              + "Durch meine Neugierde konnte ich meine Fähigkeiten verbessern und meine Perspektive in vielen Bereichen des Lebens erweitern.",
+              "Ich habe umfangreiche Erfahrung in der Entwicklung von Java-Anwendungen. Ich bin in der Lage, komplexe Algorithmen zu schreiben und habe Kenntnisse in der Arbeit mit Frameworks wie Spring. Mein tiefes Verständnis der objektorientierten Programmierung und die Fähigkeit, Fehler schnell zu diagnostizieren und zu beheben, ermöglichen es mir, qualitativ hochwertigen und zuverlässigen Code zu schreiben.",
           },
           {
             title: "Teamwork",
             content:
-              "Ich kann effektiv mit anderen zusammenarbeiten, um gemeinsame Ziele zu erreichen. Ich kommuniziere klar und kooperiere gut mit anderen, "
-              + "um sicherzustellen, dass wir aufeinander abgestimmt arbeiten. Ich bin auch bereit, Feedback zu geben und anzunehmen sowie Konflikte konstruktiv zu lösen. "
-              + "Durch mein effektives Teamwork können wir unsere vielfältigen Perspektiven und Fähigkeiten kombinieren, um die bestmöglichen Ergebnisse zu erzielen.",
+              "Ich bin ein engagierter Teamplayer und habe im Laufe meiner Karriere viele Erfahrungen im Team gesammelt. Als Servicetechniker für Sicherheitstechnik war ich oft Teil von Projektteams, die zusammenarbeiteten, um komplexe Projekte zu realisieren. Diese Erfahrungen haben meine Fähigkeiten im Bereich der Zusammenarbeit gestärkt und mich zu einem wertvollen Teammitglied gemacht.",
           },
           {
-            title: "Kommunikation",
+            title: "Versionskontrolle mit Git",
             content:
-              "Ich verfüge über ausgezeichnete kommunikative Fähigkeiten und kann meine Gedanken und Ideen klar und präzise vermitteln. "
-              + "Ich höre anderen aktiv zu und kann komplexe Konzepte in einfache, leicht verständliche Sprache übersetzen, "
-              + "um sicherzustellen, dass alle Beteiligten auf derselben Seite sind.",
+              "Ich verfüge über umfangreiche Kenntnisse in der Versionskontrolle mit Git, einer wichtigen Technologie für die Zusammenarbeit in Softwareentwicklungsprojekten. Meine Fähigkeiten im Bereich des Projektmanagements helfen mir dabei, effektiv mit Git zu arbeiten und sicherzustellen, dass alle Projektbeteiligten auf dem neuesten Stand sind.",
           },
           {
             title: "Zeitmanagement",
             content:
-              "Ich plane meine Arbeit im Voraus und nutze meine Zeit effizient, um sicherzustellen, "
-              + "dass ich meine Aufgaben rechtzeitig und qualitativ hochwertig erledige. Durch meine Fähigkeiten im Zeitmanagement kann "
-              + "ich produktiv bleiben und meine Ziele erfolgreich erreichen.",
-          },
-          {
-            title: "Kreativität",
-            content:
-              "Ich bin sehr kreativ und kann innovative Lösungen entwickeln, die über den Rahmen traditioneller Denkweisen hinausgehen.",
-          },
-          {
-            title: "Kundenservice",
-            content:
-              "Ich bin kreativ und habe ein Talent dafür, innovative Lösungen zu finden und neue Ideen zu generieren. "
-              + "Meine Neugier und Offenheit für neue Erfahrungen fördern meine Kreativität und ermöglichen es mir, "
-              + "Grenzen zu überschreiten. Ich nutze meine Fähigkeiten in verschiedenen Bereichen und verbessere meine Fähigkeiten durch meine Kreativität.",
-          },
-          {
-            title: "Sprachen",
-            content:
-              "Neben meiner Mutterspruche Deutsch, spreche ich fließend English und kann damit erfolgreich mit Kunden und Kollegen aus verschiedenen Ländern und Kulturen kommunizieren.",
-          },
-          {
-            title: "Empathie",
-            content:
-              "Ich bin empathisch und einfühlsam und kann mich gut in die Gefühle und Bedürfnisse anderer hineinversetzen. "
-              + "Ich höre aktiv zu und bemühe mich, die Perspektive anderer zu verstehen, um eine erfolgreiche Zusammenarbeit zu fördern. "
-              + "Durch meine Fähigkeiten in Empathie kann ich gute Beziehungen aufbauen und ein positives Arbeitsumfeld schaffen.",
-          },
-          {
-            title: "Agilität",
-            content:
-              "Ich bin agil und kann mich schnell an veränderte Umstände und Anforderungen anpassen. "
-              + "Ich arbeite gut unter Druck und kann auch in stressigen Situationen meine Leistung aufrechterhalten. "
-              + "Durch meine Fähigkeiten in Agilität kann ich flexibel bleiben und erfolgreich in einem sich schnell verändernden Arbeitsumfeld arbeiten.",
-          },
-          {
-            title: "Analytisches Denken",
-            content:
-              "Ich verfüge über ausgezeichnete Fähigkeiten im analytischen Denken und kann komplexe Probleme systematisch und logisch angehen. "
-              + "Ich bin in der Lage, Daten zu analysieren und Muster zu erkennen, um fundierte Entscheidungen zu treffen und effektive Lösungen zu finden. "
-              + "Durch meine Fähigkeiten im analytischen Denken kann ich erfolgreich in verschiedenen Bereichen arbeiten und komplexe Herausforderungen meistern.",
-          },
-          {
-            title: "Kritisches Denken",
-            content:
-              "Ich bin in der Lage, kritisches Denken anzuwenden, um komplexe Probleme zu analysieren und fundierte Entscheidungen zu treffen. "
-              + "Ich hinterfrage Annahmen und suche nach verschiedenen Perspektiven, um eine umfassende Sichtweise zu erhalten und mögliche Risiken zu minimieren. "
-              + "Meine Fähigkeiten im kritischen Denken ermöglichen es mir, Herausforderungen effektiv zu bewältigen und innovative Lösungen zu finden.",
-          },
-          {
-            title: "Design",
-            content:
-              "Ich habe ein gutes Auge für Design und kann ansprechende, benutzerfreundliche Oberflächen erstellen.",
+              "Ich bin ein erfahrener Projektmanager und verfüge über umfangreiche Fähigkeiten im Bereich des Zeitmanagements. Durch meine Arbeit als Servicetechniker für Sicherheitstechnik habe ich gelernt, effektiv mit begrenzten Ressourcen und engen Zeitplänen umzugehen, was mir in meiner Arbeit als Softwareentwickler zugutekommt.",
           },
           {
             title: "Projektmanagement",
             content:
-              "Ich habe Erfahrung mit Projektmanagement und kann Projekte effizient planen und organisieren.",
+              "Als Elektroniker für Informations- und Telekommunikationstechnik und ehemaliger Servicetechniker im Bereich der Sicherheitstechnik habe ich bereits Erfahrungen im Projektmanagement gesammelt. Ich bin in der Lage, Ziele zu definieren, Prioritäten zu setzen und Ressourcen effektiv zu nutzen. Ich kann Projektteams motivieren und koordinieren und habe dabei stets das Ziel im Blick. Ich weiß auch, wie wichtig es ist, Risiken und Chancen zu identifizieren und zu bewerten, um so die erfolgreiche Umsetzung von Projekten zu gewährleisten.",
           },
           {
-            title: "Zusammenarbeit mit KI",
+            title: "Technisches Verständnis und Abstraktionsvermögen",
             content:
-              "Ich habe Erfahrung in der Arbeit mit KI-Tools und -Technologien, um datengesteuerte Entscheidungen zu treffen und komplexe Probleme effektiver zu lösen.",
+              "Aufgrund meiner Ausbildung als Elektroniker für Informations- und Telekommunikationstechnik sowie meines Studiums in Maschinenbau, Elektrotechnik und Informatik verfüge ich über ein ausgeprägtes technisches Verständnis und Abstraktionsvermögen. Ich bin in der Lage, komplexe technische Sachverhalte zu verstehen und in eine leicht verständliche Sprache zu übersetzen. Ich habe auch die Fähigkeit, abstrakte Konzepte und Zusammenhänge zu erkennen und diese in praktische Anwendungen umzusetzen.",
+          },
+          {
+            title: "Analytisches Denken und Problemlösung",
+            content:
+              "Als Elektroniker und ehemaliger Servicetechniker habe ich gelernt, analytisch zu denken und Probleme systematisch zu lösen. Ich kann komplexe Probleme in ihre Einzelteile zerlegen und so schneller und effektiver Lösungen finden. Meine Fähigkeit, Zusammenhänge zu erkennen und logische Schlüsse zu ziehen, hilft mir bei der Diagnose und Lösung technischer Probleme. Auch bei der Entwicklung und Implementierung von Softwarelösungen bin ich in der Lage, ein systematisches Vorgehen zu wählen.",
+          },
+          {
+            title: "Kritisches und logisches Denken",
+            content:
+              "Durch meine Ausbildung und Studium habe ich gelernt, kritisch und logisch zu denken. Ich kann komplexe Sachverhalte und Zusammenhänge analysieren und daraus Schlüsse ziehen. Auch bei der Beurteilung von Informationen und Daten kann ich eine kritische Herangehensweise wählen, um Fehlentscheidungen zu vermeiden. Meine Fähigkeit, komplexe Sachverhalte zu durchdringen und Zusammenhänge zu erkennen, hilft mir auch bei der Lösung von technischen Problemen und der Entwicklung von Softwarelösungen.",
+          },
+          {
+            title: "Mathematik",
+            content:
+              "Durch mein Studium der Physik, Maschinenbau und Elektrotechnik habe ich ein fundiertes mathematisches Verständnis erlangt. In der Schule hatte ich bereits viel Spaß an Mathematik und Informatik und konnte meine analytischen Fähigkeiten bei der Lösung von mathematischen Problemen unter Beweis stellen. Diese Fähigkeiten kommen mir auch bei der Programmierung und der Lösung technischer Herausforderungen zugute.",
           },
         ],
       },
