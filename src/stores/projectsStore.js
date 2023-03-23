@@ -15,10 +15,10 @@ export const useProjectsStore = defineStore("ProjectsStore", {
             notice: "This project is currently in development!",
             description:
               "Record your adventures and characters in an interactive diary with the Dungeons and Dragons webapp, programmed with Vue.js!",
-            image: "/src/assets/images/dnd-diary-preview-english-overview.png",
+            image: "@/assets/images/dnd-diary-preview-english-overview.jpg",
             images: [
               {
-                src: "/src/assets/images/dnd-diary-preview-english-overview.png",
+                src: "@/assets/images/dnd-diary-preview-english-overview.jpg",
                 alt: {
                   title: "Overview",
                   description:
@@ -26,7 +26,7 @@ export const useProjectsStore = defineStore("ProjectsStore", {
                 },
               },
               {
-                src: "/src/assets/images/dnd-diary-preview-english-sessions.png",
+                src: "@/assets/images/dnd-diary-preview-english-sessions.jpg",
                 alt: {
                   title: "Sessions",
                   description:
@@ -34,7 +34,7 @@ export const useProjectsStore = defineStore("ProjectsStore", {
                 },
               },
               {
-                src: "/src/assets/images/dnd-diary-preview-english-persons.png",
+                src: "@/assets/images/dnd-diary-preview-english-persons.jpg",
                 alt: {
                   title: "Persons",
                   description:
@@ -42,7 +42,7 @@ export const useProjectsStore = defineStore("ProjectsStore", {
                 },
               },
               {
-                src: "/src/assets/images/dnd-diary-preview-english-locations.png",
+                src: "@/assets/images/dnd-diary-preview-english-locations.jpg",
                 alt: {
                   title: "Locations",
                   description:
@@ -50,7 +50,7 @@ export const useProjectsStore = defineStore("ProjectsStore", {
                 },
               },
               {
-                src: "/src/assets/images/dnd-diary-preview-english-notes.png",
+                src: "@/assets/images/dnd-diary-preview-english-notes.jpg",
                 alt: {
                   title: "Notes",
                   description:
@@ -76,10 +76,10 @@ export const useProjectsStore = defineStore("ProjectsStore", {
             title: "Addressbook",
             description:
               "This is a Java application that allows to manage people with their names, addresses, birthdays and contact options. The application provides a simple and intuitive interface that allows the user to quickly and effectively add, edit and delete people.",
-            image: "/src/assets/images/addressbook-preview.png",
+            image: "@/assets/images/addressbook-preview.jpg",
             images: [
               {
-                src: "/src/assets/images/addressbook-preview.png",
+                src: "@/assets/images/addressbook-preview.jpg",
                 alt: {
                   title: "Overview",
                   description: "",
@@ -101,10 +101,10 @@ export const useProjectsStore = defineStore("ProjectsStore", {
             notice: "Dieses Projekt befindet sich in der Entwicklung!",
             description:
               "Halte deine Abenteuer und Charaktere in einem interaktiven Tagebuch fest - mit der Dungeons and Dragons Webapp, programmiert mit Vue.js!",
-            image: "/src/assets/images/dnd-diary-preview-german-overview.png",
+            image: "@/assets/images/dnd-diary-preview-german-overview.jpg",
             images: [
               {
-                src: "/src/assets/images/dnd-diary-preview-german-overview.png",
+                src: "@/assets/images/dnd-diary-preview-german-overview.jpg",
                 alt: {
                   title: "Übersicht",
                   description:
@@ -112,7 +112,7 @@ export const useProjectsStore = defineStore("ProjectsStore", {
                 },
               },
               {
-                src: "/src/assets/images/dnd-diary-preview-german-sessions.png",
+                src: "@/assets/images/dnd-diary-preview-german-sessions.jpg",
                 alt: {
                   title: "Sitzungen",
                   description:
@@ -120,7 +120,7 @@ export const useProjectsStore = defineStore("ProjectsStore", {
                 },
               },
               {
-                src: "/src/assets/images/dnd-diary-preview-german-persons.png",
+                src: "@/assets/images/dnd-diary-preview-german-persons.jpg",
                 alt: {
                   title: "Personen",
                   description:
@@ -128,7 +128,7 @@ export const useProjectsStore = defineStore("ProjectsStore", {
                 },
               },
               {
-                src: "/src/assets/images/dnd-diary-preview-german-locations.png",
+                src: "@/assets/images/dnd-diary-preview-german-locations.jpg",
                 alt: {
                   title: "Orte",
                   description:
@@ -136,7 +136,7 @@ export const useProjectsStore = defineStore("ProjectsStore", {
                 },
               },
               {
-                src: "/src/assets/images/dnd-diary-preview-german-notes.png",
+                src: "@/assets/images/dnd-diary-preview-german-notes.jpg",
                 alt: {
                   title: "Notizen",
                   description:
@@ -163,10 +163,10 @@ export const useProjectsStore = defineStore("ProjectsStore", {
             notice: null,
             description:
               "Dies ist eine Java-Anwendung, die es ermöglicht, Personen mit ihren Namen, Adressen, Geburtstagen und Kontaktmöglichkeiten zu verwalten. Die Anwendung bietet eine einfache und intuitive Benutzeroberfläche, die es dem Benutzer ermöglicht, schnell und effektiv Personen hinzuzufügen, zu bearbeiten und zu löschen.",
-            image: "/src/assets/images/addressbook-preview.png",
+            image: "@/assets/images/addressbook-preview.jpg",
             images: [
               {
-                src: "/src/assets/images/addressbook-preview.png",
+                src: "@/assets/images/addressbook-preview.jpg",
                 alt: {
                   title: "Übersicht",
                   description: "",
