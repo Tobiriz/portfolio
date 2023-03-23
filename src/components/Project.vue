@@ -40,12 +40,20 @@ export default {
       return this.project.title;
     },
 
+    notice() {
+      return this.project.notice;
+    },
+
     description() {
       return this.project.description;
     },
 
     link() {
       return this.project.link;
+    },
+
+    linkText() {
+      return this.project.linkText;
     },
 
     previewImagesText() {
@@ -61,23 +69,31 @@ export default {
     togglePreview() {
       const screenWidth = document.documentElement.clientWidth;
       if (screenWidth <= 800) {
-        return
+        return;
       }
       this.previewActive = !this.previewActive;
     },
 
     handleMouseOver() {
-      this.activateCursorShadow();
       const cursor = document.getElementById("cursor");
       cursor.classList.add("cursor--active");
     },
 
+    handleMouseOverForPreview() {
+      this.activateCursorShadow();
+      this.handleMouseOver();
+    },
+
     handleMouseLeave() {
+      const cursor = document.getElementById("cursor");
+      cursor.classList.remove("cursor--active");
+    },
+
+    handleMouseLeaveForPreview() {
       if (!this.previewActive) {
         this.deactivateCursorShadow();
       }
-      const cursor = document.getElementById("cursor");
-      cursor.classList.remove("cursor--active");
+      this.handleMouseLeave();
     },
 
     handleMouseClick() {
@@ -114,8 +130,8 @@ export default {
         :src="image"
         alt="project image"
         @click="handleMouseClick()"
-        @mouseover="handleMouseOver()"
-        @mouseleave="handleMouseLeave()"
+        @mouseover="handleMouseOverForPreview()"
+        @mouseleave="handleMouseLeaveForPreview()"
       />
       <span class="visually-hidden">
         {{ previewImagesText }}
@@ -128,12 +144,24 @@ export default {
       {{ title }}
     </div>
 
+    <div v-if="notice" class="project__notice">
+      {{ notice }}
+    </div>
+
     <div class="project__details">
       <div class="project__details__description">
         {{ description }}
       </div>
-      <div class="project__details__link">
-        {{ link }}
+      <div v-if="link" class="project__details__link">
+        <a
+          :href="link"
+          target="_blank"
+          @click="handleMouseClick()"
+          @mouseover="handleMouseOver()"
+          @mouseleave="handleMouseLeave()"
+        >
+          {{ linkText }}
+        </a>
       </div>
     </div>
 
@@ -150,6 +178,16 @@ button {
   all: unset;
 }
 
+a {
+  all: unset;
+  transition: color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-accent);
+  }
+}
+
 .project {
   justify-self: center;
   padding: 3rem;
@@ -157,7 +195,7 @@ button {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 1.5rem;
   color: var(--color-secondary);
 
   &__image-container {
@@ -193,10 +231,17 @@ button {
     letter-spacing: 1px;
   }
 
+  &__notice {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    font-style: italic;
+  }
+
   &__details {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
 
     &__description {
       font-size: 1.5rem;
@@ -207,6 +252,7 @@ button {
     &__link {
       font-size: 1.5rem;
       font-weight: 400;
+      color: var(--color-secondary-light);
     }
   }
 }
@@ -219,6 +265,11 @@ button {
     &__title {
       font-size: 2.8rem;
       letter-spacing: 1px;
+    }
+
+    &__notice {
+      font-size: 1.5rem;
+      letter-spacing: 0.1rem;
     }
 
     &__details {
@@ -246,6 +297,11 @@ button {
       letter-spacing: 1px;
     }
 
+    &__notice {
+      font-size: 1rem;
+      letter-spacing: 0.1rem;
+    }
+
     &__details {
       gap: 1rem;
 
@@ -269,6 +325,11 @@ button {
     &__title {
       font-size: 1.8rem;
       letter-spacing: 1px;
+    }
+
+    &__notice {
+      font-size: 1rem;
+      letter-spacing: 0.1rem;
     }
 
     &__details {
@@ -304,6 +365,11 @@ button {
       letter-spacing: 1px;
     }
 
+    &__notice {
+      font-size: 1rem;
+      letter-spacing: 0.1rem;
+    }
+
     &__details {
       gap: 1rem;
 
@@ -329,6 +395,11 @@ button {
       letter-spacing: 0;
     }
 
+    &__notice {
+      font-size: 1rem;
+      letter-spacing: 0;
+    }
+
     &__details {
       gap: 1rem;
 
@@ -351,6 +422,11 @@ button {
 
     &__title {
       font-size: 1.5rem;
+      letter-spacing: 0;
+    }
+
+    &__notice {
+      font-size: 1rem;
       letter-spacing: 0;
     }
 
