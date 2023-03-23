@@ -1,9 +1,61 @@
 <script>
+import { useSettingsStore } from '@/stores/settingsStore';
+
 export default {
   props: {
     job: {
       type: Object,
       required: true,
+    },
+  },
+
+  setup() {
+    const settings = useSettingsStore();
+    return { settings };
+  },
+
+  data() {
+    return {
+      showDetails: false,
+    };
+  },
+
+  methods: {
+    handleMouseOver() {
+      const cursor = document.getElementById("cursor");
+      cursor.classList.add("cursor--active");
+    },
+
+    handleMouseLeave() {
+      const cursor = document.getElementById("cursor");
+      cursor.classList.remove("cursor--active");
+    },
+
+    handleMouseClick() {
+      this.showDetails = !this.showDetails;
+      const cursor = document.getElementById("cursor");
+      cursor.classList.add("cursor--click");
+      setTimeout(() => {
+        cursor.classList.remove("cursor--click");
+      }, 300);
+    },
+  },
+
+  computed: {
+    hideDetailsText() {
+      if (this.settings.languageIsEnglish) {
+        return 'Hide Details';
+      } else {
+        return 'Details ausblenden';
+      }
+    },
+
+    showDetailsText() {
+      if (this.settings.languageIsEnglish) {
+        return 'Show Details';
+      } else {
+        return 'Details anzeigen';
+      }
     },
   },
 };
@@ -30,7 +82,12 @@ export default {
           {{ job.location }}
         </div>
         <div class="job__details">
-          {{ job.description }}
+          <button class="details-button" v-if="showDetails" @click="handleMouseClick" @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">{{ hideDetailsText }}</button>
+          <button class="details-button" v-else @click="handleMouseClick" @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">{{ showDetailsText }}</button>
+
+          <div class="details" v-if="showDetails">
+            <p>{{ job.description }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -38,6 +95,33 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+button {
+  all: unset;
+}
+
+.details-button {
+  color: var(--color-secondary-light);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-style: italic;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--color-accent);
+  }
+
+  &:focus-visible {
+    color: var(--color-accent);
+  }
+}
+
+.details {
+  text-align: center;
+}
+
 .job {
   display: flex;
   flex-direction: column;
@@ -126,6 +210,11 @@ export default {
       font-size: 2rem;
     }
   }
+
+  .details-button {
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+  }
 }
 
 @media screen and (max-width: 1440px) {
@@ -156,6 +245,11 @@ export default {
       font-size: 1.3rem;
     }
   }
+  
+  .details-button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -185,6 +279,11 @@ export default {
     &__details {
       font-size: 1rem;
     }
+  }
+   
+  .details-button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
   }
 }
 
@@ -217,6 +316,12 @@ export default {
     &__details {
       font-size: .8rem;
     }
+  }
+
+   
+  .details-button {
+    font-size: .8rem;
+    padding: 0.2rem .6rem;
   }
 }
 
