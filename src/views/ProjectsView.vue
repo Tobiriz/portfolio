@@ -46,8 +46,8 @@ export default {
   grid-auto-rows: minmax(300px, auto);
   grid-gap: 2rem;
   column-gap: 2rem;
-  justify-items: start;
-  align-items: center;
+  justify-items: center;
+  align-items: start;
 }
 
 @media screen and (min-width: 2560px) {
@@ -112,7 +112,7 @@ export default {
 
 @media screen and (max-width: 350px) {
   .projects {
-    padding: 4rem .5rem;
+    padding: 4rem 0.5rem;
   }
 
   .projects-container {

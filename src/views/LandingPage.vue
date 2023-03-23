@@ -29,7 +29,6 @@ export default {
   mounted() {
     // this.firstName = document.getElementById("first-name");
     // this.lastName = document.getElementById("last-name");
-
     // this.firstNameText = document
     //   .getElementById("first-name")
     //   .innerText.split("");
@@ -322,11 +321,11 @@ a {
 
     &__content {
       &__name {
-          font-size: 5rem;
+        font-size: 5rem;
       }
 
       &__occupation {
-          font-size: 2.6rem;
+        font-size: 2.6rem;
       }
     }
   }
@@ -338,13 +337,13 @@ a {
 
     &__content {
       &__name {
-          font-size: 2.5rem;
-          letter-spacing: .8rem;
+        font-size: 2.5rem;
+        letter-spacing: 0.8rem;
       }
 
       &__occupation {
-          font-size: 1.6rem;
-          letter-spacing: .4rem;
+        font-size: 1.6rem;
+        letter-spacing: 0.4rem;
       }
     }
   }
@@ -356,13 +355,13 @@ a {
 
     &__content {
       &__name {
-          font-size: 1.8rem;
-          letter-spacing: .6rem;
+        font-size: 1.8rem;
+        letter-spacing: 0.6rem;
       }
 
       &__occupation {
-          font-size: 1.2rem;
-          letter-spacing: .3rem;
+        font-size: 1.2rem;
+        letter-spacing: 0.3rem;
       }
     }
   }
@@ -374,13 +373,13 @@ a {
 
     &__content {
       &__name {
-          font-size: 1.8rem;
-          letter-spacing: .4rem;
+        font-size: 1.8rem;
+        letter-spacing: 0.4rem;
       }
 
       &__occupation {
-          font-size: 1.2rem;
-          letter-spacing: .2rem;
+        font-size: 1.2rem;
+        letter-spacing: 0.2rem;
       }
     }
   }
@@ -389,19 +388,19 @@ a {
 @media only screen and (max-width: 500px) {
   .title-card {
     height: 18rem;
-    
+
     &__content {
       gap: 2rem;
 
       &__name {
-          font-size: 1.5rem;
-          line-height: 3.5rem;
-          letter-spacing: .2rem;
+        font-size: 1.5rem;
+        line-height: 3.5rem;
+        letter-spacing: 0.2rem;
       }
 
       &__occupation {
-          font-size: 1.1rem;
-          letter-spacing: .1rem;
+        font-size: 1.1rem;
+        letter-spacing: 0.1rem;
       }
     }
   }
@@ -410,19 +409,19 @@ a {
 @media only screen and (max-width: 350px) {
   .title-card {
     height: 18rem;
-    
+
     &__content {
       gap: 2rem;
 
       &__name {
-          font-size: 1.4rem;
-          line-height: 3rem;
-          letter-spacing: 0;
+        font-size: 1.4rem;
+        line-height: 3rem;
+        letter-spacing: 0;
       }
 
       &__occupation {
-          font-size: 1rem;
-          letter-spacing: 0;
+        font-size: 1rem;
+        letter-spacing: 0;
       }
     }
   }

@@ -1,5 +1,5 @@
 <script>
-import { useSettingsStore } from '@/stores/settingsStore';
+import { useSettingsStore } from "@/stores/settingsStore";
 
 export default {
   props: {
@@ -44,17 +44,17 @@ export default {
   computed: {
     hideDetailsText() {
       if (this.settings.languageIsEnglish) {
-        return 'Hide Details';
+        return "Hide Details";
       } else {
-        return 'Details ausblenden';
+        return "Details ausblenden";
       }
     },
 
     showDetailsText() {
       if (this.settings.languageIsEnglish) {
-        return 'Show Details';
+        return "Show Details";
       } else {
-        return 'Details anzeigen';
+        return "Details anzeigen";
       }
     },
   },
@@ -82,8 +82,24 @@ export default {
           {{ job.location }}
         </div>
         <div class="job__details">
-          <button class="details-button" v-if="showDetails" @click="handleMouseClick" @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">{{ hideDetailsText }}</button>
-          <button class="details-button" v-else @click="handleMouseClick" @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">{{ showDetailsText }}</button>
+          <button
+            class="details-button"
+            v-if="showDetails"
+            @click="handleMouseClick"
+            @mouseover="handleMouseOver"
+            @mouseleave="handleMouseLeave"
+          >
+            {{ hideDetailsText }}
+          </button>
+          <button
+            class="details-button"
+            v-else
+            @click="handleMouseClick"
+            @mouseover="handleMouseOver"
+            @mouseleave="handleMouseLeave"
+          >
+            {{ showDetailsText }}
+          </button>
 
           <div class="details" v-if="showDetails">
             <p>{{ job.description }}</p>
@@ -245,7 +261,7 @@ button {
       font-size: 1.3rem;
     }
   }
-  
+
   .details-button {
     font-size: 1rem;
     padding: 0.5rem 1rem;
@@ -280,7 +296,7 @@ button {
       font-size: 1rem;
     }
   }
-   
+
   .details-button {
     font-size: 1rem;
     padding: 0.5rem 1rem;
@@ -293,7 +309,7 @@ button {
     word-break: break-word;
 
     &__duration {
-      font-size: .8rem;
+      font-size: 0.8rem;
     }
 
     &__date {
@@ -302,7 +318,7 @@ button {
 
     &__title {
       font-size: 1.8rem;
-      margin: .1rem;
+      margin: 0.1rem;
     }
 
     &__company {
@@ -310,21 +326,19 @@ button {
     }
 
     &__location {
-      font-size: .8rem;
+      font-size: 0.8rem;
     }
 
     &__details {
-      font-size: .8rem;
+      font-size: 0.8rem;
     }
   }
 
-   
   .details-button {
-    font-size: .8rem;
-    padding: 0.2rem .6rem;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
   }
 }
-
 
 @media screen and (max-width: 500px) {
   .job div {
@@ -339,5 +353,4 @@ button {
     }
   }
 }
-
 </style>

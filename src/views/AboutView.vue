@@ -348,7 +348,7 @@ export default {
           line-height: 1.2;
 
           p {
-            margin-bottom: .7rem;
+            margin-bottom: 0.7rem;
           }
         }
       }
@@ -409,7 +409,7 @@ export default {
           line-height: 1.3;
 
           p {
-            margin-bottom: .7rem;
+            margin-bottom: 0.7rem;
           }
         }
       }
@@ -477,7 +477,7 @@ export default {
           line-height: 1.3;
 
           p {
-            margin-bottom: .7rem;
+            margin-bottom: 0.7rem;
           }
         }
       }

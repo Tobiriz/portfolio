@@ -192,9 +192,8 @@ export default {
 
   .skillsets {
     align-items: center;
-    padding: .8rem 0.5rem;
+    padding: 0.8rem 0.5rem;
     gap: 1rem;
   }
 }
-
 </style>

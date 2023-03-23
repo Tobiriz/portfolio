@@ -204,7 +204,6 @@ export default {
   }
 }
 
-
 .isActive {
   color: var(--secondary-color);
 }

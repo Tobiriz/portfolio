@@ -90,21 +90,21 @@ export default {
       font-size: 2rem;
       letter-spacing: 0.15rem;
     }
-    
+
     &__date {
       font-size: 2.3rem;
       letter-spacing: 0.15rem;
     }
-    
+
     &__title {
       font-size: 3.4rem;
     }
-    
+
     &__school {
       font-size: 2.3rem;
       letter-spacing: 0.15rem;
     }
-    
+
     &__location {
       font-size: 2rem;
       letter-spacing: 0.15rem;
@@ -119,19 +119,19 @@ export default {
     &__duration {
       font-size: 1.25rem;
     }
-    
+
     &__date {
       font-size: 1.5rem;
     }
-    
+
     &__title {
       font-size: 2.5rem;
     }
-    
+
     &__school {
       font-size: 1.5rem;
     }
-    
+
     &__location {
       font-size: 1.25rem;
     }
@@ -143,24 +143,24 @@ export default {
     max-width: 90%;
 
     &__duration {
-      font-size: .8rem;
+      font-size: 0.8rem;
     }
-    
+
     &__date {
       font-size: 1rem;
     }
-    
+
     &__title {
       font-size: 1.8rem;
-      margin: .1rem;
+      margin: 0.1rem;
     }
-    
+
     &__school {
       font-size: 1rem;
     }
-    
+
     &__location {
-      font-size: .8rem;
+      font-size: 0.8rem;
     }
   }
 }
