@@ -116,19 +116,11 @@ export const useAboutStore = defineStore("AboutStore", {
       myEducationHeading: "Meine Ausbildung",
       aboutMeContent: {
         section1:
-          "Mein Name ist Tobias und ich bin ein begeisterter und lösungsorientierter Entwickler mit umfangreichen Kenntnissen in " +
-          "HTML, CSS, JavaScript, Vue.js, sowie Java. Mein beruflicher Werdegang begann als Elektroniker und Servicetechniker, " +
-          "bevor ich mich für ein Studium in den MINT (Mathematik, Informatik, Naturwissenschaft und Technik) -Fächern entschieden habe. Ich habe die Studiengänge Physik, Maschinenbau, Elektrotechnik und Informatik belegt, " +
-          "was mir ein breites technisches Verständnis und analytisches Denken vermittelt hat.",
+          "Als ausgebildeter Elektroniker und ehemaliger Servicetechniker in der Sicherheitstechnik habe ich mich immer für technische Zusammenhänge und Innovationen interessiert. Daher entschied ich mich für ein Studium in den Bereichen Physik, Maschinenbau und Elektro- und Informationstechnik. Während meines Studiums konnte ich meine Leidenschaft für die Softwareentwicklung entdecken und vertiefen.",
         section2:
-          "Während meines Bildungsweges habe ich meine Leidenschaft für das Coden entdeckt und diese in meinem derzeitigen Studium erneut entfacht. " +
-          "Ich bin ein neugieriger und kreativer Entwickler mit einem ausgeprägten Sinn für Teamwork, Kommunikation und Zeitmanagement. " +
-          "Meine Fähigkeiten in Kundenservice, Sprachen (Englisch, Deutsch) und Empathie helfen mir, mich auf die Bedürfnisse anderer zu " +
-          "konzentrieren und agil auf Veränderungen zu reagieren.",
+          "Auf meinem Portfolio finden Sie eine detaillierte Übersicht meiner Fähigkeiten, die ich im Laufe meiner Ausbildung und meines Studiums erworben habe. Dazu gehören Kenntnisse in HTML, CSS und Design, JavaScript, Vue.js, Java, Versionskontrolle mit Git sowie Zeit- und Projektmanagement. Auch mein technisches Verständnis, mein Abstraktionsvermögen sowie meine analytischen, kritischen und logischen Denkfähigkeiten konnte ich durch meine Ausbildung und Studium weiter ausbauen.",
         section3:
-          "Ich bin immer bestrebt, mein technisches Wissen zu erweitern und meine Fähigkeiten als Entwickler zu verbessern. " +
-          "Darüber hinaus bin ich davon überzeugt, dass meine breite Erfahrung und meine Leidenschaft für die Entwicklung mich zu einem wertvollen Mitglied " +
-          "jedes Teams machen, dem ich beitrete.",
+          "Ich freue mich darauf, mich neuen Herausforderungen zu stellen und meine Fähigkeiten weiter auszubauen. Wenn Sie noch weitere Fragen zu meiner Person oder meinem Werdegang haben, stehe ich Ihnen gerne zur Verfügung. Kontaktmöglichkeiten finden Sie auf meiner Kontaktseite.",
       },
       jobs: [
         {
@@ -139,7 +131,7 @@ export const useAboutStore = defineStore("AboutStore", {
           company: "LIDL Vertriebs-GmbH & Co. KG",
           location: "Braunschweig, Deutschland",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+            "Als Werkstudent habe ich während meines Studiums im Einzelhandel gearbeitet, wo ich hauptsächlich Kassiertätigkeiten nachkam. In dieser Position habe ich meine Fähigkeiten im Umgang mit Kunden weiterentwickelt und gelernt, wie man effektiv in einem schnelllebigen Einzelhandelsumfeld arbeitet. Darüber hinaus habe ich beim einsortieren der Ware dazu beigetragen, dass das Geschäft ordentlich und übersichtlich bleibt.",
         },
         {
           id: 2,
@@ -149,7 +141,7 @@ export const useAboutStore = defineStore("AboutStore", {
           company: "TELCAT Multicom GmbH",
           location: "Peine, Deutschland",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+            "In meiner Rolle als Servicetechniker im Bereich der Sicherheits- und Nachrichtentechnik habe ich bei einer Tochtergesellschaft der Salzgitter AG gearbeitet. Während dieser Zeit habe ich ein breites Spektrum an Kunden betreut, von privaten Haushalten bis hin zu großen Konzernen. Zu meinen Aufgaben gehörte die Installation, Inbetriebnahme, Wartung und Reparatur von Sicherheitssystemen wie Einbruchmeldeanlagen, Brandmeldeanlagen und Videoüberwachungssystemen. In dieser Position konnte ich meine technischen Fähigkeiten und mein Verständnis für komplexe technische Systeme verbessern. Darüber hinaus habe ich meine Kommunikationsfähigkeiten weiterentwickelt, indem ich mit Kunden interagiert habe, um ihre Bedürfnisse zu verstehen und Lösungen anzubieten.",
         },
         {
           id: 3,
@@ -159,7 +151,7 @@ export const useAboutStore = defineStore("AboutStore", {
           company: "R.PAPE GmbH",
           location: "Braunschweig, Deutschland",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+            "Ich habe eine 3,5-jährige Ausbildung zum Elektroniker für Informations- und Telekommunikationstechnik erfolgreich abgeschlossen, und das sogar ein halbes Jahr früher als geplant. In dieser Ausbildung habe ich umfassende Kenntnisse in den Bereichen Telekommunikation, IT-Netzwerke und Elektronik erworben und diese Fähigkeiten in zahlreichen Projekten erfolgreich angewendet. Während meiner Ausbildung habe ich auch gelernt, effektiv in einem Team zu arbeiten und meine Fähigkeit zur Problemlösung zu verbessern. Diese Erfahrungen haben mir eine solide Grundlage für meine Karriere in der Elektronikbranche gegeben.",
         },
       ],
       schools: [
