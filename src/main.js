@@ -21,6 +21,7 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faD, faE, faU, faN, faG } from "@fortawesome/free-solid-svg-icons";
+import { faImage } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
   faLinkedin,
@@ -44,7 +45,8 @@ library.add(
   faE,
   faU,
   faN,
-  faG
+  faG,
+  faImage
 );
 
 const app = createApp(App).component("font-awesome-icon", FontAwesomeIcon);
