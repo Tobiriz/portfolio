@@ -15,10 +15,10 @@ export default {
   },
 
   beforeMount() {
-    const screenWidth = document.documentElement.clientWidth;
-    if (screenWidth <= 800) {
-      this.$router.push("/portfolio");
-    }
+    // const screenWidth = document.documentElement.clientWidth;
+    // if (screenWidth <= 800) {
+    //   this.$router.push("/portfolio");
+    // }
   },
 
   mounted() {
