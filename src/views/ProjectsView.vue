@@ -59,8 +59,7 @@ export default {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
     grid-auto-rows: minmax(300px, auto);
-    grid-gap: 3rem;
-    column-gap: 3rem;
+    grid-gap: 5rem;
     justify-items: start;
     align-items: center;
   }
@@ -75,8 +74,7 @@ export default {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     grid-auto-rows: minmax(300px, auto);
-    grid-gap: 3rem;
-    column-gap: 3rem;
+    grid-gap: 10rem;
     justify-items: start;
     align-items: center;
   }
@@ -91,8 +89,7 @@ export default {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     grid-auto-rows: minmax(300px, auto);
-    grid-gap: 2rem;
-    column-gap: 3rem;
+    grid-gap: 8rem;
     justify-items: start;
     align-items: center;
   }
@@ -107,7 +104,7 @@ export default {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-auto-rows: minmax(150px, auto);
-    grid-gap: 4rem;
+    grid-gap: 8rem;
     justify-items: start;
     align-items: center;
   }
