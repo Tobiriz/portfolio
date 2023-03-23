@@ -11,18 +11,11 @@ export const useAboutStore = defineStore("AboutStore", {
       myEducationHeading: "My Education",
       aboutMeContent: {
         section1:
-          "My name is Tobias and I am an enthusiastic and solution-oriented developer with extensive knowledge in " +
-          "HTML, CSS, JavaScript, Vue.js, and Java. My professional career started as an electronics technician and service engineer " +
-          "before I decided to study STEM subjects. I have studied physics, mechanical engineering, electrical engineering, and computer science, " +
-          "which gave me a broad technical understanding and analytical thinking.",
+          "As a trained electronics technician and former service technician in safety technology, I have always been interested in technical contexts and innovations. Therefore, I decided to study physics, mechanical engineering and electrical and information technology. During my studies I was able to discover and deepen my passion for software development.",
         section2:
-          "During my educational journey, I discovered my passion for coding and reignited it in my current studies. " +
-          "I am a curious and creative developer with a strong sense of teamwork, communication and time management. " +
-          "My customer service, language (English, German), and empathy skills help me focus on the needs of others and " +
-          "respond to change in an agile manner.",
+          "On my portfolio you will find a detailed overview of the skills I have acquired during my training and studies. These include knowledge in HTML and CSS, JavaScript and Vue.js, Java as well as time and project management. I was also able to further develop my technical understanding, my ability to abstract as well as my analytical, critical and logical thinking skills through my training and studies.",
         section3:
-          "I am always looking to expand my technical knowledge and improve my skills as a developer. " +
-          "I believe that my broad experience and passion for development make me a valuable member of any team I join.",
+          "I am looking forward to taking on new challenges and further developing my skills. If you have any further questions about me or my career, please do not hesitate to contact me. You can find my contact information on the dedicated page.",
       },
       jobs: [
         {
@@ -33,7 +26,7 @@ export const useAboutStore = defineStore("AboutStore", {
           company: "LIDL Vertriebs-GmbH & Co. KG",
           location: "Braunschweig, Germany",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+            "As a working student, I worked in retail during my studies, mainly performing cashiering duties. In this position, I developed my skills in dealing with customers and learned how to work effectively in a fast-paced retail environment. In addition, I helped keep the store neat and organized when sorting merchandise.",
         },
         {
           id: 2,
@@ -43,7 +36,7 @@ export const useAboutStore = defineStore("AboutStore", {
           company: "TELCAT Multicom GmbH",
           location: "Peine, Germany",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+            "In my role as a service technician in the field of security and communications technology, I worked for a subsidiary of Salzgitter AG. During this time, I served a wide range of customers, from private households to large corporations. My duties included the installation, commissioning, maintenance and repair of security systems such as intrusion detection systems, fire alarm systems and video surveillance systems. This position allowed me to improve my technical skills and understanding of complex technical systems. In addition, I developed my communication skills by interacting with customers to understand their needs and provide solutions.",
         },
         {
           id: 3,
@@ -53,7 +46,7 @@ export const useAboutStore = defineStore("AboutStore", {
           company: "R.PAPE GmbH",
           location: "Braunschweig, Germany",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+            "I successfully completed a 3.5-year apprenticeship as an electronics technician for information and telecommunications technology, even six months ahead of schedule. During this training, I acquired comprehensive knowledge in the areas of telecommunications, IT networks and electronics and successfully applied these skills in numerous projects. During my training, I also learned how to work effectively in a team and improve my problem-solving skills. These experiences have given me a solid foundation for my career in the electronics industry.",
         },
       ],
       schools: [
@@ -118,9 +111,9 @@ export const useAboutStore = defineStore("AboutStore", {
         section1:
           "Als ausgebildeter Elektroniker und ehemaliger Servicetechniker in der Sicherheitstechnik habe ich mich immer für technische Zusammenhänge und Innovationen interessiert. Daher entschied ich mich für ein Studium in den Bereichen Physik, Maschinenbau und Elektro- und Informationstechnik. Während meines Studiums konnte ich meine Leidenschaft für die Softwareentwicklung entdecken und vertiefen.",
         section2:
-          "Auf meinem Portfolio finden Sie eine detaillierte Übersicht meiner Fähigkeiten, die ich im Laufe meiner Ausbildung und meines Studiums erworben habe. Dazu gehören Kenntnisse in HTML, CSS und Design, JavaScript, Vue.js, Java, Versionskontrolle mit Git sowie Zeit- und Projektmanagement. Auch mein technisches Verständnis, mein Abstraktionsvermögen sowie meine analytischen, kritischen und logischen Denkfähigkeiten konnte ich durch meine Ausbildung und Studium weiter ausbauen.",
+          "Auf meinem Portfolio finden Sie eine detaillierte Übersicht meiner Fähigkeiten, die ich im Laufe meiner Ausbildung und meines Studiums erworben habe. Dazu gehören Kenntnisse in HTML und CSS, JavaScript und Vue.js, Java sowie Zeit- und Projektmanagement. Auch mein technisches Verständnis, mein Abstraktionsvermögen sowie meine analytischen, kritischen und logischen Denkfähigkeiten konnte ich durch meine Ausbildung und Studium weiter ausbauen.",
         section3:
-          "Ich freue mich darauf, mich neuen Herausforderungen zu stellen und meine Fähigkeiten weiter auszubauen. Wenn Sie noch weitere Fragen zu meiner Person oder meinem Werdegang haben, stehe ich Ihnen gerne zur Verfügung. Kontaktmöglichkeiten finden Sie auf meiner Kontaktseite.",
+          "Ich freue mich darauf, mich neuen Herausforderungen zu stellen und meine Fähigkeiten weiter auszubauen. Wenn Sie noch weitere Fragen zu meiner Person oder meinem Werdegang haben, stehe ich Ihnen gerne zur Verfügung. Sie finden meine Kontaktinformationen auf der dafür vorgesehenen Seite.",
       },
       jobs: [
         {
