@@ -1,10 +1,12 @@
 <script>
 import { useSettingsStore } from "../stores/settingsStore";
 import ImagePreview from "@/components/ImagePreview.vue";
+import NoImage from "@/components/NoImage.vue";
 
 export default {
   components: {
     ImagePreview,
+    NoImage,
   },
 
   setup() {
@@ -120,6 +122,8 @@ export default {
       </span>
     </button>
 
+    <NoImage class="project__no-image" v-else />
+
     <div class="project__title">
       {{ title }}
     </div>
@@ -147,6 +151,7 @@ button {
 }
 
 .project {
+  justify-self: center;
   padding: 3rem;
   display: flex;
   flex-direction: column;
@@ -176,6 +181,10 @@ button {
       box-sizing: border-box;
       border-radius: inherit;
     }
+  }
+
+  .no-image {
+    align-self: center;
   }
 
   &__title {
