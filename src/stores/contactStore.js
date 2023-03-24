@@ -9,14 +9,14 @@ export const useContactStore = defineStore("ContactStore", {
       en: {
         viewName: "Contact",
         email: "Email",
-        emailAddress: "contact@tobiasweinlich.com",
+        emailAddress: "contact@tobiasweinlich.dev",
         media: "Media",
       },
 
       de: {
         viewName: "Kontakt",
         email: "E-Mail",
-        emailAddress: "kontakt@tobiasweinlich.com",
+        emailAddress: "kontakt@tobiasweinlich.dev",
         media: "Medien",
       },
     };
