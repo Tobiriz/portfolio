@@ -39,23 +39,6 @@
   --color-blob-2: var(--c-greyish);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-primaryr: var(--c-white);
-    --color-secondary: var(--c-black);
-    --color-secondary-light: var(--c-black-transparent);
-    --color-accent: var(--c-red);
-    --color-accent-variant-1: var(--c-red-variant-1);
-    --color-accent-variant-2: var(--c-red-variant-2);
-    --color-accent-variant-3: var(--c-red-variant-3);
-    --color-accent-variant-4: var(--c-red-variant-4);
-    --color-border: var(--c-grey-soft);
-    --color-title-card: var(--c-white-soft);
-    --color-blob-1: var(--c-violet-dark);
-    --color-blob-2: var(--c-orange-dark);
-  }
-}
-
 * {
   margin: 0;
   font-family: "Roboto", sans-serif;
