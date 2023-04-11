@@ -11,11 +11,11 @@ export const useAboutStore = defineStore("AboutStore", {
       myEducationHeading: "My Education",
       aboutMeContent: {
         section1:
-          "As a trained electronics technician and former service technician in safety technology, I have always been interested in technical contexts and innovations. Therefore, I decided to study physics, mechanical engineering and electrical and information technology. During my studies I was able to discover and deepen my passion for software development.",
+          "As a passionate electronics engineer with versatile studies in physics, mechanical engineering and electrical and information technology, I bring a wide range of skills to the table. My enthusiasm for technical innovation led me to software development, where I gained knowledge in HTML, CSS, JavaScript, Vue.js and Java. With strong analytical thinking and experience in time and project management, I am always ready to take on new challenges.",
         section2:
-          "On my portfolio you will find a detailed overview of the skills I have acquired during my training and studies. These include knowledge in HTML and CSS, JavaScript and Vue.js, Java as well as time and project management. I was also able to further develop my technical understanding, my ability to abstract as well as my analytical, critical and logical thinking skills through my training and studies.",
+          "If you have any questions about me or my career, please do not hesitate to contact me. You can find contact information on the corresponding page.",
         section3:
-          "I am looking forward to taking on new challenges and further developing my skills. If you have any further questions about me or my career, please do not hesitate to contact me. You can find my contact information on the dedicated page.",
+          "",
       },
       jobs: [
         {
@@ -60,19 +60,11 @@ export const useAboutStore = defineStore("AboutStore", {
         },
         {
           id: 2,
-          date: "October 2019 - February 2022",
-          duration: "2 years 5 months",
-          title: "Mechanical Engineering",
+          date: "October 2018 - February 2022",
+          duration: "3 years 5 months",
+          title: "Physics / Mechanical Engineering",
           school: "Technical University of Braunshweig",
-          location: "Braunshweig, Germany",
-        },
-        {
-          id: 3,
-          date: "October 2018 - September 2019",
-          duration: "1 year",
-          title: "Physics",
-          school: "Technical University of Braunshweig",
-          location: "Braunshweig, Germany",
+          location: "Braunschweig, Germany",
         },
         {
           id: 4,
@@ -109,11 +101,11 @@ export const useAboutStore = defineStore("AboutStore", {
       myEducationHeading: "Meine Ausbildung",
       aboutMeContent: {
         section1:
-          "Als ausgebildeter Elektroniker und ehemaliger Servicetechniker in der Sicherheitstechnik habe ich mich immer für technische Zusammenhänge und Innovationen interessiert. Daher entschied ich mich für ein Studium in den Bereichen Physik, Maschinenbau und Elektro- und Informationstechnik. Während meines Studiums konnte ich meine Leidenschaft für die Softwareentwicklung entdecken und vertiefen.",
+          "Als passionierter Elektroniker mit einem vielseitigen Studium in Physik, Maschinenbau und Elektro- und Informationstechnik bringe ich eine breite Palette an Fähigkeiten mit. Meine Begeisterung für technische Innovationen führte mich zur Softwareentwicklung, wo ich Kenntnisse in HTML, CSS, JavaScript, Vue.js und Java erlangte. Mit starkem analytischem Denken und Erfahrung im Zeit- und Projektmanagement bin ich stets bereit, mich neuen Herausforderungen zu stellen.",
         section2:
-          "Auf meinem Portfolio finden Sie eine detaillierte Übersicht meiner Fähigkeiten, die ich im Laufe meiner Ausbildung und meines Studiums erworben habe. Dazu gehören Kenntnisse in HTML und CSS, JavaScript und Vue.js, Java sowie Zeit- und Projektmanagement. Auch mein technisches Verständnis, mein Abstraktionsvermögen sowie meine analytischen, kritischen und logischen Denkfähigkeiten konnte ich durch meine Ausbildung und Studium weiter ausbauen.",
+          "Bei Fragen zu meiner Person oder meinem Werdegang stehe ich Ihnen gerne zur Verfügung. Kontaktinformationen finden Sie auf der entsprechenden Seite.",
         section3:
-          "Ich freue mich darauf, mich neuen Herausforderungen zu stellen und meine Fähigkeiten weiter auszubauen. Wenn Sie noch weitere Fragen zu meiner Person oder meinem Werdegang haben, stehe ich Ihnen gerne zur Verfügung. Sie finden meine Kontaktinformationen auf der dafür vorgesehenen Seite.",
+          "",
       },
       jobs: [
         {
@@ -158,17 +150,9 @@ export const useAboutStore = defineStore("AboutStore", {
         },
         {
           id: 2,
-          date: "Oktober 2019 - Februar 2022",
-          duration: "2 Jahre 5 Monate",
-          title: "Maschinenbau",
-          school: "Technische Universität Braunschweig",
-          location: "Braunshweig, Deutschland",
-        },
-        {
-          id: 3,
-          date: "Oktober 2018 - September 2019",
-          duration: "1 Jahr",
-          title: "Physik",
+          date: "Oktober 2018 - Februar 2022",
+          duration: "3 Jahre 5 Monate",
+          title: "Physik / Maschinenbau",
           school: "Technische Universität Braunschweig",
           location: "Braunshweig, Deutschland",
         },

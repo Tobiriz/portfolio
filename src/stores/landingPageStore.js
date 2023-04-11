@@ -8,12 +8,12 @@ export const useLandingPageStore = defineStore("LandingPageStore", {
 
       en: {
         name: "Tobias Weinlich",
-        occupation: "Future Software Developer",
+        occupation: "Junior Software Developer",
       },
 
       de: {
         name: "Tobias Weinlich",
-        occupation: "Zukünftiger Softwareentwickler",
+        occupation: "Junior Software Developer",
       },
     };
   },

@@ -2,9 +2,18 @@ import { defineStore } from "pinia";
 
 export const useSettingsStore = defineStore("SettingsStore", {
   state: () => {
+    const SWITCH_TO_GERMAN_STRING = "Zur deutschen Version wechseln";
+    const SWITCH_TO_ENGLISH_STRING = "Switch Language to English";
+
+    
     return {
-      languageEnglish: true,
-      languageGerman: false,
+      const: {
+        SWITCH_TO_GERMAN_STRING,
+        SWITCH_TO_ENGLISH_STRING,
+      },
+      
+      languageEnglish: false,
+      languageGerman: true,
       darkMode: true,
       lightMode: false,
       overlayActive: false,
@@ -192,11 +201,11 @@ export const useSettingsStore = defineStore("SettingsStore", {
       return window.innerWidth;
     },
 
-    languageSeletorText() {
+    languageSelectorText() {
       if (this.languageEnglish) {
-        return "Auf Deutsch wechseln";
+        return this.const.SWITCH_TO_GERMAN_STRING;
       } else if (this.languageGerman) {
-        return "Switch to English";
+        return this.const.SWITCH_TO_ENGLISH_STRING;
       }
     },
 
